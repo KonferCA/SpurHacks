@@ -1,54 +1,53 @@
-# React + TypeScript + Vite
+<div align="center">
+  <h1 align="center">
+    <a href="https://onboard.spuric.com/">
+        <picture>
+            <source height="65" media="(prefers-color-scheme: dark)" srcset="https://github.com/KonferCA/SpurHacks/blob/main/src/assets/spurhacks-logo-white.png">
+            <img height="750" alt="SPURHACKS" src="https://github.com/KonferCA/SpurHacks/blob/main/src/assets/spurhacks-logo-white.png">
+        </picture>
+    </a>
+    <br>
+  </h1>
+                                                 
+  ![GitHub](https://img.shields.io/github/license/KonferCA/SPUR-Landing?style=flat-square)
+  
+  #### The official landing page for SpurHacks - ~~see [here](https://hackathon.spuric.com).~~
+</div>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Quick Setup :hammer:
 
-Currently, two official plugins are available:
+> Install Node.js
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```sh
+https://nodejs.org/en/download/
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+> Install pnpm using npm
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```sh
+$ npm install -g pnpm
+```
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+> Clone the repo
+
+```sh
+$ git clone https://github.com/KonferCA/SpurHacks.git
+```
+
+> From your terminal, navigate to the root path of clone
+
+```sh
+$ cd path/to/your/clone
+```
+
+> Install dependencies
+
+```sh
+$ pnpm i
+```
+
+> Run local server
+
+```sh
+$ pnpm dev
 ```
