@@ -6,9 +6,11 @@
         "module": "ESNext",
         "skipLibCheck": true,
 
+        "baseUrl": "./",
+
         /* Paths */
         "paths": {
-            "@": ["./src/*"],
+            "@/": ["./src/*"],
             "@assets": ["./src/assets/index"],
             "@components": ["./src/components/index"],
             "@pages": ["./src/pages/index"],

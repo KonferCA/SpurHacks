@@ -1,3 +1,4 @@
+import { Provider } from '@components';
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import './index.css';
@@ -9,6 +10,8 @@ if (!rootElement) throw new Error('Failed to find the root element');
 
 createRoot(rootElement).render(
     <StrictMode>
-        <Router />
+        <Provider>
+            <Router />
+        </Provider>
     </StrictMode>
 );
