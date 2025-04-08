@@ -9,7 +9,7 @@
     <br>
   </h1>
                                                  
-  ![GitHub](https://img.shields.io/github/license/KonferCA/SPUR-Landing?style=flat-square)
+  ![GitHub](https://img.shields.io/github/license/KonferCA/SpurHacks?style=flat-square)
   
   #### The official landing page for SpurHacks - ~~see [here](https://hackathon.spuric.com).~~
 </div>
