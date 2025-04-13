@@ -7,10 +7,17 @@ import {
     Container,
     Box,
     Image,
+    Grid,
+    Stack,
 } from "@chakra-ui/react";
 
 export const Sponsorship = () => {
     const singularitySponsors = [
+        {
+            name: "Snglrty Co.",
+            image: Sing,
+            slogan: "Which came first, the chicken or chicken jockey?",
+        },
         {
             name: "Snglrty Co.",
             image: Sing,
@@ -23,9 +30,17 @@ export const Sponsorship = () => {
             name: "Company",
             image: Entang,
         },
+        {
+            name: "Company",
+            image: Entang,
+        },
     ];
 
     const quarkSponsors = [
+        {
+            name: "Company",
+            image: Quark,
+        },
         {
             name: "Company",
             image: Quark,
@@ -38,6 +53,9 @@ export const Sponsorship = () => {
             image: Quanta,
         },
     ];
+
+    // Reusable width for all tiers
+    const MAX_WIDTH = "1000px";
 
     return (
         <div className="bg-black text-white min-h-screen grid place-items-center">
@@ -83,58 +101,65 @@ export const Sponsorship = () => {
                         BECOME A SPONSOR
                     </Button>
                 </Flex>
-                <Flex
-                    direction="column"
-                    gap={8}
-                    align="center"
-                    justify="center"
-                    textAlign="center"
-                >
-                    {singularitySponsors.map((sponsor, index) => (
-                        <Flex
-                            key={index}
-                            bg="blue.50"
-                            w={{
-                                base: "90%",
-                                sm: "600px",
-                                md: "700px",
-                                lg: "1000px",
-                            }}
-                            h={{ base: "auto", md: "200px" }}
-                            justify="center"
-                            align="center"
-                            textAlign="left"
-                            rounded="3xl"
-                            px={8}
-                            gap={2}
-                        >
-                            <Image
-                                src={sponsor.image}
-                                alt={sponsor.name}
-                                boxSize={{ base: "150px", md: "200px" }}
-                                objectFit="contain"
-                                py={5}
-                            />
-                            <Flex
-                                direction="column"
-                                align="flex-start"
-                                justify="center"
-                            >
-                                <Text
-                                    fontSize={["lg", "2xl", "3xl", "4xl"]}
-                                    fontWeight="semibold"
-                                    color="black"
+
+                <Stack gap={20} align="center">
+                    {/* SINGULARITY SPONSORS (1RST) */}
+                    <Box w="full" maxW={MAX_WIDTH} mx="auto">
+                        <Grid templateColumns="1fr" gap={10}>
+                            {singularitySponsors.map((sponsor, index) => (
+                                <Box
+                                    key={index}
+                                    bg="offWhite"
+                                    rounded="3xl"
+                                    w={{
+                                        base: "300px",
+                                        sm: "600px",
+                                        md: "700px",
+                                        lg: "900px",
+                                        xl: "1000px",
+                                    }}
+                                    h={{ base: "auto", md: "200px" }}
+                                    display="flex"
+                                    alignItems="center"
+                                    justifyContent="center"
                                 >
-                                    {sponsor.name}
-                                </Text>
-                                <Box h="1px" w="full" bg="blue.700" my={1} />
-                                <Text fontSize="sm" color="black">
-                                    {sponsor.slogan}
-                                </Text>
-                            </Flex>
-                        </Flex>
-                    ))}
-                </Flex>
+                                    <Image
+                                        src={sponsor.image}
+                                        alt={sponsor.name}
+                                        boxSize={{ base: "150px", md: "200px" }}
+                                        objectFit="contain"
+                                        py={5}
+                                    />
+                                </Box>
+                            ))}
+                        </Grid>
+                    </Box>
+                    {/* ENTANGLEMENT SPONSORS (2ND) */}
+                    <Box w="full" maxW={MAX_WIDTH} mx="auto">
+                        <Grid templateColumns="repeat(2, 1fr)" gap={10}>
+                            {entanglementSponsors.map((sponsor, index) => (
+                                <Box
+                                    key={index}
+                                    bg="offWhite"
+                                    rounded="3xl"
+                                    w="full"
+                                    h={{ base: "auto", md: "150px" }}
+                                    display="flex"
+                                    alignItems="center"
+                                    justifyContent="center"
+                                >
+                                    <Image
+                                        src={sponsor.image}
+                                        alt={sponsor.name}
+                                        boxSize={{ base: "100px", md: "150px" }}
+                                        objectFit="contain"
+                                        py={5}
+                                    />
+                                </Box>
+                            ))}
+                        </Grid>
+                    </Box>
+                </Stack>
                 <Flex direction="column">
                     <Heading fontSize={["2xl", "3xl", "4xl", "5xl"]}>
                         Our Partners
