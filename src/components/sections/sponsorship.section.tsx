@@ -1,31 +1,41 @@
-import { Heading, Text, Button, Flex } from "@chakra-ui/react";
+import { Quanta, Quark, Entang, Sing } from "@assets";
+import {
+    Heading,
+    Text,
+    Button,
+    Flex,
+    Container,
+    Box,
+    Image,
+} from "@chakra-ui/react";
 
 export const Sponsorship = () => {
-    const quantaSponsors = [
+    const singularitySponsors = [
         {
-            name: "Company",
-            image: "image here",
-        },
-    ];
-
-    const quarkSponsors = [
-        {
-            name: "Company",
-            image: "image here",
+            name: "Snglrty Co.",
+            image: Sing,
+            slogan: "Which came first, the chicken or chicken jockey?",
         },
     ];
 
     const entanglementSponsors = [
         {
             name: "Company",
-            image: "image here",
+            image: Entang,
         },
     ];
 
-    const singularitySponsors = [
+    const quarkSponsors = [
         {
             name: "Company",
-            image: "image here",
+            image: Quark,
+        },
+    ];
+
+    const quantaSponsors = [
+        {
+            name: "This Company",
+            image: Quanta,
         },
     ];
 
@@ -37,11 +47,18 @@ export const Sponsorship = () => {
                 align="center"
                 justify="center"
                 textAlign="center"
-                className="w-full h-full bg-[linear-gradient(to_right,rgba(255,255,255,0.15)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.15)_1px,transparent_1px)] [background-size:60px_60px]"
+                className="w-full h-full bg-[linear-gradient(to_right,rgba(255,255,255,0.12)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.12)_1px,transparent_1px)] [background-size:90px_90px]"
             >
                 {/* Header and Text */}
-                <Flex className="flex flex-col items-center justify-center gap-8 max-w-3xl">
-                    <Heading fontSize={{ base: "sm", desktop: "5xl" }}>
+                <Flex
+                    direction="column"
+                    gap={8}
+                    align="center"
+                    justify="center"
+                    textAlign="center"
+                    className="max-w-3xl"
+                >
+                    <Heading fontSize={["2xl", "3xl", "4xl", "5xl"]}>
                         Sponsor a Special Weekend
                     </Heading>
                     <Text>
@@ -61,11 +78,68 @@ export const Sponsorship = () => {
                         rounded="full"
                         p={5}
                         _hover={{ bg: "orange.hover" }}
+                        transition="all 0.3s ease-in-out"
                     >
                         BECOME A SPONSOR
                     </Button>
                 </Flex>
-                <Flex></Flex>
+                <Flex
+                    direction="column"
+                    gap={8}
+                    align="center"
+                    justify="center"
+                    textAlign="center"
+                >
+                    {singularitySponsors.map((sponsor, index) => (
+                        <Flex
+                            key={index}
+                            bg="blue.50"
+                            w={{
+                                base: "90%",
+                                sm: "600px",
+                                md: "700px",
+                                lg: "1000px",
+                            }}
+                            h={{ base: "auto", md: "200px" }}
+                            justify="center"
+                            align="center"
+                            textAlign="left"
+                            rounded="3xl"
+                            px={8}
+                            gap={2}
+                        >
+                            <Image
+                                src={sponsor.image}
+                                alt={sponsor.name}
+                                boxSize={{ base: "150px", md: "200px" }}
+                                objectFit="contain"
+                                py={5}
+                            />
+                            <Flex
+                                direction="column"
+                                align="flex-start"
+                                justify="center"
+                            >
+                                <Text
+                                    fontSize={["lg", "2xl", "3xl", "4xl"]}
+                                    fontWeight="semibold"
+                                    color="black"
+                                >
+                                    {sponsor.name}
+                                </Text>
+                                <Box h="1px" w="full" bg="blue.700" my={1} />
+                                <Text fontSize="sm" color="black">
+                                    {sponsor.slogan}
+                                </Text>
+                            </Flex>
+                        </Flex>
+                    ))}
+                </Flex>
+                <Flex direction="column">
+                    <Heading fontSize={["2xl", "3xl", "4xl", "5xl"]}>
+                        Our Partners
+                    </Heading>
+                </Flex>
             </Flex>
         </div>
     );
