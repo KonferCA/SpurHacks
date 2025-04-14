@@ -45,6 +45,10 @@ export const Sponsorship = () => {
             name: "Company",
             image: Quark,
         },
+        {
+            name: "Company",
+            image: Quark,
+        },
     ];
 
     const quantaSponsors = [
@@ -55,7 +59,7 @@ export const Sponsorship = () => {
     ];
 
     // Reusable width for all tiers
-    const MAX_WIDTH = "1000px";
+    const MAX_WIDTH = "1200px";
 
     return (
         <div className="bg-black text-white min-h-screen grid place-items-center">
@@ -102,23 +106,21 @@ export const Sponsorship = () => {
                     </Button>
                 </Flex>
 
-                <Stack gap={20} align="center">
+                <Stack gap={{ base: 10, lg: 20 }} align="center" w="90%">
                     {/* SINGULARITY SPONSORS (1RST) */}
                     <Box w="full" maxW={MAX_WIDTH} mx="auto">
-                        <Grid templateColumns="1fr" gap={10}>
+                        <Grid
+                            templateColumns="1fr"
+                            gap={{ base: 6, lg: 10 }}
+                            justifyItems="center"
+                        >
                             {singularitySponsors.map((sponsor, index) => (
                                 <Box
                                     key={index}
                                     bg="offWhite"
                                     rounded="3xl"
-                                    w={{
-                                        base: "300px",
-                                        sm: "600px",
-                                        md: "700px",
-                                        lg: "900px",
-                                        xl: "1000px",
-                                    }}
-                                    h={{ base: "auto", md: "200px" }}
+                                    w="full"
+                                    h={{ base: "200px", md: "180px" }}
                                     display="flex"
                                     alignItems="center"
                                     justifyContent="center"
@@ -128,7 +130,7 @@ export const Sponsorship = () => {
                                         alt={sponsor.name}
                                         boxSize={{ base: "150px", md: "200px" }}
                                         objectFit="contain"
-                                        py={5}
+                                        py={6}
                                     />
                                 </Box>
                             ))}
@@ -136,14 +138,21 @@ export const Sponsorship = () => {
                     </Box>
                     {/* ENTANGLEMENT SPONSORS (2ND) */}
                     <Box w="full" maxW={MAX_WIDTH} mx="auto">
-                        <Grid templateColumns="repeat(2, 1fr)" gap={10}>
+                        <Grid
+                            templateColumns={{
+                                base: "repeat(1, 1fr)",
+                                md: "repeat(2, 1fr)",
+                            }}
+                            gap={{ base: 6, lg: 10 }}
+                            justifyItems="center"
+                        >
                             {entanglementSponsors.map((sponsor, index) => (
                                 <Box
                                     key={index}
                                     bg="offWhite"
                                     rounded="3xl"
                                     w="full"
-                                    h={{ base: "auto", md: "150px" }}
+                                    h={{ base: "150px", md: "150px" }}
                                     display="flex"
                                     alignItems="center"
                                     justifyContent="center"
@@ -157,6 +166,68 @@ export const Sponsorship = () => {
                                     />
                                 </Box>
                             ))}
+                        </Grid>
+                    </Box>
+                    {/* QUARK SPONSORS (3RD) */}
+                    <Box w="full" maxW={MAX_WIDTH} mx="auto">
+                        <Grid
+                            templateColumns={{
+                                base: "repeat(2, 1fr)",
+                                md: "repeat(3, 1fr)",
+                            }}
+                            gap={{ base: 6, lg: 10 }}
+                            justifyItems="center"
+                        >
+                            {quarkSponsors.map((sponsor, index) => {
+                                const isLastItem =
+                                    index === quarkSponsors.length - 1;
+                                const isOdd = quarkSponsors.length % 2 === 1;
+
+                                return (
+                                    <Box
+                                        key={index}
+                                        bg="offWhite"
+                                        rounded="3xl"
+                                        w="full"
+                                        h={{ base: "auto", md: "150px" }}
+                                        display="flex"
+                                        alignItems="center"
+                                        justifyContent="center"
+                                        gridColumn={{
+                                            base:
+                                                isLastItem && isOdd
+                                                    ? "1 / span 2"
+                                                    : "auto",
+                                            md: "auto",
+                                        }}
+                                        justifySelf={{
+                                            base:
+                                                isLastItem && isOdd
+                                                    ? "center"
+                                                    : "stretch",
+                                            md: "stretch",
+                                        }}
+                                        maxWidth={{
+                                            base:
+                                                isLastItem && isOdd
+                                                    ? "50%"
+                                                    : "100%",
+                                            md: "100%",
+                                        }}
+                                    >
+                                        <Image
+                                            src={sponsor.image}
+                                            alt={sponsor.name}
+                                            boxSize={{
+                                                base: "100px",
+                                                md: "150px",
+                                            }}
+                                            objectFit="contain"
+                                            py={5}
+                                        />
+                                    </Box>
+                                );
+                            })}
                         </Grid>
                     </Box>
                 </Stack>
