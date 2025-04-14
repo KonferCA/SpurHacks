@@ -5,7 +5,7 @@
   --font-geist: "Geist", sans-serif;
 }
 
-p h1 h2 h3 h4 h5 h6 {
+p h1 h2 h3 h4 h5 h6 body {
   font-family: "Geist", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;

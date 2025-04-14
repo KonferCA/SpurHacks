@@ -1,4 +1,3 @@
-import React from "react";
 import Spline from "@splinetool/react-spline";
 import { LogoWhite } from "../assets/";
 
@@ -10,7 +9,7 @@ export const Landing = () => {
                 scene="https://prod.spline.design/TmAYMNy2qJHyDE9m/scene.splinecode"
                 className="w-screen h-screen absolute top-0 left-0 z-0"
             />
-            <div className="font-[Geist] text-9xl text-white text-bold w-full h-full z-10 flex flex-col items-center justify-center gap-10">
+            <div className="text-9xl text-white text-bold w-full h-full z-10 flex flex-col items-center justify-center gap-10">
                 <img src={LogoWhite} className="" />
 
                 <div className="flex flex-row items-center justify-center gap-10">

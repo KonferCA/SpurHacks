@@ -11,7 +11,8 @@
         "lint:fix": "biome lint --write .",
         "format": "biome format .",
         "format:fix": "biome format --write .",
-        "preview": "vite preview"
+        "preview": "vite preview",
+        "push": "tsc -b && vite build && vercel --prod"
     },
     "dependencies": {
         "@chakra-ui/react": "^3.15.1",
