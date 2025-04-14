@@ -1,5 +1,6 @@
 import Spline from "@splinetool/react-spline";
 import { LogoWhite } from "../assets/";
+import { Link, Text, HStack } from "@chakra-ui/react";
 
 export const Landing = () => {
   return (
@@ -12,20 +13,23 @@ export const Landing = () => {
             <div className="text-9xl text-white text-bold w-full h-full z-10 flex flex-col items-center justify-center gap-10">
                 <img src={LogoWhite} className="" />
 
-                <div className="flex flex-row items-center justify-center gap-10">
-                    <p>June 20-22, 2025 </p>
-                    <span>|</span>
-                    <p>In-person</p>
-                    <span>|</span>
-                    <p>Waterloo, ON</p>
-                </div>
+                <HStack gap={6} justify="center" fontFamily="Geist">
+                    <Text>June 20-22, 2025</Text>
+                    <Text>|</Text>
+                    <Text>In-person</Text>
+                    <Text>|</Text>
+                    <Text>Waterloo, ON</Text>
+                </HStack>
 
-                <p>
-                    <a href="https://linktr.ee/spurhacks"
-                        target="_blank">
-                        Coming soon - stay tuned!
-                    </a>
-                </p>
+                <Text fontFamily="Geist">
+                    <Link 
+                        href="https://linktr.ee/spurhacks" 
+                        target="_blank"
+                        color="white" 
+                    >
+                        Coming soon – stay tuned!
+                    </Link>
+                </Text>
             </div>
         </div>
     </main>
