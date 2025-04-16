@@ -4,6 +4,7 @@
  *
  */
 import VerticalLogo from './logo_vertical.svg';
-import HorizontalLogo from './logo_horizontalsvg';
+import HorizontalLogo from './logo_horizontal.svg';
+import Icon from './icon.svg';
 
-export { VerticalLogo, HorizontalLogo };
+export { VerticalLogo, HorizontalLogo, Icon };
