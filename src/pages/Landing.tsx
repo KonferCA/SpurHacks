@@ -1,5 +1,5 @@
 import Spline from "@splinetool/react-spline";
-import { LogoWhite } from "../assets/";
+import { HorizontalLogo } from "../assets/";
 import { Link, Text, HStack, Image } from "@chakra-ui/react";
 
 export const Landing = () => {
@@ -11,7 +11,7 @@ export const Landing = () => {
                     className="w-screen h-screen absolute top-0 left-0 z-0"
                 />
                 <div className="text-white text-bold w-full h-full z-10 flex flex-col items-center justify-center gap-10">
-                    <Image src={LogoWhite} px={6} />
+                    <Image src={HorizontalLogo} px={6} />
 
                     <HStack
                         fontSize={["xs", "lg", "2xl"]}
