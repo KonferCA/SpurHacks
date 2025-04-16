@@ -3,6 +3,7 @@
  * @asset
  *
  */
-import LogoWhite from './spurhacks-logo-white.png';
+import VerticalLogo from './logo_vertical.svg';
+import HorizontalLogo from './logo_horizontalsvg';
 
-export { LogoWhite };
+export { VerticalLogo, HorizontalLogo };
