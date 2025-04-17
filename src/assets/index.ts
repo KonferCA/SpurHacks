@@ -1,6 +1,6 @@
 /*
  *
- * @asset
+ * @asset/logos
  *
  */
 import VerticalLogo from './logo_vertical.svg';

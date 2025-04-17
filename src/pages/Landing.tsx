@@ -1,3 +1,10 @@
+import { Navbar, Hero } from '@components';
+
 export const Landing = () => {
-    return <div>Landing</div>;
+    return (
+        <>
+            <Navbar />
+            <Hero />
+        </>
+    );
 };

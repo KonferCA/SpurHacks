@@ -15,3 +15,25 @@ export {
     useColorMode,
     useColorModeValue,
 };
+
+/*
+ *
+ * @section Hero
+ *
+ */
+import { Hero } from './sections/Hero';
+
+export { Hero };
+
+import { HeroBackground } from './HeroBackground';
+
+export { HeroBackground };
+
+/*
+ *
+ * @component Navbar
+ *
+ */
+import { Navbar } from './Navbar';
+
+export { Navbar };
