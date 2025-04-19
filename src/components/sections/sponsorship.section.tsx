@@ -16,12 +16,12 @@ export const Sponsorship = () => {
 		{
 			name: "Snglrty Co.",
 			image: Sing,
-			slogan: "Which came first, the chicken or chicken jockey?",
+			link: "https://konfer.ca",
 		},
 		{
 			name: "Snglrty Co.",
 			image: Sing,
-			slogan: "Which came first, the chicken or chicken jockey?",
+			link: "https://konfer.ca",
 		},
 	];
 
@@ -29,14 +29,17 @@ export const Sponsorship = () => {
 		{
 			name: "Company",
 			image: Entang,
+			link: "https://konfer.ca",
 		},
 		{
 			name: "Company",
 			image: Entang,
+			link: "https://konfer.ca",
 		},
 		{
 			name: "Company",
 			image: Entang,
+			link: "https://konfer.ca",
 		},
 	];
 
@@ -44,14 +47,17 @@ export const Sponsorship = () => {
 		{
 			name: "Company",
 			image: Quark,
+			link: "https://konfer.ca",
 		},
 		{
 			name: "Company",
 			image: Quark,
+			link: "https://konfer.ca",
 		},
 		{
 			name: "Company",
 			image: Quark,
+			link: "https://konfer.ca",
 		},
 	];
 
@@ -59,30 +65,37 @@ export const Sponsorship = () => {
 		{
 			name: "This Company",
 			image: Quanta,
+			link: "https://konfer.ca",
 		},
 		{
 			name: "This Company",
 			image: Quanta,
+			link: "https://konfer.ca",
 		},
 		{
 			name: "This Company",
 			image: Quanta,
+			link: "https://konfer.ca",
 		},
 		{
 			name: "This Company",
 			image: Quanta,
+			link: "https://konfer.ca",
 		},
 		{
 			name: "This Company",
 			image: Quanta,
+			link: "https://konfer.ca",
 		},
 		{
 			name: "This Company",
 			image: Quanta,
+			link: "https://konfer.ca",
 		},
 		{
 			name: "This Company",
 			image: Quanta,
+			link: "https://konfer.ca",
 		},
 	];
 
@@ -90,14 +103,17 @@ export const Sponsorship = () => {
 		{
 			name: "Konfer",
 			image: Quanta,
+			link: "https://konfer.ca",
 		},
 		{
 			name: "Konfer",
 			image: Quanta,
+			link: "https://konfer.ca",
 		},
 		{
 			name: "Konfer",
 			image: Quanta,
+			link: "https://konfer.ca",
 		},
 	];
 
@@ -161,7 +177,7 @@ export const Sponsorship = () => {
 							justifyItems="center"
 						>
 							{singularitySponsors.map((sponsor, index) => (
-								<Box
+								<Link
 									key={index}
 									bg="offWhite"
 									rounded="3xl"
@@ -170,6 +186,8 @@ export const Sponsorship = () => {
 									display="flex"
 									alignItems="center"
 									justifyContent="center"
+									href={sponsor.link}
+									target="_blank"
 								>
 									<Image
 										src={sponsor.image}
@@ -178,7 +196,7 @@ export const Sponsorship = () => {
 										objectFit="contain"
 										py={6}
 									/>
-								</Box>
+								</Link>
 							))}
 						</Grid>
 					</Box>
@@ -199,7 +217,7 @@ export const Sponsorship = () => {
 									entanglementSponsors.length % 2 === 1;
 
 								return (
-									<Box
+									<Link
 										key={index}
 										bg="offWhite"
 										rounded="3xl"
@@ -229,6 +247,8 @@ export const Sponsorship = () => {
 													? "50%"
 													: "100%",
 										}}
+										href={sponsor.link}
+										target="_blank"
 									>
 										<Image
 											src={sponsor.image}
@@ -240,7 +260,7 @@ export const Sponsorship = () => {
 											objectFit="contain"
 											py={5}
 										/>
-									</Box>
+									</Link>
 								);
 							})}
 						</Grid>
@@ -261,7 +281,7 @@ export const Sponsorship = () => {
 								const isOdd = quarkSponsors.length % 2 === 1;
 
 								return (
-									<Box
+									<Link
 										key={index}
 										bg="offWhite"
 										rounded="3xl"
@@ -291,6 +311,8 @@ export const Sponsorship = () => {
 													: "100%",
 											md: "100%",
 										}}
+										href={sponsor.link}
+										target="_blank"
 									>
 										<Image
 											src={sponsor.image}
@@ -302,7 +324,7 @@ export const Sponsorship = () => {
 											objectFit="contain"
 											py={5}
 										/>
-									</Box>
+									</Link>
 								);
 							})}
 						</Grid>
@@ -318,7 +340,7 @@ export const Sponsorship = () => {
 							w="full"
 						>
 							{quantaSponsors.map((sponsor, index) => (
-								<Box
+								<Link
 									key={index}
 									bg="offWhite"
 									rounded="3xl"
@@ -329,6 +351,8 @@ export const Sponsorship = () => {
 									display="flex"
 									alignItems="center"
 									justifyContent="center"
+									href={sponsor.link}
+									target="_blank"
 								>
 									<Image
 										src={sponsor.image}
@@ -337,7 +361,7 @@ export const Sponsorship = () => {
 										objectFit="contain"
 										py={5}
 									/>
-								</Box>
+								</Link>
 							))}
 						</Flex>
 					</Box>
@@ -362,7 +386,7 @@ export const Sponsorship = () => {
 								const isOdd = partners.length % 2 === 1;
 
 								return (
-									<Box
+									<Link
 										key={index}
 										bg="offWhite"
 										rounded="3xl"
@@ -392,6 +416,8 @@ export const Sponsorship = () => {
 													: "100%",
 											md: "100%",
 										}}
+										href={sponsor.link}
+										target="_blank"
 									>
 										<Image
 											src={sponsor.image}
@@ -403,7 +429,7 @@ export const Sponsorship = () => {
 											objectFit="contain"
 											py={5}
 										/>
-									</Box>
+									</Link>
 								);
 							})}
 						</Grid>
