@@ -19,7 +19,7 @@ export const Sponsorship = () => {
             link: 'https://konfer.ca',
         },
         {
-            name: 'Snglrty Co.',
+            name: 'Snglrty Co. 2',
             image: Sing,
             link: 'https://konfer.ca',
         },
@@ -27,17 +27,17 @@ export const Sponsorship = () => {
 
     const entanglementSponsors = [
         {
-            name: 'Company',
+            name: 'Company 1',
             image: Entang,
             link: 'https://konfer.ca',
         },
         {
-            name: 'Company',
+            name: 'Company 2',
             image: Entang,
             link: 'https://konfer.ca',
         },
         {
-            name: 'Company',
+            name: 'Company 3',
             image: Entang,
             link: 'https://konfer.ca',
         },
@@ -45,17 +45,17 @@ export const Sponsorship = () => {
 
     const quarkSponsors = [
         {
-            name: 'Company',
+            name: 'Quark Co. 1',
             image: Quark,
             link: 'https://konfer.ca',
         },
         {
-            name: 'Company',
+            name: 'Quark Co. 2',
             image: Quark,
             link: 'https://konfer.ca',
         },
         {
-            name: 'Company',
+            name: 'Quark Co. 3',
             image: Quark,
             link: 'https://konfer.ca',
         },
@@ -63,37 +63,37 @@ export const Sponsorship = () => {
 
     const quantaSponsors = [
         {
-            name: 'This Company',
+            name: 'Quanta 1',
             image: Quanta,
             link: 'https://konfer.ca',
         },
         {
-            name: 'This Company',
+            name: 'Quanta 2',
             image: Quanta,
             link: 'https://konfer.ca',
         },
         {
-            name: 'This Company',
+            name: 'Quanta 3',
             image: Quanta,
             link: 'https://konfer.ca',
         },
         {
-            name: 'This Company',
+            name: 'Quanta 4',
             image: Quanta,
             link: 'https://konfer.ca',
         },
         {
-            name: 'This Company',
+            name: 'Quanta 5',
             image: Quanta,
             link: 'https://konfer.ca',
         },
         {
-            name: 'This Company',
+            name: 'Quanta 6',
             image: Quanta,
             link: 'https://konfer.ca',
         },
         {
-            name: 'This Company',
+            name: 'Quanta 7',
             image: Quanta,
             link: 'https://konfer.ca',
         },
@@ -101,17 +101,17 @@ export const Sponsorship = () => {
 
     const partners = [
         {
-            name: 'Konfer',
+            name: 'Konfer 1',
             image: Quanta,
             link: 'https://konfer.ca',
         },
         {
-            name: 'Konfer',
+            name: 'Konfer 2',
             image: Quanta,
             link: 'https://konfer.ca',
         },
         {
-            name: 'Konfer',
+            name: 'Konfer 3',
             image: Quanta,
             link: 'https://konfer.ca',
         },
@@ -176,9 +176,9 @@ export const Sponsorship = () => {
                             gap={{ base: 6, lg: 10 }}
                             justifyItems="center"
                         >
-                            {singularitySponsors.map((sponsor, index) => (
+                            {singularitySponsors.map((sponsor) => (
                                 <Link
-                                    key={index}
+                                    key={sponsor.name}
                                     bg="offWhite"
                                     rounded="3xl"
                                     w="full"
@@ -218,7 +218,7 @@ export const Sponsorship = () => {
 
                                 return (
                                     <Link
-                                        key={index}
+                                        key={sponsor.name}
                                         bg="offWhite"
                                         rounded="3xl"
                                         w="full"
@@ -282,7 +282,7 @@ export const Sponsorship = () => {
 
                                 return (
                                     <Link
-                                        key={index}
+                                        key={sponsor.name}
                                         bg="offWhite"
                                         rounded="3xl"
                                         w="full"
@@ -339,9 +339,9 @@ export const Sponsorship = () => {
                             mx="auto"
                             w="full"
                         >
-                            {quantaSponsors.map((sponsor, index) => (
+                            {quantaSponsors.map((sponsor) => (
                                 <Link
-                                    key={index}
+                                    key={sponsor.name}
                                     bg="offWhite"
                                     rounded="3xl"
                                     flex={{ base: '1 1 45%', md: '1 1 21%' }}
@@ -387,7 +387,7 @@ export const Sponsorship = () => {
 
                                 return (
                                     <Link
-                                        key={index}
+                                        key={sponsor.name}
                                         bg="offWhite"
                                         rounded="3xl"
                                         w="full"
