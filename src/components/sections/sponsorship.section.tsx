@@ -1,4 +1,4 @@
-import { Quanta, Quark, Entang, Sing } from "@assets";
+import { Quanta, Quark, Entang, Sing } from '@assets';
 import {
     Heading,
     Text,
@@ -9,116 +9,116 @@ import {
     Grid,
     Stack,
     Link,
-} from "@chakra-ui/react";
+} from '@chakra-ui/react';
 
 export const Sponsorship = () => {
     const singularitySponsors = [
         {
-            name: "Snglrty Co.",
+            name: 'Snglrty Co.',
             image: Sing,
-            link: "https://konfer.ca",
+            link: 'https://konfer.ca',
         },
         {
-            name: "Snglrty Co.",
+            name: 'Snglrty Co.',
             image: Sing,
-            link: "https://konfer.ca",
+            link: 'https://konfer.ca',
         },
     ];
 
     const entanglementSponsors = [
         {
-            name: "Company",
+            name: 'Company',
             image: Entang,
-            link: "https://konfer.ca",
+            link: 'https://konfer.ca',
         },
         {
-            name: "Company",
+            name: 'Company',
             image: Entang,
-            link: "https://konfer.ca",
+            link: 'https://konfer.ca',
         },
         {
-            name: "Company",
+            name: 'Company',
             image: Entang,
-            link: "https://konfer.ca",
+            link: 'https://konfer.ca',
         },
     ];
 
     const quarkSponsors = [
         {
-            name: "Company",
+            name: 'Company',
             image: Quark,
-            link: "https://konfer.ca",
+            link: 'https://konfer.ca',
         },
         {
-            name: "Company",
+            name: 'Company',
             image: Quark,
-            link: "https://konfer.ca",
+            link: 'https://konfer.ca',
         },
         {
-            name: "Company",
+            name: 'Company',
             image: Quark,
-            link: "https://konfer.ca",
+            link: 'https://konfer.ca',
         },
     ];
 
     const quantaSponsors = [
         {
-            name: "This Company",
+            name: 'This Company',
             image: Quanta,
-            link: "https://konfer.ca",
+            link: 'https://konfer.ca',
         },
         {
-            name: "This Company",
+            name: 'This Company',
             image: Quanta,
-            link: "https://konfer.ca",
+            link: 'https://konfer.ca',
         },
         {
-            name: "This Company",
+            name: 'This Company',
             image: Quanta,
-            link: "https://konfer.ca",
+            link: 'https://konfer.ca',
         },
         {
-            name: "This Company",
+            name: 'This Company',
             image: Quanta,
-            link: "https://konfer.ca",
+            link: 'https://konfer.ca',
         },
         {
-            name: "This Company",
+            name: 'This Company',
             image: Quanta,
-            link: "https://konfer.ca",
+            link: 'https://konfer.ca',
         },
         {
-            name: "This Company",
+            name: 'This Company',
             image: Quanta,
-            link: "https://konfer.ca",
+            link: 'https://konfer.ca',
         },
         {
-            name: "This Company",
+            name: 'This Company',
             image: Quanta,
-            link: "https://konfer.ca",
+            link: 'https://konfer.ca',
         },
     ];
 
     const partners = [
         {
-            name: "Konfer",
+            name: 'Konfer',
             image: Quanta,
-            link: "https://konfer.ca",
+            link: 'https://konfer.ca',
         },
         {
-            name: "Konfer",
+            name: 'Konfer',
             image: Quanta,
-            link: "https://konfer.ca",
+            link: 'https://konfer.ca',
         },
         {
-            name: "Konfer",
+            name: 'Konfer',
             image: Quanta,
-            link: "https://konfer.ca",
+            link: 'https://konfer.ca',
         },
     ];
 
     // Reusable width for all tiers
-    const MAX_WIDTH = "1200px";
+    const MAX_WIDTH = '1200px';
 
     return (
         <div className="bg-black text-white min-h-screen grid place-items-center">
@@ -140,7 +140,7 @@ export const Sponsorship = () => {
                     textAlign="center"
                     className="max-w-3xl"
                 >
-                    <Heading fontSize={["2xl", "3xl", "4xl", "5xl"]}>
+                    <Heading fontSize={['2xl', '3xl', '4xl', '5xl']}>
                         Sponsor a Special Weekend
                     </Heading>
                     <Text>
@@ -160,7 +160,7 @@ export const Sponsorship = () => {
                             background="orange.default"
                             rounded="full"
                             p={5}
-                            _hover={{ bg: "orange.hover" }}
+                            _hover={{ bg: 'orange.hover' }}
                             transition="all 0.3s ease-in-out"
                         >
                             BECOME A SPONSOR
@@ -182,7 +182,7 @@ export const Sponsorship = () => {
                                     bg="offWhite"
                                     rounded="3xl"
                                     w="full"
-                                    h={{ base: "200px", md: "180px" }}
+                                    h={{ base: '200px', md: '180px' }}
                                     display="flex"
                                     alignItems="center"
                                     justifyContent="center"
@@ -192,7 +192,7 @@ export const Sponsorship = () => {
                                     <Image
                                         src={sponsor.image}
                                         alt={sponsor.name}
-                                        boxSize={{ base: "200px", md: "180px" }}
+                                        boxSize={{ base: '200px', md: '180px' }}
                                         objectFit="contain"
                                         py={6}
                                     />
@@ -204,8 +204,8 @@ export const Sponsorship = () => {
                     <Box w="full" maxW={MAX_WIDTH} mx="auto">
                         <Grid
                             templateColumns={{
-                                base: "repeat(1, 1fr)",
-                                md: "repeat(2, 1fr)",
+                                base: 'repeat(1, 1fr)',
+                                md: 'repeat(2, 1fr)',
                             }}
                             gap={{ base: 6, lg: 10 }}
                             justifyItems="center"
@@ -222,30 +222,30 @@ export const Sponsorship = () => {
                                         bg="offWhite"
                                         rounded="3xl"
                                         w="full"
-                                        h={{ base: "150px", md: "150px" }}
+                                        h={{ base: '150px', md: '150px' }}
                                         display="flex"
                                         alignItems="center"
                                         justifyContent="center"
                                         gridColumn={{
-                                            base: "auto",
+                                            base: 'auto',
                                             md:
                                                 isLastItem && isOdd
-                                                    ? "1 / span 2"
-                                                    : "auto",
+                                                    ? '1 / span 2'
+                                                    : 'auto',
                                         }}
                                         justifySelf={{
-                                            base: "stretch",
+                                            base: 'stretch',
                                             md:
                                                 isLastItem && isOdd
-                                                    ? "center"
-                                                    : "stretch",
+                                                    ? 'center'
+                                                    : 'stretch',
                                         }}
                                         maxWidth={{
-                                            base: "100%",
+                                            base: '100%',
                                             md:
                                                 isLastItem && isOdd
-                                                    ? "50%"
-                                                    : "100%",
+                                                    ? '50%'
+                                                    : '100%',
                                         }}
                                         href={sponsor.link}
                                         target="_blank"
@@ -254,8 +254,8 @@ export const Sponsorship = () => {
                                             src={sponsor.image}
                                             alt={sponsor.name}
                                             boxSize={{
-                                                base: "100px",
-                                                md: "150px",
+                                                base: '100px',
+                                                md: '150px',
                                             }}
                                             objectFit="contain"
                                             py={5}
@@ -269,8 +269,8 @@ export const Sponsorship = () => {
                     <Box w="full" maxW={MAX_WIDTH} mx="auto">
                         <Grid
                             templateColumns={{
-                                base: "repeat(2, 1fr)",
-                                md: "repeat(3, 1fr)",
+                                base: 'repeat(2, 1fr)',
+                                md: 'repeat(3, 1fr)',
                             }}
                             gap={{ base: 6, lg: 10 }}
                             justifyItems="center"
@@ -286,30 +286,30 @@ export const Sponsorship = () => {
                                         bg="offWhite"
                                         rounded="3xl"
                                         w="full"
-                                        h={{ base: "auto", md: "150px" }}
+                                        h={{ base: 'auto', md: '150px' }}
                                         display="flex"
                                         alignItems="center"
                                         justifyContent="center"
                                         gridColumn={{
                                             base:
                                                 isLastItem && isOdd
-                                                    ? "1 / span 2"
-                                                    : "auto",
-                                            md: "auto",
+                                                    ? '1 / span 2'
+                                                    : 'auto',
+                                            md: 'auto',
                                         }}
                                         justifySelf={{
                                             base:
                                                 isLastItem && isOdd
-                                                    ? "center"
-                                                    : "stretch",
-                                            md: "stretch",
+                                                    ? 'center'
+                                                    : 'stretch',
+                                            md: 'stretch',
                                         }}
                                         maxWidth={{
                                             base:
                                                 isLastItem && isOdd
-                                                    ? "50%"
-                                                    : "100%",
-                                            md: "100%",
+                                                    ? '50%'
+                                                    : '100%',
+                                            md: '100%',
                                         }}
                                         href={sponsor.link}
                                         target="_blank"
@@ -318,8 +318,8 @@ export const Sponsorship = () => {
                                             src={sponsor.image}
                                             alt={sponsor.name}
                                             boxSize={{
-                                                base: "100px",
-                                                md: "150px",
+                                                base: '100px',
+                                                md: '150px',
                                             }}
                                             objectFit="contain"
                                             py={5}
@@ -344,10 +344,10 @@ export const Sponsorship = () => {
                                     key={index}
                                     bg="offWhite"
                                     rounded="3xl"
-                                    flex={{ base: "1 1 45%", md: "1 1 21%" }}
-                                    maxW={{ base: "45%", md: "22%" }}
+                                    flex={{ base: '1 1 45%', md: '1 1 21%' }}
+                                    maxW={{ base: '45%', md: '22%' }}
                                     minW="150px"
-                                    h={{ base: "100px", md: "125px" }}
+                                    h={{ base: '100px', md: '125px' }}
                                     display="flex"
                                     alignItems="center"
                                     justifyContent="center"
@@ -357,7 +357,7 @@ export const Sponsorship = () => {
                                     <Image
                                         src={sponsor.image}
                                         alt={sponsor.name}
-                                        boxSize={{ base: "100px", md: "125px" }}
+                                        boxSize={{ base: '100px', md: '125px' }}
                                         objectFit="contain"
                                         py={5}
                                     />
@@ -367,15 +367,15 @@ export const Sponsorship = () => {
                     </Box>
                 </Stack>
                 <Stack gap={{ base: 10, lg: 20 }} align="center" w="90%">
-                    <Heading fontSize={["2xl", "3xl", "4xl", "5xl"]}>
+                    <Heading fontSize={['2xl', '3xl', '4xl', '5xl']}>
                         Our Partners
                     </Heading>
                     {/* QUARK SPONSORS (3RD) */}
                     <Box w="full" maxW={MAX_WIDTH} mx="auto">
                         <Grid
                             templateColumns={{
-                                base: "repeat(2, 1fr)",
-                                md: "repeat(3, 1fr)",
+                                base: 'repeat(2, 1fr)',
+                                md: 'repeat(3, 1fr)',
                             }}
                             gap={{ base: 6, lg: 10 }}
                             justifyItems="center"
@@ -391,30 +391,30 @@ export const Sponsorship = () => {
                                         bg="offWhite"
                                         rounded="3xl"
                                         w="full"
-                                        h={{ base: "auto", md: "125px" }}
+                                        h={{ base: 'auto', md: '125px' }}
                                         display="flex"
                                         alignItems="center"
                                         justifyContent="center"
                                         gridColumn={{
                                             base:
                                                 isLastItem && isOdd
-                                                    ? "1 / span 2"
-                                                    : "auto",
-                                            md: "auto",
+                                                    ? '1 / span 2'
+                                                    : 'auto',
+                                            md: 'auto',
                                         }}
                                         justifySelf={{
                                             base:
                                                 isLastItem && isOdd
-                                                    ? "center"
-                                                    : "stretch",
-                                            md: "stretch",
+                                                    ? 'center'
+                                                    : 'stretch',
+                                            md: 'stretch',
                                         }}
                                         maxWidth={{
                                             base:
                                                 isLastItem && isOdd
-                                                    ? "50%"
-                                                    : "100%",
-                                            md: "100%",
+                                                    ? '50%'
+                                                    : '100%',
+                                            md: '100%',
                                         }}
                                         href={sponsor.link}
                                         target="_blank"
@@ -423,8 +423,8 @@ export const Sponsorship = () => {
                                             src={sponsor.image}
                                             alt={sponsor.name}
                                             boxSize={{
-                                                base: "100px",
-                                                md: "125px",
+                                                base: '100px',
+                                                md: '125px',
                                             }}
                                             objectFit="contain"
                                             py={5}
