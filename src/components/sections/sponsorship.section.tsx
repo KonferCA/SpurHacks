@@ -1,441 +1,441 @@
 import { Quanta, Quark, Entang, Sing } from "@assets";
 import {
-	Heading,
-	Text,
-	Button,
-	Flex,
-	Box,
-	Image,
-	Grid,
-	Stack,
-	Link,
+    Heading,
+    Text,
+    Button,
+    Flex,
+    Box,
+    Image,
+    Grid,
+    Stack,
+    Link,
 } from "@chakra-ui/react";
 
 export const Sponsorship = () => {
-	const singularitySponsors = [
-		{
-			name: "Snglrty Co.",
-			image: Sing,
-			link: "https://konfer.ca",
-		},
-		{
-			name: "Snglrty Co.",
-			image: Sing,
-			link: "https://konfer.ca",
-		},
-	];
+    const singularitySponsors = [
+        {
+            name: "Snglrty Co.",
+            image: Sing,
+            link: "https://konfer.ca",
+        },
+        {
+            name: "Snglrty Co.",
+            image: Sing,
+            link: "https://konfer.ca",
+        },
+    ];
 
-	const entanglementSponsors = [
-		{
-			name: "Company",
-			image: Entang,
-			link: "https://konfer.ca",
-		},
-		{
-			name: "Company",
-			image: Entang,
-			link: "https://konfer.ca",
-		},
-		{
-			name: "Company",
-			image: Entang,
-			link: "https://konfer.ca",
-		},
-	];
+    const entanglementSponsors = [
+        {
+            name: "Company",
+            image: Entang,
+            link: "https://konfer.ca",
+        },
+        {
+            name: "Company",
+            image: Entang,
+            link: "https://konfer.ca",
+        },
+        {
+            name: "Company",
+            image: Entang,
+            link: "https://konfer.ca",
+        },
+    ];
 
-	const quarkSponsors = [
-		{
-			name: "Company",
-			image: Quark,
-			link: "https://konfer.ca",
-		},
-		{
-			name: "Company",
-			image: Quark,
-			link: "https://konfer.ca",
-		},
-		{
-			name: "Company",
-			image: Quark,
-			link: "https://konfer.ca",
-		},
-	];
+    const quarkSponsors = [
+        {
+            name: "Company",
+            image: Quark,
+            link: "https://konfer.ca",
+        },
+        {
+            name: "Company",
+            image: Quark,
+            link: "https://konfer.ca",
+        },
+        {
+            name: "Company",
+            image: Quark,
+            link: "https://konfer.ca",
+        },
+    ];
 
-	const quantaSponsors = [
-		{
-			name: "This Company",
-			image: Quanta,
-			link: "https://konfer.ca",
-		},
-		{
-			name: "This Company",
-			image: Quanta,
-			link: "https://konfer.ca",
-		},
-		{
-			name: "This Company",
-			image: Quanta,
-			link: "https://konfer.ca",
-		},
-		{
-			name: "This Company",
-			image: Quanta,
-			link: "https://konfer.ca",
-		},
-		{
-			name: "This Company",
-			image: Quanta,
-			link: "https://konfer.ca",
-		},
-		{
-			name: "This Company",
-			image: Quanta,
-			link: "https://konfer.ca",
-		},
-		{
-			name: "This Company",
-			image: Quanta,
-			link: "https://konfer.ca",
-		},
-	];
+    const quantaSponsors = [
+        {
+            name: "This Company",
+            image: Quanta,
+            link: "https://konfer.ca",
+        },
+        {
+            name: "This Company",
+            image: Quanta,
+            link: "https://konfer.ca",
+        },
+        {
+            name: "This Company",
+            image: Quanta,
+            link: "https://konfer.ca",
+        },
+        {
+            name: "This Company",
+            image: Quanta,
+            link: "https://konfer.ca",
+        },
+        {
+            name: "This Company",
+            image: Quanta,
+            link: "https://konfer.ca",
+        },
+        {
+            name: "This Company",
+            image: Quanta,
+            link: "https://konfer.ca",
+        },
+        {
+            name: "This Company",
+            image: Quanta,
+            link: "https://konfer.ca",
+        },
+    ];
 
-	const partners = [
-		{
-			name: "Konfer",
-			image: Quanta,
-			link: "https://konfer.ca",
-		},
-		{
-			name: "Konfer",
-			image: Quanta,
-			link: "https://konfer.ca",
-		},
-		{
-			name: "Konfer",
-			image: Quanta,
-			link: "https://konfer.ca",
-		},
-	];
+    const partners = [
+        {
+            name: "Konfer",
+            image: Quanta,
+            link: "https://konfer.ca",
+        },
+        {
+            name: "Konfer",
+            image: Quanta,
+            link: "https://konfer.ca",
+        },
+        {
+            name: "Konfer",
+            image: Quanta,
+            link: "https://konfer.ca",
+        },
+    ];
 
-	// Reusable width for all tiers
-	const MAX_WIDTH = "1200px";
+    // Reusable width for all tiers
+    const MAX_WIDTH = "1200px";
 
-	return (
-		<div className="bg-black text-white min-h-screen grid place-items-center">
-			<Flex
-				direction="column"
-				gap={20}
-				py={20}
-				align="center"
-				justify="center"
-				textAlign="center"
-				className="w-full h-full bg-[linear-gradient(to_right,rgba(255,255,255,0.12)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.12)_1px,transparent_1px)] [background-size:90px_90px]"
-			>
-				{/* Header and Text */}
-				<Flex
-					direction="column"
-					gap={8}
-					align="center"
-					justify="center"
-					textAlign="center"
-					className="max-w-3xl"
-				>
-					<Heading fontSize={["2xl", "3xl", "4xl", "5xl"]}>
-						Sponsor a Special Weekend
-					</Heading>
-					<Text>
-						Placerat maecenas aliquam primis duis viverra integer.
-						Vehicula nulla bibendum facilisis per quis vehicula
-						risus donec euismod. Curabitur aliquet sem vel fermentum
-						lacinia. Aliquam sodales neque lorem, aliquam luctus
-						tellus viverra ut. Curabitur.
-					</Text>
-					<Text>
-						Vehicula nulla bibendum facilisis per
-						<strong> sponsors@spurhacks.com.</strong>
-					</Text>
-					<Link href="https://file.notion.so/f/f/c6de4f07-3f90-4e85-a24d-90ff7216e5bf/43d072d6-ccf4-47e2-bb5c-7d8f9712ec8c/SpurHacks_Sponsorship_Package_v1.pdf?table=block&id=1cbbeda0-7d32-809f-8939-c9bd1bb30946&spaceId=c6de4f07-3f90-4e85-a24d-90ff7216e5bf&expirationTimestamp=1745107200000&signature=JWxzUtXUtfWd3xcEkpeTliLQfebZLEXe2NkedBDxGIM&downloadName=SpurHacks+Sponsorship+Package+v1.pdf">
-						<Button
-							color="black"
-							background="orange.default"
-							rounded="full"
-							p={5}
-							_hover={{ bg: "orange.hover" }}
-							transition="all 0.3s ease-in-out"
-						>
-							BECOME A SPONSOR
-						</Button>
-					</Link>
-				</Flex>
+    return (
+        <div className="bg-black text-white min-h-screen grid place-items-center">
+            <Flex
+                direction="column"
+                gap={20}
+                py={20}
+                align="center"
+                justify="center"
+                textAlign="center"
+                className="w-full h-full bg-[linear-gradient(to_right,rgba(255,255,255,0.12)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.12)_1px,transparent_1px)] [background-size:90px_90px]"
+            >
+                {/* Header and Text */}
+                <Flex
+                    direction="column"
+                    gap={8}
+                    align="center"
+                    justify="center"
+                    textAlign="center"
+                    className="max-w-3xl"
+                >
+                    <Heading fontSize={["2xl", "3xl", "4xl", "5xl"]}>
+                        Sponsor a Special Weekend
+                    </Heading>
+                    <Text>
+                        Placerat maecenas aliquam primis duis viverra integer.
+                        Vehicula nulla bibendum facilisis per quis vehicula
+                        risus donec euismod. Curabitur aliquet sem vel fermentum
+                        lacinia. Aliquam sodales neque lorem, aliquam luctus
+                        tellus viverra ut. Curabitur.
+                    </Text>
+                    <Text>
+                        Vehicula nulla bibendum facilisis per
+                        <strong> sponsors@spurhacks.com.</strong>
+                    </Text>
+                    <Link href="https://file.notion.so/f/f/c6de4f07-3f90-4e85-a24d-90ff7216e5bf/43d072d6-ccf4-47e2-bb5c-7d8f9712ec8c/SpurHacks_Sponsorship_Package_v1.pdf?table=block&id=1cbbeda0-7d32-809f-8939-c9bd1bb30946&spaceId=c6de4f07-3f90-4e85-a24d-90ff7216e5bf&expirationTimestamp=1745107200000&signature=JWxzUtXUtfWd3xcEkpeTliLQfebZLEXe2NkedBDxGIM&downloadName=SpurHacks+Sponsorship+Package+v1.pdf">
+                        <Button
+                            color="black"
+                            background="orange.default"
+                            rounded="full"
+                            p={5}
+                            _hover={{ bg: "orange.hover" }}
+                            transition="all 0.3s ease-in-out"
+                        >
+                            BECOME A SPONSOR
+                        </Button>
+                    </Link>
+                </Flex>
 
-				<Stack gap={{ base: 10, lg: 20 }} align="center" w="90%">
-					{/* SINGULARITY SPONSORS (1RST) */}
-					<Box w="full" maxW={MAX_WIDTH} mx="auto">
-						<Grid
-							templateColumns="1fr"
-							gap={{ base: 6, lg: 10 }}
-							justifyItems="center"
-						>
-							{singularitySponsors.map((sponsor, index) => (
-								<Link
-									key={index}
-									bg="offWhite"
-									rounded="3xl"
-									w="full"
-									h={{ base: "200px", md: "180px" }}
-									display="flex"
-									alignItems="center"
-									justifyContent="center"
-									href={sponsor.link}
-									target="_blank"
-								>
-									<Image
-										src={sponsor.image}
-										alt={sponsor.name}
-										boxSize={{ base: "200px", md: "180px" }}
-										objectFit="contain"
-										py={6}
-									/>
-								</Link>
-							))}
-						</Grid>
-					</Box>
-					{/* ENTANGLEMENT SPONSORS (2ND) */}
-					<Box w="full" maxW={MAX_WIDTH} mx="auto">
-						<Grid
-							templateColumns={{
-								base: "repeat(1, 1fr)",
-								md: "repeat(2, 1fr)",
-							}}
-							gap={{ base: 6, lg: 10 }}
-							justifyItems="center"
-						>
-							{entanglementSponsors.map((sponsor, index) => {
-								const isLastItem =
-									index === entanglementSponsors.length - 1;
-								const isOdd =
-									entanglementSponsors.length % 2 === 1;
+                <Stack gap={{ base: 10, lg: 20 }} align="center" w="90%">
+                    {/* SINGULARITY SPONSORS (1RST) */}
+                    <Box w="full" maxW={MAX_WIDTH} mx="auto">
+                        <Grid
+                            templateColumns="1fr"
+                            gap={{ base: 6, lg: 10 }}
+                            justifyItems="center"
+                        >
+                            {singularitySponsors.map((sponsor, index) => (
+                                <Link
+                                    key={index}
+                                    bg="offWhite"
+                                    rounded="3xl"
+                                    w="full"
+                                    h={{ base: "200px", md: "180px" }}
+                                    display="flex"
+                                    alignItems="center"
+                                    justifyContent="center"
+                                    href={sponsor.link}
+                                    target="_blank"
+                                >
+                                    <Image
+                                        src={sponsor.image}
+                                        alt={sponsor.name}
+                                        boxSize={{ base: "200px", md: "180px" }}
+                                        objectFit="contain"
+                                        py={6}
+                                    />
+                                </Link>
+                            ))}
+                        </Grid>
+                    </Box>
+                    {/* ENTANGLEMENT SPONSORS (2ND) */}
+                    <Box w="full" maxW={MAX_WIDTH} mx="auto">
+                        <Grid
+                            templateColumns={{
+                                base: "repeat(1, 1fr)",
+                                md: "repeat(2, 1fr)",
+                            }}
+                            gap={{ base: 6, lg: 10 }}
+                            justifyItems="center"
+                        >
+                            {entanglementSponsors.map((sponsor, index) => {
+                                const isLastItem =
+                                    index === entanglementSponsors.length - 1;
+                                const isOdd =
+                                    entanglementSponsors.length % 2 === 1;
 
-								return (
-									<Link
-										key={index}
-										bg="offWhite"
-										rounded="3xl"
-										w="full"
-										h={{ base: "150px", md: "150px" }}
-										display="flex"
-										alignItems="center"
-										justifyContent="center"
-										gridColumn={{
-											base: "auto",
-											md:
-												isLastItem && isOdd
-													? "1 / span 2"
-													: "auto",
-										}}
-										justifySelf={{
-											base: "stretch",
-											md:
-												isLastItem && isOdd
-													? "center"
-													: "stretch",
-										}}
-										maxWidth={{
-											base: "100%",
-											md:
-												isLastItem && isOdd
-													? "50%"
-													: "100%",
-										}}
-										href={sponsor.link}
-										target="_blank"
-									>
-										<Image
-											src={sponsor.image}
-											alt={sponsor.name}
-											boxSize={{
-												base: "100px",
-												md: "150px",
-											}}
-											objectFit="contain"
-											py={5}
-										/>
-									</Link>
-								);
-							})}
-						</Grid>
-					</Box>
-					{/* QUARK SPONSORS (3RD) */}
-					<Box w="full" maxW={MAX_WIDTH} mx="auto">
-						<Grid
-							templateColumns={{
-								base: "repeat(2, 1fr)",
-								md: "repeat(3, 1fr)",
-							}}
-							gap={{ base: 6, lg: 10 }}
-							justifyItems="center"
-						>
-							{quarkSponsors.map((sponsor, index) => {
-								const isLastItem =
-									index === quarkSponsors.length - 1;
-								const isOdd = quarkSponsors.length % 2 === 1;
+                                return (
+                                    <Link
+                                        key={index}
+                                        bg="offWhite"
+                                        rounded="3xl"
+                                        w="full"
+                                        h={{ base: "150px", md: "150px" }}
+                                        display="flex"
+                                        alignItems="center"
+                                        justifyContent="center"
+                                        gridColumn={{
+                                            base: "auto",
+                                            md:
+                                                isLastItem && isOdd
+                                                    ? "1 / span 2"
+                                                    : "auto",
+                                        }}
+                                        justifySelf={{
+                                            base: "stretch",
+                                            md:
+                                                isLastItem && isOdd
+                                                    ? "center"
+                                                    : "stretch",
+                                        }}
+                                        maxWidth={{
+                                            base: "100%",
+                                            md:
+                                                isLastItem && isOdd
+                                                    ? "50%"
+                                                    : "100%",
+                                        }}
+                                        href={sponsor.link}
+                                        target="_blank"
+                                    >
+                                        <Image
+                                            src={sponsor.image}
+                                            alt={sponsor.name}
+                                            boxSize={{
+                                                base: "100px",
+                                                md: "150px",
+                                            }}
+                                            objectFit="contain"
+                                            py={5}
+                                        />
+                                    </Link>
+                                );
+                            })}
+                        </Grid>
+                    </Box>
+                    {/* QUARK SPONSORS (3RD) */}
+                    <Box w="full" maxW={MAX_WIDTH} mx="auto">
+                        <Grid
+                            templateColumns={{
+                                base: "repeat(2, 1fr)",
+                                md: "repeat(3, 1fr)",
+                            }}
+                            gap={{ base: 6, lg: 10 }}
+                            justifyItems="center"
+                        >
+                            {quarkSponsors.map((sponsor, index) => {
+                                const isLastItem =
+                                    index === quarkSponsors.length - 1;
+                                const isOdd = quarkSponsors.length % 2 === 1;
 
-								return (
-									<Link
-										key={index}
-										bg="offWhite"
-										rounded="3xl"
-										w="full"
-										h={{ base: "auto", md: "150px" }}
-										display="flex"
-										alignItems="center"
-										justifyContent="center"
-										gridColumn={{
-											base:
-												isLastItem && isOdd
-													? "1 / span 2"
-													: "auto",
-											md: "auto",
-										}}
-										justifySelf={{
-											base:
-												isLastItem && isOdd
-													? "center"
-													: "stretch",
-											md: "stretch",
-										}}
-										maxWidth={{
-											base:
-												isLastItem && isOdd
-													? "50%"
-													: "100%",
-											md: "100%",
-										}}
-										href={sponsor.link}
-										target="_blank"
-									>
-										<Image
-											src={sponsor.image}
-											alt={sponsor.name}
-											boxSize={{
-												base: "100px",
-												md: "150px",
-											}}
-											objectFit="contain"
-											py={5}
-										/>
-									</Link>
-								);
-							})}
-						</Grid>
-					</Box>
-					{/* QUANTA SPONSORS (4TH) */}
-					<Box w="full" maxW={MAX_WIDTH} mx="auto">
-						<Flex
-							wrap="wrap"
-							justify="center"
-							gap={6}
-							maxW={MAX_WIDTH}
-							mx="auto"
-							w="full"
-						>
-							{quantaSponsors.map((sponsor, index) => (
-								<Link
-									key={index}
-									bg="offWhite"
-									rounded="3xl"
-									flex={{ base: "1 1 45%", md: "1 1 21%" }}
-									maxW={{ base: "45%", md: "22%" }}
-									minW="150px"
-									h={{ base: "100px", md: "125px" }}
-									display="flex"
-									alignItems="center"
-									justifyContent="center"
-									href={sponsor.link}
-									target="_blank"
-								>
-									<Image
-										src={sponsor.image}
-										alt={sponsor.name}
-										boxSize={{ base: "100px", md: "125px" }}
-										objectFit="contain"
-										py={5}
-									/>
-								</Link>
-							))}
-						</Flex>
-					</Box>
-				</Stack>
-				<Stack gap={{ base: 10, lg: 20 }} align="center" w="90%">
-					<Heading fontSize={["2xl", "3xl", "4xl", "5xl"]}>
-						Our Partners
-					</Heading>
-					{/* QUARK SPONSORS (3RD) */}
-					<Box w="full" maxW={MAX_WIDTH} mx="auto">
-						<Grid
-							templateColumns={{
-								base: "repeat(2, 1fr)",
-								md: "repeat(3, 1fr)",
-							}}
-							gap={{ base: 6, lg: 10 }}
-							justifyItems="center"
-						>
-							{partners.map((sponsor, index) => {
-								const isLastItem =
-									index === partners.length - 1;
-								const isOdd = partners.length % 2 === 1;
+                                return (
+                                    <Link
+                                        key={index}
+                                        bg="offWhite"
+                                        rounded="3xl"
+                                        w="full"
+                                        h={{ base: "auto", md: "150px" }}
+                                        display="flex"
+                                        alignItems="center"
+                                        justifyContent="center"
+                                        gridColumn={{
+                                            base:
+                                                isLastItem && isOdd
+                                                    ? "1 / span 2"
+                                                    : "auto",
+                                            md: "auto",
+                                        }}
+                                        justifySelf={{
+                                            base:
+                                                isLastItem && isOdd
+                                                    ? "center"
+                                                    : "stretch",
+                                            md: "stretch",
+                                        }}
+                                        maxWidth={{
+                                            base:
+                                                isLastItem && isOdd
+                                                    ? "50%"
+                                                    : "100%",
+                                            md: "100%",
+                                        }}
+                                        href={sponsor.link}
+                                        target="_blank"
+                                    >
+                                        <Image
+                                            src={sponsor.image}
+                                            alt={sponsor.name}
+                                            boxSize={{
+                                                base: "100px",
+                                                md: "150px",
+                                            }}
+                                            objectFit="contain"
+                                            py={5}
+                                        />
+                                    </Link>
+                                );
+                            })}
+                        </Grid>
+                    </Box>
+                    {/* QUANTA SPONSORS (4TH) */}
+                    <Box w="full" maxW={MAX_WIDTH} mx="auto">
+                        <Flex
+                            wrap="wrap"
+                            justify="center"
+                            gap={6}
+                            maxW={MAX_WIDTH}
+                            mx="auto"
+                            w="full"
+                        >
+                            {quantaSponsors.map((sponsor, index) => (
+                                <Link
+                                    key={index}
+                                    bg="offWhite"
+                                    rounded="3xl"
+                                    flex={{ base: "1 1 45%", md: "1 1 21%" }}
+                                    maxW={{ base: "45%", md: "22%" }}
+                                    minW="150px"
+                                    h={{ base: "100px", md: "125px" }}
+                                    display="flex"
+                                    alignItems="center"
+                                    justifyContent="center"
+                                    href={sponsor.link}
+                                    target="_blank"
+                                >
+                                    <Image
+                                        src={sponsor.image}
+                                        alt={sponsor.name}
+                                        boxSize={{ base: "100px", md: "125px" }}
+                                        objectFit="contain"
+                                        py={5}
+                                    />
+                                </Link>
+                            ))}
+                        </Flex>
+                    </Box>
+                </Stack>
+                <Stack gap={{ base: 10, lg: 20 }} align="center" w="90%">
+                    <Heading fontSize={["2xl", "3xl", "4xl", "5xl"]}>
+                        Our Partners
+                    </Heading>
+                    {/* QUARK SPONSORS (3RD) */}
+                    <Box w="full" maxW={MAX_WIDTH} mx="auto">
+                        <Grid
+                            templateColumns={{
+                                base: "repeat(2, 1fr)",
+                                md: "repeat(3, 1fr)",
+                            }}
+                            gap={{ base: 6, lg: 10 }}
+                            justifyItems="center"
+                        >
+                            {partners.map((sponsor, index) => {
+                                const isLastItem =
+                                    index === partners.length - 1;
+                                const isOdd = partners.length % 2 === 1;
 
-								return (
-									<Link
-										key={index}
-										bg="offWhite"
-										rounded="3xl"
-										w="full"
-										h={{ base: "auto", md: "125px" }}
-										display="flex"
-										alignItems="center"
-										justifyContent="center"
-										gridColumn={{
-											base:
-												isLastItem && isOdd
-													? "1 / span 2"
-													: "auto",
-											md: "auto",
-										}}
-										justifySelf={{
-											base:
-												isLastItem && isOdd
-													? "center"
-													: "stretch",
-											md: "stretch",
-										}}
-										maxWidth={{
-											base:
-												isLastItem && isOdd
-													? "50%"
-													: "100%",
-											md: "100%",
-										}}
-										href={sponsor.link}
-										target="_blank"
-									>
-										<Image
-											src={sponsor.image}
-											alt={sponsor.name}
-											boxSize={{
-												base: "100px",
-												md: "125px",
-											}}
-											objectFit="contain"
-											py={5}
-										/>
-									</Link>
-								);
-							})}
-						</Grid>
-					</Box>
-				</Stack>
-			</Flex>
-		</div>
-	);
+                                return (
+                                    <Link
+                                        key={index}
+                                        bg="offWhite"
+                                        rounded="3xl"
+                                        w="full"
+                                        h={{ base: "auto", md: "125px" }}
+                                        display="flex"
+                                        alignItems="center"
+                                        justifyContent="center"
+                                        gridColumn={{
+                                            base:
+                                                isLastItem && isOdd
+                                                    ? "1 / span 2"
+                                                    : "auto",
+                                            md: "auto",
+                                        }}
+                                        justifySelf={{
+                                            base:
+                                                isLastItem && isOdd
+                                                    ? "center"
+                                                    : "stretch",
+                                            md: "stretch",
+                                        }}
+                                        maxWidth={{
+                                            base:
+                                                isLastItem && isOdd
+                                                    ? "50%"
+                                                    : "100%",
+                                            md: "100%",
+                                        }}
+                                        href={sponsor.link}
+                                        target="_blank"
+                                    >
+                                        <Image
+                                            src={sponsor.image}
+                                            alt={sponsor.name}
+                                            boxSize={{
+                                                base: "100px",
+                                                md: "125px",
+                                            }}
+                                            objectFit="contain"
+                                            py={5}
+                                        />
+                                    </Link>
+                                );
+                            })}
+                        </Grid>
+                    </Box>
+                </Stack>
+            </Flex>
+        </div>
+    );
 };
