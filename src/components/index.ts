@@ -15,3 +15,12 @@ export {
     useColorMode,
     useColorModeValue,
 };
+
+/*
+ *
+ * @Sections
+ *
+ */
+import { Sponsorship } from './sections/sponsorship.section';
+
+export { Sponsorship };
