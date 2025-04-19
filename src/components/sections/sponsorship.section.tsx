@@ -358,8 +358,8 @@ export const Sponsorship = () => {
 						>
 							{partners.map((sponsor, index) => {
 								const isLastItem =
-									index === quarkSponsors.length - 1;
-								const isOdd = quarkSponsors.length % 2 === 1;
+									index === partners.length - 1;
+								const isOdd = partners.length % 2 === 1;
 
 								return (
 									<Box
