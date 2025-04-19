@@ -7,6 +7,12 @@ import LogoWhite from "./spurhacks-logo-white.png";
 
 export { LogoWhite };
 
+import VerticalLogo from './logo_vertical.svg';
+import HorizontalLogo from './logo_horizontal.svg';
+import Icon from './icon.svg';
+
+export { VerticalLogo, HorizontalLogo, Icon };
+
 /*
  *
  * @asset Quanta Sponsors
@@ -33,3 +39,4 @@ import Entang from "./sponsors/entanglementSponsors/entang.png";
 import Sing from "./sponsors/singularitySponsors/sing.png";
 
 export { Quanta, Quark, Entang, Sing };
+
