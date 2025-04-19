@@ -154,7 +154,7 @@ export const Sponsorship = () => {
 						Vehicula nulla bibendum facilisis per
 						<strong> sponsors@spurhacks.com.</strong>
 					</Text>
-					<Link href="https://konfer.ca">
+					<Link href="https://file.notion.so/f/f/c6de4f07-3f90-4e85-a24d-90ff7216e5bf/43d072d6-ccf4-47e2-bb5c-7d8f9712ec8c/SpurHacks_Sponsorship_Package_v1.pdf?table=block&id=1cbbeda0-7d32-809f-8939-c9bd1bb30946&spaceId=c6de4f07-3f90-4e85-a24d-90ff7216e5bf&expirationTimestamp=1745107200000&signature=JWxzUtXUtfWd3xcEkpeTliLQfebZLEXe2NkedBDxGIM&downloadName=SpurHacks+Sponsorship+Package+v1.pdf">
 						<Button
 							color="black"
 							background="orange.default"
