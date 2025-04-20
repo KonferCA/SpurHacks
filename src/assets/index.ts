@@ -3,15 +3,19 @@
  * @asset
  *
  */
-import LogoWhite from './spurhacks-logo-white.png';
-
-export { LogoWhite };
-
 import VerticalLogo from './logo_vertical.svg';
 import HorizontalLogo from './logo_horizontal.svg';
 import Icon from './icon.svg';
 
 export { VerticalLogo, HorizontalLogo, Icon };
+/*
+ *
+ * @asset Sponsorship package
+ *
+ */
+import SponsorshipPackage from './spurhacks-sponsorship-package.pdf';
+
+export { SponsorshipPackage };
 
 /*
  *
