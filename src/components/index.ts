@@ -21,6 +21,7 @@ export {
  * @Sections
  *
  */
+import { Statistics } from './sections/statistics.section';
 import { Sponsorship } from './sections/sponsorship.section';
 
-export { Sponsorship };
+export { Statistics, Sponsorship };

@@ -1,9 +1,10 @@
-import { Sponsorship } from '@components';
+import { Statistics, Sponsorship } from "@components";
 
 export const Landing = () => {
-    return (
-        <main>
-            <Sponsorship />
-        </main>
-    );
+	return (
+		<main>
+			<Statistics />
+			<Sponsorship />
+		</main>
+	);
 };
