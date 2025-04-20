@@ -23,18 +23,33 @@ export { SponsorshipPackage };
  *
  */
 import Quanta from './sponsors/quantaSponsors/quant.png';
+
+export const quantaImages = {
+    quantaEx: Quanta,
+};
+
 /*
  *
  * @asset Quark Sponsors
  *
  */
 import Quark from './sponsors/quarkSponsors/quark.png';
+
+export const quarkImages = {
+    quarkEx: Quark,
+};
+
 /*
  *
  * @asset Entanglement Sponsors
  *
  */
 import Entang from './sponsors/entanglementSponsors/entang.png';
+
+export const entanglementImages = {
+    entanglementEx: Entang,
+};
+
 /*
  *
  * @asset Singularity Sponsors
@@ -42,4 +57,6 @@ import Entang from './sponsors/entanglementSponsors/entang.png';
  */
 import Sing from './sponsors/singularitySponsors/sing.png';
 
-export { Quanta, Quark, Entang, Sing };
+export const singularityImages = {
+    singularityEx: Sing,
+};

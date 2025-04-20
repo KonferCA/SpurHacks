@@ -1,4 +1,10 @@
-import { Quanta, Quark, Entang, Sing, SponsorshipPackage } from '@assets';
+import {
+    quantaImages,
+    quarkImages,
+    entanglementImages,
+    singularityImages,
+    SponsorshipPackage,
+} from '@assets';
 import {
     Heading,
     Text,
@@ -15,12 +21,12 @@ export const Sponsorship = () => {
     const singularitySponsors = [
         {
             name: 'Snglrty Co.',
-            image: Sing,
+            image: singularityImages.singularityEx,
             link: 'https://konfer.ca',
         },
         {
             name: 'Snglrty Co. 2',
-            image: Sing,
+            image: singularityImages.singularityEx,
             link: 'https://konfer.ca',
         },
     ];
@@ -28,17 +34,17 @@ export const Sponsorship = () => {
     const entanglementSponsors = [
         {
             name: 'Company 1',
-            image: Entang,
+            image: entanglementImages.entanglementEx,
             link: 'https://konfer.ca',
         },
         {
             name: 'Company 2',
-            image: Entang,
+            image: entanglementImages.entanglementEx,
             link: 'https://konfer.ca',
         },
         {
             name: 'Company 3',
-            image: Entang,
+            image: entanglementImages.entanglementEx,
             link: 'https://konfer.ca',
         },
     ];
@@ -46,17 +52,17 @@ export const Sponsorship = () => {
     const quarkSponsors = [
         {
             name: 'Quark Co. 1',
-            image: Quark,
+            image: quarkImages.quarkEx,
             link: 'https://konfer.ca',
         },
         {
             name: 'Quark Co. 2',
-            image: Quark,
+            image: quarkImages.quarkEx,
             link: 'https://konfer.ca',
         },
         {
             name: 'Quark Co. 3',
-            image: Quark,
+            image: quarkImages.quarkEx,
             link: 'https://konfer.ca',
         },
     ];
@@ -64,37 +70,37 @@ export const Sponsorship = () => {
     const quantaSponsors = [
         {
             name: 'Quanta 1',
-            image: Quanta,
+            image: quantaImages.quantaEx,
             link: 'https://konfer.ca',
         },
         {
             name: 'Quanta 2',
-            image: Quanta,
+            image: quantaImages.quantaEx,
             link: 'https://konfer.ca',
         },
         {
             name: 'Quanta 3',
-            image: Quanta,
+            image: quantaImages.quantaEx,
             link: 'https://konfer.ca',
         },
         {
             name: 'Quanta 4',
-            image: Quanta,
+            image: quantaImages.quantaEx,
             link: 'https://konfer.ca',
         },
         {
             name: 'Quanta 5',
-            image: Quanta,
+            image: quantaImages.quantaEx,
             link: 'https://konfer.ca',
         },
         {
             name: 'Quanta 6',
-            image: Quanta,
+            image: quantaImages.quantaEx,
             link: 'https://konfer.ca',
         },
         {
             name: 'Quanta 7',
-            image: Quanta,
+            image: quantaImages.quantaEx,
             link: 'https://konfer.ca',
         },
     ];
@@ -102,17 +108,17 @@ export const Sponsorship = () => {
     const partners = [
         {
             name: 'Konfer 1',
-            image: Quanta,
+            image: quantaImages.quantaEx,
             link: 'https://konfer.ca',
         },
         {
             name: 'Konfer 2',
-            image: Quanta,
+            image: quantaImages.quantaEx,
             link: 'https://konfer.ca',
         },
         {
             name: 'Konfer 3',
-            image: Quanta,
+            image: quantaImages.quantaEx,
             link: 'https://konfer.ca',
         },
     ];
