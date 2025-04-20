@@ -27,12 +27,30 @@ export { Hero };
 
 /*
  *
- * @Sections
+ * @section Statistics
+ *
+ */
+import { Statistics } from './sections/statistics.section';
+
+export { Statistics }; 
+
+/*
+ *
+ * @section Sponsorship
  *
  */
 import { Sponsorship } from './sections/sponsorship.section';
 
 export { Sponsorship };
+
+/*
+ *
+ * @Components
+ *
+ */
+import { CountUp } from './countup';
+
+export { CountUp };
 
 import { Footer } from './Footer';
 
