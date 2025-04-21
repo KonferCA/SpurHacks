@@ -269,6 +269,7 @@ export const Sponsorship = () => {
                     justify="center"
                     textAlign="center"
                     className="max-w-3xl"
+                    px={5}
                 >
                     <Heading fontSize={['2xl', '3xl', '4xl', '5xl']}>
                         Sponsor a Special Weekend
