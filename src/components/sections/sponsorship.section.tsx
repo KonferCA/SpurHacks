@@ -248,7 +248,10 @@ const Partners = () => (
 
 export const Sponsorship = () => {
     return (
-        <div className="bg-black text-white min-h-screen grid place-items-center">
+        <section
+            id="sponsorship"
+            className="bg-black text-white min-h-screen grid place-items-center"
+        >
             <Flex
                 direction="column"
                 gap={20}
@@ -323,6 +326,6 @@ export const Sponsorship = () => {
                     </Box>
                 </Stack>
             </Flex>
-        </div>
+        </section>
     );
 };
