@@ -1,7 +1,7 @@
-import { Flex, Heading, Text, Box } from '@chakra-ui/react';
-import Spline from '@splinetool/react-spline';
-import { motionValue, useSpring } from 'motion/react';
-import { CountUp } from '@components';
+import { Flex, Heading, Text, Box } from "@chakra-ui/react";
+import Spline from "@splinetool/react-spline";
+import { motionValue, useSpring } from "motion/react";
+import { CountUp } from "@components";
 
 export const Statistics = () => {
     return (
@@ -31,7 +31,7 @@ export const Statistics = () => {
                     <Flex direction="column" gap={6}>
                         <Text>Prize Value</Text>
                         <Heading
-                            fontSize={['5xl', '7xl']}
+                            fontSize={["5xl", "7xl"]}
                             color="white"
                             fontWeight="light"
                         >
@@ -41,7 +41,7 @@ export const Statistics = () => {
                     <Flex direction="column" gap={6}>
                         <Text>Participants</Text>
                         <Heading
-                            fontSize={['5xl', '7xl']}
+                            fontSize={["5xl", "7xl"]}
                             color="white"
                             fontWeight="light"
                         >
@@ -51,7 +51,7 @@ export const Statistics = () => {
                     <Flex direction="column" gap={6}>
                         <Text>Valuation</Text>
                         <Heading
-                            fontSize={['5xl', '7xl']}
+                            fontSize={["5xl", "7xl"]}
                             color="white"
                             fontWeight="light"
                         >
