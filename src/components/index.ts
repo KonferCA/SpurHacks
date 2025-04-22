@@ -33,4 +33,4 @@ export { Statistics, Sponsorship };
  */
 import { CountUp } from './countup';
 
-export { CountUp }
+export { CountUp };

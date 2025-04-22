@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from "react";
-import { useInView, animate, useMotionValue } from "motion/react";
+import { useEffect, useRef, useState } from 'react';
+import { useInView, animate, useMotionValue } from 'motion/react';
 
 type CountUpProps = {
     to: number;
@@ -11,8 +11,8 @@ type CountUpProps = {
 
 export const CountUp = ({
     to,
-    prefix = "",
-    suffix = "",
+    prefix = '',
+    suffix = '',
     duration = 2,
     allowDecimal = false,
 }: CountUpProps) => {
