@@ -35,7 +35,7 @@ export const CountUp = ({
 
             return controls.stop;
         }
-    }, [isInView, to, duration, count]);
+    }, [isInView, to, duration, count, allowDecimal]);
 
     return (
         <span ref={ref}>
