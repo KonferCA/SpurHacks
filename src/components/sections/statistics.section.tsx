@@ -1,13 +1,13 @@
-import { Flex, Heading, Text, Box } from '@chakra-ui/react';
-import Spline from '@splinetool/react-spline';
+import { Flex, Heading, Text, Box } from "@chakra-ui/react";
+import Spline from "@splinetool/react-spline";
 
 export const Statistics = () => {
     return (
         <Flex className="bg-black min-h-screen">
-            <Box w="50%">
+            <Box w="50%" h="full" maxH="100%">
                 <Spline
                     scene="https://prod.spline.design/TmAYMNy2qJHyDE9m/scene.splinecode"
-                    className="w-1/2 h-screen absolute top-0 left-0 z-0"
+                    className="w-1/2 max-h-screen absolute top-0 left-0 z-0"
                 />
             </Box>
             <Flex
@@ -16,7 +16,8 @@ export const Statistics = () => {
                 w="70%"
                 justify="center"
                 align="center"
-                className="bg-gradient-to-l from-black from-70% to-black/0 focus:outline-none z-10"
+                pr={[20, 0]}
+                className="md:bg-gradient-to-l from-black from-70% to-black/0 focus:outline-none z-10"
             >
                 <Flex
                     gap={20}
@@ -27,7 +28,7 @@ export const Statistics = () => {
                     <Flex direction="column" gap={6}>
                         <Text>Prize Value</Text>
                         <Heading
-                            fontSize={['4xl', '7xl']}
+                            fontSize={["5xl", "7xl"]}
                             color="white"
                             fontWeight="light"
                         >
@@ -37,7 +38,7 @@ export const Statistics = () => {
                     <Flex direction="column" gap={6}>
                         <Text>Participants</Text>
                         <Heading
-                            fontSize={['4xl', '7xl']}
+                            fontSize={["5xl", "7xl"]}
                             color="white"
                             fontWeight="light"
                         >
@@ -47,7 +48,7 @@ export const Statistics = () => {
                     <Flex direction="column" gap={6}>
                         <Text>Valuation</Text>
                         <Heading
-                            fontSize={['4xl', '7xl']}
+                            fontSize={["5xl", "7xl"]}
                             color="white"
                             fontWeight="light"
                         >
