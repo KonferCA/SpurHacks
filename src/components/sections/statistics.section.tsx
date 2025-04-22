@@ -1,5 +1,7 @@
 import { Flex, Heading, Text, Box } from "@chakra-ui/react";
 import Spline from "@splinetool/react-spline";
+import { motionValue, useSpring } from "motion/react";
+import { CountUp } from "@components";
 
 export const Statistics = () => {
     return (
@@ -16,11 +18,11 @@ export const Statistics = () => {
                 w="70%"
                 justify="center"
                 align="center"
-                pr={[20, 0]}
+                pr={[10, 0]}
                 className="md:bg-gradient-to-l from-black from-70% to-black/0 focus:outline-none z-10"
             >
                 <Flex
-                    gap={20}
+                    gap={[10, 20]}
                     direction="column"
                     fontFamily="Geist"
                     fontWeight="extralight"
@@ -32,7 +34,7 @@ export const Statistics = () => {
                             color="white"
                             fontWeight="light"
                         >
-                            $100k+
+                            <CountUp to={100} prefix="$" suffix="k+" />
                         </Heading>
                     </Flex>
                     <Flex direction="column" gap={6}>
@@ -42,7 +44,7 @@ export const Statistics = () => {
                             color="white"
                             fontWeight="light"
                         >
-                            2000
+                            <CountUp to={2000} />
                         </Heading>
                     </Flex>
                     <Flex direction="column" gap={6}>
@@ -52,7 +54,7 @@ export const Statistics = () => {
                             color="white"
                             fontWeight="light"
                         >
-                            23.4B
+                            <CountUp to={23.4} suffix="B" allowDecimal />
                         </Heading>
                     </Flex>
                 </Flex>
