@@ -1,6 +1,5 @@
 import { Flex, Heading, Text, Box } from '@chakra-ui/react';
 import Spline from '@splinetool/react-spline';
-import { motionValue, useSpring } from 'motion/react';
 import { CountUp } from '@components';
 
 export const Statistics = () => {
