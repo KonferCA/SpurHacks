@@ -26,6 +26,7 @@ export const Statistics = () => {
                     direction="column"
                     fontFamily="Geist"
                     fontWeight="extralight"
+                    className="text-white"
                 >
                     <Flex direction="column" gap={6}>
                         <Text>Prize Value</Text>
