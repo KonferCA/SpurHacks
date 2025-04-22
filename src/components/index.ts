@@ -25,3 +25,12 @@ import { Statistics } from './sections/statistics.section';
 import { Sponsorship } from './sections/sponsorship.section';
 
 export { Statistics, Sponsorship };
+
+/*
+ *
+ * @Components
+ *
+ */
+import { CountUp } from './countup';
+
+export { CountUp }
