@@ -1,4 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap");
+@font-face {
+    font-family: "Geist";
+    src: url("/fonts/geist/Geist-Light.woff2") format("woff2");
+    font-weight: 500;
+    font-display: swap;
+}
+
 @import "tailwindcss";
 
 @theme {
