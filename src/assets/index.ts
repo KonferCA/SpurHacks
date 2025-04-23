@@ -3,11 +3,13 @@
  * @asset/logos
  *
  */
-import VerticalLogo from './logo_vertical.svg';
-import HorizontalLogo from './logo_horizontal.svg';
-import Icon from './icon.svg';
+import NoIconLogo from './logos/logo_noicon.svg';
+import VerticalLogo from './logos/logo_vertical.svg';
+import HorizontalLogo from './logos/logo_horizontal.svg';
+import Icon from './logos/icon.svg';
 
-export { VerticalLogo, HorizontalLogo, Icon };
+export { NoIconLogo, VerticalLogo, HorizontalLogo, Icon };
+
 /*
  *
  * @asset Sponsorship package
