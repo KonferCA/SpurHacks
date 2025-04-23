@@ -2,8 +2,8 @@
   <h1 align="center">
     <a href="https://spurhacks.com/">
         <picture>
-            <source height="65" media="(prefers-color-scheme: dark)" srcset="https://github.com/KonferCA/SpurHacks/blob/main/src/assets/logo_horizontal.svg">
-            <img height="750" alt="SPURHACKS" src="https://github.com/KonferCA/SpurHacks/blob/main/src/assets/logo_horizontal.svg">
+            <source height="65" media="(prefers-color-scheme: dark)" srcset="https://github.com/KonferCA/SpurHacks/blob/main/src/assets/logos/logo_horizontal.svg">
+            <img height="750" alt="SPURHACKS" src="https://github.com/KonferCA/SpurHacks/blob/main/src/assets/logos/logo_horizontal.svg">
         </picture>
     </a>
     <br>
