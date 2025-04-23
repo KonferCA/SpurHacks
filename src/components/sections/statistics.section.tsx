@@ -22,13 +22,13 @@ export const Statistics = () => {
                 <Flex
                     gap={[10, 20]}
                     direction="column"
-                    fontFamily="Geist"
                     fontWeight="extralight"
                     className="text-white"
                 >
                     <Flex direction="column" gap={6}>
-                        <Text>Prize Value</Text>
+                        <Text fontFamily="Geist">Prize Value</Text>
                         <Heading
+                            fontFamily="Geist"
                             fontSize={['5xl', '7xl']}
                             color="white"
                             fontWeight="light"
@@ -37,8 +37,9 @@ export const Statistics = () => {
                         </Heading>
                     </Flex>
                     <Flex direction="column" gap={6}>
-                        <Text>Participants</Text>
+                        <Text fontFamily="Geist">Participants</Text>
                         <Heading
+                            fontFamily="Geist"
                             fontSize={['5xl', '7xl']}
                             color="white"
                             fontWeight="light"
@@ -47,8 +48,9 @@ export const Statistics = () => {
                         </Heading>
                     </Flex>
                     <Flex direction="column" gap={6}>
-                        <Text>Valuation</Text>
+                        <Text fontFamily="Geist">Valuation</Text>
                         <Heading
+                            fontFamily="Geist"
                             fontSize={['5xl', '7xl']}
                             color="white"
                             fontWeight="light"
