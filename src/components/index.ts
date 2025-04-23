@@ -21,22 +21,9 @@ export {
  * @section Hero
  *
  */
-import { Hero } from './sections/Hero';
+import { Hero } from './sections/hero.section';
 
 export { Hero };
-
-import { HeroBackground } from './HeroBackground';
-
-export { HeroBackground };
-
-/*
- *
- * @component Navbar
- *
- */
-import { Navbar } from './Navbar';
-
-export { Navbar };
 
 /*
  *
