@@ -1,4 +1,4 @@
-import { Hero, Sponsorship } from '@components';
+import { Hero, Sponsorship, Footer } from '@components';
 
 export const Landing = () => {
     return (
@@ -8,6 +8,7 @@ export const Landing = () => {
                 <div id="sponsorship">
                     <Sponsorship />
                 </div>
+                <Footer />
             </main>
         </div>
     );
