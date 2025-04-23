@@ -1,11 +1,11 @@
+@import "tailwindcss";
+
 @font-face {
     font-family: "Geist";
     src: url("/fonts/geist/Geist-Light.woff2") format("woff2");
     font-weight: 500;
     font-display: swap;
 }
-
-@import "tailwindcss";
 
 @theme {
     --font-geist: "Geist", sans-serif;
