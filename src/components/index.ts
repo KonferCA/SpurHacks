@@ -37,3 +37,12 @@ export { HeroBackground };
 import { Navbar } from './Navbar';
 
 export { Navbar };
+
+/*
+ *
+ * @Sections
+ *
+ */
+import { Sponsorship } from './sections/sponsorship.section';
+
+export { Sponsorship };
