@@ -1,11 +1,10 @@
-import { Navbar, Hero } from '@components';
-
-import { Sponsorship } from '@components';
+import { Hero, Sponsorship } from '@components';
 
 export const Landing = () => {
     return (
         <div>
             <main>
+                <Hero />
                 <div id="sponsorship">
                     <Sponsorship />
                 </div>
