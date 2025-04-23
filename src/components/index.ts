@@ -24,3 +24,7 @@ export {
 import { Sponsorship } from './sections/sponsorship.section';
 
 export { Sponsorship };
+
+import { Footer } from './Footer';
+
+export { Footer };
