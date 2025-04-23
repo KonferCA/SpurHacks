@@ -1,9 +1,9 @@
 <div align="center">
   <h1 align="center">
-    <a href="https://onboard.spuric.com/">
+    <a href="https://spurhacks.com/">
         <picture>
-            <source height="65" media="(prefers-color-scheme: dark)" srcset="https://github.com/KonferCA/SpurHacks/blob/main/src/assets/spurhacks-logo-white.png">
-            <img height="750" alt="SPURHACKS" src="https://github.com/KonferCA/SpurHacks/blob/main/src/assets/spurhacks-logo-white.png">
+            <source height="65" media="(prefers-color-scheme: dark)" srcset="https://github.com/KonferCA/SpurHacks/blob/main/src/assets/logo_horizontal.svg">
+            <img height="750" alt="SPURHACKS" src="https://github.com/KonferCA/SpurHacks/blob/main/src/assets/logo_horizontal.svg">
         </picture>
     </a>
     <br>
@@ -11,7 +11,7 @@
                                                  
   ![GitHub](https://img.shields.io/github/license/KonferCA/SpurHacks?style=flat-square)
   
-  #### The official landing page for SpurHacks - ~~see [here](https://hackathon.spuric.com).~~
+  #### The official landing page for SpurHacks - see [here](https://spurhacks.com).
 </div>
 
 ## Quick Setup :hammer:
