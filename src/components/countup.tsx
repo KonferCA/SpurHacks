@@ -13,7 +13,7 @@ export const CountUp = ({
     to,
     prefix = '',
     suffix = '',
-    duration = 2,
+    duration = 1.5,
     allowDecimal = false,
 }: CountUpProps) => {
     const ref = useRef(null);
