@@ -4,7 +4,7 @@ import { CountUp } from "@components";
 
 export const Statistics = () => {
     return (
-        <Flex className="bg-black min-h-screen">
+        <Flex className="relative bg-black min-h-screen">
             <Box w="50%" h="full" maxH="100%">
                 <Spline
                     scene="https://prod.spline.design/TmAYMNy2qJHyDE9m/scene.splinecode"
@@ -17,8 +17,7 @@ export const Statistics = () => {
                 w="70%"
                 justify="center"
                 align="center"
-                pr={[10, 0]}
-                className="md:bg-gradient-to-l from-black from-70% to-black/0 focus:outline-none z-10"
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 md:static md:translate-x-0 md:translate-y-0 md:bg-gradient-to-l from-black from-70% to-black/0 focus:outline-none z-10"
             >
                 <Flex
                     gap={[10, 20]}
