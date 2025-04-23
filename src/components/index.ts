@@ -18,6 +18,15 @@ export {
 
 /*
  *
+ * @section Hero
+ *
+ */
+import { Hero } from './sections/hero.section';
+
+export { Hero };
+
+/*
+ *
  * @Sections
  *
  */
