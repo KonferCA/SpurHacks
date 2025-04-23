@@ -12,15 +12,32 @@ export const Footer = () => {
             px={{ base: 4, md: 10 }}
             color="white"
         >
-            <Flex direction="column" width="100%" gap={1}>
+            <Flex
+                direction="column"
+                width="100%"
+                gap={{ base: 4, md: 1 }}
+                position="relative"
+            >
+                <Flex
+                    width="100%"
+                    justify="center"
+                    align="center"
+                    mb={1}
+                    display={{ base: 'none', md: 'flex' }}
+                >
+                    <Text fontSize="sm" textAlign="center">
+                        &copy; 2025 SPUR Innovation. All rights reserved
+                    </Text>
+                </Flex>
+
                 <Flex
                     width="100%"
                     direction={{ base: 'column', md: 'row' }}
                     justify="space-between"
                     align={{ base: 'center', md: 'flex-start' }}
-                    mb={1}
+                    mb={{ base: 6, md: 1 }}
                 >
-                    <Box>
+                    <Box display={{ base: 'none', md: 'block' }}>
                         <Image src={LogoNoIcon} alt="SPURHACKS" height="24px" />
                     </Box>
 
@@ -55,20 +72,14 @@ export const Footer = () => {
                     </Flex>
                 </Flex>
 
-                <Flex width="100%" justify="center" align="center" mb={1}>
-                    <Text fontSize="sm" textAlign="center">
-                        &copy; 2025 SPUR Innovation. All rights reserved
-                    </Text>
-                </Flex>
-
                 <Flex
                     width="100%"
                     direction={{ base: 'column', md: 'row' }}
                     justify="space-between"
                     align={{ base: 'center', md: 'center' }}
-                    mb={1}
+                    mb={{ base: 6, md: 1 }}
                 >
-                    <HStack ml={-1} mb={{ base: 2, md: 0 }}>
+                    <HStack ml={-1} mb={{ base: 4, md: 0 }}>
                         <Box>
                             <a
                                 href="https://discord.gg/spurhacks"
@@ -166,7 +177,7 @@ export const Footer = () => {
 
                     <Box display={{ base: 'none', md: 'block' }} />
 
-                    <HStack>
+                    <HStack mb={{ base: 4, md: 0 }}>
                         <Link
                             href="https://github.com/MLH/mlh-policies/blob/main/code-of-conduct.md"
                             fontSize="sm"
@@ -185,6 +196,18 @@ export const Footer = () => {
                             Privacy Policy
                         </Link>
                     </HStack>
+                </Flex>
+
+                <Flex
+                    width="100%"
+                    justify="center"
+                    align="center"
+                    mt={{ base: 6, md: 0 }}
+                    display={{ base: 'flex', md: 'none' }}
+                >
+                    <Text fontSize="sm" textAlign="center">
+                        &copy; 2025 SPUR Innovation. All rights reserved
+                    </Text>
                 </Flex>
             </Flex>
         </Box>
