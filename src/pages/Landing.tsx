@@ -1,6 +1,7 @@
 import Spline from "@splinetool/react-spline";
 import { HorizontalLogo } from "../assets/";
-import { Link, Text, HStack, Image } from "@chakra-ui/react";
+import { Link, Text, HStack, Image, Button } from "@chakra-ui/react";
+import { MdNotificationsActive } from "react-icons/md";
 
 export const Landing = () => {
     return (
@@ -26,16 +27,27 @@ export const Landing = () => {
                         <Text>Waterloo, ON</Text>
                     </HStack>
 
-                    <Text fontFamily="Geist">
+                    {/* <Text fontFamily="Geist">
                         <Link
                             href="https://linktr.ee/spurhacks"
                             target="_blank"
                             color="white"
                             fontSize={["xs", "sm", "md"]}
                         >
-                            Coming soon – stay tuned!
+                            Coming soon!
                         </Link>
-                    </Text>
+                    </Text> */}
+
+                    <Link
+                        href="https://lu.ma/m9sseyrj"
+                        target="_blank"
+                        fontSize={["xs", "sm", "md"]}
+                    >
+                        <Button variant="subtle" size="lg">
+                            <MdNotificationsActive />
+                            Coming soon - stay tuned!
+                        </Button>
+                    </Link>
                 </div>
             </div>
         </main>
