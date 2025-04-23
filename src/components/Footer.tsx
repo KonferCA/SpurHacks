@@ -1,5 +1,5 @@
 import { Box, Flex, Text, HStack, Link, Image } from '@chakra-ui/react';
-import { LogoNoIcon, SpurNoIcon, KonferNoIcon } from '@assets';
+import { NoIconLogo, SpurNoIcon, KonferNoIcon } from '@assets';
 
 export const Footer = () => {
     return (
@@ -38,7 +38,7 @@ export const Footer = () => {
                     mb={{ base: 6, md: 1 }}
                 >
                     <Box display={{ base: 'none', md: 'block' }}>
-                        <Image src={LogoNoIcon} alt="SPURHACKS" height="24px" />
+                        <Image src={NoIconLogo} alt="SPURHACKS" height="24px" />
                     </Box>
 
                     <Flex direction="column" align="center" justify="center">
