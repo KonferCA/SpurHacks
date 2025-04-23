@@ -8,12 +8,7 @@ import VerticalLogo from './logos/logo_vertical.svg';
 import HorizontalLogo from './logos/logo_horizontal.svg';
 import Icon from './logos/icon.svg';
 
-export { 
-    NoIconLogo, 
-    VerticalLogo, 
-    HorizontalLogo, 
-    Icon 
-};
+export { NoIconLogo, VerticalLogo, HorizontalLogo, Icon };
 
 /*
  *
@@ -61,4 +56,4 @@ export const singularityImages = {
 
 import SponsorData from './data/sponsors.json';
 
-export { VerticalLogo, HorizontalLogo, Icon, SponsorData };
+export { SponsorData };
