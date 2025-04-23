@@ -8,16 +8,12 @@ import VerticalLogo from './logos/logo_vertical.svg';
 import HorizontalLogo from './logos/logo_horizontal.svg';
 import Icon from './logos/icon.svg';
 
-export { NoIconLogo, VerticalLogo, HorizontalLogo, Icon };
-
-/*
- *
- * @asset Sponsorship package
- *
- */
-import SponsorshipPackage from './spurhacks-sponsorship-package.pdf';
-
-export { SponsorshipPackage };
+export { 
+    NoIconLogo, 
+    VerticalLogo, 
+    HorizontalLogo, 
+    Icon 
+};
 
 /*
  *
@@ -62,3 +58,7 @@ import Sing from './sponsors/singularitySponsors/sing.png';
 export const singularityImages = {
     singularityEx: Sing,
 };
+
+import SponsorData from './data/sponsors.json';
+
+export { VerticalLogo, HorizontalLogo, Icon, SponsorData };
