@@ -1,13 +1,16 @@
 @import "tailwindcss";
 
 @font-face {
-    font-family: 'Geist';
+    font-family: "Geist";
     font-style: normal;
     font-display: swap;
     font-weight: 200;
-    src: url(@fontsource/geist-sans/files/geist-sans-latin-200-normal.woff2) format('woff2'), url(@fontsource/geist-sans/files/geist-sans-latin-200-normal.woff) format('woff');
-  }
+    src: url("@fontsource/geist-sans/files/geist-sans-latin-200-normal.woff2")
+        format("woff2"),
+        url("@fontsource/geist-sans/files/geist-sans-latin-200-normal.woff")
+        format("woff");
+}
 
-@theme {
-    --font-geist: "Geist sans", sans-serif;
+:root {
+    --font-geist: "Geist", sans-serif;
 }
