@@ -55,3 +55,7 @@ export { CountUp };
 import { Footer } from './Footer';
 
 export { Footer };
+
+import { UpdatesSection } from './sections/updates.section';
+
+export { UpdatesSection };
