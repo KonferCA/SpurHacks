@@ -62,3 +62,6 @@ export { UpdatesSection };
 
 import { FAQ } from './sections/faq.section';
 export { FAQ };
+
+import { About } from './sections/about.section';
+export { About };
