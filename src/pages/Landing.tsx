@@ -3,6 +3,7 @@ import {
     Statistics,
     UpdatesSection,
     Sponsorship,
+    FAQ,
     Footer,
 } from '@components';
 
@@ -12,6 +13,7 @@ export const Landing = () => {
             <Hero />
             <Statistics />
             <Sponsorship />
+            <FAQ />
             <UpdatesSection />
             <Footer />
         </main>
