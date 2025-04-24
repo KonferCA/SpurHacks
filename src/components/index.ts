@@ -59,3 +59,6 @@ export { Footer };
 import { UpdatesSection } from './sections/updates.section';
 
 export { UpdatesSection };
+
+import { FAQ } from './sections/faq.section';
+export { FAQ };
