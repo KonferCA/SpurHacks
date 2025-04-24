@@ -54,16 +54,38 @@ const FAQItem: React.FC<FAQItemProps> = ({
                 >
                     {question}
                 </Text>
-                <MotionBox
-                    transition={{ duration: 0.2 }}
-                >
+                <MotionBox transition={{ duration: 0.2 }}>
                     {isOpen ? (
-                        <svg width="18" height="18" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M21.375 12.5C21.375 12.7984 21.2565 13.0845 21.0455 13.2955C20.8345 13.5065 20.5484 13.625 20.25 13.625H3.75C3.45163 13.625 3.16548 13.5065 2.9545 13.2955C2.74353 13.0845 2.625 12.7984 2.625 12.5C2.625 12.2016 2.74353 11.9155 2.9545 11.7045C3.16548 11.4935 3.45163 11.375 3.75 11.375H20.25C20.5484 11.375 20.8345 11.4935 21.0455 11.7045C21.2565 11.9155 21.375 12.2016 21.375 12.5Z" fill="black"/>
+                        <svg
+                            width="18"
+                            height="18"
+                            viewBox="0 0 24 25"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            aria-labelledby="minusTitleId"
+                            role="img"
+                        >
+                            <title id="minusTitleId">Collapse</title>
+                            <path
+                                d="M21.375 12.5C21.375 12.7984 21.2565 13.0845 21.0455 13.2955C20.8345 13.5065 20.5484 13.625 20.25 13.625H3.75C3.45163 13.625 3.16548 13.5065 2.9545 13.2955C2.74353 13.0845 2.625 12.7984 2.625 12.5C2.625 12.2016 2.74353 11.9155 2.9545 11.7045C3.16548 11.4935 3.45163 11.375 3.75 11.375H20.25C20.5484 11.375 20.8345 11.4935 21.0455 11.7045C21.2565 11.9155 21.375 12.2016 21.375 12.5Z"
+                                fill="black"
+                            />
                         </svg>
                     ) : (
-                        <svg width="18" height="18" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M21.375 12.5C21.375 12.7984 21.2565 13.0845 21.0455 13.2955C20.8345 13.5065 20.5484 13.625 20.25 13.625H13.125V20.75C13.125 21.0484 13.0065 21.3345 12.7955 21.5455C12.5845 21.7565 12.2984 21.875 12 21.875C11.7016 21.875 11.4155 21.7565 11.2045 21.5455C10.9935 21.3345 10.875 21.0484 10.875 20.75V13.625H3.75C3.45163 13.625 3.16548 13.5065 2.9545 13.2955C2.74353 13.0845 2.625 12.7984 2.625 12.5C2.625 12.2016 2.74353 11.9155 2.9545 11.7045C3.16548 11.4935 3.45163 11.375 3.75 11.375H10.875V4.25C10.875 3.95163 10.9935 3.66548 11.2045 3.4545C11.4155 3.24353 11.7016 3.125 12 3.125C12.2984 3.125 12.5845 3.24353 12.7955 3.4545C13.0065 3.66548 13.125 3.95163 13.125 4.25V11.375H20.25C20.5484 11.375 20.8345 11.4935 21.0455 11.7045C21.2565 11.9155 21.375 12.2016 21.375 12.5Z" fill="black"/>
+                        <svg
+                            width="18"
+                            height="18"
+                            viewBox="0 0 24 25"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            aria-labelledby="plusTitleId"
+                            role="img"
+                        >
+                            <title id="plusTitleId">Expand</title>
+                            <path
+                                d="M21.375 12.5C21.375 12.7984 21.2565 13.0845 21.0455 13.2955C20.8345 13.5065 20.5484 13.625 20.25 13.625H13.125V20.75C13.125 21.0484 13.0065 21.3345 12.7955 21.5455C12.5845 21.7565 12.2984 21.875 12 21.875C11.7016 21.875 11.4155 21.7565 11.2045 21.5455C10.9935 21.3345 10.875 21.0484 10.875 20.75V13.625H3.75C3.45163 13.625 3.16548 13.5065 2.9545 13.2955C2.74353 13.0845 2.625 12.7984 2.625 12.5C2.625 12.2016 2.74353 11.9155 2.9545 11.7045C3.16548 11.4935 3.45163 11.375 3.75 11.375H10.875V4.25C10.875 3.95163 10.9935 3.66548 11.2045 3.4545C11.4155 3.24353 11.7016 3.125 12 3.125C12.2984 3.125 12.5845 3.24353 12.7955 3.4545C13.0065 3.66548 13.125 3.95163 13.125 4.25V11.375H20.25C20.5484 11.375 20.8345 11.4935 21.0455 11.7045C21.2565 11.9155 21.375 12.2016 21.375 12.5Z"
+                                fill="black"
+                            />
                         </svg>
                     )}
                 </MotionBox>
@@ -110,7 +132,7 @@ export const FAQ = () => {
     const faqItems = [
         {
             question: 'What is SPURHacks?',
-            answer: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi.",
+            answer: 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi.',
         },
         {
             question: 'Who can participate?',
@@ -123,7 +145,7 @@ export const FAQ = () => {
         {
             question:
                 'What if I have no experience in quantum computing, web3, or AI?',
-            answer: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi.",
+            answer: 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi.',
         },
         {
             question: 'What should I bring?',
@@ -131,7 +153,7 @@ export const FAQ = () => {
         },
         {
             question: 'Are there any accommodations?',
-            answer: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi.",
+            answer: 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi.',
         },
     ];
 
