@@ -32,7 +32,7 @@ export { Hero };
  */
 import { Statistics } from './sections/statistics.section';
 
-export { Statistics }; 
+export { Statistics };
 
 /*
  *
@@ -41,7 +41,7 @@ export { Statistics };
  */
 import { Sponsorship } from './sections/sponsorship.section';
 
-export { Sponsorship }
+export { Sponsorship };
 
 /*
  *

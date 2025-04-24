@@ -1,6 +1,6 @@
-import { Flex, Heading, Text, Box } from "@chakra-ui/react";
-import Spline from "@splinetool/react-spline";
-import { CountUp } from "@components";
+import { Flex, Heading, Text, Box } from '@chakra-ui/react';
+import Spline from '@splinetool/react-spline';
+import { CountUp } from '@components';
 
 export const Statistics = () => {
     return (
@@ -29,7 +29,7 @@ export const Statistics = () => {
                         <Text fontFamily="Geist">Prize Value</Text>
                         <Heading
                             fontFamily="Geist"
-                            fontSize={["5xl", "7xl"]}
+                            fontSize={['5xl', '7xl']}
                             color="white"
                             fontWeight="light"
                         >
@@ -40,7 +40,7 @@ export const Statistics = () => {
                         <Text fontFamily="Geist">Participants</Text>
                         <Heading
                             fontFamily="Geist"
-                            fontSize={["5xl", "7xl"]}
+                            fontSize={['5xl', '7xl']}
                             color="white"
                             fontWeight="light"
                         >
@@ -51,7 +51,7 @@ export const Statistics = () => {
                         <Text fontFamily="Geist">Valuation</Text>
                         <Heading
                             fontFamily="Geist"
-                            fontSize={["5xl", "7xl"]}
+                            fontSize={['5xl', '7xl']}
                             color="white"
                             fontWeight="light"
                         >

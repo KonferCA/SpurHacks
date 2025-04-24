@@ -1,4 +1,4 @@
-import { Hero, Statistics, Sponsorship, Footer } from "@components";
+import { Hero, Statistics, Sponsorship, Footer } from '@components';
 
 export const Landing = () => {
     return (
