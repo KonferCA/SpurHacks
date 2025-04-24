@@ -1,4 +1,10 @@
-import { Hero, Statistics, Sponsorship, Footer } from '@components';
+import {
+    Hero,
+    Statistics,
+    UpdatesSection,
+    Sponsorship,
+    Footer,
+} from '@components';
 
 export const Landing = () => {
     return (
@@ -6,6 +12,7 @@ export const Landing = () => {
             <Hero />
             <Statistics />
             <Sponsorship />
+            <UpdatesSection />
             <Footer />
         </main>
     );
