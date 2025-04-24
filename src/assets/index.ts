@@ -63,6 +63,11 @@ export const singularityImages = {
     singularityEx: Sing,
 };
 
+/*
+ *
+ * @asset Sponsor Data
+ *
+ */
 import SponsorData from './data/sponsors.json';
 
 export { SponsorData };

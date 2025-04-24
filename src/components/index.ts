@@ -27,6 +27,15 @@ export { Hero };
 
 /*
  *
+ * @section About
+ *
+ */
+import { About } from './sections/about.section';
+
+export { About };
+
+/*
+ *
  * @section Statistics
  *
  */
@@ -45,23 +54,36 @@ export { Sponsorship };
 
 /*
  *
- * @Components
+ * @section FAQ
+ *
+ */
+import { FAQ } from './sections/faq.section';
+
+export { FAQ };
+
+/*
+ *
+ * @section Stay in the know
+ *
+ */
+import { UpdatesSection } from './sections/updates.section';
+
+export { UpdatesSection };
+
+/*
+ *
+ * @component Footer
+ *
+ */
+import { Footer } from './Footer';
+
+export { Footer };
+
+/*
+ *
+ * @Component CountUp
  *
  */
 import { CountUp } from './countup';
 
 export { CountUp };
-
-import { Footer } from './Footer';
-
-export { Footer };
-
-import { UpdatesSection } from './sections/updates.section';
-
-export { UpdatesSection };
-
-import { FAQ } from './sections/faq.section';
-export { FAQ };
-
-import { About } from './sections/about.section';
-export { About };
