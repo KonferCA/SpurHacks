@@ -21,6 +21,15 @@ export {
  * @section Hero
  *
  */
+import { Navbar } from './Navbar';
+
+export { Navbar };
+
+/*
+ *
+ * @section Hero
+ *
+ */
 import { Hero } from './sections/hero.section';
 
 export { Hero };
