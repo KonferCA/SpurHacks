@@ -1,4 +1,5 @@
 import {
+    Navbar,
     Hero,
     Statistics,
     UpdatesSection,
@@ -10,12 +11,13 @@ import {
 export const Landing = () => {
     return (
         <main>
+            <Navbar />
             <Hero />
             <Statistics />
-            <Sponsorship />
+            {/* <Sponsorship />
             <FAQ />
             <UpdatesSection />
-            <Footer />
+            <Footer /> */}
         </main>
     );
 };
