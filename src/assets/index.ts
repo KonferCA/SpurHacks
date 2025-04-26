@@ -9,7 +9,7 @@ import HorizontalLogo from './logos/logo_horizontal.svg';
 import Icon from './logos/icon.svg';
 import KonferNoIcon from './logos/konfer_noicon.svg';
 import SpurNoIcon from './logos/spur_noicon.svg';
-import MLHBanner from './mlh_banner.svg';
+import MLHBanner from './mlh_banner.png';
 
 export {
     NoIconLogo,
