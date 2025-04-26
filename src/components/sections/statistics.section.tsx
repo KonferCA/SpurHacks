@@ -1,15 +1,63 @@
 import { Flex, Heading, Text, Box } from '@chakra-ui/react';
 import Spline from '@splinetool/react-spline';
 import { CountUp } from '@components';
+import { useState } from 'react';
+import { useInView } from 'react-intersection-observer';
 
 export const Statistics = () => {
+    const [isSplineLoaded, setIsSplineLoaded] = useState(false);
+    const [splineError, setSplineError] = useState(false);
+    const { ref, inView } = useInView({
+        threshold: 0.1,
+        triggerOnce: false,
+        rootMargin: '200px 0px 200px 0px',
+    });
+
+    function onSplineLoad() {
+        setIsSplineLoaded(true);
+    }
+
+    function onSplineError(error: unknown) {
+        console.error('Spline loading error:', error);
+        setSplineError(true);
+    }
+
+    const splineSceneUrl = 'https://prod.spline.design/TmAYMNy2qJHyDE9m/scene.splinecode';
+
     return (
-        <Flex className="relative bg-black min-h-screen">
-            <Box w="50%" h="full" maxH="100%">
-                <Spline
-                    scene="https://prod.spline.design/TmAYMNy2qJHyDE9m/scene.splinecode"
-                    className="w-1/2 max-h-screen absolute top-0 left-0 z-0"
-                />
+        <Flex ref={ref} className="relative bg-black min-h-screen">
+            <Box 
+                w="50%" 
+                h="full" 
+                maxH="100%" 
+                position="relative"
+            >
+                {inView && !splineError && (
+                    <Spline
+                        scene={splineSceneUrl}
+                        onLoad={onSplineLoad}
+                        onError={onSplineError}
+                        style={{ 
+                            width: '100%',
+                            height: '100vh',
+                            position: 'absolute', 
+                            top: 0, 
+                            left: 0, 
+                            zIndex: 0 
+                        }}
+                    />
+                )}
+                {(!inView || !isSplineLoaded || splineError) && (
+                    <Box
+                        position="absolute"
+                        top="0"
+                        left="0"
+                        width="100%" 
+                        height="100%"
+                        bg="black"
+                        zIndex={-1}
+                    />
+                )}
             </Box>
             <Flex
                 direction="column"

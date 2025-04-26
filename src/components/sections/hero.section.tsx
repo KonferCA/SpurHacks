@@ -11,6 +11,7 @@ import {
 } from '@chakra-ui/react';
 import { NoIconLogo } from '@assets';
 import Spline from '@splinetool/react-spline';
+import { useInView } from 'react-intersection-observer';
 
 export const Hero: React.FC = () => {
     const [isSplineLoaded, setIsSplineLoaded] = useState(false);
@@ -20,6 +21,11 @@ export const Hero: React.FC = () => {
         hours: '00',
         minutes: '00',
         seconds: '00',
+    });
+
+    const { ref, inView } = useInView({
+        threshold: 0.1,
+        triggerOnce: true,
     });
 
     const showSocialIcons = useBreakpointValue({ base: false, md: true });
@@ -186,7 +192,7 @@ export const Hero: React.FC = () => {
     );
 
     return (
-        <Box position="relative" h="100vh" overflow="hidden">
+        <Box ref={ref} position="relative" h="100vh" overflow="hidden">
             {!splineError && (
                 <Box
                     position="absolute"
@@ -197,12 +203,14 @@ export const Hero: React.FC = () => {
                     opacity={isSplineLoaded ? 1 : 0}
                     transition="opacity 0.5s ease-in"
                 >
-                    <Spline
-                        scene={splineSceneUrl}
-                        onLoad={onSplineLoad}
-                        onError={onSplineError}
-                        style={{ width: '100%', height: '100%' }}
-                    />
+                    {inView && (
+                        <Spline
+                            scene={splineSceneUrl}
+                            onLoad={onSplineLoad}
+                            onError={onSplineError}
+                            style={{ width: '100%', height: '100%' }}
+                        />
+                    )}
                 </Box>
             )}
 
@@ -604,7 +612,7 @@ export const Hero: React.FC = () => {
                 )}
             </Flex>
 
-            {(!isSplineLoaded || splineError) && (
+            {(!inView || !isSplineLoaded || splineError) && (
                 <Box
                     position="absolute"
                     top="0"

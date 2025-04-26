@@ -9,6 +9,7 @@ import {
 } from '@chakra-ui/react';
 import Spline from '@splinetool/react-spline';
 import { motion, AnimatePresence } from 'motion/react';
+import { useInView } from 'react-intersection-observer';
 
 const MotionBox = motion(Box);
 const MotionFlex = motion(Flex);
@@ -113,8 +114,14 @@ const FAQItem: React.FC<FAQItemProps> = ({
 export const FAQ = () => {
     const [activeIndex, setActiveIndex] = useState<number | null>(0);
     const isMobile = useBreakpointValue({ base: true, md: false });
-    const [, setIsSplineLoaded] = useState(false);
-    const [, setSplineError] = useState(false);
+    const [isSplineLoaded, setIsSplineLoaded] = useState(false);
+    const [splineError, setSplineError] = useState(false);
+
+    const { ref, inView } = useInView({
+        threshold: 0.1,
+        triggerOnce: false,
+        rootMargin: '200px 0px 200px 0px',
+    });
 
     const splineSceneUrl =
         'https://prod.spline.design/TmAYMNy2qJHyDE9m/scene.splinecode';
@@ -162,22 +169,38 @@ export const FAQ = () => {
     };
 
     return (
-        <Box position="relative" py={20} overflow="hidden" minHeight="100vh">
-            <Box
-                position="absolute"
-                top="0"
-                left="0"
-                width="100%"
-                height="100%"
-                zIndex={0}
-            >
-                <Spline
-                    scene={splineSceneUrl}
-                    onLoad={onSplineLoad}
-                    onError={onSplineError}
-                    style={{ width: '100%', height: '100%' }}
+        <Box ref={ref} position="relative" py={20} overflow="hidden" minHeight="100vh">
+            {inView && !splineError && (
+                <Box
+                    position="absolute"
+                    top="0"
+                    left="0"
+                    width="100%"
+                    height="100%"
+                    zIndex={0}
+                    opacity={isSplineLoaded ? 1 : 0}
+                    transition="opacity 0.5s ease-in"
+                >
+                    <Spline
+                        scene={splineSceneUrl}
+                        onLoad={onSplineLoad}
+                        onError={onSplineError}
+                        style={{ width: '100%', height: '100%' }}
+                    />
+                </Box>
+            )}
+
+            {(!inView || !isSplineLoaded || splineError) && (
+                <Box
+                    position="absolute"
+                    top="0"
+                    left="0"
+                    width="100%"
+                    height="100%"
+                    bg="rgba(222, 235, 255, 0.65)"
+                    zIndex={-1}
                 />
-            </Box>
+            )}
 
             <Box
                 position="absolute"

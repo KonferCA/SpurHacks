@@ -1,10 +1,15 @@
 import { Box, Flex, Text, Button, Heading, Link } from '@chakra-ui/react';
 import Spline from '@splinetool/react-spline';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useInView } from 'react-intersection-observer';
 
 export const UpdatesSection = () => {
     const [isSplineLoaded, setIsSplineLoaded] = useState(false);
     const [splineError, setSplineError] = useState(false);
+    const { ref, inView } = useInView({
+        threshold: 0.1,
+        rootMargin: '500px 0px 500px 0px',
+    });
 
     function onSplineLoad() {
         setIsSplineLoaded(true);
@@ -20,16 +25,18 @@ export const UpdatesSection = () => {
         'https://prod.spline.design/TmAYMNy2qJHyDE9m/scene.splinecode';
 
     return (
-        <Flex className="relative bg-black min-h-screen">
+        <Flex ref={ref} className="relative bg-black min-h-screen">
             <Box w="50%" h="full" maxH="100%">
-                <Spline
-                    scene={splineSceneUrl}
-                    onLoad={onSplineLoad}
-                    onError={onSplineError}
-                    className="w-1/2 max-h-screen absolute top-0 left-0 z-0"
-                />
+                {inView && (
+                    <Spline
+                        scene={splineSceneUrl}
+                        onLoad={onSplineLoad}
+                        onError={onSplineError}
+                        className="w-1/2 max-h-screen absolute top-0 left-0 z-0"
+                    />
+                )}
 
-                {(!isSplineLoaded || splineError) && (
+                {(!isSplineLoaded || splineError || !inView) && (
                     <Box
                         position="absolute"
                         top="0"
