@@ -37,7 +37,7 @@ const navItemVariants = {
         opacity: 0,
         transition: {
             type: "spring",
-            stiffness: 300,
+            stiffness: 100,
         },
     },
 };
@@ -55,10 +55,6 @@ const navButtonAnimation = {
     closed: {
         y: 20,
         opacity: 0,
-        transition: {
-            type: "spring",
-            stiffness: 300,
-        },
     },
 };
 
