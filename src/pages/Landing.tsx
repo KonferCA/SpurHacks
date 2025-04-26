@@ -6,7 +6,7 @@ import {
     Sponsorship,
     FAQ,
     Footer,
-} from '@components';
+} from "@components";
 
 export const Landing = () => {
     return (
@@ -14,10 +14,10 @@ export const Landing = () => {
             <Navbar />
             <Hero />
             <Statistics />
-            {/* <Sponsorship />
+            <Sponsorship />
             <FAQ />
             <UpdatesSection />
-            <Footer /> */}
+            <Footer />
         </main>
     );
 };
