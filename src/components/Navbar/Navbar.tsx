@@ -1,4 +1,4 @@
-import { Icon, MLHBanner } from "@assets";
+import { Icon, MLHBanner } from '@assets';
 import {
     Box,
     Flex,
@@ -8,10 +8,10 @@ import {
     Link,
     Image,
     Drawer,
-} from "@chakra-ui/react";
-import { useEffect, useState } from "react";
-import { HamburgerMenuIcon, Cross2Icon } from "@radix-ui/react-icons";
-import { ExpandingMenu } from "./ExpandingMenu";
+} from '@chakra-ui/react';
+import { useEffect, useState } from 'react';
+import { HamburgerMenuIcon, Cross2Icon } from '@radix-ui/react-icons';
+import { ExpandingMenu } from './ExpandingMenu';
 
 export const Navbar = () => {
     const [isMobile, setIsMobile] = useState(false);
@@ -24,8 +24,8 @@ export const Navbar = () => {
 
         handleResize();
 
-        window.addEventListener("resize", handleResize);
-        return () => window.removeEventListener("resize", handleResize);
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
     }, []);
 
     return (
@@ -50,11 +50,11 @@ export const Navbar = () => {
                                 size="md"
                                 variant="ghost"
                                 bg="transparent"
-                                _hover={{ bg: "transparent" }}
-                                _active={{ bg: "transparent" }}
+                                _hover={{ bg: 'transparent' }}
+                                _active={{ bg: 'transparent' }}
                                 onClick={() => setIsOpen(!isOpen)}
                                 onKeyDown={(e) => {
-                                    if (e.key === "Enter" || e.key === " ") {
+                                    if (e.key === 'Enter' || e.key === ' ') {
                                         setIsOpen(!isOpen);
                                     }
                                 }}
@@ -93,8 +93,8 @@ export const Navbar = () => {
                         alt="spurIcon"
                         objectFit="contain"
                         boxSize={{
-                            base: "25px",
-                            md: "40px",
+                            base: '25px',
+                            md: '40px',
                         }}
                     />
                 </Box>
@@ -115,7 +115,7 @@ export const Navbar = () => {
                                     borderRadius="full"
                                     px={8}
                                     py={4}
-                                    _hover={{ bg: "whiteAlpha.200" }}
+                                    _hover={{ bg: 'whiteAlpha.200' }}
                                 >
                                     Register
                                 </Button>
@@ -130,7 +130,7 @@ export const Navbar = () => {
                                     py={4}
                                     mr={32}
                                     _hover={{
-                                        bg: "#FFA75F",
+                                        bg: '#FFA75F',
                                         opacity: 0.9,
                                     }}
                                 >

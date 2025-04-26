@@ -6,7 +6,7 @@ import {
     Sponsorship,
     FAQ,
     Footer,
-} from "@components";
+} from '@components';
 
 export const Landing = () => {
     return (
