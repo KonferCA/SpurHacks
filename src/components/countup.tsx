@@ -1,46 +1,65 @@
-import { useEffect, useRef, useState } from 'react';
-import { useInView, animate, useMotionValue } from 'motion/react';
-
-type CountUpProps = {
-    to: number;
-    prefix?: string;
-    suffix?: string;
-    duration?: number;
-    allowDecimal?: boolean;
-};
+import { useState, useEffect, useRef } from 'react';
+import { useInView } from 'motion/react';
 
 export const CountUp = ({
     to,
     prefix = '',
     suffix = '',
-    duration = 1.5,
+    duration = 1500,
     allowDecimal = false,
-}: CountUpProps) => {
+}: {
+    to: number;
+    prefix?: string;
+    suffix?: string;
+    duration?: number;
+    allowDecimal?: boolean;
+}) => {
+    const [value, setValue] = useState(0);
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true });
-    const count = useMotionValue(0);
-    const [display, setDisplay] = useState(0);
+    const startTime = useRef<number | null>(null);
+    const frameId = useRef<number | null>(null);
 
     useEffect(() => {
-        if (isInView) {
-            const controls = animate(count, to, {
-                duration,
-                onUpdate: (v) => {
-                    const value = allowDecimal
-                        ? Number(v.toFixed(1))
-                        : Math.floor(v);
-                    setDisplay(value);
-                },
-            });
+        if (!isInView) return;
 
-            return controls.stop;
-        }
-    }, [isInView, to, duration, count, allowDecimal]);
+        const animate = (timestamp: number) => {
+            if (!startTime.current) {
+                startTime.current = timestamp;
+            }
+
+            const progress: number = timestamp - startTime.current;
+
+            const percentage: number = Math.min(progress / duration, 1);
+            const easedPercentage: number = easeOutQuad(percentage);
+            const currentValue: number = to * easedPercentage;
+
+            setValue(
+                allowDecimal
+                    ? Number(currentValue.toFixed(1))
+                    : Math.floor(currentValue)
+            );
+
+            if (percentage < 1) {
+                frameId.current = requestAnimationFrame(animate);
+            }
+        };
+
+        frameId.current = requestAnimationFrame(animate);
+
+        return () => {
+            if (frameId.current) {
+                cancelAnimationFrame(frameId.current);
+            }
+        };
+    }, [isInView, to, duration, allowDecimal]);
+
+    const easeOutQuad = (t: number): number => t * (2 - t);
 
     return (
         <span ref={ref}>
             {prefix}
-            {display.toLocaleString()}
+            {value.toLocaleString()}
             {suffix}
         </span>
     );

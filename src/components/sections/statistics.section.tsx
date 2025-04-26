@@ -7,11 +7,15 @@ import { useInView } from 'react-intersection-observer';
 export const Statistics = () => {
     const [isSplineLoaded, setIsSplineLoaded] = useState(false);
     const [splineError, setSplineError] = useState(false);
+
     const { ref, inView } = useInView({
         threshold: 0.1,
         triggerOnce: false,
         rootMargin: '200px 0px 200px 0px',
     });
+
+    const splineSceneUrl =
+        'https://prod.spline.design/TmAYMNy2qJHyDE9m/scene.splinecode';
 
     function onSplineLoad() {
         setIsSplineLoaded(true);
@@ -21,8 +25,6 @@ export const Statistics = () => {
         console.error('Spline loading error:', error);
         setSplineError(true);
     }
-
-    const splineSceneUrl = 'https://prod.spline.design/TmAYMNy2qJHyDE9m/scene.splinecode';
 
     return (
         <Flex ref={ref} className="relative bg-black min-h-screen">
