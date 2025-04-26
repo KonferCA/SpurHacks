@@ -17,6 +17,7 @@ export const Navbar = () => {
     const [isMobile, setIsMobile] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
 
+    // Listen for window resizing
     useEffect(() => {
         const handleResize = () => {
             setIsMobile(window.innerWidth < 1280);
@@ -39,11 +40,13 @@ export const Navbar = () => {
             left={0}
             zIndex={1000}
         >
+            {/* Expanded Menu on Mobile */}
             {isMobile ? <ExpandingMenu isOpen={isOpen} /> : <></>}
             <Flex align="center" justify="space-between" maxW="2000" mx="auto">
                 {/* Left Nav Links */}
                 <Box>
                     {isMobile ? (
+                        // Cross and Hamburger menu on Mobile
                         <Drawer.Root size="full" placement="top">
                             <Button
                                 zIndex={1000}
@@ -67,6 +70,7 @@ export const Navbar = () => {
                             </Button>
                         </Drawer.Root>
                     ) : (
+                        // Links on Desktop
                         <HStack gap={8}>
                             <Link href="#about">
                                 <Text fontWeight="medium">About</Text>
@@ -101,7 +105,7 @@ export const Navbar = () => {
 
                 {/* Right Buttons + MLH Banner */}
                 <HStack gap={4} position="relative" minW="200px">
-                    {/* Buttons */}
+                    {/* Buttons (hidden on Mobile)*/}
                     {isMobile ? (
                         <></>
                     ) : (
