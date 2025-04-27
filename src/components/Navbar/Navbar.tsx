@@ -41,7 +41,11 @@ export const Navbar = () => {
             zIndex={1000}
         >
             {/* Expanded Menu on Mobile */}
-            {isMobile ? <ExpandingMenu isOpen={isOpen} /> : <></>}
+            {isMobile ? (
+                <ExpandingMenu isOpen={isOpen} setIsOpen={setIsOpen} />
+            ) : (
+                <></>
+            )}
             <Flex align="center" justify="space-between" maxW="2000" mx="auto">
                 {/* Left Nav Links */}
                 <Box>

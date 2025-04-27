@@ -1,4 +1,4 @@
-import { Flex, Button, Link } from '@chakra-ui/react';
+import { Flex, Button, Link, Text } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import { useEffect } from 'react';
 
@@ -62,20 +62,12 @@ const links = ['About', 'Sponsors', 'FAQ'];
 
 type ExpandingMenuProps = {
     isOpen: boolean;
+    setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-export function ExpandingMenu({ isOpen }: ExpandingMenuProps) {
-    // Stop user from scrolling when the menu is open
-    useEffect(() => {
-        if (isOpen) {
-            document.body.classList.add('overflow-hidden');
-        } else {
-            document.body.classList.remove('overflow-hidden');
-        }
-
-        return () => document.body.classList.remove('overflow-hidden');
-    }, [isOpen]);
-
+export function ExpandingMenu({ isOpen, setIsOpen }: ExpandingMenuProps) {
+    console.log('isOpen:', isOpen);
+    console.log('setIsOpen:', setIsOpen);
     return (
         <motion.nav
             initial={false}
@@ -95,10 +87,16 @@ export function ExpandingMenu({ isOpen }: ExpandingMenuProps) {
                         key={link}
                         custom={i}
                         variants={navItemVariants}
-                        className="text-white text-3xl font-semibold hover:scale-105"
                         href={`#${link.toLowerCase()}`}
                     >
-                        {link}
+                        <Text
+                            fontFamily="Geist"
+                            color="white"
+                            className="hover:scale-110]"
+                            onClick={() => setIsOpen((prev) => !prev)}
+                        >
+                            {link}
+                        </Text>
                     </motion.a>
                 ))}
                 <motion.div
