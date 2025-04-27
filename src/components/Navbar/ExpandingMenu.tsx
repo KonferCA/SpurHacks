@@ -92,7 +92,7 @@ export function ExpandingMenu({ isOpen, setIsOpen }: ExpandingMenuProps) {
                         <Text
                             fontFamily="Geist"
                             color="white"
-                            className="hover:scale-110]"
+                            className="hover:scale-110"
                             onClick={() => setIsOpen((prev) => !prev)}
                         >
                             {link}
