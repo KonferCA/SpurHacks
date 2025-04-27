@@ -67,23 +67,52 @@ export const Navbar = () => {
                                 }}
                             >
                                 {isOpen ? (
-                                    <Cross2Icon width={25} height={25} />
+                                    <Cross2Icon
+                                        width={25}
+                                        height={25}
+                                        color="white"
+                                    />
                                 ) : (
-                                    <HamburgerMenuIcon width={25} height={25} />
+                                    <HamburgerMenuIcon
+                                        width={25}
+                                        height={25}
+                                        color="white"
+                                    />
                                 )}
                             </Button>
                         </Drawer.Root>
                     ) : (
                         // Links on Desktop
                         <HStack gap={8}>
-                            <Link href="#about">
-                                <Text fontWeight="medium">About</Text>
+                            <Link href="#about" textDecoration="none">
+                                <Text
+                                    fontWeight="medium"
+                                    fontFamily="Geist"
+                                    color="white"
+                                    className="hover:scale-110"
+                                >
+                                    About
+                                </Text>
                             </Link>
-                            <Link href="#sponsors">
-                                <Text fontWeight="medium">Sponsors</Text>
+                            <Link href="#sponsors" textDecoration="none">
+                                <Text
+                                    fontWeight="medium"
+                                    fontFamily="Geist"
+                                    color="white"
+                                    className="hover:scale-110"
+                                >
+                                    Sponsors
+                                </Text>
                             </Link>
-                            <Link href="#faq">
-                                <Text fontWeight="medium">FAQ</Text>
+                            <Link href="#faq" textDecoration="none">
+                                <Text
+                                    fontWeight="medium"
+                                    fontFamily="Geist"
+                                    color="white"
+                                    className="hover:scale-110"
+                                >
+                                    FAQ
+                                </Text>
                             </Link>
                         </HStack>
                     )}
