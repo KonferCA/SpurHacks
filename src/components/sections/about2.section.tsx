@@ -5,14 +5,19 @@ import {
     Flex,
     Text,
     Heading,
-    useBreakpointValue,
     Image,
 } from '@chakra-ui/react';
+import { keyframes } from '@emotion/react';
 import Spline from '@splinetool/react-spline';
 import { useInView } from 'react-intersection-observer';
 
 const splineSceneUrl =
     'https://prod.spline.design/TmAYMNy2qJHyDE9m/scene.splinecode';
+
+const spin = keyframes`
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+`;
 
 export const About2: React.FC = () => {
     const [isSplineLoaded, setIsSplineLoaded] = useState(false);
@@ -21,8 +26,6 @@ export const About2: React.FC = () => {
         threshold: 0.1,
         triggerOnce: true,
     });
-
-    const containerHeight = useBreakpointValue({ base: 'auto', md: '100vh' });
 
     function onSplineLoad() {
         setIsSplineLoaded(true);
@@ -39,22 +42,24 @@ export const About2: React.FC = () => {
             justify="center"
             align="center"
             position="relative"
-            minH={containerHeight}
+            minH="100vh"
             overflow="hidden"
             bg="black"
         >
             <Box
                 position="absolute"
                 top="0"
-                left="50%"
-                width="50%"
+                left={{ base: '0', md: '50%' }}
+                width={{ base: '100%', md: '50%' }}
                 height="100%"
                 zIndex={0}
-                style={{
-                    maskImage:
-                        'linear-gradient(to left, black 60%, rgba(0,0,0,0.5) 85%, rgba(0,0,0,0.02) 100%)',
-                    WebkitMaskImage:
-                        'linear-gradient(to left, black 60%, rgba(0,0,0,0.5) 85%, rgba(0,0,0,0.02) 100%)',
+                maskImage={{ 
+                    base: 'none', 
+                    md: 'linear-gradient(to left, black 60%, rgba(0,0,0,0.5) 85%, rgba(0,0,0,0.02) 100%)' 
+                }}
+                WebkitMaskImage={{ 
+                    base: 'none', 
+                    md: 'linear-gradient(to left, black 60%, rgba(0,0,0,0.5) 85%, rgba(0,0,0,0.02) 100%)' 
                 }}
             >
                 {!splineError && (
@@ -90,7 +95,7 @@ export const About2: React.FC = () => {
             </Box>
 
             <Box
-                width={{ base: '90vw', md: '30vw' }}
+                width={{ base: '10vw', sm: '70vw', md: '60vw', lg: '50vw' }}
                 minWidth="300px"
                 maxW="container.md"
                 p={{ base: 4, md: 8 }}
@@ -103,35 +108,38 @@ export const About2: React.FC = () => {
                     src="/src/assets/animations/knot_1.svg"
                     alt="Knot decorative element 1"
                     position="absolute"
-                    top="-90%"
-                    left="-85%"
+                    top={{ base: '-40%', md: '-60%' }}
+                    left="-15%"
                     zIndex={-1}
-                    boxSize="490px"
+                    boxSize="200px"
+                    animation={`${spin} infinite 15s linear`}
                 />
                 <Image
                     src="/src/assets/animations/knot_8.svg"
                     alt="Knot decorative element 4"
                     position="absolute"
-                    bottom="-120%"
-                    right="60%"
+                    bottom="-60%"
+                    right="-10%"
                     zIndex={-1}
-                    boxSize="290px"
+                    boxSize="300px"
+                    animation={`${spin} infinite 18s linear reverse`}
                 />
 
                 <Heading
                     as="h2"
                     fontFamily="Geist"
-                    fontSize={['6xl', '7xl']}
+                    fontSize={['2xl', '5xl']}
                     fontWeight="semibold"
                     color="inherit"
-                    mb={16}
+                    mb={{ base: 8, sm: 16, md: 20 }}
+                    lineHeight="1.2"
                     textAlign="left"
                 >
                     Quantum. Web3. AI.
                 </Heading>
                 <Text
                     fontFamily="Geist"
-                    fontSize="xl"
+                    fontSize="lg"
                     color="inherit"
                     mb={4}
                     textAlign="left"
