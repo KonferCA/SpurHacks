@@ -1,6 +1,5 @@
 import { Flex, Button, Link, Text } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
-import { useEffect } from 'react';
 
 const sidebarVariants = {
     open: {
@@ -66,8 +65,6 @@ type ExpandingMenuProps = {
 };
 
 export function ExpandingMenu({ isOpen, setIsOpen }: ExpandingMenuProps) {
-    console.log('isOpen:', isOpen);
-    console.log('setIsOpen:', setIsOpen);
     return (
         <motion.nav
             initial={false}
