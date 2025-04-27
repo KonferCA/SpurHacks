@@ -249,7 +249,7 @@ const Partners = () => (
 export const Sponsorship = () => {
     return (
         <section
-            id="sponsorship"
+            id="sponsors"
             className="bg-black text-white min-h-screen grid place-items-center"
         >
             <Flex
