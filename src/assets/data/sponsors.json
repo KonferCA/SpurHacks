@@ -4,6 +4,11 @@
             "name": "Snglrty Co.",
             "image": "singularitySponsors/sing.png",
             "link": "https://konfer.ca"
+        },
+        {
+            "name": "Snglrty Co. 2",
+            "image": "singularitySponsors/sing.png",
+            "link": "https://konfer.ca"
         }
     ],
     "entanglementSponsors": [
@@ -14,6 +19,11 @@
         },
         {
             "name": "Company 2",
+            "image": "entanglementSponsors/entang.png",
+            "link": "https://konfer.ca"
+        },
+        {
+            "name": "Company 3",
             "image": "entanglementSponsors/entang.png",
             "link": "https://konfer.ca"
         }
@@ -64,6 +74,11 @@
         },
         {
             "name": "Quanta 6",
+            "image": "quantaSponsors/quant.png",
+            "link": "https://konfer.ca"
+        },
+        {
+            "name": "Quanta 7",
             "image": "quantaSponsors/quant.png",
             "link": "https://konfer.ca"
         }
