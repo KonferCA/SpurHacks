@@ -1,66 +1,20 @@
 import { Flex, Heading, Text, Box } from '@chakra-ui/react';
-import Spline from '@splinetool/react-spline';
 import { CountUp } from '@components';
-import { useState } from 'react';
-import { useInView } from 'react-intersection-observer';
+import { SplineTarget } from '@components';
 
 export const Statistics = () => {
-    const [isSplineLoaded, setIsSplineLoaded] = useState(false);
-    const [splineError, setSplineError] = useState(false);
-
-    const { ref, inView } = useInView({
-        threshold: 0.1,
-        triggerOnce: false,
-        rootMargin: '200px 0px 200px 0px',
-    });
-
-    const splineSceneUrl =
-        'https://prod.spline.design/TmAYMNy2qJHyDE9m/scene.splinecode';
-
-    function onSplineLoad() {
-        setIsSplineLoaded(true);
-    }
-
-    function onSplineError(error: unknown) {
-        console.error('Spline loading error:', error);
-        setSplineError(true);
-    }
-
     return (
-        <Flex ref={ref} className="relative bg-black min-h-screen">
-            <Box 
-                w="50%" 
-                h="full" 
+        <Flex className="relative bg-black min-h-screen">
+            <SplineTarget
+                width="50%" 
+                height="full" 
                 maxH="100%" 
-                position="relative"
-            >
-                {inView && !splineError && (
-                    <Spline
-                        scene={splineSceneUrl}
-                        onLoad={onSplineLoad}
-                        onError={onSplineError}
-                        style={{ 
-                            width: '100%',
-                            height: '100vh',
-                            position: 'absolute', 
-                            top: 0, 
-                            left: 0, 
-                            zIndex: 0 
-                        }}
-                    />
-                )}
-                {(!inView || !isSplineLoaded || splineError) && (
-                    <Box
-                        position="absolute"
-                        top="0"
-                        left="0"
-                        width="100%" 
-                        height="100%"
-                        bg="black"
-                        zIndex={-1}
-                    />
-                )}
-            </Box>
+                position="absolute" 
+                top={0}
+                left={0}
+                zIndex={0}
+                bg="black"
+            />
             <Flex
                 direction="column"
                 gap={8}

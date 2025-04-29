@@ -1,5 +1,5 @@
 import type React from 'react';
-import { useEffect, useState, useRef, memo } from 'react';
+import { useEffect, useState } from 'react';
 import {
     Box,
     Flex,
@@ -10,8 +10,7 @@ import {
     useBreakpointValue,
 } from '@chakra-ui/react';
 import { NoIconLogo } from '@assets';
-import Spline from '@splinetool/react-spline';
-import { useInView } from 'react-intersection-observer';
+import { SplineTarget } from '@components';
 
 interface CountdownType {
     days: string;
@@ -20,30 +19,28 @@ interface CountdownType {
     seconds: string;
 }
 
-const CountdownDisplay = memo(
-    ({ value, label }: { value: string; label: string }) => (
-        <Box textAlign="center" px={2}>
-            <Text color="white" fontWeight="bold" fontSize="4xl" lineHeight="1">
-                {value}
-            </Text>
-            <Text
-                color="whiteAlpha.700"
-                fontSize="xs"
-                textTransform="uppercase"
-            >
-                {label}
-            </Text>
-        </Box>
-    )
+const CountdownDisplay = ({ value, label }: { value: string; label: string }) => (
+    <Box textAlign="center" px={2}>
+        <Text color="white" fontWeight="bold" fontSize="4xl" lineHeight="1">
+            {value}
+        </Text>
+        <Text
+            color="whiteAlpha.700"
+            fontSize="xs"
+            textTransform="uppercase"
+        >
+            {label}
+        </Text>
+    </Box>
 );
 
-const Separator = memo(() => (
+const Separator = () => (
     <Text color="white" fontWeight="bold" fontSize="4xl" lineHeight="1" mb={5}>
         :
     </Text>
-));
+);
 
-const MobileCountdown = memo(({ countdown }: { countdown: CountdownType }) => (
+const MobileCountdown = ({ countdown }: { countdown: CountdownType }) => (
     <Flex justify="center" w="100%" mt={4} mb={6} align="center">
         <Box textAlign="center" px={2}>
             <Text color="white" fontWeight="bold" fontSize="xl" lineHeight="1">
@@ -127,11 +124,9 @@ const MobileCountdown = memo(({ countdown }: { countdown: CountdownType }) => (
             </Text>
         </Box>
     </Flex>
-));
+);
 
 export const Hero: React.FC = () => {
-    const [isSplineLoaded, setIsSplineLoaded] = useState(false);
-    const [splineError, setSplineError] = useState(false);
     const [countdown, setCountdown] = useState<CountdownType>({
         days: '00',
         hours: '00',
@@ -139,26 +134,9 @@ export const Hero: React.FC = () => {
         seconds: '00',
     });
 
-    const { ref, inView } = useInView({
-        threshold: 0.1,
-        triggerOnce: true,
-    });
-
     const showSocialIcons = useBreakpointValue({ base: false, md: true });
     const showDesktopCountdown = useBreakpointValue({ base: false, md: true });
     const isMobile = useBreakpointValue({ base: true, sm: false });
-
-    const splineSceneUrl =
-        'https://prod.spline.design/TmAYMNy2qJHyDE9m/scene.splinecode';
-
-    function onSplineLoad() {
-        setIsSplineLoaded(true);
-    }
-
-    function onSplineError(error: unknown) {
-        console.error('Spline loading error:', error);
-        setSplineError(true);
-    }
 
     useEffect(() => {
         const calculateTimeRemaining = () => {
@@ -299,27 +277,16 @@ export const Hero: React.FC = () => {
     );
 
     return (
-        <Box ref={ref} position="relative" h="100vh" overflow="hidden">
-            {!splineError && (
-                <Box
-                    position="absolute"
-                    top="0"
-                    left="0"
-                    width="100%"
-                    height="100%"
-                    opacity={isSplineLoaded ? 1 : 0}
-                    transition="opacity 0.5s ease-in"
-                >
-                    {inView && (
-                        <Spline
-                            scene={splineSceneUrl}
-                            onLoad={onSplineLoad}
-                            onError={onSplineError}
-                            style={{ width: '100%', height: '100%' }}
-                        />
-                    )}
-                </Box>
-            )}
+        <Box position="relative" h="100vh" overflow="hidden">
+            <SplineTarget 
+                zIndex={-1} 
+                position="absolute"
+                top={0}
+                left={0}
+                width="100%"
+                height="100%"
+                bg="black" 
+            />
 
             <Box
                 position="absolute"
@@ -530,18 +497,6 @@ export const Hero: React.FC = () => {
 
                 {showSocialIcons && <SocialIcons />}
             </Flex>
-
-            {(!inView || !isSplineLoaded || splineError) && (
-                <Box
-                    position="absolute"
-                    top="0"
-                    left="0"
-                    width="100%"
-                    height="100%"
-                    bg="black"
-                    zIndex={-1}
-                />
-            )}
         </Box>
     );
 };
