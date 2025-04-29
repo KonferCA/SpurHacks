@@ -1,17 +1,20 @@
-import { Provider } from '@components';
-import { StrictMode } from 'react';
-import { createRoot } from 'react-dom/client';
-import './index.css';
+import { Provider } from "@components";
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import { SplineProvider } from "./providers/SplineProvider";
+import "./index.css";
 
-import { Router } from '@utils';
+import { Router } from "@utils";
 
-const rootElement = document.getElementById('root');
-if (!rootElement) throw new Error('Failed to find the root element');
+const rootElement = document.getElementById("root");
+if (!rootElement) throw new Error("Failed to find the root element");
 
 createRoot(rootElement).render(
-    <StrictMode>
-        <Provider>
-            <Router />
-        </Provider>
-    </StrictMode>
+  <StrictMode>
+    <Provider>
+      <SplineProvider>
+        <Router />
+      </SplineProvider>
+    </Provider>
+  </StrictMode>
 );
