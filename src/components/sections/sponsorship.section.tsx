@@ -111,10 +111,7 @@ const QuarkSponsors = () => (
         gap={{ base: 6, lg: 10 }}
         justifyItems="center"
     >
-        {quarkSponsors.map((sponsor, index) => {
-            const isLastItem = index === quarkSponsors.length - 1;
-            const isOdd = quarkSponsors.length % 2 === 1;
-
+        {quarkSponsors.map((sponsor, _) => {
             return (
                 <Link
                     key={sponsor.name}
@@ -125,18 +122,6 @@ const QuarkSponsors = () => (
                     display="flex"
                     alignItems="center"
                     justifyContent="center"
-                    gridColumn={{
-                        base: isLastItem && isOdd ? '1 / span 2' : 'auto',
-                        md: 'auto',
-                    }}
-                    justifySelf={{
-                        base: isLastItem && isOdd ? 'center' : 'stretch',
-                        md: 'stretch',
-                    }}
-                    maxWidth={{
-                        base: isLastItem && isOdd ? '50%' : '100%',
-                        md: '100%',
-                    }}
                     href={sponsor.link}
                     target="_blank"
                 >
@@ -157,10 +142,13 @@ const QuarkSponsors = () => (
 );
 
 const QuantaSponsors = () => (
-    <Flex
-        wrap="wrap"
-        justify="center"
-        gap={6}
+    <Grid
+        templateColumns={{
+            base: 'repeat(2, 1fr)',
+            md: 'repeat(3, 1fr)',
+        }}
+        gap={{ base: 6, lg: 10 }}
+        justifyItems="center"
         maxW={MAX_WIDTH}
         mx="auto"
         w="full"
@@ -170,9 +158,7 @@ const QuantaSponsors = () => (
                 key={sponsor.name}
                 bg="offWhite"
                 rounded="3xl"
-                flex={{ base: '1 1 45%', md: '1 1 21%' }}
-                maxW={{ base: '45%', md: '22%' }}
-                minW="150px"
+                w="full"
                 h={{ base: '100px', md: '125px' }}
                 display="flex"
                 alignItems="center"
@@ -189,7 +175,7 @@ const QuantaSponsors = () => (
                 />
             </Link>
         ))}
-    </Flex>
+    </Grid>
 );
 
 const Partners = () => (
