@@ -21,6 +21,15 @@ export {
  * @section Hero
  *
  */
+import { Navbar } from './Navbar/Navbar';
+
+export { Navbar };
+
+/*
+ *
+ * @section Hero
+ *
+ */
 import { Hero } from './sections/hero.section';
 
 export { Hero };
@@ -33,6 +42,15 @@ export { Hero };
 import { About } from './sections/about.section';
 
 export { About };
+
+/*
+ *
+ * @section About2
+ *
+ */
+import { About2 } from './sections/about2.section';
+
+export { About2 };
 
 /*
  *
