@@ -1,20 +1,20 @@
-import { Flex, Button, Link, Text } from '@chakra-ui/react';
-import { motion } from 'framer-motion';
+import { Flex, Button, Link, Text } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 
 const sidebarVariants = {
     open: {
-        clipPath: 'circle(2000px at 40px 40px)',
+        clipPath: "circle(2000px at 40px 40px)",
         transition: {
-            type: 'spring',
+            type: "spring",
             stiffness: 20,
             restDelta: 2,
         },
     },
     closed: {
-        clipPath: 'circle(30px at -30px -30px)',
+        clipPath: "circle(30px at -30px -30px)",
         transition: {
             delay: 0.3,
-            type: 'spring',
+            type: "spring",
             stiffness: 400,
             damping: 40,
         },
@@ -27,7 +27,7 @@ const navItemVariants = {
         opacity: 1,
         transition: {
             delay: i * 0.1 + 0.3,
-            type: 'spring',
+            type: "spring",
             stiffness: 300,
         },
     }),
@@ -35,7 +35,7 @@ const navItemVariants = {
         y: 20,
         opacity: 0,
         transition: {
-            type: 'spring',
+            type: "spring",
             stiffness: 100,
         },
     },
@@ -47,7 +47,7 @@ const navButtonAnimation = {
         opacity: 1,
         transition: {
             delay: 0.6,
-            type: 'spring',
+            type: "spring",
             stiffness: 300,
         },
     }),
@@ -57,7 +57,7 @@ const navButtonAnimation = {
     },
 };
 
-const links = ['About', 'Sponsors', 'FAQ'];
+const links = ["About", "Sponsors", "FAQ"];
 
 type ExpandingMenuProps = {
     isOpen: boolean;
@@ -68,17 +68,19 @@ export function ExpandingMenu({ isOpen, setIsOpen }: ExpandingMenuProps) {
     return (
         <motion.nav
             initial={false}
-            animate={isOpen ? 'open' : 'closed'}
-            className="absolute inset-0 w-full h-screen z-50 pointer-events-none"
+            animate={isOpen ? "open" : "closed"}
+            className={`absolute inset-0 w-full h-screen ${
+                isOpen ? "pointer-events-auto" : "pointer-events-none"
+            }`}
         >
             {/* Expanding Circle Background */}
             <motion.div
-                className="absolute top-0 left-0 w-full h-full bg-[#181C2B]"
+                className="absolute top-0 left-0 w-full h-full bg-black/97"
                 variants={sidebarVariants}
             />
 
             {/* Menu Items */}
-            <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center gap-8 pointer-events-auto">
+            <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center gap-8">
                 {links.map((link, i) => (
                     <motion.a
                         key={link}
@@ -108,15 +110,15 @@ export function ExpandingMenu({ isOpen, setIsOpen }: ExpandingMenuProps) {
                     >
                         <Link href="#register" textDecoration="none">
                             <Button
-                                size="lg"
+                                size="md"
                                 variant="outline"
                                 color="white"
                                 borderColor="white"
                                 borderRadius="full"
-                                px={8}
-                                py={4}
+                                px={6}
+                                py={2}
                                 _hover={{
-                                    bg: 'whiteAlpha.200',
+                                    bg: "whiteAlpha.200",
                                 }}
                             >
                                 REGISTER
@@ -124,14 +126,14 @@ export function ExpandingMenu({ isOpen, setIsOpen }: ExpandingMenuProps) {
                         </Link>
                         <Link href="#portal" textDecoration="none">
                             <Button
-                                size="lg"
+                                size="md"
                                 bg="#FFA75F"
                                 color="black"
                                 borderRadius="full"
-                                px={8}
-                                py={4}
+                                px={6}
+                                py={2}
                                 _hover={{
-                                    bg: '#FFA75F',
+                                    bg: "#FFA75F",
                                     opacity: 0.9,
                                 }}
                             >
