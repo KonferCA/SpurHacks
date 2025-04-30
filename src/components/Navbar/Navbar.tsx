@@ -1,4 +1,4 @@
-import { IconWhite, MLHBanner } from '@assets';
+import { IconWhite, MLHBannerSVG } from "@assets";
 import {
     Box,
     Flex,
@@ -8,14 +8,18 @@ import {
     Link,
     Image,
     Drawer,
-} from '@chakra-ui/react';
-import { useEffect, useState } from 'react';
-import { HamburgerMenuIcon, Cross2Icon } from '@radix-ui/react-icons';
-import { ExpandingMenu } from './ExpandingMenu';
+} from "@chakra-ui/react";
+import { useEffect, useState } from "react";
+import { HamburgerMenuIcon, Cross2Icon } from "@radix-ui/react-icons";
+import { ExpandingMenu } from "./ExpandingMenu";
 
 export const Navbar = () => {
     const [isMobile, setIsMobile] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
+
+    const [scrollY, setScrollY] = useState(0);
+    const [scrollingUp, setScrollingUp] = useState(true);
+    const [scrolled, setScrolled] = useState(false);
 
     // Listen for window resizing
     useEffect(() => {
@@ -25,27 +29,35 @@ export const Navbar = () => {
 
         handleResize();
 
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
     }, []);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentScrollY = window.scrollY;
+            setScrollingUp(currentScrollY < scrollY || currentScrollY < 10);
+            setScrollY(currentScrollY);
+            setScrolled(currentScrollY > 10);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, [scrollY]);
 
     return (
         <Box
-            bg="transparent"
+            className={`transition-all duration-500 ${
+                scrolled ? "backdrop-blur-md bg-black/50" : "bg-transparent"
+            }`}
             w="full"
             px={8}
             py={4}
-            position="absolute"
-            top={0}
+            position="fixed"
+            top={scrollingUp ? 0 : "-150px"}
             left={0}
             zIndex={1000}
         >
-            {/* Expanded Menu on Mobile */}
-            {isMobile ? (
-                <ExpandingMenu isOpen={isOpen} setIsOpen={setIsOpen} />
-            ) : (
-                <></>
-            )}
             <Flex align="center" justify="space-between" maxW="2000" mx="auto">
                 {/* Left Nav Links */}
                 <Box>
@@ -57,11 +69,11 @@ export const Navbar = () => {
                                 size="md"
                                 variant="ghost"
                                 bg="transparent"
-                                _hover={{ bg: 'transparent' }}
-                                _active={{ bg: 'transparent' }}
+                                _hover={{ bg: "transparent" }}
+                                _active={{ bg: "transparent" }}
                                 onClick={() => setIsOpen(!isOpen)}
                                 onKeyDown={(e) => {
-                                    if (e.key === 'Enter' || e.key === ' ') {
+                                    if (e.key === "Enter" || e.key === " ") {
                                         setIsOpen(!isOpen);
                                     }
                                 }}
@@ -130,8 +142,8 @@ export const Navbar = () => {
                         alt="spurIcon"
                         objectFit="contain"
                         boxSize={{
-                            base: '25px',
-                            md: '40px',
+                            base: "25px",
+                            md: "40px",
                         }}
                     />
                 </Box>
@@ -145,29 +157,29 @@ export const Navbar = () => {
                         <HStack gap={4}>
                             <Link href="#register" textDecoration="none">
                                 <Button
-                                    size="lg"
+                                    size="md"
                                     variant="outline"
                                     color="white"
                                     borderColor="white"
                                     borderRadius="full"
-                                    px={8}
-                                    py={4}
-                                    _hover={{ bg: 'whiteAlpha.200' }}
+                                    px={6}
+                                    py={2}
+                                    _hover={{ bg: "whiteAlpha.200" }}
                                 >
                                     REGISTER
                                 </Button>
                             </Link>
                             <Link href="#portal" textDecoration="none">
                                 <Button
-                                    size="lg"
+                                    size="md"
                                     bg="#FFA75F"
                                     color="black"
                                     borderRadius="full"
-                                    px={8}
-                                    py={4}
+                                    px={6}
+                                    py={2}
                                     mr={32}
                                     _hover={{
-                                        bg: '#FFA75F',
+                                        bg: "#FFA75F",
                                         opacity: 0.9,
                                     }}
                                 >
@@ -183,14 +195,26 @@ export const Navbar = () => {
                         top={{ base: -10, xl: -4 }}
                         right={0}
                     >
-                        <Image
-                            src={MLHBanner}
-                            alt="MLH Banner"
-                            h={[150, 200]}
-                        />
+                        <Link
+                            id="mlh-trust-badge"
+                            href="https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2025-season&utm_content=black"
+                            target="_blank"
+                        >
+                            <Image
+                                src={MLHBannerSVG}
+                                alt="Major League Hacking 2025 Hackathon Season"
+                                h={[100, 150]}
+                            />
+                        </Link>
                     </Box>
                 </HStack>
             </Flex>
+            {/* Expanded Menu on Mobile */}
+            {isMobile ? (
+                <ExpandingMenu isOpen={isOpen} setIsOpen={setIsOpen} />
+            ) : (
+                <></>
+            )}
         </Box>
     );
 };
