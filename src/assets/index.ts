@@ -75,3 +75,14 @@ export const singularityImages = {
 import SponsorData from './data/sponsors.json';
 
 export { SponsorData };
+
+import Knot1 from './animations/knot_1.svg';
+import Knot2 from './animations/knot_2.svg';
+import Knot3 from './animations/knot_3.svg';
+import Knot4 from './animations/knot_4.svg';
+import Knot5 from './animations/knot_5.svg';
+import Knot6 from './animations/knot_6.svg';
+import Knot7 from './animations/knot_7.svg';
+import Knot8 from './animations/knot_8.svg';
+
+export { Knot1, Knot2, Knot3, Knot4, Knot5, Knot6, Knot7, Knot8 };

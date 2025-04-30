@@ -36,6 +36,24 @@ export { Hero };
 
 /*
  *
+ * @section About
+ *
+ */
+import { About } from './sections/about.section';
+
+export { About };
+
+/*
+ *
+ * @section About2
+ *
+ */
+import { About2 } from './sections/about2.section';
+
+export { About2 };
+
+/*
+ *
  * @section Statistics
  *
  */
