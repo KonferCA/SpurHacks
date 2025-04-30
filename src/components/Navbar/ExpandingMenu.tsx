@@ -69,16 +69,18 @@ export function ExpandingMenu({ isOpen, setIsOpen }: ExpandingMenuProps) {
         <motion.nav
             initial={false}
             animate={isOpen ? 'open' : 'closed'}
-            className="absolute inset-0 w-full h-screen z-50 pointer-events-none"
+            className={`absolute inset-0 w-full h-screen ${
+                isOpen ? 'pointer-events-auto' : 'pointer-events-none'
+            }`}
         >
             {/* Expanding Circle Background */}
             <motion.div
-                className="absolute top-0 left-0 w-full h-full bg-[#181C2B]"
+                className="absolute top-0 left-0 w-full h-full bg-black/97"
                 variants={sidebarVariants}
             />
 
             {/* Menu Items */}
-            <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center gap-8 pointer-events-auto">
+            <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center gap-8">
                 {links.map((link, i) => (
                     <motion.a
                         key={link}
@@ -108,13 +110,13 @@ export function ExpandingMenu({ isOpen, setIsOpen }: ExpandingMenuProps) {
                     >
                         <Link href="#register" textDecoration="none">
                             <Button
-                                size="lg"
+                                size="md"
                                 variant="outline"
                                 color="white"
                                 borderColor="white"
                                 borderRadius="full"
-                                px={8}
-                                py={4}
+                                px={6}
+                                py={2}
                                 _hover={{
                                     bg: 'whiteAlpha.200',
                                 }}
@@ -124,12 +126,12 @@ export function ExpandingMenu({ isOpen, setIsOpen }: ExpandingMenuProps) {
                         </Link>
                         <Link href="#portal" textDecoration="none">
                             <Button
-                                size="lg"
+                                size="md"
                                 bg="#FFA75F"
                                 color="black"
                                 borderRadius="full"
-                                px={8}
-                                py={4}
+                                px={6}
+                                py={2}
                                 _hover={{
                                     bg: '#FFA75F',
                                     opacity: 0.9,
