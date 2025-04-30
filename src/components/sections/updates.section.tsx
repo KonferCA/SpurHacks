@@ -1,4 +1,4 @@
-import { Box, Flex, Text, Button, Heading, Link } from '@chakra-ui/react';
+import { Flex, Text, Button, Heading, Link } from '@chakra-ui/react';
 import { SplineTarget } from '@components';
 
 export const UpdatesSection = () => {

@@ -1,9 +1,8 @@
 import type React from 'react';
 import { useEffect, useRef, useCallback, useState } from 'react';
-import { Box } from '@chakra-ui/react';
-import type { SystemStyleObject } from '@chakra-ui/react';
+import { Box, type SystemStyleObject } from '@chakra-ui/react';
 import { useInView } from 'react-intersection-observer';
-import { useSpline } from '@contexts/SplineContext';
+import { useSpline } from '@contexts';
 
 interface SplineTargetProps {
     id?: string;
@@ -16,7 +15,7 @@ interface SplineTargetProps {
     right?: string | number | SystemStyleObject;
     bottom?: string | number | SystemStyleObject;
     zIndex?: number;
-    bg?: string | SystemStyleObject; 
+    bg?: string | SystemStyleObject;
     maskImage?: string | SystemStyleObject;
     WebkitMaskImage?: string | SystemStyleObject;
     maxH?: string | number | SystemStyleObject;
@@ -27,17 +26,23 @@ export const SplineTarget: React.FC<SplineTargetProps> = ({
     minHeight = '100%',
     height = '100%',
     width = '100%',
-    position = 'absolute', 
+    position = 'absolute',
     top = 0,
     left = 0,
     zIndex = 0,
-    bg = 'black', 
+    bg = 'black',
     maskImage,
     WebkitMaskImage,
     maxH,
     ...rest
 }) => {
-    const { mountSpline, isSplineLoaded, splineError, initialTargetId, currentTargetId } = useSpline();
+    const {
+        mountSpline,
+        isSplineLoaded,
+        splineError,
+        initialTargetId,
+        currentTargetId,
+    } = useSpline();
     const [isReadyToShow, setIsReadyToShow] = useState(false);
     const placeholderRef = useRef<HTMLDivElement>(null);
     const isInitialTarget = id && id === initialTargetId;
@@ -46,12 +51,14 @@ export const SplineTarget: React.FC<SplineTargetProps> = ({
     const { ref: inViewRef, inView } = useInView({
         threshold: 0.3,
         triggerOnce: false,
-        skip: isInitialTarget && !hasInitiallyMounted 
+        skip: !!(isInitialTarget && !hasInitiallyMounted),
     });
 
     const setRefs = useCallback(
         (node: HTMLDivElement | null) => {
-            (placeholderRef as React.MutableRefObject<HTMLDivElement | null>).current = node;
+            (
+                placeholderRef as React.MutableRefObject<HTMLDivElement | null>
+            ).current = node;
             inViewRef(node);
         },
         [inViewRef]
@@ -69,7 +76,7 @@ export const SplineTarget: React.FC<SplineTargetProps> = ({
 
         let timeoutId: NodeJS.Timeout | null = null;
         if (inView) {
-            mountSpline(placeholderRef.current, id ?? null);
+            mountSpline(placeholderRef.current, id ?? undefined);
             if (isSplineLoaded) {
                 timeoutId = setTimeout(() => {
                     setIsReadyToShow(true);
@@ -80,17 +87,29 @@ export const SplineTarget: React.FC<SplineTargetProps> = ({
         } else {
             setIsReadyToShow(false);
             if (!isInitialTarget && currentTargetId === id) {
-                 mountSpline(null, null); 
+                mountSpline(null, undefined);
             }
         }
 
         return () => {
-             if (timeoutId) clearTimeout(timeoutId);
-             if (placeholderRef.current && !isInitialTarget && currentTargetId === id) {
-                 mountSpline(null, null); 
-             }
+            if (timeoutId) clearTimeout(timeoutId);
+            if (
+                placeholderRef.current &&
+                !isInitialTarget &&
+                currentTargetId === id
+            ) {
+                mountSpline(null, undefined);
+            }
         };
-    }, [inView, mountSpline, isSplineLoaded, id, isInitialTarget, hasInitiallyMounted, currentTargetId]);
+    }, [
+        inView,
+        mountSpline,
+        isSplineLoaded,
+        id,
+        isInitialTarget,
+        hasInitiallyMounted,
+        currentTargetId,
+    ]);
 
     const isVisible = isReadyToShow;
 
@@ -113,7 +132,6 @@ export const SplineTarget: React.FC<SplineTargetProps> = ({
             opacity={isVisible ? 1 : 0}
             transition="opacity 0.6s ease-in-out"
             {...rest}
-        >
-        </Box>
+        />
     );
-}; 
+};

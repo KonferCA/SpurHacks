@@ -1,4 +1,4 @@
-import { Flex, Heading, Text, Box } from '@chakra-ui/react';
+import { Flex, Heading, Text } from '@chakra-ui/react';
 import { CountUp } from '@components';
 import { SplineTarget } from '@components';
 
@@ -6,10 +6,10 @@ export const Statistics = () => {
     return (
         <Flex className="relative bg-black min-h-screen">
             <SplineTarget
-                width="50%" 
-                height="full" 
-                maxH="100%" 
-                position="absolute" 
+                width="50%"
+                height="full"
+                maxH="100%"
+                position="absolute"
                 top={0}
                 left={0}
                 zIndex={0}

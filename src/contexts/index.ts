@@ -1,1 +1,1 @@
-export * from './SplineContext'; 
+export * from './SplineContext';

@@ -19,16 +19,15 @@ interface CountdownType {
     seconds: string;
 }
 
-const CountdownDisplay = ({ value, label }: { value: string; label: string }) => (
+const CountdownDisplay = ({
+    value,
+    label,
+}: { value: string; label: string }) => (
     <Box textAlign="center" px={2}>
         <Text color="white" fontWeight="bold" fontSize="4xl" lineHeight="1">
             {value}
         </Text>
-        <Text
-            color="whiteAlpha.700"
-            fontSize="xs"
-            textTransform="uppercase"
-        >
+        <Text color="whiteAlpha.700" fontSize="xs" textTransform="uppercase">
             {label}
         </Text>
     </Box>
@@ -278,15 +277,15 @@ export const Hero: React.FC = () => {
 
     return (
         <Box position="relative" h="100vh" overflow="hidden">
-            <SplineTarget 
+            <SplineTarget
                 id="hero"
-                zIndex={-1} 
+                zIndex={-1}
                 position="absolute"
                 top={0}
                 left={0}
                 width="100%"
                 height="100%"
-                bg="black" 
+                bg="black"
             />
 
             <Box

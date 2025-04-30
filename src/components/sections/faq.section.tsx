@@ -146,7 +146,13 @@ export const FAQ = () => {
     };
 
     return (
-        <Box position="relative" py={20} overflow="hidden" minHeight="100vh" bg="rgba(222, 235, 255, 0.65)">
+        <Box
+            position="relative"
+            py={20}
+            overflow="hidden"
+            minHeight="100vh"
+            bg="rgba(222, 235, 255, 0.65)"
+        >
             <Box
                 position="absolute"
                 top="0"
