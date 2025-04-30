@@ -140,7 +140,6 @@ export const Hero: React.FC = () => {
         seconds: '00',
     });
 
-    const isVisible = useRef(true);
     const splineInstance = useRef<unknown | null>(null);
 
     const showSocialIcons = useBreakpointValue({ base: false, md: true });
@@ -163,8 +162,6 @@ export const Hero: React.FC = () => {
 
     useEffect(() => {
         const calculateTimeRemaining = () => {
-            if (!isVisible.current) return;
-
             const eventDate = new Date('June 20, 2025 00:00:00').getTime();
             const now = new Date().getTime();
             const distance = eventDate - now;
@@ -205,7 +202,6 @@ export const Hero: React.FC = () => {
 
         return () => {
             clearInterval(interval);
-            isVisible.current = false;
         };
     }, []);
 
