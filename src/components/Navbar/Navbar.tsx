@@ -1,4 +1,4 @@
-import { IconWhite, MLHBannerSVG } from '@assets';
+import { IconWhite } from '@assets';
 import {
     Box,
     Flex,
@@ -203,7 +203,7 @@ export const Navbar = () => {
                             target="_blank"
                         >
                             <Image
-                                src={MLHBannerSVG}
+                                src="https://s3.amazonaws.com/logged-assets/trust-badge/2025/mlh-trust-badge-2025-black.svg"
                                 alt="Major League Hacking 2025 Hackathon Season"
                                 h={[100, 150]}
                             />

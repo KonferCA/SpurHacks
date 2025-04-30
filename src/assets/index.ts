@@ -10,7 +10,6 @@ import Icon from './logos/icon.svg';
 import IconWhite from './logos/icon_white.svg';
 import KonferNoIcon from './logos/konfer_noicon.svg';
 import SpurNoIcon from './logos/spur_noicon.svg';
-import MLHBannerSVG from './mlh_banner.svg';
 
 export {
     NoIconLogo,
@@ -20,7 +19,6 @@ export {
     IconWhite,
     KonferNoIcon,
     SpurNoIcon,
-    MLHBannerSVG,
 };
 
 /*
