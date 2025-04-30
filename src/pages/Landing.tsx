@@ -1,6 +1,7 @@
 import {
     Hero,
     About,
+    About2,
     Statistics,
     UpdatesSection,
     Sponsorship,
@@ -13,6 +14,7 @@ export const Landing = () => {
         <main>
             <Hero />
             <About />
+            <About2 />
             <Statistics />
             <Sponsorship />
             <FAQ />
