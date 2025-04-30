@@ -7,7 +7,6 @@ import {
     Container,
     useBreakpointValue,
 } from '@chakra-ui/react';
-import Spline from '@splinetool/react-spline';
 import { motion, AnimatePresence } from 'motion/react';
 
 const MotionBox = motion(Box);
@@ -113,21 +112,6 @@ const FAQItem: React.FC<FAQItemProps> = ({
 export const FAQ = () => {
     const [activeIndex, setActiveIndex] = useState<number | null>(0);
     const isMobile = useBreakpointValue({ base: true, md: false });
-    const [, setIsSplineLoaded] = useState(false);
-    const [, setSplineError] = useState(false);
-
-    const splineSceneUrl =
-        'https://prod.spline.design/TmAYMNy2qJHyDE9m/scene.splinecode';
-
-    function onSplineLoad() {
-        setIsSplineLoaded(true);
-    }
-
-    // biome-ignore lint: unsure of error type
-    function onSplineError(error: any) {
-        console.error('Spline loading error:', error);
-        setSplineError(true);
-    }
 
     const faqItems = [
         {
@@ -162,23 +146,13 @@ export const FAQ = () => {
     };
 
     return (
-        <Box position="relative" py={20} overflow="hidden" minHeight="100vh">
-            <Box
-                position="absolute"
-                top="0"
-                left="0"
-                width="100%"
-                height="100%"
-                zIndex={0}
-            >
-                <Spline
-                    scene={splineSceneUrl}
-                    onLoad={onSplineLoad}
-                    onError={onSplineError}
-                    style={{ width: '100%', height: '100%' }}
-                />
-            </Box>
-
+        <Box
+            position="relative"
+            py={20}
+            overflow="hidden"
+            minHeight="100vh"
+            bg="rgba(222, 235, 255, 0.65)"
+        >
             <Box
                 position="absolute"
                 top="0"

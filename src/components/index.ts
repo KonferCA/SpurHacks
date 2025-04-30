@@ -105,3 +105,10 @@ export { Footer };
 import { CountUp } from './countup';
 
 export { CountUp };
+
+/*
+ *
+ * @Component SplineTarget
+ *
+ */
+export * from './spline/SplineTarget';

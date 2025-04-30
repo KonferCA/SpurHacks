@@ -1,59 +1,20 @@
-import { Flex, Heading, Text, Box } from '@chakra-ui/react';
-import { Suspense, useState, useRef } from 'react';
-import { useInView } from 'motion/react';
-import { lazy } from 'react';
+import { Flex, Heading, Text } from '@chakra-ui/react';
 import { CountUp } from '@components';
-
-const LazySpline = lazy(() => import('@splinetool/react-spline'));
+import { SplineTarget } from '@components';
 
 export const Statistics = () => {
-    const [isSplineLoaded, setIsSplineLoaded] = useState(false);
-    const [splineError, setSplineError] = useState(false);
-    const componentRef = useRef(null);
-    const isInView = useInView(componentRef, {
-        once: true,
-        margin: '-10% 0px',
-    });
-
-    const splineSceneUrl =
-        'https://prod.spline.design/TmAYMNy2qJHyDE9m/scene.splinecode';
-
-    function onSplineLoad() {
-        setIsSplineLoaded(true);
-    }
-
-    // biome-ignore lint: unsure of error type
-    function onSplineError(error: any) {
-        console.error('Spline loading error:', error);
-        setSplineError(true);
-    }
-
     return (
-        <Flex className="relative bg-black min-h-screen" ref={componentRef}>
-            {isInView && !splineError && (
-                <Box w="50%" h="full" maxH="100%">
-                    <Suspense fallback={<Box w="100%" h="100%" bg="black" />}>
-                        <LazySpline
-                            scene={splineSceneUrl}
-                            onLoad={onSplineLoad}
-                            onError={onSplineError}
-                            className="w-1/2 max-h-screen absolute top-0 left-0 z-0"
-                        />
-                    </Suspense>
-                </Box>
-            )}
-
-            {!isInView || !isSplineLoaded || splineError ? (
-                <Box
-                    w="50%"
-                    h="full"
-                    bg="black"
-                    position="absolute"
-                    left="0"
-                    top="0"
-                />
-            ) : null}
-
+        <Flex className="relative bg-black min-h-screen">
+            <SplineTarget
+                width="50%"
+                height="full"
+                maxH="100%"
+                position="absolute"
+                top={0}
+                left={0}
+                zIndex={0}
+                bg="black"
+            />
             <Flex
                 direction="column"
                 gap={8}
