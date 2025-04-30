@@ -12,7 +12,7 @@ if (!rootElement) throw new Error('Failed to find the root element');
 createRoot(rootElement).render(
     <StrictMode>
         <Provider>
-            <SplineProvider>
+            <SplineProvider initialTargetId="hero">
                 <Router />
             </SplineProvider>
         </Provider>

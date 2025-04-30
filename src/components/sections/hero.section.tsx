@@ -279,6 +279,7 @@ export const Hero: React.FC = () => {
     return (
         <Box position="relative" h="100vh" overflow="hidden">
             <SplineTarget 
+                id="hero"
                 zIndex={-1} 
                 position="absolute"
                 top={0}

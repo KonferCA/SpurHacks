@@ -6,6 +6,7 @@ import { useInView } from 'react-intersection-observer';
 import { useSpline } from '@contexts/SplineContext';
 
 interface SplineTargetProps {
+    id?: string;
     minHeight?: string | number | SystemStyleObject;
     height?: string | number | SystemStyleObject;
     width?: string | number | SystemStyleObject;
@@ -22,6 +23,7 @@ interface SplineTargetProps {
 }
 
 export const SplineTarget: React.FC<SplineTargetProps> = ({
+    id,
     minHeight = '100%',
     height = '100%',
     width = '100%',
@@ -35,12 +37,16 @@ export const SplineTarget: React.FC<SplineTargetProps> = ({
     maxH,
     ...rest
 }) => {
-    const { mountSpline, isSplineLoaded, splineError } = useSpline();
+    const { mountSpline, isSplineLoaded, splineError, initialTargetId, currentTargetId } = useSpline();
     const [isReadyToShow, setIsReadyToShow] = useState(false);
     const placeholderRef = useRef<HTMLDivElement>(null);
+    const isInitialTarget = id && id === initialTargetId;
+    const [hasInitiallyMounted, setHasInitiallyMounted] = useState(false);
+
     const { ref: inViewRef, inView } = useInView({
-        threshold: 0.3, // guesstimating 30% of the target is in view is our target threshold
-        triggerOnce: false, 
+        threshold: 0.3,
+        triggerOnce: false,
+        skip: isInitialTarget && !hasInitiallyMounted 
     });
 
     const setRefs = useCallback(
@@ -52,30 +58,43 @@ export const SplineTarget: React.FC<SplineTargetProps> = ({
     );
 
     useEffect(() => {
+        if (isInitialTarget && !hasInitiallyMounted && placeholderRef.current) {
+            mountSpline(placeholderRef.current, id);
+            setHasInitiallyMounted(true);
+        }
+    }, [isInitialTarget, hasInitiallyMounted, mountSpline, id]);
+
+    useEffect(() => {
+        if (isInitialTarget && !hasInitiallyMounted) return;
+
         let timeoutId: NodeJS.Timeout | null = null;
         if (inView) {
-            mountSpline(placeholderRef.current);
+            mountSpline(placeholderRef.current, id ?? null);
             if (isSplineLoaded) {
                 timeoutId = setTimeout(() => {
                     setIsReadyToShow(true);
-                }, 0); 
+                }, 0);
             } else {
                 setIsReadyToShow(false);
             }
         } else {
             setIsReadyToShow(false);
-            mountSpline(null); 
+            if (!isInitialTarget && currentTargetId === id) {
+                 mountSpline(null, null); 
+            }
         }
 
         return () => {
              if (timeoutId) clearTimeout(timeoutId);
-            if (placeholderRef.current && !inView) {
-                 mountSpline(null); 
+             if (placeholderRef.current && !isInitialTarget && currentTargetId === id) {
+                 mountSpline(null, null); 
              }
         };
-    }, [inView, mountSpline, isSplineLoaded]);
+    }, [inView, mountSpline, isSplineLoaded, id, isInitialTarget, hasInitiallyMounted, currentTargetId]);
 
-    const showPlaceholderBg = !isReadyToShow && (!isSplineLoaded || splineError);
+    const isVisible = isReadyToShow;
+
+    const showPlaceholderBg = !isVisible && (!isSplineLoaded || splineError);
 
     return (
         <Box
@@ -91,7 +110,7 @@ export const SplineTarget: React.FC<SplineTargetProps> = ({
             bg={showPlaceholderBg ? bg : 'transparent'}
             maskImage={maskImage}
             WebkitMaskImage={WebkitMaskImage}
-            opacity={isReadyToShow ? 1 : 0}
+            opacity={isVisible ? 1 : 0}
             transition="opacity 0.6s ease-in-out"
             {...rest}
         >
