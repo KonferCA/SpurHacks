@@ -137,15 +137,17 @@ export const Navbar = () => {
                     transform="translateX(-50%)"
                     textAlign="center"
                 >
-                    <Image
-                        src={IconWhite}
-                        alt="spurIcon"
-                        objectFit="contain"
-                        boxSize={{
-                            base: "25px",
-                            md: "40px",
-                        }}
-                    />
+                    <Link href="#hero">
+                        <Image
+                            src={IconWhite}
+                            alt="spurIcon"
+                            objectFit="contain"
+                            boxSize={{
+                                base: "25px",
+                                md: "40px",
+                            }}
+                        />
+                    </Link>
                 </Box>
 
                 {/* Right Buttons + MLH Banner */}
