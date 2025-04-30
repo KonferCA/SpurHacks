@@ -1,12 +1,6 @@
 import type React from 'react';
 import { useState } from 'react';
-import {
-    Box,
-    Flex,
-    Text,
-    Heading,
-    Image,
-} from '@chakra-ui/react';
+import { Box, Flex, Text, Heading, Image } from '@chakra-ui/react';
 import { keyframes } from '@emotion/react';
 import Spline from '@splinetool/react-spline';
 import { useInView } from 'react-intersection-observer';
@@ -53,13 +47,13 @@ export const About2: React.FC = () => {
                 width={{ base: '100%', md: '50%' }}
                 height="100%"
                 zIndex={0}
-                maskImage={{ 
-                    base: 'none', 
-                    md: 'linear-gradient(to left, black 60%, rgba(0,0,0,0.5) 85%, rgba(0,0,0,0.02) 100%)' 
+                maskImage={{
+                    base: 'none',
+                    md: 'linear-gradient(to left, black 60%, rgba(0,0,0,0.5) 85%, rgba(0,0,0,0.02) 100%)',
                 }}
-                WebkitMaskImage={{ 
-                    base: 'none', 
-                    md: 'linear-gradient(to left, black 60%, rgba(0,0,0,0.5) 85%, rgba(0,0,0,0.02) 100%)' 
+                WebkitMaskImage={{
+                    base: 'none',
+                    md: 'linear-gradient(to left, black 60%, rgba(0,0,0,0.5) 85%, rgba(0,0,0,0.02) 100%)',
                 }}
             >
                 {!splineError && (
