@@ -1,16 +1,59 @@
 import { Flex, Heading, Text, Box } from '@chakra-ui/react';
-import Spline from '@splinetool/react-spline';
+import { Suspense, useState, useRef } from 'react';
+import { useInView } from 'motion/react';
+import { lazy } from 'react';
 import { CountUp } from '@components';
 
+const LazySpline = lazy(() => import('@splinetool/react-spline'));
+
 export const Statistics = () => {
+    const [isSplineLoaded, setIsSplineLoaded] = useState(false);
+    const [splineError, setSplineError] = useState(false);
+    const componentRef = useRef(null);
+    const isInView = useInView(componentRef, {
+        once: true,
+        margin: '-10% 0px',
+    });
+
+    const splineSceneUrl =
+        'https://prod.spline.design/TmAYMNy2qJHyDE9m/scene.splinecode';
+
+    function onSplineLoad() {
+        setIsSplineLoaded(true);
+    }
+
+    // biome-ignore lint: unsure of error type
+    function onSplineError(error: any) {
+        console.error('Spline loading error:', error);
+        setSplineError(true);
+    }
+
     return (
-        <Flex className="relative bg-black min-h-screen">
-            <Box w="50%" h="full" maxH="100%">
-                <Spline
-                    scene="https://prod.spline.design/TmAYMNy2qJHyDE9m/scene.splinecode"
-                    className="w-1/2 max-h-screen absolute top-0 left-0 z-0"
+        <Flex className="relative bg-black min-h-screen" ref={componentRef}>
+            {isInView && !splineError && (
+                <Box w="50%" h="full" maxH="100%">
+                    <Suspense fallback={<Box w="100%" h="100%" bg="black" />}>
+                        <LazySpline
+                            scene={splineSceneUrl}
+                            onLoad={onSplineLoad}
+                            onError={onSplineError}
+                            className="w-1/2 max-h-screen absolute top-0 left-0 z-0"
+                        />
+                    </Suspense>
+                </Box>
+            )}
+
+            {!isInView || !isSplineLoaded || splineError ? (
+                <Box
+                    w="50%"
+                    h="full"
+                    bg="black"
+                    position="absolute"
+                    left="0"
+                    top="0"
                 />
-            </Box>
+            ) : null}
+
             <Flex
                 direction="column"
                 gap={8}

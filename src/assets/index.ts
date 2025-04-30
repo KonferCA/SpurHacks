@@ -7,16 +7,20 @@ import NoIconLogo from './logos/logo_noicon.svg';
 import VerticalLogo from './logos/logo_vertical.svg';
 import HorizontalLogo from './logos/logo_horizontal.svg';
 import Icon from './logos/icon.svg';
+import IconWhite from './logos/icon_white.svg';
 import KonferNoIcon from './logos/konfer_noicon.svg';
 import SpurNoIcon from './logos/spur_noicon.svg';
+import MLHBanner from './mlh_banner.png';
 
 export {
     NoIconLogo,
     VerticalLogo,
     HorizontalLogo,
     Icon,
+    IconWhite,
     KonferNoIcon,
     SpurNoIcon,
+    MLHBanner,
 };
 
 /*
