@@ -1,0 +1,205 @@
+{
+    "navigation": {
+        "links": {
+            "about": "About",
+            "sponsors": "Sponsors",
+            "faq": "FAQ"
+        },
+        "buttons": {
+            "register": "REGISTER",
+            "applicationPortal": "APPLICATION PORTAL"
+        },
+        "mlh": {
+            "altText": "Major League Hacking 2025 Hackathon Season"
+        }
+    },
+    "faq": {
+        "title": "Frequently Asked Questions",
+        "contactText": "Can't find your answer? Email us your question at",
+        "contactEmail": "hello@spurhacks.com",
+        "accessibility": {
+            "collapseTitle": "Collapse",
+            "expandTitle": "Expand"
+        },
+        "items": [
+            {
+                "question": "What is SPURHacks?",
+                "answer": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi."
+            },
+            {
+                "question": "Who can participate?",
+                "answer": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi."
+            },
+            {
+                "question": "How many people can be on a team?",
+                "answer": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi."
+            },
+            {
+                "question": "What if I have no experience in quantum computing, web3, or AI?",
+                "answer": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi."
+            },
+            {
+                "question": "What should I bring?",
+                "answer": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi."
+            },
+            {
+                "question": "Are there any accommodations?",
+                "answer": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi."
+            }
+        ]
+    },
+    "hero": {
+        "alt": "SPURHACKS",
+        "eventDetails": {
+            "date": "June 20-22, 2025",
+            "format": "In-person",
+            "location": "Waterloo, ON"
+        },
+        "tagline": "Largest tech x business hackathon in Canada.",
+        "buttons": {
+            "apply": "APPLY NOW",
+            "sponsor": "BECOME A SPONSOR"
+        },
+        "countdown": {
+            "days": "DAYS",
+            "hours": "HOURS",
+            "hoursShort": "HRS",
+            "minutes": "MINUTES",
+            "minutesShort": "MIN",
+            "seconds": "SECONDS",
+            "secondsShort": "SECS"
+        },
+        "eventDate": "June 20, 2025 00:00:00",
+        "socialMedia": {
+            "discord": {
+                "url": "https://discord.gg/spurhacks",
+                "ariaLabel": "Discord",
+                "title": "Discord Logo"
+            },
+            "linkedin": {
+                "url": "https://linkedin.com/company/spurhacks",
+                "ariaLabel": "LinkedIn",
+                "title": "LinkedIn Logo"
+            },
+            "instagram": {
+                "url": "https://instagram.com/spurhacks",
+                "ariaLabel": "Instagram",
+                "title": "Instagram Logo"
+            },
+            "twitter": {
+                "url": "https://twitter.com/spurhacks",
+                "ariaLabel": "Twitter",
+                "title": "Twitter Logo"
+            }
+        }
+    },
+    "about": {
+        "headings": {
+            "first": "Hack the Uncertainty.",
+            "second": "Build the Future."
+        },
+        "description": "Placerat maecenas aliquam primis duis viverra integer. Vehicula nulla bibendum facilisis per quis vehicula risus donec euismod. Curabitur aliquet sem vel fermentum lacinia. Aliquam sodales neque lorem, aliquam luctus tellus viverra ut. Curabitur aliquet sem vel fermentum lacinia. Aliquam sodales neque lorem, aliquam luctus tellus viverra ut.",
+        "buttons": {
+            "companySite": "COMPANY SITE"
+        }
+    },
+    "about2": {
+        "heading": "Quantum. Web3. AI.",
+        "description": "Placerat maecenas aliquam primis duis viverra integer. Vehicula nulla bibendum facilisis per quis vehicula risus donec euismod. Curabitur aliquet sem vel fermentum lacinia. Aliquam sodales neque lorem, aliquam luctus tellus viverra ut. Curabitur aliquet sem vel fermentum lacinia. Aliquam sodales neque lorem, aliquam luctus tellus viverra ut.",
+        "images": {
+            "knot1": {
+                "alt": "Knot decorative element 1"
+            },
+            "knot8": {
+                "alt": "Knot decorative element 4"
+            }
+        }
+    },
+    "sponsorship": {
+        "title": "Sponsor a Special Weekend",
+        "description": "Placerat maecenas aliquam primis duis viverra integer. Vehicula nulla bibendum facilisis per quis vehicula risus donec euismod. Curabitur aliquet sem vel fermentum lacinia. Aliquam sodales neque lorem, aliquam luctus tellus viverra ut. Curabitur.",
+        "contactText": "Vehicula nulla bibendum facilisis per",
+        "contactEmail": "sponsors@spurhacks.com",
+        "buttonText": "BECOME A SPONSOR",
+        "partnersTitle": "Our Partners",
+        "resourcePaths": {
+            "baseUrl": "/src/assets/sponsors/",
+            "sponsorshipPdf": "./sponsorships.pdf"
+        }
+    },
+    "statistics": {
+        "items": [
+            {
+                "label": "Prize Value",
+                "value": 100,
+                "prefix": "$",
+                "suffix": "k+",
+                "allowDecimal": false
+            },
+            {
+                "label": "Participants",
+                "value": 2000,
+                "prefix": "",
+                "suffix": "",
+                "allowDecimal": false
+            },
+            {
+                "label": "Valuation",
+                "value": 23.4,
+                "prefix": "",
+                "suffix": "B",
+                "allowDecimal": true
+            }
+        ]
+    },
+    "updates": {
+        "title": "Stay in the know",
+        "description": "Get the latest updates from our Discord server accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti.",
+        "buttonText": "TAKE ME THERE",
+        "discordUrl": "https://discord.gg/spurhacks"
+    },
+    "footer": {
+        "copyright": "2025 SPUR Innovation. All rights reserved",
+        "madeWith": "Made with",
+        "byTeam": "by the Konfer team",
+        "poweredBy": "Powered by",
+        "brandX": "x",
+        "alts": {
+            "spurhacks": "SPURHACKS",
+            "spur": "SPUR",
+            "konfer": "KONFER"
+        },
+        "socialMedia": {
+            "discord": {
+                "url": "https://discord.gg/spurhacks",
+                "ariaLabel": "Discord",
+                "title": "Discord Logo"
+            },
+            "linkedin": {
+                "url": "https://linkedin.com/company/spurhacks",
+                "ariaLabel": "LinkedIn",
+                "title": "LinkedIn Logo"
+            },
+            "instagram": {
+                "url": "https://instagram.com/spurhacks",
+                "ariaLabel": "Instagram",
+                "title": "Instagram Logo"
+            },
+            "x": {
+                "url": "https://x.com/spurhacks",
+                "ariaLabel": "X",
+                "title": "X Logo"
+            }
+        },
+        "links": {
+            "codeOfConduct": {
+                "text": "MLH Code of Conduct",
+                "url": "https://github.com/MLH/mlh-policies/blob/main/code-of-conduct.md"
+            },
+            "privacy": {
+                "text": "Privacy Policy",
+                "url": "https://github.com/MLH/mlh-policies/blob/main/privacy-policy.md"
+            }
+        }
+    }
+}

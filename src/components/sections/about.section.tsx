@@ -22,6 +22,8 @@ import {
     Knot8,
 } from '@assets';
 
+import { aboutStrings } from '@locales';
+
 const knotSvgs = [Knot1, Knot2, Knot3, Knot4, Knot5, Knot6, Knot7, Knot8];
 
 interface Position {
@@ -431,7 +433,7 @@ export const About = () => {
                         mb={2}
                         textAlign="left"
                     >
-                        Hack the Uncertainty.
+                        {aboutStrings.headings.first}
                     </Heading>
 
                     <Heading
@@ -443,7 +445,7 @@ export const About = () => {
                         mb={8}
                         textAlign="left"
                     >
-                        Build the Future.
+                        {aboutStrings.headings.second}
                     </Heading>
 
                     <Text
@@ -454,13 +456,7 @@ export const About = () => {
                         opacity={0.9}
                         textAlign="left"
                     >
-                        Placerat maecenas aliquam primis duis viverra integer.
-                        Vehicula nulla bibendum facilisis per quis vehicula
-                        risus donec euismod. Curabitur aliquet sem vel fermentum
-                        lacinia. Aliquam sodales neque lorem, aliquam luctus
-                        tellus viverra ut. Curabitur aliquet sem vel fermentum
-                        lacinia. Aliquam sodales neque lorem, aliquam luctus
-                        tellus viverra ut.
+                        {aboutStrings.description}
                     </Text>
 
                     <Link href="https://spuric.com" target="_blank">
@@ -476,7 +472,7 @@ export const About = () => {
                             as="a"
                             rel="noopener noreferrer"
                         >
-                            COMPANY SITE
+                            {aboutStrings.buttons.companySite}
                         </Button>
                     </Link>
                 </Flex>

@@ -12,6 +12,7 @@ import {
 import { useEffect, useState } from 'react';
 import { HamburgerMenuIcon, Cross2Icon } from '@radix-ui/react-icons';
 import { ExpandingMenu } from './ExpandingMenu';
+import { navLinks, navButtons, mlhStrings } from '@locales';
 
 export const Navbar = () => {
     const [isMobile, setIsMobile] = useState(false);
@@ -103,7 +104,7 @@ export const Navbar = () => {
                                     color="white"
                                     className="hover:scale-110"
                                 >
-                                    About
+                                    {navLinks.about}
                                 </Text>
                             </Link>
                             <Link href="#sponsors" textDecoration="none">
@@ -113,7 +114,7 @@ export const Navbar = () => {
                                     color="white"
                                     className="hover:scale-110"
                                 >
-                                    Sponsors
+                                    {navLinks.sponsors}
                                 </Text>
                             </Link>
                             <Link href="#faq" textDecoration="none">
@@ -123,7 +124,7 @@ export const Navbar = () => {
                                     color="white"
                                     className="hover:scale-110"
                                 >
-                                    FAQ
+                                    {navLinks.faq}
                                 </Text>
                             </Link>
                         </HStack>
@@ -168,7 +169,7 @@ export const Navbar = () => {
                                     py={2}
                                     _hover={{ bg: 'whiteAlpha.200' }}
                                 >
-                                    REGISTER
+                                    {navButtons.register}
                                 </Button>
                             </Link>
                             <Link href="#portal" textDecoration="none">
@@ -185,7 +186,7 @@ export const Navbar = () => {
                                         opacity: 0.9,
                                     }}
                                 >
-                                    APPLICATION PORTAL
+                                    {navButtons.applicationPortal}
                                 </Button>
                             </Link>
                         </HStack>
@@ -204,7 +205,7 @@ export const Navbar = () => {
                         >
                             <Image
                                 src="https://s3.amazonaws.com/logged-assets/trust-badge/2025/mlh-trust-badge-2025-black.svg"
-                                alt="Major League Hacking 2025 Hackathon Season"
+                                alt={mlhStrings.altText}
                                 h={[100, 150]}
                             />
                         </Link>

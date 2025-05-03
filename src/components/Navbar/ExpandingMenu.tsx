@@ -1,5 +1,6 @@
 import { Flex, Button, Link, Text } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
+import { navLinks, navButtons } from '@locales';
 
 const sidebarVariants = {
     open: {
@@ -57,7 +58,7 @@ const navButtonAnimation = {
     },
 };
 
-const links = ['About', 'Sponsors', 'FAQ'];
+const links = Object.values(navLinks);
 
 type ExpandingMenuProps = {
     isOpen: boolean;
@@ -121,7 +122,7 @@ export function ExpandingMenu({ isOpen, setIsOpen }: ExpandingMenuProps) {
                                     bg: 'whiteAlpha.200',
                                 }}
                             >
-                                REGISTER
+                                {navButtons.register}
                             </Button>
                         </Link>
                         <Link href="#portal" textDecoration="none">
@@ -137,7 +138,7 @@ export function ExpandingMenu({ isOpen, setIsOpen }: ExpandingMenuProps) {
                                     opacity: 0.9,
                                 }}
                             >
-                                APPLICATION PORTAL
+                                {navButtons.applicationPortal}
                             </Button>
                         </Link>
                     </Flex>

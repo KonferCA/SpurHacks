@@ -1,5 +1,6 @@
 import { Flex, Text, Button, Heading, Link } from '@chakra-ui/react';
 import { SplineTarget } from '@components';
+import { updatesStrings } from '@locales';
 
 export const UpdatesSection = () => {
     return (
@@ -31,21 +32,17 @@ export const UpdatesSection = () => {
                     className="text-white"
                 >
                     <Heading fontSize={['xl', '2xl', '3xl', '4xl']}>
-                        Stay in the know
+                        {updatesStrings.title}
                     </Heading>
-
                     <Text
                         color="white"
                         fontFamily="Geist"
                         fontSize={{ base: 'sm', md: 'md' }}
                         mb={8}
                     >
-                        Get the latest updates from our Discord server accusamus
-                        et iusto odio dignissimos ducimus qui blanditiis
-                        praesentium voluptatum deleniti.
+                        {updatesStrings.description}
                     </Text>
-
-                    <Link href="https://discord.gg/spurhacks" target="_blank">
+                    <Link href={updatesStrings.discordUrl} target="_blank">
                         <Button
                             size={{ base: 'sm', md: 'md' }}
                             bg="#FFA75F"
@@ -58,7 +55,7 @@ export const UpdatesSection = () => {
                             _hover={{ bg: '#FFA75F', opacity: 0.9 }}
                             rel="noopener noreferrer"
                         >
-                            TAKE ME THERE
+                            {updatesStrings.buttonText}
                         </Button>
                     </Link>
                 </Flex>
