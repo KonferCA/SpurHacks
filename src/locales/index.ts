@@ -38,6 +38,14 @@ export const heroSocialMedia = strings.hero.socialMedia;
 
 /*
  *
+ * @object / section About
+ *
+ */
+export const aboutStrings = strings.about;
+export const about2Strings = strings.about2;
+
+/*
+ *
  * @object / section Sponsors
  *
  */
