@@ -10,6 +10,7 @@ import {
     Stack,
     Link,
 } from '@chakra-ui/react';
+import { sponsorshipStrings } from '@locales';
 
 const baseUrl = '/src/assets/sponsors/';
 const singularitySponsors = SponsorData.singularitySponsors;
@@ -272,20 +273,17 @@ export const Sponsorship = () => {
                     px={5}
                 >
                     <Heading fontSize={['2xl', '3xl', '4xl', '5xl']}>
-                        Sponsor a Special Weekend
+                        {sponsorshipStrings.title}
                     </Heading>
+                    <Text>{sponsorshipStrings.description}</Text>
                     <Text>
-                        Placerat maecenas aliquam primis duis viverra integer.
-                        Vehicula nulla bibendum facilisis per quis vehicula
-                        risus donec euismod. Curabitur aliquet sem vel fermentum
-                        lacinia. Aliquam sodales neque lorem, aliquam luctus
-                        tellus viverra ut. Curabitur.
+                        {sponsorshipStrings.contactText}
+                        <strong> {sponsorshipStrings.contactEmail}</strong>
                     </Text>
-                    <Text>
-                        Vehicula nulla bibendum facilisis per
-                        <strong> sponsors@spurhacks.com.</strong>
-                    </Text>
-                    <Link href="./sponsorships.pdf" target="_blank">
+                    <Link
+                        href={sponsorshipStrings.resourcePaths.sponsorshipPdf}
+                        target="_blank"
+                    >
                         <Button
                             color="black"
                             background="orange.default"
@@ -294,7 +292,7 @@ export const Sponsorship = () => {
                             _hover={{ bg: 'orange.hover' }}
                             transition="all 0.3s ease-in-out"
                         >
-                            BECOME A SPONSOR
+                            {sponsorshipStrings.buttonText}
                         </Button>
                     </Link>
                 </Flex>
@@ -319,7 +317,7 @@ export const Sponsorship = () => {
                 </Stack>
                 <Stack gap={{ base: 10, lg: 20 }} align="center" w="90%">
                     <Heading fontSize={['2xl', '3xl', '4xl', '5xl']}>
-                        Our Partners
+                        {sponsorshipStrings.partnersTitle}
                     </Heading>
                     {/* QUARK SPONSORS (3RD) */}
                     <Box w="full" maxW={MAX_WIDTH} mx="auto">
