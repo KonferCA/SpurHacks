@@ -1,6 +1,7 @@
 import { Flex, Heading, Text } from '@chakra-ui/react';
 import { CountUp } from '@components';
 import { SplineTarget } from '@components';
+import { statisticsItems } from '@locales';
 
 export const Statistics = () => {
     return (
@@ -29,39 +30,28 @@ export const Statistics = () => {
                     fontWeight="extralight"
                     className="text-white"
                 >
-                    <Flex direction="column" gap={6}>
-                        <Text fontFamily="Geist">Prize Value</Text>
-                        <Heading
-                            fontFamily="Geist"
-                            fontSize={['5xl', '7xl']}
-                            color="white"
-                            fontWeight="light"
+                    {statisticsItems.items.map((item) => (
+                        <Flex
+                            key={`stat-${item.label}`}
+                            direction="column"
+                            gap={6}
                         >
-                            <CountUp to={100} prefix="$" suffix="k+" />
-                        </Heading>
-                    </Flex>
-                    <Flex direction="column" gap={6}>
-                        <Text fontFamily="Geist">Participants</Text>
-                        <Heading
-                            fontFamily="Geist"
-                            fontSize={['5xl', '7xl']}
-                            color="white"
-                            fontWeight="light"
-                        >
-                            <CountUp to={2000} />
-                        </Heading>
-                    </Flex>
-                    <Flex direction="column" gap={6}>
-                        <Text fontFamily="Geist">Valuation</Text>
-                        <Heading
-                            fontFamily="Geist"
-                            fontSize={['5xl', '7xl']}
-                            color="white"
-                            fontWeight="light"
-                        >
-                            <CountUp to={23.4} suffix="B" allowDecimal />
-                        </Heading>
-                    </Flex>
+                            <Text fontFamily="Geist">{item.label}</Text>
+                            <Heading
+                                fontFamily="Geist"
+                                fontSize={['5xl', '7xl']}
+                                color="white"
+                                fontWeight="light"
+                            >
+                                <CountUp
+                                    to={item.value}
+                                    prefix={item.prefix}
+                                    suffix={item.suffix}
+                                    allowDecimal={item.allowDecimal}
+                                />
+                            </Heading>
+                        </Flex>
+                    ))}
                 </Flex>
             </Flex>
         </Flex>
