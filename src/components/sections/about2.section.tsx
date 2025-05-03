@@ -5,6 +5,8 @@ import { keyframes } from '@emotion/react';
 import Spline from '@splinetool/react-spline';
 import { useInView } from 'react-intersection-observer';
 
+import { about2Strings } from '@locales';
+
 const splineSceneUrl =
     'https://prod.spline.design/TmAYMNy2qJHyDE9m/scene.splinecode';
 
@@ -100,7 +102,7 @@ export const About2: React.FC = () => {
             >
                 <Image
                     src="/src/assets/animations/knot_1.svg"
-                    alt="Knot decorative element 1"
+                    alt={about2Strings.images.knot1.alt}
                     position="absolute"
                     top={{ base: '-40%', md: '-60%' }}
                     left="-15%"
@@ -110,7 +112,7 @@ export const About2: React.FC = () => {
                 />
                 <Image
                     src="/src/assets/animations/knot_8.svg"
-                    alt="Knot decorative element 4"
+                    alt={about2Strings.images.knot8.alt}
                     position="absolute"
                     bottom="-60%"
                     right="-10%"
@@ -129,7 +131,7 @@ export const About2: React.FC = () => {
                     lineHeight="1.2"
                     textAlign="left"
                 >
-                    Quantum. Web3. AI.
+                    {about2Strings.heading}
                 </Heading>
                 <Text
                     fontFamily="Geist"
@@ -138,12 +140,7 @@ export const About2: React.FC = () => {
                     mb={4}
                     textAlign="left"
                 >
-                    Placerat maecenas aliquam primis duis viverra integer.
-                    Vehicula nulla bibendum facilisis per quis vehicula risus
-                    donec euismod. Curabitur aliquet sem vel fermentum lacinia.
-                    Aliquam sodales neque lorem, aliquam luctus tellus viverra
-                    ut. Curabitur aliquet sem vel fermentum lacinia. Aliquam
-                    sodales neque lorem, aliquam luctus tellus viverra ut.
+                    {about2Strings.description}
                 </Text>
             </Box>
         </Flex>
