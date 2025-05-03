@@ -14,7 +14,8 @@
             "@assets": ["./src/assets/index"],
             "@components": ["./src/components/index"],
             "@pages": ["./src/pages/index"],
-            "@utils": ["./src/utils/index"]
+            "@utils": ["./src/utils/index"],
+            "@locales": ["./src/locales/index"],
         },
 
         /* Bundler mode */
