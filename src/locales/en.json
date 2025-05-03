@@ -93,6 +93,28 @@
             }
         }
     },
+    "about": {
+        "headings": {
+            "first": "Hack the Uncertainty.",
+            "second": "Build the Future."
+        },
+        "description": "Placerat maecenas aliquam primis duis viverra integer. Vehicula nulla bibendum facilisis per quis vehicula risus donec euismod. Curabitur aliquet sem vel fermentum lacinia. Aliquam sodales neque lorem, aliquam luctus tellus viverra ut. Curabitur aliquet sem vel fermentum lacinia. Aliquam sodales neque lorem, aliquam luctus tellus viverra ut.",
+        "buttons": {
+            "companySite": "COMPANY SITE"
+        }
+    },
+    "about2": {
+        "heading": "Quantum. Web3. AI.",
+        "description": "Placerat maecenas aliquam primis duis viverra integer. Vehicula nulla bibendum facilisis per quis vehicula risus donec euismod. Curabitur aliquet sem vel fermentum lacinia. Aliquam sodales neque lorem, aliquam luctus tellus viverra ut. Curabitur aliquet sem vel fermentum lacinia. Aliquam sodales neque lorem, aliquam luctus tellus viverra ut.",
+        "images": {
+            "knot1": {
+                "alt": "Knot decorative element 1"
+            },
+            "knot8": {
+                "alt": "Knot decorative element 4"
+            }
+        }
+    },
     "sponsorship": {
         "title": "Sponsor a Special Weekend",
         "description": "Placerat maecenas aliquam primis duis viverra integer. Vehicula nulla bibendum facilisis per quis vehicula risus donec euismod. Curabitur aliquet sem vel fermentum lacinia. Aliquam sodales neque lorem, aliquam luctus tellus viverra ut. Curabitur.",
