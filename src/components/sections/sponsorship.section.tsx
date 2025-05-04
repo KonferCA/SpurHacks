@@ -1,4 +1,3 @@
-import { SponsorData } from '@assets';
 import {
     Heading,
     Text,
@@ -10,14 +9,17 @@ import {
     Stack,
     Link,
 } from '@chakra-ui/react';
+
 import { sponsorshipStrings } from '@locales';
 
-const baseUrl = '/src/assets/sponsors/';
-const singularitySponsors = SponsorData.singularitySponsors;
-const entanglementSponsors = SponsorData.entanglementSponsors;
-const quarkSponsors = SponsorData.quarkSponsors;
-const quantaSponsors = SponsorData.quantaSponsors;
-const partners = SponsorData.partners;
+import {
+    singularitySponsors,
+    entanglementSponsors,
+    quarkSponsors,
+    quantaSponsors,
+    partners,
+    sponsorsBaseUrl,
+} from '@data';
 
 // Reusable width for all tiers
 const MAX_WIDTH = '1200px';
@@ -38,7 +40,7 @@ const SingularitySponsors = () => (
                 target="_blank"
             >
                 <Image
-                    src={`${baseUrl}${sponsor.image}`}
+                    src={`${sponsorsBaseUrl}${sponsor.image}`}
                     alt={sponsor.name}
                     boxSize={{ base: '200px', md: '180px' }}
                     objectFit="contain"
@@ -88,7 +90,7 @@ const EntanglementSponsors = () => (
                     target="_blank"
                 >
                     <Image
-                        src={`${baseUrl}${sponsor.image}`}
+                        src={`${sponsorsBaseUrl}${sponsor.image}`}
                         alt={sponsor.name}
                         boxSize={{
                             base: '100px',
@@ -142,7 +144,7 @@ const QuarkSponsors = () => (
                     target="_blank"
                 >
                     <Image
-                        src={`${baseUrl}${sponsor.image}`}
+                        src={`${sponsorsBaseUrl}${sponsor.image}`}
                         alt={sponsor.name}
                         boxSize={{
                             base: '100px',
@@ -182,7 +184,7 @@ const QuantaSponsors = () => (
                 target="_blank"
             >
                 <Image
-                    src={`${baseUrl}${sponsor.image}`}
+                    src={`${sponsorsBaseUrl}${sponsor.image}`}
                     alt={sponsor.name}
                     boxSize={{ base: '100px', md: '125px' }}
                     objectFit="contain"
@@ -232,7 +234,7 @@ const Partners = () => (
                     target="_blank"
                 >
                     <Image
-                        src={`${baseUrl}${sponsor.image}`}
+                        src={`${sponsorsBaseUrl}${sponsor.image}`}
                         alt={sponsor.name}
                         boxSize={{
                             base: '100px',
