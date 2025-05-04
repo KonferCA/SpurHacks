@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import {
     Box,
     Flex,
@@ -31,9 +31,20 @@ const FAQItem: React.FC<FAQItemProps> = ({
     index,
 }) => {
     const isMobile = useBreakpointValue({ base: true, md: false });
+    const contentRef = useRef<HTMLDivElement>(null);
+    const [contentHeight, setContentHeight] = useState(0);
+
+    useEffect(() => {
+        if (isOpen && contentRef.current) {
+            setContentHeight(contentRef.current.scrollHeight);
+        } else {
+            setContentHeight(0);
+        }
+    }, [isOpen]);
 
     return (
         <MotionBox
+            layout
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -98,15 +109,17 @@ const FAQItem: React.FC<FAQItemProps> = ({
             <AnimatePresence>
                 {isOpen && (
                     <MotionBox
+                        ref={contentRef}
                         initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: 'auto', opacity: 1 }}
+                        animate={{ height: contentHeight, opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.3 }}
                         overflow="hidden"
-                        pt={3}
                         pr={10}
                     >
-                        <Text color="black">{answer}</Text>
+                        <Text color="black" pt={3}>
+                            {answer}
+                        </Text>
                     </MotionBox>
                 )}
             </AnimatePresence>
@@ -186,6 +199,7 @@ export const FAQ = () => {
                 </MotionText>
 
                 <MotionFlex
+                    layout
                     direction="column"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
