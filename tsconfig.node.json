@@ -16,6 +16,7 @@
             "@pages": ["./src/pages/index"],
             "@utils": ["./src/utils/index"],
             "@locales": ["./src/locales/index"],
+            "@data": ["./src/data/index"], 
         },
 
         /* Bundler mode */
