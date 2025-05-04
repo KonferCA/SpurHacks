@@ -161,7 +161,6 @@ export const About2: React.FC = () => {
                         py={5}
                         mt={-6}
                         _hover={{ bg: '#FFA75F', opacity: 0.9 }}
-                        as="a"
                         rel="noopener noreferrer"
                     >
                         {about2Strings.buttons.companySite}
