@@ -1,5 +1,4 @@
 import strings from './en.json';
-
 /*
  *
  * @object Strings
@@ -72,6 +71,5 @@ export const updatesStrings = strings.updates;
  */
 export const footerStrings = strings.footer;
 export const footerSocialMedia = strings.footer.socialMedia;
-export const footerLinks = strings.footer.links;
 
 export default strings;

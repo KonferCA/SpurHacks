@@ -14,10 +14,9 @@ import Spline from '@splinetool/react-spline';
 import { useInView } from 'react-intersection-observer';
 
 import { about2Strings } from '@locales';
+import { links } from '@data';
 
-const splineSceneUrl =
-    'https://prod.spline.design/TmAYMNy2qJHyDE9m/scene.splinecode';
-
+const splineSceneUrl = links.spline;
 const spin = keyframes`
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
@@ -149,7 +148,7 @@ export const Spur: React.FC = () => {
                     {about2Strings.description}
                 </Text>
 
-                <Link href="https://spuric.com" target="_blank">
+                <Link href={links.spur} target="_blank">
                     <Button
                         size={{ base: 'sm', md: 'md' }}
                         bg="#FFA75F"

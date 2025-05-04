@@ -1,11 +1,12 @@
 import sponsorsData from './sponsors.json';
+import links from './links.json';
 
 /*
  *
- * @object Sponsors Data
+ * @object Sponsors Data, Links
  *
  */
-export { sponsorsData };
+export { sponsorsData, links };
 
 /*
  *

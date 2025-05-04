@@ -1,3 +1,9 @@
+import { useEffect, useState } from 'react';
+import { keyframes } from '@emotion/react';
+import { HamburgerMenuIcon, Cross2Icon } from '@radix-ui/react-icons';
+
+import { navLinks, navButtons, mlhStrings } from '@locales';
+import { links } from '@data';
 import { IconWhite } from '@assets';
 import {
     Box,
@@ -9,11 +15,8 @@ import {
     Image,
     Drawer,
 } from '@chakra-ui/react';
-import { useEffect, useState } from 'react';
-import { HamburgerMenuIcon, Cross2Icon } from '@radix-ui/react-icons';
+
 import { ExpandingMenu } from './ExpandingMenu';
-import { navLinks, navButtons, mlhStrings } from '@locales';
-import { keyframes } from '@emotion/react';
 
 const rotateAnimation = keyframes`
     from {
@@ -186,7 +189,11 @@ export const Navbar = () => {
                                     {navButtons.register}
                                 </Button>
                             </Link>
-                            <Link href="#portal" textDecoration="none">
+                            <Link
+                                href={links.hackathon.dashboard}
+                                target="_blank"
+                                textDecoration="none"
+                            >
                                 <Button
                                     size="md"
                                     bg="#FFA75F"
@@ -214,11 +221,11 @@ export const Navbar = () => {
                     >
                         <Link
                             id="mlh-trust-badge"
-                            href="https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2025-season&utm_content=black"
+                            href={links.mlh.trust}
                             target="_blank"
                         >
                             <Image
-                                src="https://s3.amazonaws.com/logged-assets/trust-badge/2025/mlh-trust-badge-2025-black.svg"
+                                src={links.mlh.trustImage}
                                 alt={mlhStrings.altText}
                                 h={[100, 150]}
                             />

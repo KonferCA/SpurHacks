@@ -9,6 +9,7 @@ import {
 } from '@chakra-ui/react';
 import { SplineTarget } from '@components';
 import { updatesStrings } from '@locales';
+import { links } from '@data';
 
 export const UpdatesSection = () => {
     const isMobile = useBreakpointValue({ base: true, md: false });
@@ -87,7 +88,7 @@ export const UpdatesSection = () => {
                     >
                         {updatesStrings.description}
                     </Text>
-                    <Link href={updatesStrings.discordUrl} target="_blank">
+                    <Link href={links.hackathon.discord} target="_blank">
                         <Button
                             size={{ base: 'md', md: 'md' }}
                             bg="#FFA75F"

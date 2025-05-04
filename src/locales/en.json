@@ -14,6 +14,25 @@
         }
     },
 
+    "socials": {
+        "discord": {
+            "ariaLabel": "Discord",
+            "title": "Discord Logo"
+        },
+        "linkedin": {
+            "ariaLabel": "LinkedIn",
+            "title": "LinkedIn Logo"
+        },
+        "instagram": {
+            "ariaLabel": "Instagram",
+            "title": "Instagram Logo"
+        },
+        "x": {
+            "ariaLabel": "Twitter",
+            "title": "Twitter Logo"
+        }
+    },
+
     "hero": {
         "alt": "SpurHacks 2025",
         "eventDetails": {
@@ -35,29 +54,7 @@
             "seconds": "SECONDS",
             "secondsShort": "SECS"
         },
-        "eventDate": "June 20, 2025 00:00:00",
-        "socialMedia": {
-            "discord": {
-                "url": "https://discord.gg/spurhacks",
-                "ariaLabel": "Discord",
-                "title": "Discord Logo"
-            },
-            "linkedin": {
-                "url": "https://linkedin.com/company/spurhacks",
-                "ariaLabel": "LinkedIn",
-                "title": "LinkedIn Logo"
-            },
-            "instagram": {
-                "url": "https://instagram.com/spurhacks",
-                "ariaLabel": "Instagram",
-                "title": "Instagram Logo"
-            },
-            "twitter": {
-                "url": "https://twitter.com/spurhacks",
-                "ariaLabel": "Twitter",
-                "title": "Twitter Logo"
-            }
-        }
+        "eventDate": "June 20, 2025 00:00:00"
     },
 
     "about": {
@@ -67,14 +64,14 @@
         },
         "description": "Join over 2,000 students from across Canada at SpurHacks; pushing the boundaries of what a hackathon can be. Discover a community of like-minded individuals, learn from industry experts, and build innovative projects that will shape the future of technology. Whether you're a seasoned hacker or a first-time participant, SpurHacks is the perfect place to unleash your creativity and make lasting connections.",
         "travel": {
-            "heading": "Coming from out of province?",
-            "description": "If you're traveling from outside Ontario, we'll cover your travel costs - but spots are limited and first-come, first-served. So don’t sleep on it!"
+            "heading": "Coming from out of Town?",
+            "description": "If you're traveling from outside Kitchener-Waterloo, we'll provide buses OR cover your travel costs - spots are limited and on a first-come, first-served. So don’t sleep on it!"
         }
     },
 
     "about2": {
-        "heading": "Quantum. Web3. AI.",
-        "description": "Placerat maecenas aliquam primis duis viverra integer. Vehicula nulla bibendum facilisis per quis vehicula risus donec euismod. Curabitur aliquet sem vel fermentum lacinia. Aliquam sodales neque lorem, aliquam luctus tellus viverra ut. Curabitur aliquet sem vel fermentum lacinia. Aliquam sodales neque lorem, aliquam luctus tellus viverra ut.",
+        "heading": "Quantum. High-Performance Computing. AI.",
+        "description": "Spur enables a community that spurs innovation and support like no other incubator in Canada, offering unparalleled resources in quantum computing, high-performance computing, decentralized computing, and artificial intelligence. A strong and experienced mentorship program alongside a collaborative ecosystem has secured over $1B+ in assets under management and over 200 successful startups in the past decade.",
         "buttons": {
             "companySite": "COMPANY SITE"
         },
@@ -162,12 +159,13 @@
             }
         ]
     },
+
     "updates": {
         "title": "Stay in the know",
-        "description": "Get the latest updates from our Discord server accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti.",
-        "buttonText": "TAKE ME THERE",
-        "discordUrl": "https://discord.gg/spurhacks"
+        "description": "Get the latest updates from our Discord server et ",
+        "buttonText": "TAKE ME THERE"
     },
+
     "footer": {
         "copyright": "2025 SPUR Innovation. All rights reserved",
         "madeWith": "Made with",
@@ -179,37 +177,10 @@
             "spur": "SPUR",
             "konfer": "KONFER"
         },
-        "socialMedia": {
-            "discord": {
-                "url": "https://discord.gg/spurhacks",
-                "ariaLabel": "Discord",
-                "title": "Discord Logo"
-            },
-            "linkedin": {
-                "url": "https://linkedin.com/company/spurhacks",
-                "ariaLabel": "LinkedIn",
-                "title": "LinkedIn Logo"
-            },
-            "instagram": {
-                "url": "https://instagram.com/spurhacks",
-                "ariaLabel": "Instagram",
-                "title": "Instagram Logo"
-            },
-            "x": {
-                "url": "https://x.com/spurhacks",
-                "ariaLabel": "X",
-                "title": "X Logo"
-            }
-        },
-        "links": {
-            "codeOfConduct": {
-                "text": "MLH Code of Conduct",
-                "url": "https://github.com/MLH/mlh-policies/blob/main/code-of-conduct.md"
-            },
-            "privacy": {
-                "text": "Privacy Policy",
-                "url": "https://github.com/MLH/mlh-policies/blob/main/privacy-policy.md"
-            }
+
+        "mlh": {
+            "codeOfConduct": "MLH Code of Conduct",
+            "privacy": "Privacy Policy"
         }
     }
 }

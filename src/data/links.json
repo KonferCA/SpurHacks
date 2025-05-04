@@ -1,0 +1,26 @@
+{
+    "socials": {
+        "linkedin": "https://linkedin.com/company/spurhacks",
+        "instagram": "https://instagram.com/spurhacks",
+        "x": "https://x.com/spurhacks",
+        "tiktok": "https://tiktok.com/@spurhacks",
+        "youtube": "https://youtube.com/@spurhacks",
+        "facebook": ""
+    },
+
+    "hackathon": {
+        "dashboard": "https://portal.spurhacks.com",
+        "discord": "https://discord.spurhacks.com",
+        "sponsorship": "/sponsorships.pdf"
+    },
+
+    "mlh": {
+        "privacy": "https://mlh.io/privacy",
+        "codeOfConduct": "https://mlh.io/code-of-conduct",
+        "trust": "https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2025-season&utm_content=black",
+        "trustImage": "https://s3.amazonaws.com/logged-assets/trust-badge/2025/mlh-trust-badge-2025-black.svg"
+    },
+
+    "spur": "https://spuric.com",
+    "spline": "https://prod.spline.design/TmAYMNy2qJHyDE9m/scene.splinecode"
+}
