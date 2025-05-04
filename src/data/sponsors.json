@@ -3,5 +3,21 @@
     "entanglementSponsors": [],
     "quarkSponsors": [],
     "quantaSponsors": [],
-    "partners": []
+    "partners": [
+        {
+            "name": "Laurier Computing Society",
+            "image": "partners/lcs.svg",
+            "link": "https://lauriercs.ca"
+        },
+        {
+            "name": "HawkHacks",
+            "image": "partners/hawkhacks.svg",
+            "link": "https://hawkhacks.ca"
+        },
+        {
+            "name": "Waterloo Blockchain",
+            "image": "partners/uwb.svg",
+            "link": "https://waterlooblockchain.ca/"
+        },
+    ]
 }
