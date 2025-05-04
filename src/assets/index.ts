@@ -65,15 +65,6 @@ export const singularityImages = {
     singularityEx: Sing,
 };
 
-/*
- *
- * @asset Sponsor Data
- *
- */
-import SponsorData from './data/sponsors.json';
-
-export { SponsorData };
-
 import Knot1 from './animations/knot_1.svg';
 import Knot2 from './animations/knot_2.svg';
 import Knot3 from './animations/knot_3.svg';
