@@ -1,6 +1,6 @@
 import type React from 'react';
 import { useState } from 'react';
-import { Box, Flex, Text, Heading, Image } from '@chakra-ui/react';
+import { Box, Flex, Text, Heading, Image, Link, Button } from '@chakra-ui/react';
 import { keyframes } from '@emotion/react';
 import Spline from '@splinetool/react-spline';
 import { useInView } from 'react-intersection-observer';
@@ -137,11 +137,28 @@ export const About2: React.FC = () => {
                     fontFamily="Geist"
                     fontSize="lg"
                     color="inherit"
-                    mb={4}
+                    mb={10}
                     textAlign="left"
                 >
                     {about2Strings.description}
                 </Text>
+
+                <Link href="https://spuric.com" target="_blank">
+                    <Button
+                        size={{ base: 'sm', md: 'md' }}
+                        bg="#FFA75F"
+                        color="black"
+                        borderRadius="full"
+                        px={5}
+                        py={5}
+                        mt={-6}
+                        _hover={{ bg: '#FFA75F', opacity: 0.9 }}
+                        as="a"
+                        rel="noopener noreferrer"
+                    >
+                        {about2Strings.buttons.companySite}
+                    </Button>
+                </Link>
             </Box>
         </Flex>
     );

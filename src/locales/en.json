@@ -23,7 +23,7 @@
         },
         "items": [
             {
-                "question": "What is SPURHacks?",
+                "question": "What is SpurHacks?",
                 "answer": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi."
             },
             {
@@ -55,7 +55,7 @@
             "format": "In-person",
             "location": "Waterloo, ON"
         },
-        "tagline": "Largest tech x business hackathon in Canada.",
+        "tagline": "The largest hackathon in Canada; where business and tech intersect.",
         "buttons": {
             "apply": "APPLY NOW",
             "sponsor": "BECOME A SPONSOR"
@@ -95,17 +95,17 @@
     },
     "about": {
         "headings": {
-            "first": "Hack the Uncertainty.",
+            "first": "A Place to Innovate.",
             "second": "Build the Future."
         },
-        "description": "Placerat maecenas aliquam primis duis viverra integer. Vehicula nulla bibendum facilisis per quis vehicula risus donec euismod. Curabitur aliquet sem vel fermentum lacinia. Aliquam sodales neque lorem, aliquam luctus tellus viverra ut. Curabitur aliquet sem vel fermentum lacinia. Aliquam sodales neque lorem, aliquam luctus tellus viverra ut.",
-        "buttons": {
-            "companySite": "COMPANY SITE"
-        }
+        "description": "Join over  maecenas aliquam primis duis viverra integer. Vehicula nulla bibendum facilisis per quis vehicula risus donec euismod. Curabitur aliquet sem vel fermentum lacinia. Aliquam sodales neque lorem, aliquam luctus tellus viverra ut. Curabitur aliquet sem vel fermentum lacinia. Aliquam sodales neque lorem, aliquam luctus tellus viverra ut."
     },
     "about2": {
         "heading": "Quantum. Web3. AI.",
         "description": "Placerat maecenas aliquam primis duis viverra integer. Vehicula nulla bibendum facilisis per quis vehicula risus donec euismod. Curabitur aliquet sem vel fermentum lacinia. Aliquam sodales neque lorem, aliquam luctus tellus viverra ut. Curabitur aliquet sem vel fermentum lacinia. Aliquam sodales neque lorem, aliquam luctus tellus viverra ut.",
+        "buttons": {
+            "companySite": "COMPANY SITE"
+        },
         "images": {
             "knot1": {
                 "alt": "Knot decorative element 1"
