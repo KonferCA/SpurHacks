@@ -13,6 +13,16 @@ import { useEffect, useState } from 'react';
 import { HamburgerMenuIcon, Cross2Icon } from '@radix-ui/react-icons';
 import { ExpandingMenu } from './ExpandingMenu';
 import { navLinks, navButtons, mlhStrings } from '@locales';
+import { keyframes } from '@emotion/react';
+
+const rotateAnimation = keyframes`
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+`;
 
 export const Navbar = () => {
     const [isMobile, setIsMobile] = useState(false);
@@ -146,6 +156,10 @@ export const Navbar = () => {
                             boxSize={{
                                 base: '25px',
                                 md: '40px',
+                            }}
+                            transition="transform 0.5s ease-in-out"
+                            _hover={{
+                                animation: `${rotateAnimation} 1s ease-in-out infinite`,
                             }}
                         />
                     </Link>
