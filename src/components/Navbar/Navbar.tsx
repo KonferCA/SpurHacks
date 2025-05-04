@@ -175,8 +175,7 @@ export const Navbar = () => {
                         <></>
                     ) : (
                         <HStack gap={4}>
-                            {
-                            /* <Link href="#register" textDecoration="none">
+                            {/* <Link href="#register" textDecoration="none">
                                 <Button
                                     size="md"
                                     variant="outline"
@@ -189,8 +188,7 @@ export const Navbar = () => {
                                 >
                                     {navButtons.register}
                                 </Button>
-                            </Link> */
-                            }
+                            </Link> */}
                             <Link
                                 href={links.hackathon.dashboard}
                                 target="_blank"
