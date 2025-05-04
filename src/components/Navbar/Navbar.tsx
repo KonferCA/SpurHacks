@@ -1,3 +1,9 @@
+import { useEffect, useState } from 'react';
+import { keyframes } from '@emotion/react';
+import { HamburgerMenuIcon, Cross2Icon } from '@radix-ui/react-icons';
+
+import { navLinks, navButtons, mlhStrings } from '@locales';
+import { links } from '@data';
 import { IconWhite } from '@assets';
 import {
     Box,
@@ -9,11 +15,17 @@ import {
     Image,
     Drawer,
 } from '@chakra-ui/react';
-import { useEffect, useState } from 'react';
-import { HamburgerMenuIcon, Cross2Icon } from '@radix-ui/react-icons';
+
 import { ExpandingMenu } from './ExpandingMenu';
-import { navLinks, navButtons, mlhStrings } from '@locales';
-import { links } from '@data';
+
+const rotateAnimation = keyframes`
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+`;
 
 export const Navbar = () => {
     const [isMobile, setIsMobile] = useState(false);
@@ -147,6 +159,10 @@ export const Navbar = () => {
                             boxSize={{
                                 base: '25px',
                                 md: '40px',
+                            }}
+                            transition="transform 0.5s ease-in-out"
+                            _hover={{
+                                animation: `${rotateAnimation} 1s ease-in-out infinite`,
                             }}
                         />
                     </Link>

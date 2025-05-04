@@ -5,9 +5,9 @@ import {
     Flex,
     Text,
     Heading,
-    Image,
     Link,
     Button,
+    Image,
 } from '@chakra-ui/react';
 import { keyframes } from '@emotion/react';
 import Spline from '@splinetool/react-spline';
@@ -18,11 +18,11 @@ import { links } from '@data';
 
 const splineSceneUrl = links.spline;
 const spin = keyframes`
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 `;
 
-export const About2: React.FC = () => {
+export const Spur: React.FC = () => {
     const [isSplineLoaded, setIsSplineLoaded] = useState(false);
     const [splineError, setSplineError] = useState(false);
     const { ref, inView } = useInView({
@@ -44,10 +44,8 @@ export const About2: React.FC = () => {
             direction="column"
             justify="center"
             align="center"
-            position="relative"
             minH="100vh"
-            overflow="hidden"
-            bg="black"
+            className="relative bg-black min-h-screen overflow-hidden"
         >
             <Box
                 position="absolute"
@@ -144,7 +142,7 @@ export const About2: React.FC = () => {
                     fontFamily="Geist"
                     fontSize="lg"
                     color="inherit"
-                    mb={10}
+                    mb={4}
                     textAlign="left"
                 >
                     {about2Strings.description}
@@ -158,7 +156,7 @@ export const About2: React.FC = () => {
                         borderRadius="full"
                         px={5}
                         py={5}
-                        mt={-6}
+                        mt={4}
                         _hover={{ bg: '#FFA75F', opacity: 0.9 }}
                         rel="noopener noreferrer"
                     >

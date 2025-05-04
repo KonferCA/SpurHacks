@@ -2,7 +2,7 @@ import {
     Navbar,
     Hero,
     About,
-    About2,
+    Spur,
     Statistics,
     UpdatesSection,
     Sponsorship,
@@ -16,7 +16,7 @@ export const Landing = () => {
             <Navbar />
             <Hero />
             <About />
-            <About2 />
+            <Spur />
             <Statistics />
             <Sponsorship />
             <FAQ />

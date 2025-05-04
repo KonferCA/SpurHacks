@@ -114,8 +114,8 @@ export const About = () => {
         const positions: Position[] = [
             { x: 5, y: 10 }, // top-left
             { x: 85, y: 15 }, // top-right
-            { x: 10, y: 80 }, // bottom-left
-            { x: 80, y: 85 }, // bottom-right
+            { x: 5, y: 58 }, // bottom-left
+            { x: 80, y: 45 }, // bottom-right
             { x: 50, y: 5 }, // top-center
             { x: 5, y: 50 }, // left-center
             { x: 95, y: 50 }, // right-center
