@@ -1,6 +1,14 @@
 import type React from 'react';
 import { useState } from 'react';
-import { Box, Flex, Text, Heading, Image, Link, Button } from '@chakra-ui/react';
+import {
+    Box,
+    Flex,
+    Text,
+    Heading,
+    Image,
+    Link,
+    Button,
+} from '@chakra-ui/react';
 import { keyframes } from '@emotion/react';
 import Spline from '@splinetool/react-spline';
 import { useInView } from 'react-intersection-observer';
