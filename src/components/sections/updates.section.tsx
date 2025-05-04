@@ -16,7 +16,7 @@ export const UpdatesSection = () => {
     return (
         <Flex className="relative bg-black min-h-screen overflow-hidden">
             <SplineTarget
-                width={isMobile ? '100%' : '60%'} 
+                width={isMobile ? '100%' : '60%'}
                 height="full"
                 maxH="100%"
                 position="absolute"
