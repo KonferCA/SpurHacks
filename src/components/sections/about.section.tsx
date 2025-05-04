@@ -3,9 +3,7 @@ import {
     Box,
     Heading,
     Text,
-    Button,
     Container,
-    Link,
     Image,
     Flex,
     useBreakpointValue,
@@ -215,22 +213,28 @@ export const About = () => {
                         {aboutStrings.description}
                     </Text>
 
-                    <Link href="https://spuric.com" target="_blank">
-                        <Button
-                            size={{ base: 'sm', md: 'md' }}
-                            bg="#FFA75F"
-                            color="black"
-                            borderRadius="full"
-                            px={5}
-                            py={5}
-                            mt={-6}
-                            _hover={{ bg: '#FFA75F', opacity: 0.9 }}
-                            as="a"
-                            rel="noopener noreferrer"
-                        >
-                            {aboutStrings.buttons.companySite}
-                        </Button>
-                    </Link>
+                    <Heading
+                        fontFamily="Geist"
+                        fontSize={['2xl', '4xl']}
+                        color="white"
+                        fontWeight="bold"
+                        lineHeight="1.1"
+                        mb={8}
+                        textAlign="left"
+                    >
+                        {aboutStrings.travel.heading}
+                    </Heading>
+
+                    <Text
+                        color="white"
+                        fontFamily="Geist"
+                        fontSize={{ base: 'md', md: 'lg' }}
+                        mb={12}
+                        opacity={0.9}
+                        textAlign="left"
+                    >
+                        {aboutStrings.travel.description}
+                    </Text>
                 </Flex>
             </Container>
         </Box>
