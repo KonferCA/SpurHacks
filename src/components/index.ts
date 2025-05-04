@@ -45,12 +45,12 @@ export { About };
 
 /*
  *
- * @section About2
+ * @section SPUR
  *
  */
-import { About2 } from './sections/about2.section';
+import { Spur } from './sections/spur.section';
 
-export { About2 };
+export { Spur };
 
 /*
  *

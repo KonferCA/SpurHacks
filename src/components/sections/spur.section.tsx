@@ -19,11 +19,11 @@ const splineSceneUrl =
     'https://prod.spline.design/TmAYMNy2qJHyDE9m/scene.splinecode';
 
 const spin = keyframes`
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 `;
 
-export const About2: React.FC = () => {
+export const Spur: React.FC = () => {
     const [isSplineLoaded, setIsSplineLoaded] = useState(false);
     const [splineError, setSplineError] = useState(false);
     const { ref, inView } = useInView({
