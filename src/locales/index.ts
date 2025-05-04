@@ -33,7 +33,6 @@ export const heroStrings = strings.hero;
 export const heroEventDetails = strings.hero.eventDetails;
 export const heroButtons = strings.hero.buttons;
 export const heroCountdown = strings.hero.countdown;
-export const heroSocialMedia = strings.hero.socialMedia;
 
 /*
  *
@@ -70,6 +69,12 @@ export const updatesStrings = strings.updates;
  *
  */
 export const footerStrings = strings.footer;
-export const footerSocialMedia = strings.footer.socialMedia;
+
+/*
+ *
+ * @object / Social Media Links
+ *
+ */
+export const socialLinks = strings.socials;
 
 export default strings;
