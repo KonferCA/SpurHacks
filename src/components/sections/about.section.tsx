@@ -182,7 +182,7 @@ export const About = () => {
                 >
                     <Heading
                         fontFamily="Geist"
-                        fontSize={['2xl', '4xl']}
+                        fontSize={['2xl', '5xl']}
                         color="white"
                         fontWeight="bold"
                         lineHeight="1.1"
@@ -194,7 +194,7 @@ export const About = () => {
 
                     <Heading
                         fontFamily="Geist"
-                        fontSize={['2xl', '4xl']}
+                        fontSize={['2xl', '5xl']}
                         color="white"
                         fontWeight="bold"
                         lineHeight="1.1"
@@ -207,7 +207,7 @@ export const About = () => {
                     <Text
                         color="white"
                         fontFamily="Geist"
-                        fontSize={{ base: 'md', md: 'lg' }}
+                        fontSize="lg"
                         mb={12}
                         opacity={0.9}
                         textAlign="left"
