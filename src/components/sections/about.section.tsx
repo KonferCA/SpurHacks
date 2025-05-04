@@ -214,6 +214,29 @@ export const About = () => {
                     >
                         {aboutStrings.description}
                     </Text>
+
+                    <Heading
+                        fontFamily="Geist"
+                        fontSize={['2xl', '4xl']}
+                        color="white"
+                        fontWeight="bold"
+                        lineHeight="1.1"
+                        mb={8}
+                        textAlign="left"
+                    >
+                        {aboutStrings.travel.heading}
+                    </Heading>
+
+                    <Text
+                        color="white"
+                        fontFamily="Geist"
+                        fontSize={{ base: 'md', md: 'lg' }}
+                        mb={12}
+                        opacity={0.9}
+                        textAlign="left"
+                    >
+                        {aboutStrings.travel.description}
+                    </Text>
                 </Flex>
             </Container>
         </Box>
