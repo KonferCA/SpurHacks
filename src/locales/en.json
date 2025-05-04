@@ -59,6 +59,7 @@
             }
         }
     },
+
     "about": {
         "headings": {
             "first": "A Place to Innovate.",
@@ -70,6 +71,7 @@
             "description": "If you're traveling from outside Ontario, we'll cover your travel costs - but spots are limited and first-come, first-served. So don’t sleep on it!"
         }
     },
+
     "about2": {
         "heading": "Quantum. Web3. AI.",
         "description": "Placerat maecenas aliquam primis duis viverra integer. Vehicula nulla bibendum facilisis per quis vehicula risus donec euismod. Curabitur aliquet sem vel fermentum lacinia. Aliquam sodales neque lorem, aliquam luctus tellus viverra ut. Curabitur aliquet sem vel fermentum lacinia. Aliquam sodales neque lorem, aliquam luctus tellus viverra ut.",
@@ -85,6 +87,33 @@
             }
         }
     },
+
+    "statistics": {
+        "items": [
+            {
+                "label": "In Cash Prizes",
+                "value": 100,
+                "prefix": "$",
+                "suffix": "k+",
+                "allowDecimal": false
+            },
+            {
+                "label": "Hackers",
+                "value": 2000,
+                "prefix": "",
+                "suffix": "+",
+                "allowDecimal": false
+            },
+            {
+                "label": "Valuation",
+                "value": 23.4,
+                "prefix": "",
+                "suffix": "B",
+                "allowDecimal": true
+            }
+        ]
+    },
+
     "sponsorship": {
         "title": "Sponsor a Special Weekend",
         "description": "Placerat maecenas aliquam primis duis viverra integer. Vehicula nulla bibendum facilisis per quis vehicula risus donec euismod. Curabitur aliquet sem vel fermentum lacinia. Aliquam sodales neque lorem, aliquam luctus tellus viverra ut. Curabitur.",
@@ -97,31 +126,7 @@
             "sponsorshipPdf": "./sponsorships.pdf"
         }
     },
-    "statistics": {
-        "items": [
-            {
-                "label": "Prize Value",
-                "value": 100,
-                "prefix": "$",
-                "suffix": "k+",
-                "allowDecimal": false
-            },
-            {
-                "label": "Participants",
-                "value": 2000,
-                "prefix": "",
-                "suffix": "",
-                "allowDecimal": false
-            },
-            {
-                "label": "Valuation",
-                "value": 23.4,
-                "prefix": "",
-                "suffix": "B",
-                "allowDecimal": true
-            }
-        ]
-    },
+
     "faq": {
         "title": "Frequently Asked Questions",
         "contactText": "Can't find your answer? Email us your question at",
