@@ -109,7 +109,7 @@ export const UpdatesSection = () => {
                         >
                             {updatesStrings.description}
                         </Text>
-                        <Link href={links.hackathon.discord} target="_blank">
+                        <Link href={links.socials.linktree} target="_blank">
                             <Button
                                 size={{ base: 'md', md: 'md' }}
                                 bg="#FFA75F"

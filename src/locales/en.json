@@ -113,8 +113,8 @@
 
     "sponsorship": {
         "title": "Sponsor a Special Weekend",
-        "description": "Placerat maecenas aliquam primis duis viverra integer. Vehicula nulla bibendum facilisis per quis vehicula risus donec euismod. Curabitur aliquet sem vel fermentum lacinia. Aliquam sodales neque lorem, aliquam luctus tellus viverra ut. Curabitur.",
-        "contactText": "Vehicula nulla bibendum facilisis per",
+        "description": "Thanks to our dedicated sponsors and partners, we're able to give hackers an invaluable space to connect and grow! Their contributions fuel the creative energy and unforgettable experiences that SpurHacks strives for.",
+        "contactText": "Interested in sponsoring? Contact us at",
         "contactEmail": "sponsors@spurhacks.com",
         "buttonText": "BECOME A SPONSOR",
         "partnersTitle": "Our Partners",
@@ -134,35 +134,59 @@
         },
         "items": [
             {
-                "question": "What is SpurHacks?",
-                "answer": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi."
+                "question": "❓ What is a hackathon?",
+                "answer": "A hackathon is a 48 hour event where students come together to build projects, learn new skills, and network with industry professionals. It's a great opportunity to showcase your creativity and technical abilities while collaborating with others. "
             },
             {
-                "question": "Who can participate?",
-                "answer": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi."
+                "question": "🚀 What is SpurHacks?",
+                "answer": "SpurHacks is Spur's premiere hackathon, poised to be Canada's largest hackathon hosted at SPUR Campus - a venue with a rich history in Canadian history. This 3-day overnight event, running from June 20th to June 22nd, will welcome over 2,000 students from all across the Canadian tech sphere."
             },
             {
-                "question": "How many people can be on a team?",
-                "answer": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi."
+                "question": "👀 What cool things are happening at SpurHacks?",
+                "answer": "SpurHacks will feature a variety of workshops, mentorship opportunities, and networking events with industry professionals. Alongside this, we'll have a tonne of games, tournaments, and arcade-esque activities to keep you entertained throughout the event. We will also have a variety of food and drinks available for all participants."
             },
             {
-                "question": "What if I have no experience in quantum computing, web3, or AI?",
-                "answer": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi."
+                "question": "🗓️ When and where is the event?",
+                "answer": "The event will take place from June 20th to June 22nd, 2025 and will be an overnight event. The event will be held in-person at the SPUR Campus in Waterloo, Ontario. The address is 2240 University Ave, Waterloo, ON N2K 0A9, Canada."
             },
             {
-                "question": "What should I bring?",
-                "answer": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi."
+                "question": "💰 How much does it cost to attend?",
+                "answer": "The event is completely free to attend! We will provide food, drinks, and swag for all participants. However, spots are limited and on a first-come, first-served basis."
             },
             {
-                "question": "Are there any accommodations?",
-                "answer": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi."
+                "question": "🍕 What food will be provided?",
+                "answer": "We will provide a variety of meals and snacks throughout the event, including breakfast, lunch, and dinner. If you have any dietary restrictions or allergies, please let us know in your application."
+            },
+            {
+                "question": "🏆 What prizes are available?",
+                "answer": "We have over $100k in cash prizes available for participants! Prizes will be awarded for various categories, targetted towards people who are just starting out in tech, and people who are well versed in the industry. Stay tuned for more details!"
+            },
+            {
+                "question": "👋 Who can participate?",
+                "answer": "The event is open to all, regardless of their level of experience. Whether you're a beginner or an experienced hacker, we welcome you to join us and showcase your skills. We encourage participants from all backgrounds and disciplines to apply."
+            },
+            {
+                "question": "🧑‍🤝‍🧑 How many people can be on a team?",
+                "answer": "Teams can consist of up to 4 members. You can form a team with your friends or join one at the event. If you don't have a team, don't worry! We'll help you find one."
+            },
+            {
+                "question": "✨ What if I have no experience in tech or business?",
+                "answer": "No problem! SpurHacks is designed to be inclusive and welcoming to all participants, regardless of their level of experience. We will have workshops, mentors, and resources available to help you learn and grow throughout the event. Don't hesitate to apply!"
+            },
+            {
+                "question": "💼 What should I bring?",
+                "answer": "We recommend bringing your laptop, charger, comfortable clothes, and any other personal items you may need. We will provide all necessary equipment and resources for the event. If you have any specific tools or software you would like to use, feel free to bring them along."
+            },
+            {
+                "question": "🏠 Are there any accommodations?",
+                "answer": "Yes! The venue will be open 24-hours, and has ample space to work in and sleep! Feel free to bring sleeping bags, pillows, and blankets. If you have any specific requests or needs, please let us know in your application."
             }
         ]
     },
 
     "updates": {
         "title": "Stay in the know",
-        "description": "Get the latest updates from our Discord server et ",
+        "description": "Get the latest updates from our socials and Discord server below through our Linktree.",
         "buttonText": "TAKE ME THERE"
     },
 
