@@ -1,8 +1,10 @@
-import { Flex, Button, Text } from '@chakra-ui/react';
+import { Flex, Button, Text, Link as ChakraLink } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import { navButtons } from '@locales';
 import { Link as ScrollLink } from 'react-scroll';
-import { NavbarMeta } from './Navbar';
+import type { NavbarMeta } from './Navbar';
+import { useEffect, useRef } from 'react';
+import { links } from '@data';
 
 const sidebarVariants = {
     open: {
@@ -66,16 +68,44 @@ interface ExpandingMenuProps {
     navbarSections: NavbarMeta[];
 }
 
-export function ExpandingMenu({ isOpen, setIsOpen, navbarSections }: ExpandingMenuProps) {
+export function ExpandingMenu({
+    isOpen,
+    setIsOpen,
+    navbarSections,
+}: ExpandingMenuProps) {
+    const scrollPositionRef = useRef(0);
+
     const handleLinkClick = () => {
         setIsOpen(false);
     };
+
+    useEffect(() => {
+        if (isOpen) {
+            scrollPositionRef.current = window.scrollY;
+
+            document.body.classList.add('overflow-hidden');
+
+            const scrollbarWidth =
+                window.innerWidth - document.documentElement.clientWidth;
+            document.body.style.paddingRight = `${scrollbarWidth}px`;
+        } else {
+            setTimeout(() => {
+                document.body.classList.remove('overflow-hidden');
+                document.body.style.paddingRight = '';
+            }, 10);
+        }
+
+        return () => {
+            document.body.classList.remove('overflow-hidden');
+            document.body.style.paddingRight = '';
+        };
+    }, [isOpen]);
 
     return (
         <motion.nav
             initial={false}
             animate={isOpen ? 'open' : 'closed'}
-            className={`absolute inset-0 w-full h-screen ${
+            className={`fixed inset-0 w-full h-screen z-[1001] ${
                 isOpen ? 'pointer-events-auto' : 'pointer-events-none'
             }`}
         >
@@ -99,7 +129,7 @@ export function ExpandingMenu({ isOpen, setIsOpen, navbarSections }: ExpandingMe
                             spy={true}
                             smooth={true}
                             duration={500}
-                            offset={-70}
+                            offset={0}
                             onClick={handleLinkClick}
                         >
                             <Text
@@ -123,38 +153,10 @@ export function ExpandingMenu({ isOpen, setIsOpen, navbarSections }: ExpandingMe
                         justifyContent="center"
                         alignItems="center"
                     >
-                        <ScrollLink
-                            to="register"
-                            spy={true}
-                            smooth={true}
-                            duration={500}
-                            offset={-70}
-                            onClick={handleLinkClick}
-                            style={{ cursor: 'pointer', width: '100%' }}
-                        >
-                            <Button
-                                size="md"
-                                variant="outline"
-                                color="white"
-                                borderColor="white"
-                                borderRadius="full"
-                                px={6}
-                                py={2}
-                                _hover={{
-                                    bg: 'whiteAlpha.200',
-                                }}
-                            >
-                                {navButtons.register}
-                            </Button>
-                        </ScrollLink>
-                        <ScrollLink
-                            to="portal"
-                            spy={true}
-                            smooth={true}
-                            duration={500}
-                            offset={-70}
-                            onClick={handleLinkClick}
-                            style={{ cursor: 'pointer', width: '100%' }}
+                        <ChakraLink
+                            href={links.hackathon.dashboard}
+                            target="_blank"
+                            textDecoration="none"
                         >
                             <Button
                                 size="md"
@@ -170,7 +172,7 @@ export function ExpandingMenu({ isOpen, setIsOpen, navbarSections }: ExpandingMe
                             >
                                 {navButtons.applicationPortal}
                             </Button>
-                        </ScrollLink>
+                        </ChakraLink>
                     </Flex>
                 </motion.div>
             </div>
