@@ -14,3 +14,11 @@
 :root {
     --font-geist: "Geist", sans-serif;
 }
+
+body.overflow-hidden {
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+    touch-action: none;
+    -webkit-overflow-scrolling: none;
+}
