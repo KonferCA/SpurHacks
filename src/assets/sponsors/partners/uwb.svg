@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 250">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8 {
+        fill: #1f122f;
+      }
+
+      .cls-1, .cls-9, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8 {
+        isolation: isolate;
+      }
+
+      .cls-1, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8 {
+        font-family: MakroTrial-Extrabold, 'Makro Trial';
+        font-weight: 700;
+      }
+
+      .cls-1, .cls-5, .cls-7, .cls-8 {
+        font-size: 51.74px;
+      }
+
+      .cls-3, .cls-4, .cls-6 {
+        font-size: 43.11px;
+      }
+
+      .cls-4 {
+        letter-spacing: .03em;
+      }
+
+      .cls-5 {
+        letter-spacing: .03em;
+      }
+
+      .cls-6 {
+        letter-spacing: -.05em;
+      }
+
+      .cls-7 {
+        letter-spacing: -.09em;
+      }
+
+      .cls-8 {
+        letter-spacing: -.05em;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2">
+    <path class="cls-2" d="M97.98,119.65v-14.91l-12.91-7.46-12.91,7.46v14.91l10.34,5.97v7.02l-10.34,5.97v12.09l-6.42,3.71-10.5-6.06-10.35,5.97-7.08-4.08v-9.35l5.77-3.34,11.65,6.73,12.91-7.45v-14.91l-10.74-6.19v-6.58l10.74-6.19v-14.91l-12.91-7.45-12.91,7.45v11.72l-6.56,3.79-10.87-6.28-12.91,7.46v14.91l12.91,7.45,12.91-7.45v-11.87l6.43-3.71,8.32,4.8v7.15l-10.24,5.91v10.96l-6.78,3.91-10.65-6.15-12.91,7.45v14.91l12.91,7.45,10.64-6.15,6.79,3.92v12.47l12.91,7.45,12.91-7.45v-12.3l6.24-3.61,10.68,6.16,12.91-7.45v-14.91l-10.8-6.24v-6.5l10.8-6.24h0l.02.04ZM22.48,110.97v9.53l-6.07-3.5v-9.14l8.09-4.8,6.07,3.03s-8.09,4.88-8.09,4.88ZM46.75,100.32v-9.14l8.09-4.8,6.07,3.03-8.09,4.88v9.53s-6.07-3.5-6.07-3.5ZM46.75,125.06l8.09-4.81,6.07,3.04-8.09,4.88v9.53l-6.07-3.5v-9.14h0ZM22.48,144.34v9.54l-6.07-3.51v-9.14l8.09-4.8,6.07,3.04-8.09,4.87h0ZM52.82,162.04v9.53l-6.07-3.5v-9.15l8.09-4.8,6.07,3.04-8.09,4.88h0ZM90.74,139.97l-8.09,4.88v9.53l-6.07-3.5v-9.14l8.09-4.8,6.07,3.03ZM82.65,110.97v9.53l-6.07-3.5v-9.14l8.09-4.8,6.07,3.03s-8.09,4.88-8.09,4.88Z"/>
+  </g>
+  <g class="cls-9">
+    <text class="cls-8" transform="translate(109.98 128.61) scale(.96 1)"><tspan x="0" y="0">W</tspan></text>
+    <text class="cls-7" transform="translate(176.68 128.61) scale(.96 1)"><tspan x="0" y="0">A</tspan></text>
+    <text class="cls-1" transform="translate(221.19 128.61) scale(.96 1)"><tspan x="0" y="0">TER</tspan></text>
+    <text class="cls-1" transform="translate(351.6 128.61) scale(.96 1)"><tspan x="0" y="0">L</tspan></text>
+    <text class="cls-5" transform="translate(390.5 128.61) scale(.96 1)"><tspan x="0" y="0">O</tspan></text>
+    <text class="cls-1" transform="translate(441.9 128.61) scale(.96 1)"><tspan x="0" y="0">O</tspan></text>
+  </g>
+  <g class="cls-9">
+    <text class="cls-3" transform="translate(114.64 166.16) scale(.98 1)"><tspan x="0" y="0">B</tspan></text>
+    <text class="cls-3" transform="translate(154.82 166.16) scale(.98 1)"><tspan x="0" y="0">L</tspan></text>
+    <text class="cls-4" transform="translate(187.9 166.16) scale(.98 1)"><tspan x="0" y="0">O</tspan></text>
+    <text class="cls-3" transform="translate(231.63 166.16) scale(.98 1)"><tspan x="0" y="0">C</tspan></text>
+    <text class="cls-6" transform="translate(271.35 166.16) scale(.98 1)"><tspan x="0" y="0">K</tspan></text>
+    <text class="cls-3" transform="translate(309.29 166.16) scale(.98 1)"><tspan x="0" y="0">CHAIN</tspan></text>
+  </g>
+</svg>

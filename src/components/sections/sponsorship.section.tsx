@@ -254,12 +254,10 @@ const Partners = () =>
                         target="_blank"
                     >
                         <Image
+                            w={{ base: '100px', md: '225px' }}
+                            maxH={{ base: '100px', md: '155px' }}
                             src={`${sponsorsBaseUrl}${sponsor.image}`}
                             alt={sponsor.name}
-                            boxSize={{
-                                base: '100px',
-                                md: '125px',
-                            }}
                             objectFit="contain"
                             py={5}
                         />
