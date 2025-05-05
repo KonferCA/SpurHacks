@@ -9,11 +9,18 @@ import {
 } from '@chakra-ui/react';
 import { motion, AnimatePresence } from 'motion/react';
 import { faqStrings, faqItems } from '@locales';
+import { NavbarMeta } from '@components';
 
 const MotionBox = motion(Box);
 const MotionFlex = motion(Flex);
 const MotionHeading = motion(Heading);
 const MotionText = motion(Text);
+
+// Export NavbarInfo for the FAQ section
+export const NavbarInfo: NavbarMeta = {
+    id: "faq",
+    navbarTitle: "FAQ"
+};
 
 interface FAQItemProps {
     question: string;
@@ -136,12 +143,15 @@ export const FAQ = () => {
     };
 
     return (
-        <Box
-            position="relative"
-            py={20}
-            overflow="hidden"
-            minHeight="100vh"
-            bg="rgba(222, 235, 255, 0.65)"
+        <section
+            id={NavbarInfo.id}
+            style={{
+                position: "relative",
+                padding: "5rem 0",
+                overflow: "hidden",
+                minHeight: "100vh",
+                background: "rgba(222, 235, 255, 0.65)"
+            }}
         >
             <Box
                 position="absolute"
@@ -218,6 +228,6 @@ export const FAQ = () => {
                     ))}
                 </MotionFlex>
             </Container>
-        </Box>
+        </section>
     );
 };

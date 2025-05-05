@@ -12,6 +12,8 @@ import {
 
 import { sponsorshipStrings } from '@locales';
 
+import { NavbarMeta } from '@components';
+
 import {
     singularitySponsors,
     entanglementSponsors,
@@ -20,6 +22,11 @@ import {
     partners,
     sponsorsBaseUrl,
 } from '@data';
+
+export const NavbarInfo: NavbarMeta = {
+    id: "sponsors",
+    navbarTitle: "Sponsors"
+};
 
 interface Sponsor {
     name: string;

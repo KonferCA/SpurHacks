@@ -1,6 +1,8 @@
-import { Flex, Button, Link, Text } from '@chakra-ui/react';
+import { Flex, Button, Text } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
-import { navLinks, navButtons } from '@locales';
+import { navButtons } from '@locales';
+import { Link as ScrollLink } from 'react-scroll';
+import { NavbarMeta } from './Navbar';
 
 const sidebarVariants = {
     open: {
@@ -58,14 +60,17 @@ const navButtonAnimation = {
     },
 };
 
-const links = Object.values(navLinks);
-
-type ExpandingMenuProps = {
+interface ExpandingMenuProps {
     isOpen: boolean;
     setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
-};
+    navbarSections: NavbarMeta[];
+}
 
-export function ExpandingMenu({ isOpen, setIsOpen }: ExpandingMenuProps) {
+export function ExpandingMenu({ isOpen, setIsOpen, navbarSections }: ExpandingMenuProps) {
+    const handleLinkClick = () => {
+        setIsOpen(false);
+    };
+
     return (
         <motion.nav
             initial={false}
@@ -82,22 +87,31 @@ export function ExpandingMenu({ isOpen, setIsOpen }: ExpandingMenuProps) {
 
             {/* Menu Items */}
             <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center gap-8">
-                {links.map((link, i) => (
-                    <motion.a
-                        key={link}
+                {navbarSections.map((section, i) => (
+                    <motion.div
+                        key={section.id}
                         custom={i}
                         variants={navItemVariants}
-                        href={`#${link.toLowerCase()}`}
+                        style={{ cursor: 'pointer' }}
                     >
-                        <Text
-                            fontFamily="Geist"
-                            color="white"
-                            className="hover:scale-110"
-                            onClick={() => setIsOpen((prev) => !prev)}
+                        <ScrollLink
+                            to={section.id}
+                            spy={true}
+                            smooth={true}
+                            duration={500}
+                            offset={-70}
+                            onClick={handleLinkClick}
                         >
-                            {link}
-                        </Text>
-                    </motion.a>
+                            <Text
+                                fontFamily="Geist"
+                                color="white"
+                                className="hover:scale-110"
+                                fontSize="xl"
+                            >
+                                {section.navbarTitle}
+                            </Text>
+                        </ScrollLink>
+                    </motion.div>
                 ))}
                 <motion.div
                     variants={navButtonAnimation}
@@ -109,7 +123,15 @@ export function ExpandingMenu({ isOpen, setIsOpen }: ExpandingMenuProps) {
                         justifyContent="center"
                         alignItems="center"
                     >
-                        <Link href="#register" textDecoration="none">
+                        <ScrollLink
+                            to="register"
+                            spy={true}
+                            smooth={true}
+                            duration={500}
+                            offset={-70}
+                            onClick={handleLinkClick}
+                            style={{ cursor: 'pointer', width: '100%' }}
+                        >
                             <Button
                                 size="md"
                                 variant="outline"
@@ -124,8 +146,16 @@ export function ExpandingMenu({ isOpen, setIsOpen }: ExpandingMenuProps) {
                             >
                                 {navButtons.register}
                             </Button>
-                        </Link>
-                        <Link href="#portal" textDecoration="none">
+                        </ScrollLink>
+                        <ScrollLink
+                            to="portal"
+                            spy={true}
+                            smooth={true}
+                            duration={500}
+                            offset={-70}
+                            onClick={handleLinkClick}
+                            style={{ cursor: 'pointer', width: '100%' }}
+                        >
                             <Button
                                 size="md"
                                 bg="#FFA75F"
@@ -140,7 +170,7 @@ export function ExpandingMenu({ isOpen, setIsOpen }: ExpandingMenuProps) {
                             >
                                 {navButtons.applicationPortal}
                             </Button>
-                        </Link>
+                        </ScrollLink>
                     </Flex>
                 </motion.div>
             </div>

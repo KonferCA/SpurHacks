@@ -22,8 +22,9 @@ export {
  *
  */
 import { Navbar } from './Navbar/Navbar';
-
-export { Navbar };
+import type { NavbarMeta } from './Navbar/Navbar';
+import { navbarSections } from './Navbar/SectionInterpreter';
+export { Navbar, NavbarMeta, navbarSections };
 
 /*
  *

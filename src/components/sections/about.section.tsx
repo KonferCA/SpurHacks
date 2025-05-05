@@ -23,6 +23,12 @@ import {
 } from '@assets';
 
 import { aboutStrings } from '@locales';
+import { NavbarMeta } from '@components';
+
+export const NavbarInfo: NavbarMeta = {
+    id: "about",
+    navbarTitle: "About"
+};
 
 const rotateClockwise = keyframes`
     from { transform: rotate(0deg); }
@@ -142,11 +148,14 @@ export const About = () => {
     }, [svgCount]);
 
     return (
-        <Box
+        <section
+            id={NavbarInfo.id}
             className="bg-black min-h-screen"
-            width="100%"
-            position="relative"
-            overflow="hidden"
+            style={{
+                width: "100%",
+                position: "relative",
+                overflow: "hidden"
+            }}
         >
             {inView &&
                 svgConfigs.map((config) => (
@@ -237,6 +246,6 @@ export const About = () => {
                     </Text>
                 </Flex>
             </Container>
-        </Box>
+        </section>
     );
 };

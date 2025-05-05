@@ -11,12 +11,23 @@ import {
     HStack,
     Button,
     Text,
-    Link,
+    Link as ChakraLink,
     Image,
-    Drawer,
 } from '@chakra-ui/react';
 
 import { ExpandingMenu } from './ExpandingMenu';
+import { navButtons, mlhStrings } from '@locales';
+import { keyframes } from '@emotion/react';
+import { Link as ScrollLink } from 'react-scroll';
+
+// Import the navbar sections from our collector
+import { navbarSections } from '@components';
+
+// Define the NavbarMeta interface
+export interface NavbarMeta {
+    id: string;
+    navbarTitle: string;
+}
 
 const rotateAnimation = keyframes`
     from {
@@ -77,69 +88,57 @@ export const Navbar = () => {
                 <Box>
                     {isMobile ? (
                         // Cross and Hamburger menu on Mobile
-                        <Drawer.Root size="full" placement="top">
-                            <Button
-                                zIndex={1000}
-                                size="md"
-                                variant="ghost"
-                                bg="transparent"
-                                _hover={{ bg: 'transparent' }}
-                                _active={{ bg: 'transparent' }}
-                                onClick={() => setIsOpen(!isOpen)}
-                                onKeyDown={(e) => {
-                                    if (e.key === 'Enter' || e.key === ' ') {
-                                        setIsOpen(!isOpen);
-                                    }
-                                }}
-                            >
-                                {isOpen ? (
-                                    <Cross2Icon
-                                        width={25}
-                                        height={25}
-                                        color="white"
-                                    />
-                                ) : (
-                                    <HamburgerMenuIcon
-                                        width={25}
-                                        height={25}
-                                        color="white"
-                                    />
-                                )}
-                            </Button>
-                        </Drawer.Root>
+                        <Button
+                            zIndex={1000}
+                            size="md"
+                            variant="ghost"
+                            bg="transparent"
+                            _hover={{ bg: 'transparent' }}
+                            _active={{ bg: 'transparent' }}
+                            onClick={() => setIsOpen(!isOpen)}
+                            onKeyDown={(e) => {
+                                if (e.key === 'Enter' || e.key === ' ') {
+                                    setIsOpen(!isOpen);
+                                }
+                            }}
+                        >
+                            {isOpen ? (
+                                <Cross2Icon
+                                    width={25}
+                                    height={25}
+                                    color="white"
+                                />
+                            ) : (
+                                <HamburgerMenuIcon
+                                    width={25}
+                                    height={25}
+                                    color="white"
+                                />
+                            )}
+                        </Button>
                     ) : (
-                        // Links on Desktop
+                        // Links on Desktop - dynamically generated from navbarSections
                         <HStack gap={8}>
-                            <Link href="#about" textDecoration="none">
-                                <Text
-                                    fontWeight="medium"
-                                    fontFamily="Geist"
-                                    color="white"
-                                    className="hover:scale-110"
+                            {navbarSections.map((section: NavbarMeta) => (
+                                <ScrollLink
+                                    key={section.id}
+                                    to={section.id}
+                                    spy={true}
+                                    smooth={true}
+                                    duration={500}
+                                    offset={0}
+                                    style={{ cursor: 'pointer' }}
                                 >
-                                    {navLinks.about}
-                                </Text>
-                            </Link>
-                            <Link href="#sponsors" textDecoration="none">
-                                <Text
-                                    fontWeight="medium"
-                                    fontFamily="Geist"
-                                    color="white"
-                                    className="hover:scale-110"
-                                >
-                                    {navLinks.sponsors}
-                                </Text>
-                            </Link>
-                            <Link href="#faq" textDecoration="none">
-                                <Text
-                                    fontWeight="medium"
-                                    fontFamily="Geist"
-                                    color="white"
-                                    className="hover:scale-110"
-                                >
-                                    {navLinks.faq}
-                                </Text>
-                            </Link>
+                                    <Text
+                                        fontWeight="medium"
+                                        fontFamily="Geist"
+                                        color="white"
+                                        className="hover:scale-110"
+                                    >
+                                        {section.navbarTitle}
+                                    </Text>
+                                </ScrollLink>
+                            ))}
                         </HStack>
                     )}
                 </Box>
@@ -151,7 +150,13 @@ export const Navbar = () => {
                     transform="translateX(-50%)"
                     textAlign="center"
                 >
-                    <Link href="#hero">
+                    <ScrollLink
+                        to="hero"
+                        spy={true}
+                        smooth={true}
+                        duration={500}
+                        style={{ cursor: 'pointer' }}
+                    >
                         <Image
                             src={IconWhite}
                             alt="spurIcon"
@@ -165,7 +170,7 @@ export const Navbar = () => {
                                 animation: `${rotateAnimation} 1s ease-in-out infinite`,
                             }}
                         />
-                    </Link>
+                    </ScrollLink>
                 </Box>
 
                 {/* Right Buttons + MLH Banner */}
@@ -209,7 +214,7 @@ export const Navbar = () => {
                                 >
                                     {navButtons.register}
                                 </Button>
-                            </Link>
+                            </ScrollLink>
                         </HStack>
                     )}
 
@@ -219,7 +224,7 @@ export const Navbar = () => {
                         top={{ base: -10, xl: -4 }}
                         right={0}
                     >
-                        <Link
+                        <ChakraLink
                             id="mlh-trust-badge"
                             href={links.mlh.trust}
                             target="_blank"
@@ -229,13 +234,17 @@ export const Navbar = () => {
                                 alt={mlhStrings.altText}
                                 h={[100, 150]}
                             />
-                        </Link>
+                        </ChakraLink>
                     </Box>
                 </HStack>
             </Flex>
             {/* Expanded Menu on Mobile */}
             {isMobile ? (
-                <ExpandingMenu isOpen={isOpen} setIsOpen={setIsOpen} />
+                <ExpandingMenu 
+                    isOpen={isOpen} 
+                    setIsOpen={setIsOpen} 
+                    navbarSections={navbarSections}
+                />
             ) : (
                 <></>
             )}
