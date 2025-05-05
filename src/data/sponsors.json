@@ -5,6 +5,16 @@
     "quantaSponsors": [],
     "partners": [
         {
+            "name": "Konfer",
+            "image": "partners/konfer.svg",
+            "link": "https://konfer.ca"
+        },
+        {
+            "name": "SPUR Innovation Center",
+            "image": "partners/spur.svg",
+            "link": "https://spuric.com"
+        },
+        {
             "name": "Laurier Computing Society",
             "image": "partners/lcs.svg",
             "link": "https://lauriercs.ca"
@@ -17,7 +27,7 @@
         {
             "name": "Waterloo Blockchain",
             "image": "partners/uwb.svg",
-            "link": "https://waterlooblockchain.ca/"
-        },
+            "link": "https://waterlooblockchain.ca"
+        }
     ]
 }
