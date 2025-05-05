@@ -112,3 +112,6 @@ export { CountUp };
  *
  */
 export * from './spline/SplineTarget';
+
+// Common components
+export * from './common/SocialMediaBar';
