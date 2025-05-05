@@ -142,12 +142,12 @@
         },
         "items": [
             {
-                "question": "❓ What is a hackathon?",
-                "answer": "A hackathon is a 48 hour event where students come together to build projects, learn new skills, and network with industry professionals. It's a great opportunity to showcase your creativity and technical abilities while collaborating with others. "
-            },
-            {
                 "question": "🚀 What is SpurHacks?",
                 "answer": "SpurHacks is Spur's premiere hackathon, poised to be Canada's largest hackathon hosted at SPUR Campus - a venue with a rich history in Canadian history. This 3-day overnight event, running from June 20th to June 22nd, will welcome over 2,000 students from all across the Canadian tech sphere."
+            },
+            {
+                "question": "❓ What’s unique about SpurHacks compared to a regular hackathon or case competition?",
+                "answer": "SpurHacks isn’t just a hackathon — it’s a launchpad for real-world impact. With the scale to host up to 2,000 participants, SpurHacks gives you 48 hours to design, build, and pitch innovative solutions with the chance to secure actual investment from a leading venture firm. Whether you're starting from scratch, bringing an existing idea, or looking for collaborators, SpurHacks provides the resources, mentorship, and funding opportunities to take your project beyond the weekend. Build at SpurHacks — and build the future you're aiming for."
             },
             {
                 "question": "👀 What cool things are happening at SpurHacks?",
