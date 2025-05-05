@@ -10,7 +10,6 @@ import {
 } from '@chakra-ui/react';
 import { keyframes } from '@emotion/react';
 import { useInView } from 'react-intersection-observer';
-
 import {
     Knot1,
     Knot2,
@@ -21,13 +20,13 @@ import {
     Knot7,
     Knot8,
 } from '@assets';
-
 import { aboutStrings } from '@locales';
-import { NavbarMeta } from '@components';
+import type { NavbarMeta } from '@components';
 
 export const NavbarInfo: NavbarMeta = {
-    id: "about",
-    navbarTitle: "About"
+    id: 'about',
+    navbarTitle: 'About Us',
+    priority: 1,
 };
 
 const rotateClockwise = keyframes`
@@ -152,9 +151,9 @@ export const About = () => {
             id={NavbarInfo.id}
             className="bg-black min-h-screen"
             style={{
-                width: "100%",
-                position: "relative",
-                overflow: "hidden"
+                width: '100%',
+                position: 'relative',
+                overflow: 'hidden',
             }}
         >
             {inView &&

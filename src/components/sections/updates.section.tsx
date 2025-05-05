@@ -6,25 +6,30 @@ import {
     Link,
     Box,
     useBreakpointValue,
+    Container,
 } from '@chakra-ui/react';
 import { SplineTarget } from '@components';
 import { updatesStrings } from '@locales';
 import { links } from '@data';
-import { NavbarMeta } from '@components';
+import type { NavbarMeta } from '@components';
 
-// Export NavbarInfo for the Updates section
 export const NavbarInfo: NavbarMeta = {
-    id: "updates",
-    navbarTitle: "Stay Updated"
+    id: 'updates',
+    navbarTitle: 'Stay Updated',
+    priority: 5,
 };
 
 export const UpdatesSection = () => {
     const isMobile = useBreakpointValue({ base: true, md: false });
-    
+
     return (
         <section
             id={NavbarInfo.id}
-            className="relative bg-black min-h-screen overflow-hidden flex items-center justify-center"
+            className="bg-black min-h-screen overflow-hidden"
+            style={{
+                width: '100%',
+                position: 'relative',
+            }}
         >
             <SplineTarget
                 width={isMobile ? '100%' : '60%'}
@@ -46,6 +51,7 @@ export const UpdatesSection = () => {
                         : undefined
                 }
             />
+
             {!isMobile && (
                 <Box
                     position="absolute"
@@ -57,77 +63,34 @@ export const UpdatesSection = () => {
                     bg="linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,1))"
                 />
             )}
-            
-            {isMobile ? (
+
+            <Container
+                maxW="container.xl"
+                h="100%"
+                position="relative"
+                zIndex={2}
+                px={0}
+            >
                 <Flex
                     direction="column"
                     gap={8}
-                    w="90%"
-                    position="relative"
-                    zIndex={10}
-                    px={6}
-                    py={16}
-                >
-                    <Flex
-                        direction="column"
-                        gap={6}
-                        fontWeight="extralight"
-                        textAlign="center"
-                        className="text-white"
-                    >
-                        <Heading
-                            fontSize={['2xl', '2xl', '3xl', '4xl']}
-                            fontFamily="Geist"
-                            fontWeight="semibold"
-                            lineHeight="1.2"
-                        >
-                            {updatesStrings.title}
-                        </Heading>
-                        <Text
-                            color="white"
-                            fontFamily="Geist"
-                            fontSize="lg"
-                            mb={8}
-                        >
-                            {updatesStrings.description}
-                        </Text>
-                        <Link href={updatesStrings.discordUrl} target="_blank">
-                            <Button
-                                size="md"
-                                bg="#FFA75F"
-                                color="black"
-                                borderRadius="full"
-                                px={6}
-                                py={4}
-                                mt={-8}
-                                width="100%"
-                                _hover={{ bg: '#FFA75F', opacity: 0.9 }}
-                                rel="noopener noreferrer"
-                            >
-                                {updatesStrings.buttonText}
-                            </Button>
-                        </Link>
-                    </Flex>
-                </Flex>
-            ) : (
-                <Flex
-                    direction="column"
-                    gap={8}
-                    w="40%"
+                    w={isMobile ? '100%' : '40%'}
                     justify="center"
-                    align="flex-end"
-                    ml="55%"
-                    position="relative"
-                    zIndex={10}
-                    h="100vh"
+                    align={isMobile ? 'center' : 'flex-end'}
+                    ml={isMobile ? 'auto' : '55%'}
+                    mr={isMobile ? 'auto' : '0'}
+                    px={{ base: 6, md: 0 }}
+                    py={{ base: 16, md: 0 }}
+                    minH="100vh"
+                    className="focus:outline-none z-20"
                 >
                     <Flex
                         direction="column"
-                        maxW="480px"
+                        maxW={isMobile ? '100%' : '480px'}
                         gap={6}
                         fontWeight="extralight"
-                        textAlign="left"
-                        mr={4}
+                        textAlign={isMobile ? 'center' : 'left'}
+                        mr={{ base: 0, md: 4 }}
                         className="text-white"
                     >
                         <Heading
@@ -141,20 +104,21 @@ export const UpdatesSection = () => {
                         <Text
                             color="white"
                             fontFamily="Geist"
-                            fontSize="lg"
+                            fontSize={{ base: 'lg', md: 'lg' }}
                             mb={8}
                         >
                             {updatesStrings.description}
                         </Text>
                         <Link href={links.hackathon.discord} target="_blank">
                             <Button
-                                size="md"
+                                size={{ base: 'md', md: 'md' }}
                                 bg="#FFA75F"
                                 color="black"
                                 borderRadius="full"
                                 px={6}
                                 py={4}
                                 mt={-8}
+                                width={{ base: '100%', md: 'auto' }}
                                 _hover={{ bg: '#FFA75F', opacity: 0.9 }}
                                 rel="noopener noreferrer"
                             >
@@ -163,7 +127,7 @@ export const UpdatesSection = () => {
                         </Link>
                     </Flex>
                 </Flex>
-            )}
+            </Container>
         </section>
     );
 };

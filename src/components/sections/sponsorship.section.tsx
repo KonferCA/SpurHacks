@@ -9,11 +9,8 @@ import {
     Stack,
     Link,
 } from '@chakra-ui/react';
-
 import { sponsorshipStrings } from '@locales';
-
-import { NavbarMeta } from '@components';
-
+import type { NavbarMeta } from '@components';
 import {
     singularitySponsors,
     entanglementSponsors,
@@ -24,8 +21,9 @@ import {
 } from '@data';
 
 export const NavbarInfo: NavbarMeta = {
-    id: "sponsors",
-    navbarTitle: "Sponsors"
+    id: 'sponsors',
+    navbarTitle: 'Sponsors',
+    priority: 3,
 };
 
 interface Sponsor {
