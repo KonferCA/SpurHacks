@@ -102,11 +102,11 @@
                 "allowDecimal": false
             },
             {
-                "label": "Valuation",
-                "value": 23.4,
+                "label": "Successfully Funded Startups",
+                "value": 200,
                 "prefix": "",
-                "suffix": "B",
-                "allowDecimal": true
+                "suffix": "+",
+                "allowDecimal": false
             }
         ]
     },
