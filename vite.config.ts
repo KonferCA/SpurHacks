@@ -24,4 +24,9 @@ export default defineConfig({
             '@data': path.resolve(__dirname, './src/data'),
         },
     },
+
+    build: {
+        outDir: path.resolve(__dirname, './dist'),
+        assetsDir: 'assets',
+    }
 });
