@@ -23,8 +23,8 @@ export {
  */
 import { Navbar } from './Navbar/Navbar';
 import type { NavbarMeta } from './Navbar/Navbar';
-import { navbarSections } from './Navbar/SectionInterpreter';
-export { Navbar, NavbarMeta, navbarSections };
+export { Navbar, type NavbarMeta };
+export { loadNavbarSections } from './Navbar/SectionInterpreter';
 
 /*
  *
@@ -114,5 +114,9 @@ export { CountUp };
  */
 export * from './spline/SplineTarget';
 
-// Common components
+/*
+ *
+ * @Component SocialMediaBar
+ *
+ */
 export * from './common/SocialMediaBar';
