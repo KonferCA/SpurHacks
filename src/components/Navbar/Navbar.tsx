@@ -1,9 +1,3 @@
-import { useEffect, useState } from 'react';
-import { keyframes } from '@emotion/react';
-import { HamburgerMenuIcon, Cross2Icon } from '@radix-ui/react-icons';
-
-import { navLinks, navButtons, mlhStrings } from '@locales';
-import { links } from '@data';
 import { IconWhite } from '@assets';
 import {
     Box,
@@ -14,19 +8,19 @@ import {
     Link as ChakraLink,
     Image,
 } from '@chakra-ui/react';
-
+import { useEffect, useState } from 'react';
+import { HamburgerMenuIcon, Cross2Icon } from '@radix-ui/react-icons';
 import { ExpandingMenu } from './ExpandingMenu';
 import { navButtons, mlhStrings } from '@locales';
 import { keyframes } from '@emotion/react';
 import { Link as ScrollLink } from 'react-scroll';
+import { links } from '@data';
+import { loadNavbarSections } from './SectionInterpreter';
 
-// Import the navbar sections from our collector
-import { navbarSections } from '@components';
-
-// Define the NavbarMeta interface
 export interface NavbarMeta {
     id: string;
     navbarTitle: string;
+    priority: number;
 }
 
 const rotateAnimation = keyframes`
@@ -39,6 +33,8 @@ const rotateAnimation = keyframes`
 `;
 
 export const Navbar = () => {
+    const navbarSections = loadNavbarSections();
+
     const [isMobile, setIsMobile] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
 
@@ -81,7 +77,7 @@ export const Navbar = () => {
             position="fixed"
             top={scrollingUp ? 0 : '-150px'}
             left={0}
-            zIndex={1000}
+            zIndex={1002}
         >
             <Flex align="center" justify="space-between" maxW="2000" mx="auto">
                 {/* Left Nav Links */}
@@ -89,7 +85,7 @@ export const Navbar = () => {
                     {isMobile ? (
                         // Cross and Hamburger menu on Mobile
                         <Button
-                            zIndex={1000}
+                            zIndex={1003}
                             size="md"
                             variant="ghost"
                             bg="transparent"
@@ -180,7 +176,14 @@ export const Navbar = () => {
                         <></>
                     ) : (
                         <HStack gap={4}>
-                            {/* <Link href="#register" textDecoration="none">
+                            {/* <ScrollLink
+                                to="register"
+                                spy={true}
+                                smooth={true}
+                                duration={500}
+                                offset={-70}
+                                style={{ cursor: 'pointer' }}
+                            >
                                 <Button
                                     size="md"
                                     variant="outline"
@@ -193,8 +196,9 @@ export const Navbar = () => {
                                 >
                                     {navButtons.register}
                                 </Button>
-                            </Link> */}
-                            <Link
+                            </ScrollLink> */}
+
+                            <ChakraLink
                                 href={links.hackathon.dashboard}
                                 target="_blank"
                                 textDecoration="none"
@@ -212,9 +216,9 @@ export const Navbar = () => {
                                         opacity: 0.9,
                                     }}
                                 >
-                                    {navButtons.register}
+                                    {navButtons.applicationPortal}
                                 </Button>
-                            </ScrollLink>
+                            </ChakraLink>
                         </HStack>
                     )}
 
@@ -240,9 +244,9 @@ export const Navbar = () => {
             </Flex>
             {/* Expanded Menu on Mobile */}
             {isMobile ? (
-                <ExpandingMenu 
-                    isOpen={isOpen} 
-                    setIsOpen={setIsOpen} 
+                <ExpandingMenu
+                    isOpen={isOpen}
+                    setIsOpen={setIsOpen}
                     navbarSections={navbarSections}
                 />
             ) : (
