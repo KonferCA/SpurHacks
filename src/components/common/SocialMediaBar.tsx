@@ -72,6 +72,12 @@ export const SocialMediaBar: React.FC<SocialMediaBarProps> = ({
                     rel="noopener noreferrer"
                     color={color}
                     display="block"
+                    position="relative"
+                    transition="all 0.2s ease"
+                    _hover={{
+                        opacity: 1,
+                        transform: 'scale(1.1)',
+                    }}
                 >
                     <Icon as={platform.icon} boxSize={footerIconSize} />
                 </Link>
