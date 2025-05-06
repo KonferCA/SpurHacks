@@ -77,6 +77,7 @@ export const UpdatesSection = () => {
                     w={isMobile ? '100%' : '40%'}
                     justify="center"
                     align={isMobile ? 'center' : 'flex-end'}
+                    mx={isMobile ? 'auto' : '0'}
                     ml={isMobile ? 'auto' : '55%'}
                     mr={isMobile ? 'auto' : '0'}
                     px={{ base: 6, md: 0 }}
@@ -94,22 +95,32 @@ export const UpdatesSection = () => {
                         className="text-white"
                     >
                         <Heading
-                            fontSize={['2xl', '2xl', '3xl', '4xl']}
-                            fontFamily="Geist"
-                            fontWeight="semibold"
-                            lineHeight="1.2"
+                            fontSize={['2xl', '5xl']}
+                            color="offWhite"
+                            fontWeight="bold"
+                            lineHeight="1.1"
+                            mb={12}
+                            textAlign={isMobile ? 'center' : 'left'}
                         >
                             {updatesStrings.title}
                         </Heading>
+
                         <Text
-                            color="white"
-                            fontFamily="Geist"
-                            fontSize={{ base: 'lg', md: 'lg' }}
-                            mb={8}
+                            color="offWhite"
+                            fontSize={{ base: 'md', md: 'lg' }}
+                            mb={12}
+                            opacity={0.9}
+                            textAlign={isMobile ? 'center' : 'left'}
                         >
                             {updatesStrings.description}
                         </Text>
-                        <Link href={links.socials.linktree} target="_blank">
+
+                        <Link
+                            href={links.socials.linktree}
+                            target="_blank"
+                            alignSelf={isMobile ? 'center' : 'flex-start'}
+                            width={isMobile ? '100%' : 'auto'}
+                        >
                             <Button
                                 size={{ base: 'md', md: 'md' }}
                                 bg="#FFA75F"
