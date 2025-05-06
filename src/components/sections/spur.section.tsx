@@ -149,21 +149,21 @@ export const Spur: React.FC = () => {
 
                         <Heading
                             as="h2"
-                            fontFamily="Geist"
                             fontSize={['2xl', '5xl']}
-                            fontWeight="semibold"
+                            fontWeight="bold"
                             color="inherit"
-                            mb={{ base: 8, sm: 16, md: 20 }}
+                            mb={14}
                             lineHeight="1.2"
                             textAlign="left"
                         >
                             {about2Strings.heading}
                         </Heading>
+
                         <Text
-                            fontFamily="Geist"
-                            fontSize="lg"
-                            color="inherit"
+                            color="offWhite"
+                            fontSize={{ base: 'md', md: 'lg' }}
                             mb={4}
+                            opacity={0.9}
                             textAlign="left"
                         >
                             {about2Strings.description}
