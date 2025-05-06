@@ -206,15 +206,19 @@ export const Navbar = () => {
                             >
                                 <Button
                                     size="md"
-                                    bg="#FFA75F"
+                                    bg="orange.default"
                                     color="black"
                                     borderRadius="full"
                                     px={6}
                                     py={2}
                                     mr={32}
+                                    boxShadow="orangeGlow"
+                                    transition="all 0.3s ease"
                                     _hover={{
-                                        bg: '#FFA75F',
-                                        opacity: 0.9,
+                                        bg: 'orange.hover',
+                                        transform: 'translateY(-2px)',
+                                        boxShadow:
+                                            '0 6px 12px rgba(255, 167, 95, 0.5)',
                                     }}
                                 >
                                     {navButtons.applicationPortal}

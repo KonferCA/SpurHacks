@@ -187,7 +187,12 @@ export const Spur: React.FC = () => {
                             {about2Strings.description}
                         </Text>
 
-                        <Link href={links.spur} target="_blank">
+                        <Link
+                            href={links.spur}
+                            target="_blank"
+                            textDecoration="none"
+                            _hover={{ textDecoration: 'none' }}
+                        >
                             <Button
                                 size={{ base: 'sm', md: 'md' }}
                                 bg="orange.default"
@@ -196,7 +201,14 @@ export const Spur: React.FC = () => {
                                 px={5}
                                 py={5}
                                 mt={4}
-                                _hover={{ bg: 'orange.hover', opacity: 0.9 }}
+                                boxShadow="orangeGlow"
+                                transition="all 0.3s ease"
+                                _hover={{
+                                    bg: 'orange.hover',
+                                    transform: 'translateY(-2px)',
+                                    boxShadow:
+                                        '0 6px 12px rgba(255, 167, 95, 0.5)',
+                                }}
                                 rel="noopener noreferrer"
                             >
                                 {about2Strings.buttons.companySite}

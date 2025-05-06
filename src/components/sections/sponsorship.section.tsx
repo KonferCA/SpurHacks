@@ -54,6 +54,8 @@ const SingularitySponsors = () =>
                     justifyContent="center"
                     href={sponsor.link}
                     target="_blank"
+                    textDecoration="none"
+                    _hover={{ textDecoration: 'none' }}
                 >
                     <Image
                         src={`${sponsorsBaseUrl}${sponsor.image}`}
@@ -105,6 +107,8 @@ const EntanglementSponsors = () =>
                         }}
                         href={sponsor.link}
                         target="_blank"
+                        textDecoration="none"
+                        _hover={{ textDecoration: 'none' }}
                     >
                         <Image
                             src={`${sponsorsBaseUrl}${sponsor.image}`}
@@ -160,6 +164,8 @@ const QuarkSponsors = () =>
                         }}
                         href={sponsor.link}
                         target="_blank"
+                        textDecoration="none"
+                        _hover={{ textDecoration: 'none' }}
                     >
                         <Image
                             src={`${sponsorsBaseUrl}${sponsor.image}`}
@@ -201,6 +207,8 @@ const QuantaSponsors = () =>
                     justifyContent="center"
                     href={sponsor.link}
                     target="_blank"
+                    textDecoration="none"
+                    _hover={{ textDecoration: 'none' }}
                 >
                     <Image
                         src={`${sponsorsBaseUrl}${sponsor.image}`}
@@ -232,6 +240,8 @@ const Partners = () =>
                     href={sponsor.link}
                     target="_blank"
                     p={{ base: 4, md: 5 }}
+                    textDecoration="none"
+                    _hover={{ textDecoration: 'none' }}
                 >
                     <Box
                         w="100%"
@@ -316,14 +326,21 @@ export const Sponsorship = () => {
                     <Link
                         href={sponsorshipStrings.resourcePaths.sponsorshipPdf}
                         target="_blank"
+                        textDecoration="none"
+                        _hover={{ textDecoration: 'none' }}
                     >
                         <Button
                             color="black"
                             background="orange.default"
                             rounded="full"
                             p={5}
-                            _hover={{ bg: 'orange.hover' }}
-                            transition="all 0.3s ease-in-out"
+                            boxShadow="orangeGlow"
+                            transition="all 0.3s ease"
+                            _hover={{
+                                bg: 'orange.hover',
+                                transform: 'translateY(-2px)',
+                                boxShadow: '0 6px 12px rgba(255, 167, 95, 0.5)',
+                            }}
                         >
                             {sponsorshipStrings.buttonText}
                         </Button>

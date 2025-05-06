@@ -342,7 +342,14 @@ export const Hero: React.FC = () => {
                                 borderRadius="full"
                                 px={8}
                                 py={6}
-                                _hover={{ bg: 'orange.hover', opacity: 0.9 }}
+                                boxShadow="orangeGlow"
+                                transition="all 0.3s ease"
+                                _hover={{
+                                    bg: 'orange.hover',
+                                    transform: 'translateY(-2px)',
+                                    boxShadow:
+                                        '0 6px 12px rgba(255, 167, 95, 0.5)',
+                                }}
                             >
                                 <a
                                     href={links.hackathon.dashboard}
@@ -361,7 +368,13 @@ export const Hero: React.FC = () => {
                                 borderRadius="full"
                                 px={8}
                                 py={6}
-                                _hover={{ bg: 'whiteAlpha.200' }}
+                                transition="all 0.3s ease"
+                                _hover={{
+                                    bg: 'whiteAlpha.200',
+                                    transform: 'translateY(-2px)',
+                                    boxShadow:
+                                        '0 6px 12px rgba(255, 255, 255, 0.2)',
+                                }}
                             >
                                 <a
                                     href={links.hackathon.sponsorship}
@@ -381,13 +394,20 @@ export const Hero: React.FC = () => {
                         <HStack flexDir="column" w="100%" px={6} maxW="100%">
                             <Button
                                 size="md"
-                                bg="#FFA75F"
+                                bg="orange.default"
                                 color="black"
                                 borderRadius="full"
                                 px={4}
                                 py={5}
                                 w="100%"
-                                _hover={{ bg: '#FFA75F', opacity: 0.9 }}
+                                boxShadow="orangeGlow"
+                                transition="all 0.3s ease"
+                                _hover={{
+                                    bg: 'orange.hover',
+                                    transform: 'translateY(-2px)',
+                                    boxShadow:
+                                        '0 6px 12px rgba(255, 167, 95, 0.5)',
+                                }}
                             >
                                 {heroButtons.apply}
                             </Button>
@@ -400,7 +420,13 @@ export const Hero: React.FC = () => {
                                 px={4}
                                 py={5}
                                 w="100%"
-                                _hover={{ bg: 'whiteAlpha.200' }}
+                                transition="all 0.3s ease"
+                                _hover={{
+                                    bg: 'whiteAlpha.200',
+                                    transform: 'translateY(-2px)',
+                                    boxShadow:
+                                        '0 6px 12px rgba(255, 255, 255, 0.2)',
+                                }}
                             >
                                 {heroButtons.sponsor}
                             </Button>

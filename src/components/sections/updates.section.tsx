@@ -120,17 +120,26 @@ export const UpdatesSection = () => {
                             target="_blank"
                             alignSelf={isMobile ? 'center' : 'flex-start'}
                             width={isMobile ? '100%' : 'auto'}
+                            textDecoration="none"
+                            _hover={{ textDecoration: 'none' }}
                         >
                             <Button
                                 size={{ base: 'md', md: 'md' }}
-                                bg="#FFA75F"
+                                bg="orange.default"
                                 color="black"
                                 borderRadius="full"
                                 px={6}
                                 py={4}
                                 mt={-8}
                                 width={{ base: '100%', md: 'auto' }}
-                                _hover={{ bg: '#FFA75F', opacity: 0.9 }}
+                                boxShadow="orangeGlow"
+                                transition="all 0.3s ease"
+                                _hover={{
+                                    bg: 'orange.hover',
+                                    transform: 'translateY(-2px)',
+                                    boxShadow:
+                                        '0 6px 12px rgba(255, 167, 95, 0.5)',
+                                }}
                                 rel="noopener noreferrer"
                             >
                                 {updatesStrings.buttonText}
