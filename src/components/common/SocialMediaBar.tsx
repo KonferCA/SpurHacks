@@ -4,6 +4,7 @@ import {
     FaLinkedin,
     FaInstagram,
     FaXTwitter,
+    FaTiktok
 } from 'react-icons/fa6';
 import type { IconType } from 'react-icons';
 import { strings } from '@locales';
@@ -42,6 +43,12 @@ const socialPlatforms: {
         title: strings.socials.x.title,
         href: links.socials.x,
     },
+    tiktok: {
+        icon: FaTiktok,
+        ariaLabel: strings.socials.tiktok.ariaLabel,
+        title: strings.socials.tiktok.title,
+        href: links.socials.tiktok,
+    }
 };
 
 interface SocialMediaBarProps {

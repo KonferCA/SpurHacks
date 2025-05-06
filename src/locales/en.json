@@ -30,6 +30,10 @@
         "x": {
             "ariaLabel": "Twitter",
             "title": "Twitter Logo"
+        },
+        "tiktok": {
+            "ariaLabel": "TikTok",
+            "title": "TikTok Logo"
         }
     },
 
