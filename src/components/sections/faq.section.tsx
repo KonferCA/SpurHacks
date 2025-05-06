@@ -69,6 +69,7 @@ const FAQItem: React.FC<FAQItemProps> = ({
                     opacity={0.9}
                     fontWeight="600"
                     fontFamily="inherit"
+                    mr={16}
                 >
                     {question}
                 </Text>
