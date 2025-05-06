@@ -299,13 +299,30 @@ export const Sponsorship = () => {
                     className="max-w-3xl"
                     px={5}
                 >
-                    <Heading fontSize={['2xl', '3xl', '4xl', '5xl']}>
+                    <Heading
+                        fontSize={['2xl', '5xl']}
+                        color="offWhite"
+                        fontWeight="bold"
+                        lineHeight="1.1"
+                        mb={12}
+                        textAlign="left"
+                    >
                         {sponsorshipStrings.title}
                     </Heading>
 
-                    <Text>{sponsorshipStrings.description}</Text>
+                    <Text
+                        color="offWhite"
+                        fontSize={{ base: 'md', md: 'lg' }}
+                        opacity={0.9}
+                    >
+                        {sponsorshipStrings.description}
+                    </Text>
 
-                    <Text>
+                    <Text
+                        color="offWhite"
+                        fontSize={{ base: 'md', md: 'lg' }}
+                        opacity={0.9}
+                    >
                         {sponsorshipStrings.contactText}
                         <strong> {sponsorshipStrings.contactEmail}</strong>
                     </Text>
@@ -363,9 +380,14 @@ export const Sponsorship = () => {
 
                 {hasPartners && (
                     <Stack gap={{ base: 10, lg: 20 }} align="center" w="90%">
-                        <Heading fontSize={['2xl', '3xl', '4xl', '5xl']}>
+                        <Heading
+                            fontSize={['2xl', '5xl']}
+                            color="offWhite"
+                            fontWeight="bold"
+                        >
                             {sponsorshipStrings.partnersTitle}
                         </Heading>
+
                         <Box w="full" maxW={MAX_WIDTH} mx="auto">
                             <Partners />
                         </Box>
