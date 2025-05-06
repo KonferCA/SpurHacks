@@ -55,12 +55,17 @@ export const Statistics = () => {
                         <Flex
                             key={`stat-${item.label}`}
                             direction="column"
-                            gap={isMobile ? 2 : 4}
+                            gap={isMobile ? 2 : 6}
                             mb={isMobile ? 12 : 4}
                         >
-                            <Heading color="offWhite" fontSize={['md', 'lg']}>
+                            <Text 
+                                color="offWhite" 
+                                fontSize={['xl', '2xl']}
+                                fontWeight="300"
+                            >
                                 {item.label}
-                            </Heading>
+                            </Text>
+
                             <Heading fontSize={['5xl', '7xl']} color="offWhite">
                                 <CountUp
                                     to={item.value}
