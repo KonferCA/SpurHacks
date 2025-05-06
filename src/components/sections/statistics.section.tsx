@@ -54,25 +54,18 @@ export const Statistics = () => {
                     focus:outline-none z-20
                 `}
             >
-                <Flex
-                    gap={[10, 20]}
-                    direction="column"
-                    fontWeight="extralight"
-                    className="text-white"
-                >
+                <Flex gap={[10, 20]} direction="column" className="text-white">
                     {statisticsItems.items.map((item) => (
                         <Flex
                             key={`stat-${item.label}`}
                             direction="column"
                             gap={6}
                         >
-                            <Text fontFamily="Geist">{item.label}</Text>
-                            <Heading
-                                fontFamily="Geist"
-                                fontSize={['5xl', '7xl']}
-                                color="white"
-                                fontWeight="light"
-                            >
+                            <Text color="offWhite" fontSize={['md', 'lg']}>
+                                {item.label}
+                            </Text>
+
+                            <Heading fontSize={['5xl', '7xl']} color="offWhite">
                                 <CountUp
                                     to={item.value}
                                     prefix={item.prefix}
