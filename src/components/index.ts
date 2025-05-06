@@ -23,6 +23,7 @@ export {
  */
 import { Navbar } from './Navbar/Navbar';
 import type { NavbarMeta } from './Navbar/Navbar';
+
 export { Navbar, type NavbarMeta };
 export { loadNavbarSections } from './Navbar/SectionInterpreter';
 
@@ -120,3 +121,12 @@ export * from './spline/SplineTarget';
  *
  */
 export * from './common/SocialMediaBar';
+
+/*
+ *
+ * @Component LoadingScreen
+ *
+ */
+import { LoadingScreen } from './LoadingScreen';
+
+export { LoadingScreen };
