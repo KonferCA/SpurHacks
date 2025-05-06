@@ -31,17 +31,23 @@ const CountdownDisplay = ({
     label,
 }: { value: string; label: string }) => (
     <Box textAlign="center" px={2}>
-        <Text color="white" fontWeight="bold" fontSize="4xl" lineHeight="1">
+        <Text color="offWhite" fontWeight="bold" fontSize="4xl" lineHeight="1">
             {value}
         </Text>
-        <Text color="whiteAlpha.700" fontSize="xs" textTransform="uppercase">
+        <Text color="offWhite" fontSize="xs" textTransform="uppercase">
             {label}
         </Text>
     </Box>
 );
 
 const Separator = () => (
-    <Text color="white" fontWeight="bold" fontSize="4xl" lineHeight="1" mb={5}>
+    <Text
+        color="offWhite"
+        fontWeight="bold"
+        fontSize="4xl"
+        lineHeight="1"
+        mb={5}
+    >
         :
     </Text>
 );
@@ -49,20 +55,21 @@ const Separator = () => (
 const MobileCountdown = ({ countdown }: { countdown: CountdownType }) => (
     <Flex justify="center" w="100%" mt={4} mb={6} align="center">
         <Box textAlign="center" px={2}>
-            <Text color="white" fontWeight="bold" fontSize="xl" lineHeight="1">
+            <Text
+                color="offWhite"
+                fontWeight="bold"
+                fontSize="xl"
+                lineHeight="1"
+            >
                 {countdown.days}
             </Text>
-            <Text
-                color="whiteAlpha.700"
-                fontSize="xs"
-                textTransform="uppercase"
-            >
+            <Text color="offWhite" fontSize="xs" textTransform="uppercase">
                 {heroCountdown.days}
             </Text>
         </Box>
 
         <Text
-            color="white"
+            color="offWhite"
             fontWeight="bold"
             fontSize="xl"
             lineHeight="1"
@@ -72,20 +79,21 @@ const MobileCountdown = ({ countdown }: { countdown: CountdownType }) => (
         </Text>
 
         <Box textAlign="center" px={2}>
-            <Text color="white" fontWeight="bold" fontSize="xl" lineHeight="1">
+            <Text
+                color="offWhite"
+                fontWeight="bold"
+                fontSize="xl"
+                lineHeight="1"
+            >
                 {countdown.hours}
             </Text>
-            <Text
-                color="whiteAlpha.700"
-                fontSize="xs"
-                textTransform="uppercase"
-            >
+            <Text color="offWhite" fontSize="xs" textTransform="uppercase">
                 {heroCountdown.hoursShort}
             </Text>
         </Box>
 
         <Text
-            color="white"
+            color="offWhite"
             fontWeight="bold"
             fontSize="xl"
             lineHeight="1"
@@ -95,20 +103,21 @@ const MobileCountdown = ({ countdown }: { countdown: CountdownType }) => (
         </Text>
 
         <Box textAlign="center" px={2}>
-            <Text color="white" fontWeight="bold" fontSize="xl" lineHeight="1">
+            <Text
+                color="offWhite"
+                fontWeight="bold"
+                fontSize="xl"
+                lineHeight="1"
+            >
                 {countdown.minutes}
             </Text>
-            <Text
-                color="whiteAlpha.700"
-                fontSize="xs"
-                textTransform="uppercase"
-            >
+            <Text color="offWhite" fontSize="xs" textTransform="uppercase">
                 {heroCountdown.minutesShort}
             </Text>
         </Box>
 
         <Text
-            color="white"
+            color="offWhite"
             fontWeight="bold"
             fontSize="xl"
             lineHeight="1"
@@ -118,14 +127,15 @@ const MobileCountdown = ({ countdown }: { countdown: CountdownType }) => (
         </Text>
 
         <Box textAlign="center" px={2}>
-            <Text color="white" fontWeight="bold" fontSize="xl" lineHeight="1">
+            <Text
+                color="offWhite"
+                fontWeight="bold"
+                fontSize="xl"
+                lineHeight="1"
+            >
                 {countdown.seconds}
             </Text>
-            <Text
-                color="whiteAlpha.700"
-                fontSize="xs"
-                textTransform="uppercase"
-            >
+            <Text color="offWhite" fontSize="xs" textTransform="uppercase">
                 {heroCountdown.secondsShort}
             </Text>
         </Box>
@@ -242,7 +252,7 @@ export const Hero: React.FC = () => {
                         </Box>
 
                         <HStack
-                            color="white"
+                            color="offWhite"
                             mb={6}
                             pt={-2}
                             pb={2}
@@ -250,17 +260,27 @@ export const Hero: React.FC = () => {
                             flexWrap="wrap"
                             justify="center"
                         >
-                            <Text>{heroEventDetails.date}</Text>
-                            <Text>|</Text>
-                            <Text>{heroEventDetails.format}</Text>
-                            <Text>|</Text>
-                            <Text>{heroEventDetails.location}</Text>
+                            <Text color="offWhite" fontSize="md" opacity={0.9}>
+                                {heroEventDetails.date}
+                            </Text>
+                            <Text color="offWhite" fontSize="md" opacity={0.9}>
+                                |
+                            </Text>
+                            <Text color="offWhite" fontSize="md" opacity={0.9}>
+                                {heroEventDetails.format}
+                            </Text>
+                            <Text color="offWhite" fontSize="md" opacity={0.9}>
+                                |
+                            </Text>
+                            <Text color="offWhite" fontSize="md" opacity={0.9}>
+                                {heroEventDetails.location}
+                            </Text>
                         </HStack>
 
                         <Text
                             fontSize="md"
                             flexWrap="wrap"
-                            color="white"
+                            color="offWhite"
                             textAlign="center"
                             px="10"
                             mb={4}
@@ -285,7 +305,7 @@ export const Hero: React.FC = () => {
                         </Box>
 
                         <HStack
-                            color="white"
+                            color="offWhite"
                             mb={6}
                             pt={4}
                             pb={4}
@@ -303,7 +323,7 @@ export const Hero: React.FC = () => {
                         <Text
                             fontSize="2xl"
                             flexWrap="wrap"
-                            color="white"
+                            color="offWhite"
                             textAlign="center"
                             px="10"
                             mb={10}
@@ -317,12 +337,12 @@ export const Hero: React.FC = () => {
                             <Button
                                 asChild
                                 size="lg"
-                                bg="#FFA75F"
+                                bg="orange.default"
                                 color="black"
                                 borderRadius="full"
                                 px={8}
                                 py={6}
-                                _hover={{ bg: '#FFA75F', opacity: 0.9 }}
+                                _hover={{ bg: 'orange.hover', opacity: 0.9 }}
                             >
                                 <a
                                     href={links.hackathon.dashboard}
@@ -336,7 +356,7 @@ export const Hero: React.FC = () => {
                                 asChild
                                 size="lg"
                                 variant="outline"
-                                color="white"
+                                color="offWhite"
                                 borderColor="white"
                                 borderRadius="full"
                                 px={8}
@@ -374,7 +394,7 @@ export const Hero: React.FC = () => {
                             <Button
                                 size="md"
                                 variant="outline"
-                                color="white"
+                                color="offWhite"
                                 borderColor="white"
                                 borderRadius="full"
                                 px={4}
