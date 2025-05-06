@@ -1,11 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-import {
-    Box,
-    Flex,
-    Text,
-    Heading,
-    Container,
-} from '@chakra-ui/react';
+import { Box, Flex, Text, Heading, Container } from '@chakra-ui/react';
 import { motion, AnimatePresence } from 'motion/react';
 import { faqStrings, faqItems } from '@locales';
 import type { NavbarMeta } from '@components';

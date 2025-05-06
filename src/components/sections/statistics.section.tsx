@@ -58,8 +58,8 @@ export const Statistics = () => {
                             gap={isMobile ? 2 : 6}
                             mb={isMobile ? 12 : 4}
                         >
-                            <Text 
-                                color="offWhite" 
+                            <Text
+                                color="offWhite"
                                 fontSize={['xl', '2xl']}
                                 fontWeight="300"
                             >
