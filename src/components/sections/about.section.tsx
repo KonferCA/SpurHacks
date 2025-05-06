@@ -187,11 +187,10 @@ export const About = () => {
                     maxW={{ base: '90%', md: '600px' }}
                 >
                     <Heading
-                        fontFamily="Geist"
                         fontSize={['2xl', '5xl']}
-                        color="white"
-                        fontWeight="bold"
+                        color="offWhite"
                         lineHeight="1.1"
+                        fontWeight="bold"
                         mb={2}
                         textAlign="left"
                     >
@@ -199,21 +198,19 @@ export const About = () => {
                     </Heading>
 
                     <Heading
-                        fontFamily="Geist"
                         fontSize={['2xl', '5xl']}
-                        color="white"
+                        color="offWhite"
                         fontWeight="bold"
                         lineHeight="1.1"
-                        mb={8}
+                        mb={14}
                         textAlign="left"
                     >
                         {aboutStrings.headings.second}
                     </Heading>
 
                     <Text
-                        color="white"
-                        fontFamily="Geist"
-                        fontSize="lg"
+                        color="offWhite"
+                        fontSize={{ base: 'md', md: 'lg' }}
                         mb={12}
                         opacity={0.9}
                         textAlign="left"
@@ -222,20 +219,18 @@ export const About = () => {
                     </Text>
 
                     <Heading
-                        fontFamily="Geist"
-                        fontSize={['2xl', '4xl']}
-                        color="white"
+                        fontSize={['1.5xl', '3xl']}
+                        color="offWhite"
                         fontWeight="bold"
                         lineHeight="1.1"
-                        mb={8}
+                        mb={14}
                         textAlign="left"
                     >
                         {aboutStrings.travel.heading}
                     </Heading>
 
                     <Text
-                        color="white"
-                        fontFamily="Geist"
+                        color="offWhite"
                         fontSize={{ base: 'md', md: 'lg' }}
                         mb={12}
                         opacity={0.9}
