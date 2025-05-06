@@ -48,14 +48,14 @@ interface SocialMediaBarProps {
     iconSize?: number | string; // size in pixels or chakra size string
     spacing?: number | string; // spacing between icons
     color?: string; // icon color
-    isFooter?: boolean; 
+    isFooter?: boolean;
 }
 
 export const SocialMediaBar: React.FC<SocialMediaBarProps> = ({
     iconSize = 7,
     spacing = 4,
-    color = 'white',
-    isFooter = false, 
+    color = 'offWhite',
+    isFooter = false,
 }) => {
     const footerIconSize = isFooter ? 5 : iconSize;
     const footerSpacing = isFooter ? 3 : spacing;
