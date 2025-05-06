@@ -19,14 +19,22 @@ const spurhacksDesignConfig = defineConfig({
             colors: {
                 orange: {
                     default: { value: '#FFA75F' },
-                    hover: { value: '#e6f2ff' },
+                    hover: { value: '#FF8C2B' },
                 },
                 offWhite: { value: '#DEEBFF' },
+            },
+            shadows: {
+                button: {
+                    value: '0 4px 8px rgba(255, 167, 95, 0.4)',
+                },
             },
         },
         semanticTokens: {
             colors: {
                 danger: { value: '{colors.red}' },
+            },
+            shadows: {
+                orangeGlow: { value: '{shadows.button}' },
             },
         },
         keyframes: {
