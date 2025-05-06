@@ -4,14 +4,8 @@ import * as path from 'node:path';
 import tailwindcss from '@tailwindcss/vite';
 import tsconfigPaths from 'vite-tsconfig-paths';
 
-/*
- *
- * @description Vite configuration
- *
- */
 export default defineConfig({
     plugins: [react(), tailwindcss(), tsconfigPaths()],
-
     resolve: {
         alias: {
             '@': path.resolve(__dirname, './src'),
@@ -29,4 +23,6 @@ export default defineConfig({
         outDir: path.resolve(__dirname, './dist'),
         assetsDir: 'assets',
     },
+
+    assetsInclude: ['**/*.svg'],
 });
