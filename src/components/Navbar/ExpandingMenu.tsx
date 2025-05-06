@@ -133,10 +133,10 @@ export function ExpandingMenu({
                             onClick={handleLinkClick}
                         >
                             <Text
-                                fontFamily="Geist"
-                                color="white"
                                 className="hover:scale-110"
                                 fontSize="xl"
+                                color="offWhite"
+                                opacity={0.9}
                             >
                                 {section.navbarTitle}
                             </Text>
@@ -159,14 +159,14 @@ export function ExpandingMenu({
                             textDecoration="none"
                         >
                             <Button
-                                size="md"
-                                bg="#FFA75F"
+                                size="lg"
+                                bg="orange.default"
                                 color="black"
                                 borderRadius="full"
                                 px={6}
                                 py={2}
                                 _hover={{
-                                    bg: '#FFA75F',
+                                    bg: 'orange.hover',
                                     opacity: 0.9,
                                 }}
                             >
