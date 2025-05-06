@@ -241,7 +241,7 @@ const Partners = () =>
                         justifyContent="center"
                     >
                         <Image
-                            w={{ base: '80px', md: '180px' }}
+                            w={{ base: '180px', md: '200px' }}
                             maxH={{ base: '80px', md: '105px' }}
                             src={`${sponsorsBaseUrl}${sponsor.image}`}
                             alt={sponsor.name}
