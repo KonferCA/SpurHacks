@@ -64,7 +64,7 @@
         },
         "description": "Join over 2,000 students from across Canada at SpurHacks; pushing the boundaries of what a hackathon can be. Discover a community of like-minded individuals, learn from industry experts, and build innovative projects that will shape the future of technology. Whether you're a seasoned hacker or a first-time participant, SpurHacks is the perfect place to unleash your creativity and make lasting connections.",
         "travel": {
-            "heading": "Coming from out of Town?",
+            "heading": "Coming from out of town?",
             "description": "If you're traveling from outside Kitchener-Waterloo, we'll provide buses OR cover your travel costs - spots are limited and on a first-come, first-served. So don’t sleep on it!"
         }
     },
@@ -114,7 +114,6 @@
                 "prefix": "$",
                 "suffix": "B+",
                 "allowDecimal": true
-
             }
         ]
     },
