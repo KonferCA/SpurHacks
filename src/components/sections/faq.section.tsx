@@ -5,7 +5,6 @@ import {
     Text,
     Heading,
     Container,
-    useBreakpointValue,
 } from '@chakra-ui/react';
 import { motion, AnimatePresence } from 'motion/react';
 import { faqStrings, faqItems } from '@locales';
@@ -37,7 +36,6 @@ const FAQItem: React.FC<FAQItemProps> = ({
     onToggle,
     index,
 }) => {
-    const isMobile = useBreakpointValue({ base: true, md: false });
     const contentRef = useRef<HTMLDivElement>(null);
     const [contentHeight, setContentHeight] = useState(0);
 
@@ -66,12 +64,15 @@ const FAQItem: React.FC<FAQItemProps> = ({
                 onClick={onToggle}
             >
                 <Text
-                    fontWeight="semibold"
-                    fontSize={isMobile ? 'md' : 'lg'}
                     color="black"
+                    fontSize={{ base: 'md', sm: 'lg', md: 'xl' }}
+                    opacity={0.9}
+                    fontWeight="600"
+                    fontFamily="inherit"
                 >
                     {question}
                 </Text>
+
                 <MotionBox transition={{ duration: 0.2 }}>
                     {isOpen ? (
                         <svg
@@ -122,9 +123,16 @@ const FAQItem: React.FC<FAQItemProps> = ({
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.3 }}
                         overflow="hidden"
-                        pr={10}
+                        pr={{ base: 0, md: 4 }}
                     >
-                        <Text color="black" pt={3}>
+                        <Text
+                            color="black"
+                            pt={3}
+                            fontSize={{ base: 'sm', sm: 'md', md: 'md' }}
+                            opacity={0.9}
+                            fontFamily="inherit"
+                            lineHeight="1.6"
+                        >
                             {answer}
                         </Text>
                     </MotionBox>
@@ -136,7 +144,6 @@ const FAQItem: React.FC<FAQItemProps> = ({
 
 export const FAQ = () => {
     const [activeIndex, setActiveIndex] = useState<number | null>(0);
-    const isMobile = useBreakpointValue({ base: true, md: false });
 
     const handleToggle = (index: number): void => {
         setActiveIndex(activeIndex === index ? null : index);
@@ -175,20 +182,24 @@ export const FAQ = () => {
             />
 
             <Container
-                maxW="container.md"
+                maxW={{ base: '95%', sm: '90%', md: '75%', lg: '65%' }}
                 position="relative"
                 zIndex={3}
                 mt={8}
-                px={{ base: 4, md: 52 }}
+                mx="auto"
+                px={{ base: 4, sm: 6, md: 8, lg: 12 }}
             >
                 <MotionHeading
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.7 }}
                     textAlign="center"
-                    fontSize={isMobile ? '3xl' : '5xl'}
-                    mb={12}
+                    mb={10}
                     color="black"
+                    fontSize={{ base: '2xl', sm: '3xl', md: '4xl', lg: '5xl' }}
+                    fontWeight="bold"
+                    lineHeight="1.1"
+                    fontFamily="inherit"
                 >
                     {faqStrings.title}
                 </MotionHeading>
@@ -200,9 +211,19 @@ export const FAQ = () => {
                     textAlign="center"
                     mb={8}
                     color="black"
+                    fontSize={{ base: 'md', sm: 'md', md: 'lg' }}
+                    opacity={0.9}
+                    fontFamily="inherit"
                 >
                     {faqStrings.contactText}{' '}
-                    <Text as="span" fontWeight="bold" color="black">
+                    <Text
+                        as="span"
+                        fontWeight="bold"
+                        color="black"
+                        fontSize={{ base: 'md', sm: 'md', md: 'lg' }}
+                        opacity={0.9}
+                        fontFamily="inherit"
+                    >
                         {faqStrings.contactEmail}
                     </Text>
                     .
@@ -214,7 +235,9 @@ export const FAQ = () => {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.5, delay: 0.4 }}
-                    px={{ base: 2, md: 20 }}
+                    px={{ base: 2, sm: 4, md: 10, lg: 16 }}
+                    width="100%"
+                    mx="auto"
                 >
                     {faqItems.map((item, index) => (
                         <FAQItem
