@@ -413,6 +413,7 @@ export const Hero: React.FC = () => {
                                     href={links.hackathon.dashboard}
                                     target="_blank"
                                     rel="noopener noreferrer"
+                                    className="w-full"
                                 >
                                     {heroButtons.apply}
                                 </a>
@@ -438,6 +439,7 @@ export const Hero: React.FC = () => {
                                     href={links.hackathon.sponsorship}
                                     target="_blank"
                                     rel="noopener noreferrer"
+                                    className="w-full"
                                 >
                                     {heroButtons.sponsor}
                                 </a>
