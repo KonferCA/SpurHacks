@@ -1,4 +1,4 @@
-import { Box, Flex, Text, HStack, Link, Image } from '@chakra-ui/react';
+import { Box, Flex, Text, Stack, HStack, Link, Image } from '@chakra-ui/react';
 import { NoIconLogo, SpurNoIcon, KonferNoIcon } from '@assets';
 import { footerStrings } from '@locales';
 import { links } from '@data';
@@ -116,30 +116,49 @@ export const Footer = () => {
 
                 <Flex
                     width="100%"
-                    justify="center"
-                    align="center"
-                    mb={1}
-                    display={{ base: 'none', md: 'flex' }}
-                >
-                    <Text color="offWhite" fontSize="sm" opacity={0.9}>
-                        &copy; {footerStrings.copyright}
-                    </Text>
-                </Flex>
-
-                <Flex
-                    width="100%"
                     direction={{ base: 'column', md: 'row' }}
                     justify="space-between"
                     align={{ base: 'center', md: 'center' }}
                     mb={{ base: 6, md: 1 }}
+                    position="relative"
                 >
                     <Box ml={-1} mb={{ base: 4, md: 0 }}>
                         <SocialMediaBar isFooter={true} />
                     </Box>
 
-                    <Box display={{ base: 'none', md: 'block' }} />
+                    <Text
+                        color="offWhite"
+                        fontSize="sm"
+                        opacity={0.9}
+                        textAlign="center"
+                        display={{ base: 'none', lg: 'block' }}
+                        position="absolute"
+                        left="50%"
+                        transform="translateX(-50%)"
+                    >
+                        &copy; {footerStrings.copyright}
+                    </Text>
 
-                    <HStack mb={{ base: 4, md: 0 }}>
+                    <Text
+                        color="offWhite"
+                        fontSize="sm"
+                        opacity={0.9}
+                        textAlign="center"
+                        display={{ base: 'none', md: 'block', lg: 'none' }}
+                        position="absolute"
+                        bottom="-30px"
+                        left="50%"
+                        transform="translateX(-50%)"
+                        width="100%"
+                    >
+                        &copy; {footerStrings.copyright}
+                    </Text>
+
+                    <Stack
+                        direction={{ base: 'column', md: 'row' }}
+                        gap={{ base: '4', md: '2' }}
+                        align="center"
+                    >
                         <Link
                             href={links.mlh.codeOfConduct}
                             fontSize="sm"
@@ -148,6 +167,7 @@ export const Footer = () => {
                             color="offWhite"
                             opacity={0.9}
                             _hover={{ opacity: 1 }}
+                            mr={{ base: 0, md: 2 }}
                         >
                             {footerStrings.mlh.codeOfConduct}
                         </Link>
@@ -163,7 +183,7 @@ export const Footer = () => {
                         >
                             {footerStrings.mlh.privacy}
                         </Link>
-                    </HStack>
+                    </Stack>
                 </Flex>
 
                 <Flex
