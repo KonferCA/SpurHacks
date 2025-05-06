@@ -85,7 +85,9 @@ const FloatingKnot = ({
         >
             <Image
                 src={svg}
-                alt="Knot"
+                alt=""
+                role="presentation"
+                aria-hidden="true"
                 width={size}
                 height={size}
                 style={{ width: '100%', height: '100%' }}
@@ -101,7 +103,19 @@ export const About = () => {
     });
 
     const [svgConfigs, setSvgConfigs] = useState<SVGConfig[]>([]);
+    const [knotsLoaded, setKnotsLoaded] = useState(false);
     const svgCount = useBreakpointValue({ base: 2, md: 4 }) || 4;
+
+    useEffect(() => {
+        const notifyLoading = () => {
+            if (knotsLoaded) {
+                const event = new CustomEvent('aboutAssetsLoaded');
+                window.dispatchEvent(event);
+            }
+        };
+
+        notifyLoading();
+    }, [knotsLoaded]);
 
     useEffect(() => {
         const knotSvgs = [
@@ -116,6 +130,28 @@ export const About = () => {
         ];
         const configs: SVGConfig[] = [];
 
+        const preloadImages = async () => {
+            const imagePromises = knotSvgs.map((svg) => {
+                return new Promise((resolve, reject) => {
+                    const img = document.createElement(
+                        'img'
+                    ) as HTMLImageElement;
+                    img.src = svg;
+                    img.onload = () => resolve(svg);
+                    img.onerror = () =>
+                        reject(new Error(`Failed to load ${svg}`));
+                });
+            });
+
+            try {
+                await Promise.all(imagePromises);
+                setKnotsLoaded(true);
+            } catch (error) {
+                console.error('Error preloading knot images:', error);
+                setKnotsLoaded(true);
+            }
+        };
+
         const positions: Position[] = [
             { x: 5, y: 10 }, // top-left
             { x: 85, y: 15 }, // top-right
@@ -127,7 +163,6 @@ export const About = () => {
             { x: 50, y: 95 }, // bottom-center
         ];
 
-        // select random SVGs from the collection
         for (let i = 0; i < svgCount; i++) {
             const svgIndex = Math.floor(Math.random() * knotSvgs.length);
             const positionIndex = i % positions.length;
@@ -144,12 +179,13 @@ export const About = () => {
         }
 
         setSvgConfigs(configs);
+        preloadImages();
     }, [svgCount]);
 
     return (
         <section
             id={NavbarInfo.id}
-            className="bg-black min-h-screen"
+            className="about-section bg-black min-h-screen"
             style={{
                 width: '100%',
                 position: 'relative',
@@ -157,6 +193,7 @@ export const About = () => {
             }}
         >
             {inView &&
+                knotsLoaded &&
                 svgConfigs.map((config) => (
                     <FloatingKnot
                         key={config.id}
