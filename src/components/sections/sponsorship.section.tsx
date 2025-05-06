@@ -216,55 +216,41 @@ const QuantaSponsors = () =>
 
 const Partners = () =>
     partners && partners.length > 0 ? (
-        <Grid
-            templateColumns={{
-                base: 'repeat(2, 1fr)',
-                md: 'repeat(3, 1fr)',
-            }}
-            gap={{ base: 6, lg: 10 }}
-            justifyItems="center"
-        >
-            {partners.map((sponsor: Sponsor, index) => {
-                const isLastItem = index === partners.length - 1;
-                const isOdd = partners.length % 2 === 1;
-
-                return (
-                    <Link
-                        key={sponsor.name}
-                        bg="offWhite"
-                        rounded="3xl"
-                        w="full"
-                        h={{ base: 'auto', md: '125px' }}
+        <Flex wrap="wrap" justify="center" gap={{ base: 6, lg: 10 }} w="full">
+            {partners.map((sponsor: Sponsor) => (
+                <Link
+                    key={sponsor.name}
+                    bg="offWhite"
+                    rounded="3xl"
+                    flex={{ base: '1 1 45%', md: '1 1 30%' }}
+                    maxW={{ base: '45%', md: '30%' }}
+                    minW="150px"
+                    h={{ base: '125px', md: '125px' }}
+                    display="flex"
+                    alignItems="center"
+                    justifyContent="center"
+                    href={sponsor.link}
+                    target="_blank"
+                    p={{ base: 4, md: 5 }}
+                >
+                    <Box
+                        w="100%"
+                        h="100%"
                         display="flex"
                         alignItems="center"
                         justifyContent="center"
-                        gridColumn={{
-                            base: isLastItem && isOdd ? '1 / span 2' : 'auto',
-                            md: 'auto',
-                        }}
-                        justifySelf={{
-                            base: isLastItem && isOdd ? 'center' : 'stretch',
-                            md: 'stretch',
-                        }}
-                        maxWidth={{
-                            base: isLastItem && isOdd ? '50%' : '100%',
-                            md: '100%',
-                        }}
-                        href={sponsor.link}
-                        target="_blank"
                     >
                         <Image
-                            w={{ base: '100px', md: '225px' }}
-                            maxH={{ base: '100px', md: '155px' }}
+                            w={{ base: '80px', md: '180px' }}
+                            maxH={{ base: '80px', md: '105px' }}
                             src={`${sponsorsBaseUrl}${sponsor.image}`}
                             alt={sponsor.name}
                             objectFit="contain"
-                            py={5}
                         />
-                    </Link>
-                );
-            })}
-        </Grid>
+                    </Box>
+                </Link>
+            ))}
+        </Flex>
     ) : null;
 
 export const Sponsorship = () => {
