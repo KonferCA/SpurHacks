@@ -2,10 +2,8 @@ import { Flex, Heading, Text, useBreakpointValue, Box } from '@chakra-ui/react';
 import { CountUp } from '@components';
 import { SplineTarget } from '@components';
 import { statisticsItems } from '@locales';
-
 export const Statistics = () => {
     const isMobile = useBreakpointValue({ base: true, md: false });
-
     return (
         <Flex className="relative bg-black min-h-screen overflow-hidden">
             <SplineTarget
@@ -28,7 +26,6 @@ export const Statistics = () => {
                         : undefined
                 }
             />
-
             {!isMobile && (
                 <Box
                     position="absolute"
@@ -40,7 +37,6 @@ export const Statistics = () => {
                     bg="linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,1))"
                 />
             )}
-
             <Flex
                 direction="column"
                 gap={8}
@@ -59,12 +55,12 @@ export const Statistics = () => {
                         <Flex
                             key={`stat-${item.label}`}
                             direction="column"
-                            gap={6}
+                            gap={isMobile ? 2 : 4}
+                            mb={isMobile ? 12 : 4}
                         >
-                            <Text color="offWhite" fontSize={['md', 'lg']}>
+                            <Heading color="offWhite" fontSize={['md', 'lg']}>
                                 {item.label}
-                            </Text>
-
+                            </Heading>
                             <Heading fontSize={['5xl', '7xl']} color="offWhite">
                                 <CountUp
                                     to={item.value}
