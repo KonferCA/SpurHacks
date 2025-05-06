@@ -57,7 +57,7 @@ export const CountUp = ({
     const easeOutQuad = (t: number): number => t * (2 - t);
 
     return (
-        <span ref={ref} style={{ fontWeight: '800' }}>
+        <span ref={ref} style={{ fontWeight: '300' }}>
             {prefix}
             {value.toLocaleString()}
             {suffix}
