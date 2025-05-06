@@ -16,6 +16,7 @@ import { useInView } from 'react-intersection-observer';
 import { about2Strings } from '@locales';
 import { links } from '@data';
 import type { NavbarMeta } from '@components';
+import { Knot1, Knot8 } from '@assets';
 
 export const NavbarInfo: NavbarMeta = {
     id: 'spur',
@@ -126,26 +127,43 @@ export const Spur: React.FC = () => {
                         color="white"
                         textAlign="left"
                     >
-                        <Image
-                            src="/src/assets/animations/knot_1.svg"
-                            alt={about2Strings.images.knot1.alt}
+                        <Box
                             position="absolute"
-                            top={{ base: '-40%', md: '-60%' }}
-                            left="-15%"
+                            top="-180px"
+                            left="-180px"
+                            width="200px"
+                            height="200px"
                             zIndex={-1}
-                            boxSize="200px"
-                            animation={`${spin} infinite 15s linear`}
-                        />
-                        <Image
-                            src="/src/assets/animations/knot_8.svg"
-                            alt={about2Strings.images.knot8.alt}
+                            transform="none"
+                            transformOrigin="center center"
+                        >
+                            <Image
+                                src={Knot1}
+                                alt={about2Strings.images.knot1.alt}
+                                boxSize="200px"
+                                animation={`${spin} infinite 15s linear`}
+                                transformOrigin="center center"
+                            />
+                        </Box>
+
+                        <Box
                             position="absolute"
-                            bottom="-60%"
-                            right="-10%"
+                            bottom="-180px"
+                            right="-150px"
+                            width="300px"
+                            height="300px"
                             zIndex={-1}
-                            boxSize="300px"
-                            animation={`${spin} infinite 18s linear reverse`}
-                        />
+                            transform="none"
+                            transformOrigin="center center"
+                        >
+                            <Image
+                                src={Knot8}
+                                alt={about2Strings.images.knot8.alt}
+                                boxSize="300px"
+                                animation={`${spin} infinite 18s linear reverse`}
+                                transformOrigin="center center"
+                            />
+                        </Box>
 
                         <Heading
                             as="h2"
@@ -172,13 +190,13 @@ export const Spur: React.FC = () => {
                         <Link href={links.spur} target="_blank">
                             <Button
                                 size={{ base: 'sm', md: 'md' }}
-                                bg="#FFA75F"
+                                bg="orange.default"
                                 color="black"
                                 borderRadius="full"
                                 px={5}
                                 py={5}
                                 mt={4}
-                                _hover={{ bg: '#FFA75F', opacity: 0.9 }}
+                                _hover={{ bg: 'orange.hover', opacity: 0.9 }}
                                 rel="noopener noreferrer"
                             >
                                 {about2Strings.buttons.companySite}
