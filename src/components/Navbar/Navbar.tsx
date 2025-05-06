@@ -127,9 +127,10 @@ export const Navbar = () => {
                                 >
                                     <Text
                                         fontWeight="medium"
-                                        fontFamily="Geist"
-                                        color="white"
                                         className="hover:scale-110"
+                                        color="offWhite"
+                                        fontSize={{ base: 'sm', md: 'md' }}
+                                        opacity={0.9}
                                     >
                                         {section.navbarTitle}
                                     </Text>
