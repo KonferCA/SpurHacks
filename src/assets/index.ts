@@ -10,6 +10,7 @@ import Icon from './logos/icon.svg';
 import IconWhite from './logos/icon_white.svg';
 import KonferNoIcon from './logos/konfer_noicon.svg';
 import SpurNoIcon from './logos/spur_noicon.svg';
+import GradientIcon from './logos/gradient_icon.svg';
 
 export {
     NoIconLogo,
@@ -19,6 +20,7 @@ export {
     IconWhite,
     KonferNoIcon,
     SpurNoIcon,
+    GradientIcon,
 };
 
 /*
