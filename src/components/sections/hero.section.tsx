@@ -409,7 +409,13 @@ export const Hero: React.FC = () => {
                                         '0 6px 12px rgba(255, 167, 95, 0.5)',
                                 }}
                             >
-                                {heroButtons.apply}
+                                <a
+                                    href={links.hackathon.dashboard}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    {heroButtons.apply}
+                                </a>
                             </Button>
                             <Button
                                 size="md"
@@ -428,7 +434,13 @@ export const Hero: React.FC = () => {
                                         '0 6px 12px rgba(255, 255, 255, 0.2)',
                                 }}
                             >
-                                {heroButtons.sponsor}
+                                <a
+                                    href={links.hackathon.sponsorship}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    {heroButtons.sponsor}
+                                </a>
                             </Button>
                         </HStack>
                     </Flex>
