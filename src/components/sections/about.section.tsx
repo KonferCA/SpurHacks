@@ -223,7 +223,7 @@ export const About = () => {
                         color="offWhite"
                         fontWeight="bold"
                         lineHeight="1.1"
-                        mb={14}
+                        mb={6}
                         textAlign="left"
                     >
                         {aboutStrings.travel.heading}
