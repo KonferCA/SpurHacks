@@ -1,5 +1,4 @@
 import { HStack, Link, Icon } from '@chakra-ui/react';
-
 import {
     FaDiscord,
     FaLinkedin,
@@ -7,7 +6,6 @@ import {
     FaXTwitter,
 } from 'react-icons/fa6';
 import type { IconType } from 'react-icons';
-
 import { strings } from '@locales';
 import { links } from '@data';
 
@@ -50,27 +48,32 @@ interface SocialMediaBarProps {
     iconSize?: number | string; // size in pixels or chakra size string
     spacing?: number | string; // spacing between icons
     color?: string; // icon color
+    isFooter?: boolean; 
 }
 
 export const SocialMediaBar: React.FC<SocialMediaBarProps> = ({
     iconSize = 7,
     spacing = 4,
     color = 'white',
+    isFooter = false, 
 }) => {
+    const footerIconSize = isFooter ? 5 : iconSize;
+    const footerSpacing = isFooter ? 3 : spacing;
+
     return (
-        <HStack gap={spacing}>
+        <HStack gap={footerSpacing}>
             {Object.entries(socialPlatforms).map(([key, platform]) => (
                 <Link
                     key={key}
                     href={platform.href}
                     aria-label={platform.ariaLabel}
-                    title={platform.title} // title for accessibility :eyes:
+                    title={platform.title}
                     target="_blank"
                     rel="noopener noreferrer"
                     color={color}
                     display="block"
                 >
-                    <Icon as={platform.icon} boxSize={iconSize} />
+                    <Icon as={platform.icon} boxSize={footerIconSize} />
                 </Link>
             ))}
         </HStack>
