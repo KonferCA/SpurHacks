@@ -17,8 +17,8 @@ import {
     quarkSponsors,
     quantaSponsors,
     partners,
-    sponsorsBaseUrl,
 } from '@data';
+import { getAssetUrl } from '@utils';
 
 export const NavbarInfo: NavbarMeta = {
     id: 'sponsors',
@@ -58,7 +58,7 @@ const SingularitySponsors = () =>
                     _hover={{ textDecoration: 'none' }}
                 >
                     <Image
-                        src={`${sponsorsBaseUrl}${sponsor.image}`}
+                        src={getAssetUrl(sponsor.image)}
                         alt={sponsor.name}
                         boxSize={{ base: '200px', md: '180px' }}
                         objectFit="contain"
@@ -111,7 +111,7 @@ const EntanglementSponsors = () =>
                         _hover={{ textDecoration: 'none' }}
                     >
                         <Image
-                            src={`${sponsorsBaseUrl}${sponsor.image}`}
+                            src={getAssetUrl(sponsor.image)}
                             alt={sponsor.name}
                             boxSize={{
                                 base: '100px',
@@ -168,7 +168,7 @@ const QuarkSponsors = () =>
                         _hover={{ textDecoration: 'none' }}
                     >
                         <Image
-                            src={`${sponsorsBaseUrl}${sponsor.image}`}
+                            src={getAssetUrl(sponsor.image)}
                             alt={sponsor.name}
                             boxSize={{
                                 base: '100px',
@@ -211,7 +211,7 @@ const QuantaSponsors = () =>
                     _hover={{ textDecoration: 'none' }}
                 >
                     <Image
-                        src={`${sponsorsBaseUrl}${sponsor.image}`}
+                        src={getAssetUrl(sponsor.image)}
                         alt={sponsor.name}
                         boxSize={{ base: '100px', md: '125px' }}
                         objectFit="contain"
@@ -253,7 +253,7 @@ const Partners = () =>
                         <Image
                             w={{ base: '180px', md: '200px' }}
                             maxH={{ base: '80px', md: '105px' }}
-                            src={`${sponsorsBaseUrl}${sponsor.image}`}
+                            src={getAssetUrl(sponsor.image)}
                             alt={sponsor.name}
                             objectFit="contain"
                         />
