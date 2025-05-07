@@ -20,6 +20,11 @@
             "link": "https://lauriercs.ca"
         },
         {
+            "name": "Canadian Blockchain University",
+            "image": "partners/cbu.svg",
+            "link": "#"
+        },
+        {
             "name": "HawkHacks",
             "image": "partners/hawkhacks.svg",
             "link": "https://hawkhacks.ca"
