@@ -24,6 +24,6 @@ export const partners = sponsorsData.partners;
  * @object / section Resource Paths
  *
  */
-export const sponsorsBaseUrl = '/src/assets/sponsors/';
+export const sponsorsBaseUrl = '/sponsors/';
 
 export default sponsorsData;
