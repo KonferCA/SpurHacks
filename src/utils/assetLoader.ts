@@ -7,5 +7,5 @@ export function getAssetUrl(path: string) {
     }
 
     // development
-    return `/src/assets/sponsors/${path}`;
+    return `/sponsors/${path}`;
 }
