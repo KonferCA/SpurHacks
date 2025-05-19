@@ -3,6 +3,7 @@ import { useEffect, useRef, useCallback, useState } from 'react';
 import { Box, type SystemStyleObject } from '@chakra-ui/react';
 import { useInView } from 'react-intersection-observer';
 import { useSpline } from '@contexts';
+import { getGPUTier } from 'detect-gpu';
 
 interface SplineTargetProps {
     id?: string;
@@ -47,6 +48,27 @@ export const SplineTarget: React.FC<SplineTargetProps> = ({
     const placeholderRef = useRef<HTMLDivElement>(null);
     const isInitialTarget = id && id === initialTargetId;
     const [hasInitiallyMounted, setHasInitiallyMounted] = useState(false);
+    const [allowSplineRendering, setAllowSplineRendering] = useState(false);
+
+    useEffect(() => {
+        (async () => {
+            let gpuTier = { tier: 0 };
+            try {
+                gpuTier = await getGPUTier();
+                console.log('gpuTier:', gpuTier);
+            } catch (e) {
+                console.error('detect-gpu error:', e);
+            }
+            if (gpuTier.tier >= 3) { 
+                setAllowSplineRendering(true);
+            } else {
+                setAllowSplineRendering(false);
+                console.log(
+                  `Spline disabled (gpuTier: ${gpuTier.tier})`
+                );
+            }
+        })();
+    }, []);
 
     const { ref: inViewRef, inView } = useInView({
         threshold: 0.3,
@@ -65,13 +87,35 @@ export const SplineTarget: React.FC<SplineTargetProps> = ({
     );
 
     useEffect(() => {
+        if (!allowSplineRendering) {
+            if (currentTargetId === id) {
+                mountSpline(null, undefined);
+            }
+            return;
+        }
+
         if (isInitialTarget && !hasInitiallyMounted && placeholderRef.current) {
             mountSpline(placeholderRef.current, id);
             setHasInitiallyMounted(true);
         }
-    }, [isInitialTarget, hasInitiallyMounted, mountSpline, id]);
+    }, [
+        isInitialTarget,
+        hasInitiallyMounted,
+        mountSpline,
+        id,
+        allowSplineRendering,
+        currentTargetId,
+    ]);
 
     useEffect(() => {
+        if (!allowSplineRendering) {
+            setIsReadyToShow(false);
+            if (currentTargetId === id) {
+                mountSpline(null, undefined);
+            }
+            return;
+        }
+
         if (isInitialTarget && !hasInitiallyMounted) return;
 
         let timeoutId: NodeJS.Timeout | null = null;
@@ -109,10 +153,10 @@ export const SplineTarget: React.FC<SplineTargetProps> = ({
         isInitialTarget,
         hasInitiallyMounted,
         currentTargetId,
+        allowSplineRendering,
     ]);
 
-    const isVisible = isReadyToShow;
-
+    const isVisible = isReadyToShow && allowSplineRendering;
     const showPlaceholderBg = !isVisible && (!isSplineLoaded || splineError);
 
     return (

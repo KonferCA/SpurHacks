@@ -1,5 +1,4 @@
 import type React from 'react';
-import { useState } from 'react';
 import {
     Box,
     Flex,
@@ -11,11 +10,11 @@ import {
     Container,
 } from '@chakra-ui/react';
 import { keyframes } from '@emotion/react';
-import Spline from '@splinetool/react-spline';
 import { useInView } from 'react-intersection-observer';
 import { about2Strings } from '@locales';
 import { links } from '@data';
 import type { NavbarMeta } from '@components';
+import { SplineTarget } from '@components';
 import { Knot1, Knot8 } from '@assets';
 
 export const NavbarInfo: NavbarMeta = {
@@ -31,20 +30,10 @@ const spin = keyframes`
 `;
 
 export const Spur: React.FC = () => {
-    const [isSplineLoaded, setIsSplineLoaded] = useState(false);
-    const [splineError, setSplineError] = useState(false);
     const { ref, inView } = useInView({
         threshold: 0.1,
         triggerOnce: true,
     });
-
-    function onSplineLoad() {
-        setIsSplineLoaded(true);
-    }
-    function onSplineError(error: unknown) {
-        console.error('spline loading error:', error);
-        setSplineError(true);
-    }
 
     return (
         <section
@@ -71,36 +60,16 @@ export const Spur: React.FC = () => {
                     md: 'linear-gradient(to left, black 60%, rgba(0,0,0,0.5) 85%, rgba(0,0,0,0.02) 100%)',
                 }}
             >
-                {!splineError && (
-                    <Box
-                        position="absolute"
-                        top="0"
-                        left="0"
-                        width="100%"
-                        height="100%"
-                        opacity={isSplineLoaded ? 1 : 0}
-                        transition="opacity 0.5s ease-in"
-                    >
-                        {inView && (
-                            <Spline
-                                scene={splineSceneUrl}
-                                onLoad={onSplineLoad}
-                                onError={onSplineError}
-                                style={{ width: '100%', height: '100%' }}
-                            />
-                        )}
-                    </Box>
-                )}
-                {(!inView || !isSplineLoaded || splineError) && (
-                    <Box
-                        position="absolute"
-                        top="0"
-                        left="0"
-                        width="100%"
-                        height="100%"
-                        bg="black"
-                    />
-                )}
+                <SplineTarget
+                    id="spur-spline"
+                    minHeight="100%"
+                    height="100%"
+                    width="100%"
+                    position="absolute"
+                    top={0}
+                    left={0}
+                    bg="black"
+                />
             </Box>
 
             <Container
