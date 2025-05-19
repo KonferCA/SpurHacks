@@ -1,8 +1,9 @@
 import type React from 'react';
 import { useEffect, useRef, useCallback, useState } from 'react';
-import { Box, type SystemStyleObject } from '@chakra-ui/react';
+import { Box, type SystemStyleObject, Image } from '@chakra-ui/react';
 import { useInView } from 'react-intersection-observer';
 import { useSpline } from '@contexts';
+import { getGPUTier } from 'detect-gpu';
 
 interface SplineTargetProps {
     id?: string;
@@ -47,6 +48,28 @@ export const SplineTarget: React.FC<SplineTargetProps> = ({
     const placeholderRef = useRef<HTMLDivElement>(null);
     const isInitialTarget = id && id === initialTargetId;
     const [hasInitiallyMounted, setHasInitiallyMounted] = useState(false);
+    const [allowSplineRendering, setAllowSplineRendering] = useState(false);
+    const [performanceCheckComplete, setPerformanceCheckComplete] =
+        useState(false);
+
+    useEffect(() => {
+        (async () => {
+            try {
+                const gpuTier = await getGPUTier();
+                if (gpuTier.tier >= 2) {
+                    setAllowSplineRendering(true);
+                } else {
+                    setAllowSplineRendering(false);
+                    console.log(`Spline disabled (gpuTier: ${gpuTier.tier})`);
+                }
+            } catch (e) {
+                console.error('detect-gpu error:', e);
+                setAllowSplineRendering(false);
+            } finally {
+                setPerformanceCheckComplete(true);
+            }
+        })();
+    }, []);
 
     const { ref: inViewRef, inView } = useInView({
         threshold: 0.3,
@@ -65,13 +88,44 @@ export const SplineTarget: React.FC<SplineTargetProps> = ({
     );
 
     useEffect(() => {
+        if (!performanceCheckComplete || !allowSplineRendering) {
+            if (
+                performanceCheckComplete &&
+                !allowSplineRendering &&
+                currentTargetId === id
+            ) {
+                mountSpline(null, undefined);
+            }
+            return;
+        }
+
         if (isInitialTarget && !hasInitiallyMounted && placeholderRef.current) {
             mountSpline(placeholderRef.current, id);
             setHasInitiallyMounted(true);
         }
-    }, [isInitialTarget, hasInitiallyMounted, mountSpline, id]);
+    }, [
+        isInitialTarget,
+        hasInitiallyMounted,
+        mountSpline,
+        id,
+        allowSplineRendering,
+        performanceCheckComplete,
+        currentTargetId,
+    ]);
 
     useEffect(() => {
+        if (!performanceCheckComplete || !allowSplineRendering) {
+            setIsReadyToShow(false);
+            if (
+                performanceCheckComplete &&
+                !allowSplineRendering &&
+                currentTargetId === id
+            ) {
+                mountSpline(null, undefined);
+            }
+            return;
+        }
+
         if (isInitialTarget && !hasInitiallyMounted) return;
 
         let timeoutId: NodeJS.Timeout | null = null;
@@ -109,10 +163,46 @@ export const SplineTarget: React.FC<SplineTargetProps> = ({
         isInitialTarget,
         hasInitiallyMounted,
         currentTargetId,
+        allowSplineRendering,
+        performanceCheckComplete,
     ]);
 
-    const isVisible = isReadyToShow;
+    if (!performanceCheckComplete) {
+        return (
+            <Box
+                position={position}
+                top={top}
+                left={left}
+                width={width}
+                height={height}
+                minHeight={minHeight}
+                maxH={maxH}
+                bg={bg}
+                zIndex={zIndex}
+                {...rest}
+            />
+        );
+    }
 
+    if (!allowSplineRendering) {
+        return (
+            <Image
+                src="/background.png"
+                alt="Interactive background disabled for performance"
+                position={position}
+                top={top}
+                left={left}
+                width={width}
+                height={height}
+                minHeight={minHeight}
+                maxH={maxH}
+                zIndex={zIndex}
+                objectFit="cover"
+            />
+        );
+    }
+
+    const isVisible = isReadyToShow;
     const showPlaceholderBg = !isVisible && (!isSplineLoaded || splineError);
 
     return (
