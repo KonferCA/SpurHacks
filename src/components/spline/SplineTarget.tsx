@@ -59,13 +59,11 @@ export const SplineTarget: React.FC<SplineTargetProps> = ({
             } catch (e) {
                 console.error('detect-gpu error:', e);
             }
-            if (gpuTier.tier >= 2) { 
+            if (gpuTier.tier >= 2) {
                 setAllowSplineRendering(true);
             } else {
                 setAllowSplineRendering(false);
-                console.log(
-                  `Spline disabled (gpuTier: ${gpuTier.tier})`
-                );
+                console.log(`Spline disabled (gpuTier: ${gpuTier.tier})`);
             }
         })();
     }, []);

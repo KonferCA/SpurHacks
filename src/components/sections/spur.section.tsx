@@ -23,14 +23,13 @@ export const NavbarInfo: NavbarMeta = {
     priority: 2,
 };
 
-const splineSceneUrl = links.spline;
 const spin = keyframes`
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
 `;
 
 export const Spur: React.FC = () => {
-    const { ref, inView } = useInView({
+    const { ref } = useInView({
         threshold: 0.1,
         triggerOnce: true,
     });
