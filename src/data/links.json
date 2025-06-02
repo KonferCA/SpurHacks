@@ -12,7 +12,8 @@
     "hackathon": {
         "dashboard": "https://portal.spurhacks.com",
         "discord": "https://discord.gg/NpnSUrZJQy",
-        "sponsorship": "/sponsorships.pdf"
+        "sponsorship": "/sponsorships.pdf",
+        "talent": "https://talent.spurhacks.com"
     },
 
     "mlh": {

@@ -47,7 +47,8 @@
         "tagline": "The largest hackathon in Canada; where business and tech intersect.",
         "buttons": {
             "apply": "APPLY NOW",
-            "sponsor": "BECOME A SPONSOR"
+            "sponsor": "BECOME A SPONSOR",
+            "talent": "VOLUNTEER APPLICATION"
         },
         "countdown": {
             "days": "DAYS",
