@@ -1,7 +1,41 @@
 {
     "singularitySponsors": [],
-    "entanglementSponsors": [],
-    "quarkSponsors": [],
+    "entanglementSponsors": [
+        {
+            "name": "NDAX",
+            "image": "ndax.svg",
+            "link": "https://ndax.io"
+        },
+        {
+            "name": "RBC",
+            "image": "rbc.svg",
+            "link": "https://rbcroyalbank.com/"
+        },
+        {
+            "name": "BMO",
+            "image": "bmo.svg",
+            "link": "https://bmo.com"
+        },
+        {
+            "name": "BDC",
+            "image": "bdc.svg",
+            "link": "https://bdc.ca"
+        }
+    ],
+
+    "quarkSponsors": [
+        {
+            "name": "Indomie",
+            "image": "indomie.png",
+            "link": "https://indomieonline.ca/"
+        },
+        {
+            "name": "Fantuan",
+            "image": "fantuan.png",
+            "link": "https://fantuan.ca/"
+        }
+    ],
+
     "quantaSponsors": [],
     "partners": [
         {
