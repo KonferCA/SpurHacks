@@ -384,6 +384,31 @@ export const Hero: React.FC = () => {
                                     {heroButtons.sponsor}
                                 </a>
                             </Button>
+                            <Button
+                                asChild
+                                size="lg"
+                                variant="outline"
+                                color="offWhite"
+                                borderColor="white"
+                                borderRadius="full"
+                                px={8}
+                                py={6}
+                                transition="all 0.3s ease"
+                                _hover={{
+                                    bg: 'whiteAlpha.200',
+                                    transform: 'translateY(-2px)',
+                                    boxShadow:
+                                        '0 6px 12px rgba(255, 255, 255, 0.2)',
+                                }}
+                            >
+                                <a
+                                    href={links.hackathon.talent}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    {heroButtons.talent}
+                                </a>
+                            </Button>
                         </HStack>
                     </>
                 )}
@@ -442,6 +467,32 @@ export const Hero: React.FC = () => {
                                     className="w-full"
                                 >
                                     {heroButtons.sponsor}
+                                </a>
+                            </Button>
+                            <Button
+                                size="md"
+                                variant="outline"
+                                color="offWhite"
+                                borderColor="white"
+                                borderRadius="full"
+                                px={4}
+                                py={5}
+                                w="100%"
+                                transition="all 0.3s ease"
+                                _hover={{
+                                    bg: 'whiteAlpha.200',
+                                    transform: 'translateY(-2px)',
+                                    boxShadow:
+                                        '0 6px 12px rgba(255, 255, 255, 0.2)',
+                                }}
+                            >
+                                <a
+                                    href={links.hackathon.talent}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="w-full"
+                                >
+                                    {heroButtons.talent}
                                 </a>
                             </Button>
                         </HStack>
