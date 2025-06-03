@@ -5,6 +5,7 @@ import {
     Flex,
     Text,
     HStack,
+    VStack,
     Button,
     Image,
     useBreakpointValue,
@@ -333,83 +334,90 @@ export const Hero: React.FC = () => {
                             {heroStrings.tagline}
                         </Text>
 
-                        <HStack flexDir="row" w="auto" mb={4}>
-                            <Button
-                                asChild
-                                size="lg"
-                                bg="orange.default"
-                                color="black"
-                                borderRadius="full"
-                                px={8}
-                                py={6}
-                                boxShadow="orangeGlow"
-                                transition="all 0.3s ease"
-                                _hover={{
-                                    bg: 'orange.hover',
-                                    transform: 'translateY(-2px)',
-                                    boxShadow:
-                                        '0 6px 12px rgba(255, 167, 95, 0.5)',
-                                }}
-                            >
-                                <a
-                                    href={links.hackathon.dashboard}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
+                        <VStack mb={4}>
+                            <Box>
+                                <Button
+                                    asChild
+                                    size="lg"
+                                    bg="orange.default"
+                                    color="black"
+                                    borderRadius="full"
+                                    px={8}
+                                    py={6}
+                                    mb={3}
+                                    mt={-2}
+                                    boxShadow="orangeGlow"
+                                    transition="all 0.3s ease"
+                                    _hover={{
+                                        bg: 'orange.hover',
+                                        transform: 'translateY(-2px)',
+                                        boxShadow:
+                                            '0 6px 12px rgba(255, 167, 95, 0.5)',
+                                    }}
                                 >
-                                    {heroButtons.apply}
-                                </a>
-                            </Button>
-                            <Button
-                                asChild
-                                size="lg"
-                                variant="outline"
-                                color="offWhite"
-                                borderColor="white"
-                                borderRadius="full"
-                                px={8}
-                                py={6}
-                                transition="all 0.3s ease"
-                                _hover={{
-                                    bg: 'whiteAlpha.200',
-                                    transform: 'translateY(-2px)',
-                                    boxShadow:
-                                        '0 6px 12px rgba(255, 255, 255, 0.2)',
-                                }}
-                            >
-                                <a
-                                    href={links.hackathon.sponsorship}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
+                                    <a
+                                        href={links.hackathon.dashboard}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        {heroButtons.apply}
+                                    </a>
+                                </Button>
+                            </Box>
+
+                            <HStack>
+                                <Button
+                                    asChild
+                                    size="lg"
+                                    variant="outline"
+                                    color="offWhite"
+                                    borderColor="white"
+                                    borderRadius="full"
+                                    px={8}
+                                    py={6}
+                                    transition="all 0.3s ease"
+                                    _hover={{
+                                        bg: 'whiteAlpha.200',
+                                        transform: 'translateY(-2px)',
+                                        boxShadow:
+                                            '0 6px 12px rgba(255, 255, 255, 0.2)',
+                                    }}
                                 >
-                                    {heroButtons.sponsor}
-                                </a>
-                            </Button>
-                            <Button
-                                asChild
-                                size="lg"
-                                variant="outline"
-                                color="offWhite"
-                                borderColor="white"
-                                borderRadius="full"
-                                px={8}
-                                py={6}
-                                transition="all 0.3s ease"
-                                _hover={{
-                                    bg: 'whiteAlpha.200',
-                                    transform: 'translateY(-2px)',
-                                    boxShadow:
-                                        '0 6px 12px rgba(255, 255, 255, 0.2)',
-                                }}
-                            >
-                                <a
-                                    href={links.hackathon.talent}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
+                                    <a
+                                        href={links.hackathon.sponsorship}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        {heroButtons.sponsor}
+                                    </a>
+                                </Button>
+                                <Button
+                                    asChild
+                                    size="lg"
+                                    variant="outline"
+                                    color="offWhite"
+                                    borderColor="white"
+                                    borderRadius="full"
+                                    px={8}
+                                    py={6}
+                                    transition="all 0.3s ease"
+                                    _hover={{
+                                        bg: 'whiteAlpha.200',
+                                        transform: 'translateY(-2px)',
+                                        boxShadow:
+                                            '0 6px 12px rgba(255, 255, 255, 0.2)',
+                                    }}
                                 >
-                                    {heroButtons.talent}
-                                </a>
-                            </Button>
-                        </HStack>
+                                    <a
+                                        href={links.hackathon.talent}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        {heroButtons.talent}
+                                    </a>
+                                </Button>
+                            </HStack>
+                        </VStack>
                     </>
                 )}
 
