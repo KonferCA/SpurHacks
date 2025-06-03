@@ -1,5 +1,6 @@
 {
     "singularitySponsors": [],
+
     "entanglementSponsors": [
         {
             "name": "NDAX",
@@ -32,6 +33,7 @@
     ],
 
     "quantaSponsors": [],
+
     "partners": [
         {
             "name": "Konfer",
@@ -62,6 +64,49 @@
             "name": "Waterloo Blockchain",
             "image": "partners/uwb.png",
             "link": "https://waterlooblockchain.ca"
+        }
+    ],
+
+    "dignitaries": [
+        {
+            "name": "Hon. Bardish Chagger",
+            "image": "dignitaries/bardish_chagger.jpg",
+            "position": "MP of Waterloo"
+        },
+        {
+            "name": "Berry Vrbanovic",
+            "image": "dignitaries/berry_vrbanovic.jpg",
+            "position": "Mayor of Kitchener"
+        },
+        {
+            "name": "Brock Pierce",
+            "image": "dignitaries/brock_pierce.jpg",
+            "position": "Co-Founder of Tether"
+        },
+        {
+            "name": "David Chaum",
+            "image": "dignitaries/david_chaum.jpg",
+            "position": "Inventor of Digital Cash, Pioneer in Crypto Technology"
+        },
+        {
+            "name": "Anthony Di Iorio",
+            "image": "dignitaries/anthony_di_iorio.jpg",
+            "position": "Co-Founder of Ethereum"
+        },
+        {
+            "name": "Trevor Koverko",
+            "image": "dignitaries/trevor_koverko.jpeg",
+            "position": "Co-Founder of Polymesh, Matador, SapienAI"
+        },
+        {
+            "name": "Tanim Rasul",
+            "image": "dignitaries/tanim_rasul.jpeg",
+            "position": "COO of Ndax"
+        },
+        {
+            "name": "Dragos Cada",
+            "image": "dignitaries/dragos_cada.png",
+            "position": "Founder of PathPeer"
         }
     ]
 }
