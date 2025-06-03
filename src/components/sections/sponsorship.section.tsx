@@ -66,7 +66,12 @@ const SingularitySponsors = () =>
                     href={sponsor.link}
                     target="_blank"
                     textDecoration="none"
-                    _hover={{ textDecoration: 'none' }}
+                    transition="all 0.3s ease"
+                    _hover={{
+                        textDecoration: 'none',
+                        transform: 'translateY(-4px) scale(1.02)',
+                        boxShadow: '0 10px 25px rgba(0, 0, 0, 0.15)',
+                    }}
                 >
                     <Image
                         src={getAssetUrl(sponsor.image)}
@@ -119,7 +124,12 @@ const EntanglementSponsors = () =>
                         href={sponsor.link}
                         target="_blank"
                         textDecoration="none"
-                        _hover={{ textDecoration: 'none' }}
+                        transition="all 0.3s ease"
+                        _hover={{
+                            textDecoration: 'none',
+                            transform: 'translateY(-4px) scale(1.02)',
+                            boxShadow: '0 8px 20px rgba(0, 0, 0, 0.15)',
+                        }}
                     >
                         <Image
                             src={getAssetUrl(sponsor.image)}
@@ -162,7 +172,12 @@ const QuarkSponsors = () =>
                     href={sponsor.link}
                     target="_blank"
                     textDecoration="none"
-                    _hover={{ textDecoration: 'none' }}
+                    transition="all 0.3s ease"
+                    _hover={{
+                        textDecoration: 'none',
+                        transform: 'translateY(-3px) scale(1.05)',
+                        boxShadow: '0 6px 18px rgba(0, 0, 0, 0.12)',
+                    }}
                 >
                     <Image
                         src={getAssetUrl(sponsor.image)}
@@ -244,7 +259,12 @@ const QuantaSponsors = () =>
                         href={sponsor.link}
                         target="_blank"
                         textDecoration="none"
-                        _hover={{ textDecoration: 'none' }}
+                        transition="all 0.3s ease"
+                        _hover={{
+                            textDecoration: 'none',
+                            transform: 'translateY(-2px) scale(1.05)',
+                            boxShadow: '0 4px 15px rgba(0, 0, 0, 0.1)',
+                        }}
                     >
                         <Image
                             src={getAssetUrl(sponsor.image)}
@@ -278,7 +298,12 @@ const Partners = () =>
                     target="_blank"
                     p={{ base: 4, md: 5 }}
                     textDecoration="none"
-                    _hover={{ textDecoration: 'none' }}
+                    transition="all 0.3s ease"
+                    _hover={{
+                        textDecoration: 'none',
+                        transform: 'translateY(-3px) scale(1.05)',
+                        boxShadow: '0 6px 18px rgba(0, 0, 0, 0.12)',
+                    }}
                 >
                     <Box
                         w="100%"
