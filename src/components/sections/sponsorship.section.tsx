@@ -17,6 +17,7 @@ import {
     quarkSponsors,
     quantaSponsors,
     partners,
+    dignitaries,
 } from '@data';
 import { getAssetUrl } from '@utils';
 
@@ -30,6 +31,12 @@ interface Sponsor {
     name: string;
     image: string;
     link: string;
+}
+
+interface Dignitary {
+    name: string;
+    image: string;
+    position: string;
 }
 
 // Reusable width for all tiers
@@ -252,121 +259,6 @@ const QuantaSponsors = () =>
         </Grid>
     ) : null;
 
-quantaSponsors && quantaSponsors.length > 0 ? (
-    <Grid
-        templateColumns={{
-            base: 'repeat(2, 1fr)',
-            md: 'repeat(3, 1fr)',
-        }}
-        gap={6}
-        justifyItems="center"
-        maxW={MAX_WIDTH}
-        mx="auto"
-        w="full"
-    >
-        {quantaSponsors.map((sponsor: Sponsor, index) => {
-            const isLastItem = index === quantaSponsors.length - 1;
-            const isOddBase = quantaSponsors.length % 2 === 1;
-            const isOddMd = quantaSponsors.length % 3 === 1;
-            const isTwoRemainder = quantaSponsors.length % 3 === 2;
-
-            return (
-                <Link
-                    key={sponsor.name}
-                    bg="offWhite"
-                    rounded="3xl"
-                    w="full"
-                    minW="150px"
-                    h={{ base: '100px', md: '125px' }}
-                    display="flex"
-                    alignItems="center"
-                    justifyContent="center"
-                    gridColumn={{
-                        base: isLastItem && isOddBase ? '1 / span 2' : 'auto',
-                        md:
-                            isLastItem && isOddMd
-                                ? '1 / span 3'
-                                : index >= quantaSponsors.length - 2 &&
-                                    isTwoRemainder
-                                  ? '1 / span 3'
-                                  : 'auto',
-                    }}
-                    justifySelf={{
-                        base: isLastItem && isOddBase ? 'center' : 'stretch',
-                        md:
-                            isLastItem && isOddMd
-                                ? 'center'
-                                : index >= quantaSponsors.length - 2 &&
-                                    isTwoRemainder
-                                  ? 'center'
-                                  : 'stretch',
-                    }}
-                    maxWidth={{
-                        base: isLastItem && isOddBase ? '50%' : '100%',
-                        md:
-                            isLastItem && isOddMd
-                                ? '33.33%'
-                                : index >= quantaSponsors.length - 2 &&
-                                    isTwoRemainder
-                                  ? '33.33%'
-                                  : '100%',
-                    }}
-                    href={sponsor.link}
-                    target="_blank"
-                    textDecoration="none"
-                    _hover={{ textDecoration: 'none' }}
-                >
-                    <Image
-                        src={getAssetUrl(sponsor.image)}
-                        alt={sponsor.name}
-                        boxSize={{ base: '100px', md: '125px' }}
-                        objectFit="contain"
-                        py={5}
-                    />
-                </Link>
-            );
-        })}
-    </Grid>
-) : null;
-
-quantaSponsors && quantaSponsors.length > 0 ? (
-    <Flex
-        wrap="wrap"
-        justify="center"
-        gap={6}
-        maxW={MAX_WIDTH}
-        mx="auto"
-        w="full"
-    >
-        {quantaSponsors.map((sponsor: Sponsor) => (
-            <Link
-                key={sponsor.name}
-                bg="offWhite"
-                rounded="3xl"
-                flex={{ base: '1 1 45%', md: '1 1 21%' }}
-                maxW={{ base: '45%', md: '22%' }}
-                minW="150px"
-                h={{ base: '100px', md: '125px' }}
-                display="flex"
-                alignItems="center"
-                justifyContent="center"
-                href={sponsor.link}
-                target="_blank"
-                textDecoration="none"
-                _hover={{ textDecoration: 'none' }}
-            >
-                <Image
-                    src={getAssetUrl(sponsor.image)}
-                    alt={sponsor.name}
-                    boxSize={{ base: '100px', md: '125px' }}
-                    objectFit="contain"
-                    py={5}
-                />
-            </Link>
-        ))}
-    </Flex>
-) : null;
-
 const Partners = () =>
     partners && partners.length > 0 ? (
         <Flex wrap="wrap" justify="center" gap={{ base: 6, lg: 10 }} w="full">
@@ -408,6 +300,54 @@ const Partners = () =>
         </Flex>
     ) : null;
 
+const Dignitaries = () =>
+    dignitaries && dignitaries.length > 0 ? (
+        <Flex wrap="wrap" justify="center" gap={{ base: 6, lg: 10 }} w="full">
+            {dignitaries.map((dignitary: Dignitary) => (
+                <Box
+                    key={dignitary.name}
+                    bg="offWhite"
+                    rounded="3xl"
+                    flex={{ base: '1 1 45%', md: '1 1 30%' }}
+                    maxW={{ base: '45%', md: '30%' }}
+                    minW="200px"
+                    p={{ base: 6, md: 8 }}
+                    display="flex"
+                    flexDirection="column"
+                    alignItems="center"
+                    justifyContent="center"
+                    textAlign="center"
+                    gap={4}
+                >
+                    <Image
+                        src={getAssetUrl(dignitary.image)}
+                        alt={dignitary.name}
+                        boxSize={{ base: '80px', md: '100px' }}
+                        borderRadius="full"
+                        objectFit="cover"
+                    />
+                    <Box>
+                        <Text
+                            fontSize={{ base: 'md', md: 'lg' }}
+                            fontWeight="bold"
+                            color="black"
+                            mb={1}
+                        >
+                            {dignitary.name}
+                        </Text>
+                        <Text
+                            fontSize={{ base: 'sm', md: 'md' }}
+                            color="gray.600"
+                            fontWeight="medium"
+                        >
+                            {dignitary.position}
+                        </Text>
+                    </Box>
+                </Box>
+            ))}
+        </Flex>
+    ) : null;
+
 export const Sponsorship = () => {
     const hasSponsors =
         (singularitySponsors && singularitySponsors.length > 0) ||
@@ -416,6 +356,7 @@ export const Sponsorship = () => {
         (quantaSponsors && quantaSponsors.length > 0);
 
     const hasPartners = partners && partners.length > 0;
+    const hasDignitaries = dignitaries && dignitaries.length > 0;
 
     return (
         <section
@@ -494,7 +435,7 @@ export const Sponsorship = () => {
 
                 {hasSponsors && (
                     <Stack gap={{ base: 10, lg: 20 }} align="center" w="90%">
-                        {/* SINGULARITY SPONSORS (1RST) */}
+                        {/* SINGULARITY SPONSORS (1ST) */}
                         {singularitySponsors &&
                             singularitySponsors.length > 0 && (
                                 <Box w="full" maxW={MAX_WIDTH} mx="auto">
@@ -538,6 +479,22 @@ export const Sponsorship = () => {
 
                         <Box w="full" maxW={MAX_WIDTH} mx="auto">
                             <Partners />
+                        </Box>
+                    </Stack>
+                )}
+
+                {hasDignitaries && (
+                    <Stack gap={{ base: 10, lg: 20 }} align="center" w="90%">
+                        <Heading
+                            fontSize={['2xl', '5xl']}
+                            color="offWhite"
+                            fontWeight="bold"
+                        >
+                            {sponsorshipStrings.dignitariesTitle}
+                        </Heading>
+
+                        <Box w="full" maxW={MAX_WIDTH} mx="auto">
+                            <Dignitaries />
                         </Box>
                     </Stack>
                 )}
