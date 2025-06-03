@@ -18,6 +18,7 @@ export const entanglementSponsors = sponsorsData.entanglementSponsors;
 export const quarkSponsors = sponsorsData.quarkSponsors;
 export const quantaSponsors = sponsorsData.quantaSponsors;
 export const partners = sponsorsData.partners;
+export const dignitaries = sponsorsData.dignitaries;
 
 /*
  *
