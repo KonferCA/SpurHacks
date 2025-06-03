@@ -133,7 +133,8 @@
         "resourcePaths": {
             "baseUrl": "/src/assets/sponsors/",
             "sponsorshipPdf": "./sponsorships.pdf"
-        }
+        },
+        "dignitariesTitle": "Dignitaries & Special Guests"
     },
 
     "faq": {
