@@ -38,7 +38,10 @@ const MAX_WIDTH = '1200px';
 const SingularitySponsors = () =>
     singularitySponsors && singularitySponsors.length > 0 ? (
         <Grid
-            templateColumns="1fr"
+            templateColumns={{
+                base: 'repeat(1, 1fr)',
+                md: 'repeat(1, 1fr)',
+            }}
             gap={{ base: 6, lg: 10 }}
             justifyItems="center"
         >
@@ -48,6 +51,7 @@ const SingularitySponsors = () =>
                     bg="offWhite"
                     rounded="3xl"
                     w="full"
+                    maxW="600px"
                     h={{ base: '200px', md: '180px' }}
                     display="flex"
                     alignItems="center"
@@ -128,17 +132,64 @@ const EntanglementSponsors = () =>
 
 const QuarkSponsors = () =>
     quarkSponsors && quarkSponsors.length > 0 ? (
+        <Flex
+            wrap="wrap"
+            justify="center"
+            gap={{ base: 6, lg: 10 }}
+            maxW={MAX_WIDTH}
+            mx="auto"
+            w="full"
+        >
+            {quarkSponsors.map((sponsor: Sponsor) => (
+                <Link
+                    key={sponsor.name}
+                    bg="offWhite"
+                    rounded="3xl"
+                    flex={{ base: '1 1 45%', md: '1 1 30%' }}
+                    maxW={{ base: '45%', md: '30%' }}
+                    minW="200px"
+                    h={{ base: 'auto', md: '150px' }}
+                    display="flex"
+                    alignItems="center"
+                    justifyContent="center"
+                    href={sponsor.link}
+                    target="_blank"
+                    textDecoration="none"
+                    _hover={{ textDecoration: 'none' }}
+                >
+                    <Image
+                        src={getAssetUrl(sponsor.image)}
+                        alt={sponsor.name}
+                        boxSize={{
+                            base: '100px',
+                            md: '150px',
+                        }}
+                        objectFit="contain"
+                        py={5}
+                    />
+                </Link>
+            ))}
+        </Flex>
+    ) : null;
+
+const QuantaSponsors = () =>
+    quantaSponsors && quantaSponsors.length > 0 ? (
         <Grid
             templateColumns={{
                 base: 'repeat(2, 1fr)',
                 md: 'repeat(3, 1fr)',
             }}
-            gap={{ base: 6, lg: 10 }}
+            gap={6}
             justifyItems="center"
+            maxW={MAX_WIDTH}
+            mx="auto"
+            w="full"
         >
-            {quarkSponsors.map((sponsor: Sponsor, index) => {
-                const isLastItem = index === quarkSponsors.length - 1;
-                const isOdd = quarkSponsors.length % 2 === 1;
+            {quantaSponsors.map((sponsor: Sponsor, index) => {
+                const isLastItem = index === quantaSponsors.length - 1;
+                const isOddBase = quantaSponsors.length % 2 === 1;
+                const isOddMd = quantaSponsors.length % 3 === 1;
+                const isTwoRemainder = quantaSponsors.length % 3 === 2;
 
                 return (
                     <Link
@@ -146,21 +197,42 @@ const QuarkSponsors = () =>
                         bg="offWhite"
                         rounded="3xl"
                         w="full"
-                        h={{ base: 'auto', md: '150px' }}
+                        minW="150px"
+                        h={{ base: '100px', md: '125px' }}
                         display="flex"
                         alignItems="center"
                         justifyContent="center"
                         gridColumn={{
-                            base: isLastItem && isOdd ? '1 / span 2' : 'auto',
-                            md: 'auto',
+                            base:
+                                isLastItem && isOddBase ? '1 / span 2' : 'auto',
+                            md:
+                                isLastItem && isOddMd
+                                    ? '1 / span 3'
+                                    : index >= quantaSponsors.length - 2 &&
+                                        isTwoRemainder
+                                      ? '1 / span 3'
+                                      : 'auto',
                         }}
                         justifySelf={{
-                            base: isLastItem && isOdd ? 'center' : 'stretch',
-                            md: 'stretch',
+                            base:
+                                isLastItem && isOddBase ? 'center' : 'stretch',
+                            md:
+                                isLastItem && isOddMd
+                                    ? 'center'
+                                    : index >= quantaSponsors.length - 2 &&
+                                        isTwoRemainder
+                                      ? 'center'
+                                      : 'stretch',
                         }}
                         maxWidth={{
-                            base: isLastItem && isOdd ? '50%' : '100%',
-                            md: '100%',
+                            base: isLastItem && isOddBase ? '50%' : '100%',
+                            md:
+                                isLastItem && isOddMd
+                                    ? '33.33%'
+                                    : index >= quantaSponsors.length - 2 &&
+                                        isTwoRemainder
+                                      ? '33.33%'
+                                      : '100%',
                         }}
                         href={sponsor.link}
                         target="_blank"
@@ -170,10 +242,7 @@ const QuarkSponsors = () =>
                         <Image
                             src={getAssetUrl(sponsor.image)}
                             alt={sponsor.name}
-                            boxSize={{
-                                base: '100px',
-                                md: '150px',
-                            }}
+                            boxSize={{ base: '100px', md: '125px' }}
                             objectFit="contain"
                             py={5}
                         />
@@ -183,28 +252,65 @@ const QuarkSponsors = () =>
         </Grid>
     ) : null;
 
-const QuantaSponsors = () =>
-    quantaSponsors && quantaSponsors.length > 0 ? (
-        <Flex
-            wrap="wrap"
-            justify="center"
-            gap={6}
-            maxW={MAX_WIDTH}
-            mx="auto"
-            w="full"
-        >
-            {quantaSponsors.map((sponsor: Sponsor) => (
+quantaSponsors && quantaSponsors.length > 0 ? (
+    <Grid
+        templateColumns={{
+            base: 'repeat(2, 1fr)',
+            md: 'repeat(3, 1fr)',
+        }}
+        gap={6}
+        justifyItems="center"
+        maxW={MAX_WIDTH}
+        mx="auto"
+        w="full"
+    >
+        {quantaSponsors.map((sponsor: Sponsor, index) => {
+            const isLastItem = index === quantaSponsors.length - 1;
+            const isOddBase = quantaSponsors.length % 2 === 1;
+            const isOddMd = quantaSponsors.length % 3 === 1;
+            const isTwoRemainder = quantaSponsors.length % 3 === 2;
+
+            return (
                 <Link
                     key={sponsor.name}
                     bg="offWhite"
                     rounded="3xl"
-                    flex={{ base: '1 1 45%', md: '1 1 21%' }}
-                    maxW={{ base: '45%', md: '22%' }}
+                    w="full"
                     minW="150px"
                     h={{ base: '100px', md: '125px' }}
                     display="flex"
                     alignItems="center"
                     justifyContent="center"
+                    gridColumn={{
+                        base: isLastItem && isOddBase ? '1 / span 2' : 'auto',
+                        md:
+                            isLastItem && isOddMd
+                                ? '1 / span 3'
+                                : index >= quantaSponsors.length - 2 &&
+                                    isTwoRemainder
+                                  ? '1 / span 3'
+                                  : 'auto',
+                    }}
+                    justifySelf={{
+                        base: isLastItem && isOddBase ? 'center' : 'stretch',
+                        md:
+                            isLastItem && isOddMd
+                                ? 'center'
+                                : index >= quantaSponsors.length - 2 &&
+                                    isTwoRemainder
+                                  ? 'center'
+                                  : 'stretch',
+                    }}
+                    maxWidth={{
+                        base: isLastItem && isOddBase ? '50%' : '100%',
+                        md:
+                            isLastItem && isOddMd
+                                ? '33.33%'
+                                : index >= quantaSponsors.length - 2 &&
+                                    isTwoRemainder
+                                  ? '33.33%'
+                                  : '100%',
+                    }}
                     href={sponsor.link}
                     target="_blank"
                     textDecoration="none"
@@ -218,9 +324,48 @@ const QuantaSponsors = () =>
                         py={5}
                     />
                 </Link>
-            ))}
-        </Flex>
-    ) : null;
+            );
+        })}
+    </Grid>
+) : null;
+
+quantaSponsors && quantaSponsors.length > 0 ? (
+    <Flex
+        wrap="wrap"
+        justify="center"
+        gap={6}
+        maxW={MAX_WIDTH}
+        mx="auto"
+        w="full"
+    >
+        {quantaSponsors.map((sponsor: Sponsor) => (
+            <Link
+                key={sponsor.name}
+                bg="offWhite"
+                rounded="3xl"
+                flex={{ base: '1 1 45%', md: '1 1 21%' }}
+                maxW={{ base: '45%', md: '22%' }}
+                minW="150px"
+                h={{ base: '100px', md: '125px' }}
+                display="flex"
+                alignItems="center"
+                justifyContent="center"
+                href={sponsor.link}
+                target="_blank"
+                textDecoration="none"
+                _hover={{ textDecoration: 'none' }}
+            >
+                <Image
+                    src={getAssetUrl(sponsor.image)}
+                    alt={sponsor.name}
+                    boxSize={{ base: '100px', md: '125px' }}
+                    objectFit="contain"
+                    py={5}
+                />
+            </Link>
+        ))}
+    </Flex>
+) : null;
 
 const Partners = () =>
     partners && partners.length > 0 ? (
