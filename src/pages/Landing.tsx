@@ -9,9 +9,11 @@ import {
     Sponsorship,
     FAQ,
     Footer,
+    LoadingScreen,
+    Toast,
 } from '@components';
 import { useSpline } from '@contexts';
-import { LoadingScreen } from '@components';
+import { toastStrings } from '@locales';
 
 export const Landing = () => {
     const { isSplineLoaded, splineError } = useSpline();
@@ -23,9 +25,7 @@ export const Landing = () => {
                 setContentReady(true);
             }
         };
-
         const timer = setTimeout(handleTransitionIn, 100);
-
         return () => clearTimeout(timer);
     }, [isSplineLoaded, splineError]);
 
@@ -40,10 +40,8 @@ export const Landing = () => {
                             node instanceof HTMLElement &&
                             node.querySelector('[role="presentation"]')
                     );
-
                     if (loadingRemoved) {
                         document.body.style.display = 'none';
-
                         setTimeout(() => {
                             document.body.style.display = '';
                         }, 5);
@@ -51,16 +49,21 @@ export const Landing = () => {
                 }
             }
         });
-
         observer.observe(document.body, { childList: true });
-
         return () => observer.disconnect();
     }, []);
+
+    const handleToastCTA = () => {
+        window.open(toastStrings.ctaLink, '_blank');
+    };
+
+    const handleToastClose = () => {
+        console.log('Toast closed by user');
+    };
 
     return (
         <>
             <LoadingScreen minLoadTime={2500} />
-
             <main
                 style={{
                     opacity: contentReady ? 1 : 0,
@@ -77,6 +80,16 @@ export const Landing = () => {
                 <UpdatesSection />
                 <Footer />
             </main>
+
+            <Toast
+                title={toastStrings.title}
+                body={toastStrings.body}
+                ctaText={toastStrings.ctaText}
+                ctaAction={handleToastCTA}
+                onClose={handleToastClose}
+                autoShow={true}
+                delay={3000}
+            />
         </>
     );
 };
