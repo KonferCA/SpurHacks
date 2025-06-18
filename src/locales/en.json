@@ -48,7 +48,8 @@
         "buttons": {
             "apply": "APPLY NOW",
             "sponsor": "BECOME A SPONSOR",
-            "talent": "BECOME A VOLUNTEER"
+            "talent": "BECOME A VOLUNTEER",
+            "accelerator": "JOIN OUR ACCELERATOR"
         },
         "countdown": {
             "days": "DAYS",
@@ -59,7 +60,7 @@
             "seconds": "SECONDS",
             "secondsShort": "SECS"
         },
-        "eventDate": "June 20, 2025 00:00:00"
+        "eventDate": "June 20, 2025 17:00:00"
     },
 
     "about": {

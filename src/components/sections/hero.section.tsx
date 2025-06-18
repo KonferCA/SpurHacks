@@ -384,11 +384,11 @@ export const Hero: React.FC = () => {
                                     }}
                                 >
                                     <a
-                                        href={links.hackathon.sponsorship}
+                                        href={links.accelerator}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                     >
-                                        {heroButtons.sponsor}
+                                        {heroButtons.accelerator}
                                     </a>
                                 </Button>
                                 <Button
@@ -469,12 +469,12 @@ export const Hero: React.FC = () => {
                                 }}
                             >
                                 <a
-                                    href={links.hackathon.sponsorship}
+                                    href={links.accelerator}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="w-full"
                                 >
-                                    {heroButtons.sponsor}
+                                    {heroButtons.accelerator}
                                 </a>
                             </Button>
                             <Button
