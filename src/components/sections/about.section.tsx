@@ -254,27 +254,6 @@ export const About = () => {
                     >
                         {aboutStrings.description}
                     </Text>
-
-                    <Heading
-                        fontSize={['1.5xl', '3xl']}
-                        color="offWhite"
-                        fontWeight="bold"
-                        lineHeight="1.1"
-                        mb={6}
-                        textAlign="left"
-                    >
-                        {aboutStrings.travel.heading}
-                    </Heading>
-
-                    <Text
-                        color="offWhite"
-                        fontSize={{ base: 'md', md: 'lg' }}
-                        mb={12}
-                        opacity={0.9}
-                        textAlign="left"
-                    >
-                        {aboutStrings.travel.description}
-                    </Text>
                 </Flex>
             </Container>
         </section>
