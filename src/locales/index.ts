@@ -77,4 +77,14 @@ export const footerStrings = strings.footer;
  */
 export const socialLinks = strings.socials;
 
+/*
+ *
+ * @object / section Toast
+ *
+ */
+export const toastStrings = strings.toast;
+export const toastTitle = strings.toast.title;
+export const toastBody = strings.toast.body;
+export const toastCtaText = strings.toast.ctaText;
+
 export default strings;
