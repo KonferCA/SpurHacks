@@ -11,13 +11,7 @@ export const loadNavbarSections = (): NavbarMeta[] => {
         eager: true,
     });
 
-    const sections: NavbarMeta[] = [
-        {
-            id: "accelerator",
-            navbarTitle: "Accelerator",
-            priority: 6,
-        }
-    ];
+    const sections: NavbarMeta[] = [];
 
     for (const path in sectionModules) {
         const module = sectionModules[path] as SectionModule;
