@@ -130,3 +130,12 @@ export * from './common/SocialMediaBar';
 import { LoadingScreen } from './LoadingScreen';
 
 export { LoadingScreen };
+
+/*
+ *
+ * @Component Toast
+ *
+ */
+import { Toast } from './Toast';
+
+export { Toast };
