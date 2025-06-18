@@ -37,6 +37,13 @@
         }
     },
 
+    "toast": {
+        "title": "🚀 Join the SpurHacks Accelerator!",
+        "body": "The SpurHacks Startup Accelerator is a one-week intensive program designed for the most driven SpurHacks participants and early-stage founders who are serious about building the next game-changing company.",
+        "ctaText": "Join Now",
+        "ctaLink": "https://accelerator.spurhacks.com/"
+    },
+
     "hero": {
         "alt": "SpurHacks 2025",
         "eventDetails": {
