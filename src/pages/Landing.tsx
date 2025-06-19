@@ -10,10 +10,10 @@ import {
     FAQ,
     Footer,
     LoadingScreen,
-    Toast,
+    // Toast,
 } from '@components';
 import { useSpline } from '@contexts';
-import { toastStrings } from '@locales';
+// import { toastStrings } from '@locales';
 
 export const Landing = () => {
     const { isSplineLoaded, splineError } = useSpline();
@@ -53,13 +53,13 @@ export const Landing = () => {
         return () => observer.disconnect();
     }, []);
 
-    const handleToastCTA = () => {
-        window.open(toastStrings.ctaLink, '_blank');
-    };
+    // const handleToastCTA = () => {
+    //     window.open(toastStrings.ctaLink, '_blank');
+    // };
 
-    const handleToastClose = () => {
-        console.log('Toast closed by user');
-    };
+    // const handleToastClose = () => {
+    //     console.log('Toast closed by user');
+    // };
 
     return (
         <>
@@ -81,7 +81,7 @@ export const Landing = () => {
                 <Footer />
             </main>
 
-            <Toast
+            {/* <Toast
                 title={toastStrings.title}
                 body={toastStrings.body}
                 ctaText={toastStrings.ctaText}
@@ -89,7 +89,7 @@ export const Landing = () => {
                 onClose={handleToastClose}
                 autoShow={true}
                 delay={3000}
-            />
+            /> */}
         </>
     );
 };
