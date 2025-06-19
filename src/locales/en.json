@@ -49,9 +49,16 @@
         "eventDetails": {
             "date": "June 20th - 22nd, 2025",
             "format": "In-person",
-            "location": "Waterloo, ON"
+            "location": "Waterloo, ON",
+            "accelerator": {
+                "date": "June 23rd - 27th, 2025",
+                "format": "In-person",
+                "location": "Waterloo, ON",
+                "funding": "$1M+ in funding"
+            }
         },
         "tagline": "The largest hackathon in Canada; where business and tech intersect.",
+        "acceleratorTagline": "A one-week sprint to turn your idea into a fully-backed venture.",
         "buttons": {
             "apply": "APPLY NOW",
             "sponsor": "BECOME A SPONSOR",
