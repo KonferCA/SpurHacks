@@ -201,6 +201,51 @@ export const Hero: React.FC = () => {
         };
     }, []);
 
+    const AcceleratorTag = (
+        <>
+            <Heading
+                fontSize={['2xl', '5xl']}
+                color="offWhite"
+                lineHeight="1.1"
+                fontWeight="bold"
+                mt={[6, 12]}
+                textAlign="center"
+            >
+                SpurHacks Accelerator Program
+            </Heading>
+
+            <HStack
+                color="offWhite"
+                pt={4}
+                pb={4}
+                px={4}
+                flexWrap="wrap"
+                justify="center"
+            >
+                <Text>{heroEventDetails.accelerator.date}</Text>
+                <Text>|</Text>
+                <Text>{heroEventDetails.accelerator.format}</Text>
+                <Text>|</Text>
+                <Text>{heroEventDetails.accelerator.location}</Text>
+                <Text>|</Text>
+                <Text>{heroEventDetails.accelerator.funding}</Text>
+            </HStack>
+
+            <Text
+                fontSize={['lg', '2xl']}
+                flexWrap="wrap"
+                color="offWhite"
+                textAlign="center"
+                px="10"
+                mb={10}
+                maxW="container.md"
+                fontWeight="semibold"
+            >
+                {heroStrings.acceleratorTagline}
+            </Text>
+        </>
+    );
+
     return (
         <Box position="relative" h="100vh" overflow="hidden">
             <SplineTarget
@@ -279,37 +324,7 @@ export const Hero: React.FC = () => {
                             </Text>
                         </HStack>
 
-                        <HStack
-                            color="offWhite"
-                            mb={6}
-                            pt={-2}
-                            pb={2}
-                            px={2}
-                            flexWrap="wrap"
-                            justify="center"
-                        >
-                            <Text color="offWhite" fontSize="md" opacity={0.9}>
-                                {heroEventDetails.accelerator.date}
-                            </Text>
-                            <Text color="offWhite" fontSize="md" opacity={0.9}>
-                                |
-                            </Text>
-                            <Text color="offWhite" fontSize="md" opacity={0.9}>
-                                {heroEventDetails.accelerator.format}
-                            </Text>
-                            <Text color="offWhite" fontSize="md" opacity={0.9}>
-                                |
-                            </Text>
-                            <Text color="offWhite" fontSize="md" opacity={0.9}>
-                                {heroEventDetails.accelerator.location}
-                            </Text>
-                            <Text color="offWhite" fontSize="md" opacity={0.9}>
-                                |
-                            </Text>
-                            <Text color="offWhite" fontSize="md" opacity={0.9}>
-                                {heroEventDetails.accelerator.funding}
-                            </Text>
-                        </HStack>
+                        {AcceleratorTag}
 
                         <Text
                             fontSize="md"
@@ -398,46 +413,7 @@ export const Hero: React.FC = () => {
                                 </Button>
                             </Box>
 
-                        <Heading
-                            fontSize={['2xl', '5xl']}
-                            color="offWhite"
-                            lineHeight="1.1"
-                            fontWeight="bold"
-                            mt={12}
-                            textAlign="left"
-                        >
-                            SpurHacks Accelerator Program
-                        </Heading>
-
-                        <HStack
-                            color="offWhite"
-                            pt={4}
-                            pb={4}
-                            px={4}
-                            flexWrap="wrap"
-                            justify="flex-start"
-                        >
-                            <Text>{heroEventDetails.accelerator.date}</Text>
-                            <Text>|</Text>
-                            <Text>{heroEventDetails.accelerator.format}</Text>
-                            <Text>|</Text>
-                            <Text>{heroEventDetails.accelerator.location}</Text>
-                            <Text>|</Text>
-                            <Text>{heroEventDetails.accelerator.funding}</Text>
-                        </HStack>
-
-                        <Text
-                            fontSize="2xl"
-                            flexWrap="wrap"
-                            color="offWhite"
-                            textAlign="center"
-                            px="10"
-                            mb={10}
-                            maxW="container.md"
-                            fontWeight="semibold"
-                        >
-                            {heroStrings.acceleratorTagline}
-                        </Text>
+                            {AcceleratorTag}
 
                             <HStack>
                                 <Button
