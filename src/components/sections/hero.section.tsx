@@ -9,7 +9,6 @@ import {
     Button,
     Image,
     useBreakpointValue,
-    Heading,
 } from '@chakra-ui/react';
 import { NoIconLogo } from '@assets';
 import { SplineTarget, SocialMediaBar } from '@components';
@@ -154,7 +153,7 @@ export const Hero: React.FC = () => {
 
     const showSocialIcons = useBreakpointValue({ base: false, md: true });
     const showDesktopCountdown = useBreakpointValue({ base: false, md: true });
-    const isMobile = useBreakpointValue({ base: true, sm: false });
+    const isMobile = useBreakpointValue({ base: true, md: false });
 
     useEffect(() => {
         const calculateTimeRemaining = () => {
@@ -202,7 +201,7 @@ export const Hero: React.FC = () => {
     }, []);
 
     return (
-        <Box position="relative" h="100vh" overflow="hidden">
+        <Box position="relative" h="100vh" overflow="hidden" pl={5}>
             <SplineTarget
                 id="hero"
                 zIndex={-1}
@@ -224,24 +223,20 @@ export const Hero: React.FC = () => {
                 zIndex={0}
             />
 
-            <Flex
-                direction="column"
-                align="center"
-                justify={{ base: 'space-between', sm: 'center' }}
-                h="100%"
-                position="relative"
-                zIndex={1}
-                pb={{ base: 8, sm: 0 }}
-            >
-                {isMobile ? (
-                    <Flex
-                        direction="column"
-                        align="center"
-                        justify="center"
-                        flex="1"
-                        w="100%"
-                    >
-                        <Box mb={6} maxW="300px" px={4}>
+            {isMobile ? (
+                <Flex
+                    direction="column"
+                    align="center"
+                    justify="space-between"
+                    h="100%"
+                    position="relative"
+                    zIndex={1}
+                    px={6}
+                    pt={24}
+                    pb={8}
+                >
+                    <VStack flex="1" justify="center" w="100%">
+                        <Box maxW="350px" w="100%">
                             <Image
                                 src={
                                     NoIconLogo ||
@@ -253,267 +248,72 @@ export const Hero: React.FC = () => {
                             />
                         </Box>
 
-                        <HStack
-                            color="offWhite"
-                            mb={6}
-                            pt={-2}
-                            pb={2}
-                            px={2}
-                            flexWrap="wrap"
-                            justify="center"
-                        >
-                            <Text color="offWhite" fontSize="md" opacity={0.9}>
+                        <VStack textAlign="center">
+                            <Text
+                                color="offWhite"
+                                fontSize="sm"
+                                fontWeight="medium"
+                                letterSpacing="wide"
+                            >
                                 {heroEventDetails.date}
                             </Text>
-                            <Text color="offWhite" fontSize="md" opacity={0.9}>
-                                |
-                            </Text>
-                            <Text color="offWhite" fontSize="md" opacity={0.9}>
-                                {heroEventDetails.format}
-                            </Text>
-                            <Text color="offWhite" fontSize="md" opacity={0.9}>
-                                |
-                            </Text>
-                            <Text color="offWhite" fontSize="md" opacity={0.9}>
+                            <Text color="offWhite" fontSize="sm" opacity={0.8}>
+                                {heroEventDetails.format} •{' '}
                                 {heroEventDetails.location}
                             </Text>
-                        </HStack>
+                        </VStack>
 
-                        <HStack
+                        <Text
+                            fontSize="lg"
                             color="offWhite"
-                            mb={6}
-                            pt={-2}
-                            pb={2}
-                            px={2}
-                            flexWrap="wrap"
-                            justify="center"
+                            textAlign="center"
+                            fontWeight="medium"
+                            lineHeight="1.4"
+                            maxW="300px"
                         >
-                            <Text color="offWhite" fontSize="md" opacity={0.9}>
-                                {heroEventDetails.accelerator.date}
+                            {heroStrings.tagline}
+                        </Text>
+
+                        <VStack pt={4}>
+                            <Text
+                                color="offWhite"
+                                fontSize="md"
+                                fontWeight="semibold"
+                            >
+                                ACCELERATOR PROGRAM
                             </Text>
-                            <Text color="offWhite" fontSize="md" opacity={0.9}>
-                                |
-                            </Text>
-                            <Text color="offWhite" fontSize="md" opacity={0.9}>
-                                {heroEventDetails.accelerator.format}
-                            </Text>
-                            <Text color="offWhite" fontSize="md" opacity={0.9}>
-                                |
-                            </Text>
-                            <Text color="offWhite" fontSize="md" opacity={0.9}>
-                                {heroEventDetails.accelerator.location}
-                            </Text>
-                            <Text color="offWhite" fontSize="md" opacity={0.9}>
-                                |
-                            </Text>
-                            <Text color="offWhite" fontSize="md" opacity={0.9}>
+                            <Text
+                                color="offWhite"
+                                fontSize="xs"
+                                opacity={0.8}
+                                textAlign="center"
+                            >
+                                {heroEventDetails.accelerator.date} •{' '}
                                 {heroEventDetails.accelerator.funding}
                             </Text>
-                        </HStack>
-
-                        <Text
-                            fontSize="md"
-                            flexWrap="wrap"
-                            color="offWhite"
-                            textAlign="center"
-                            px="10"
-                            mb={4}
-                            maxW="container.md"
-                            fontWeight="semibold"
-                        >
-                            {heroStrings.tagline}
-                        </Text>
-                    </Flex>
-                ) : (
-                    <>
-                        <Box mb={6} maxW="600px" px={4}>
-                            <Image
-                                src={
-                                    NoIconLogo ||
-                                    '/src/assets/logos/logo_noicon.svg'
-                                }
-                                alt={heroStrings.alt}
-                                width="100%"
-                                height="auto"
-                            />
-                        </Box>
-
-                        <HStack
-                            color="offWhite"
-                            mb={6}
-                            pt={4}
-                            pb={4}
-                            px={4}
-                            flexWrap="wrap"
-                            justify="flex-start"
-                        >
-                            <Text>{heroEventDetails.date}</Text>
-                            <Text>|</Text>
-                            <Text>{heroEventDetails.format}</Text>
-                            <Text>|</Text>
-                            <Text>{heroEventDetails.location}</Text>
-                        </HStack>
-
-                        <Text
-                            fontSize="2xl"
-                            flexWrap="wrap"
-                            color="offWhite"
-                            textAlign="center"
-                            px="10"
-                            mb={10}
-                            maxW="container.md"
-                            fontWeight="semibold"
-                        >
-                            {heroStrings.tagline}
-                        </Text>
-
-                        <VStack mb={4}>
-                            <Box>
-                                <Button
-                                    asChild
-                                    size="lg"
-                                    bg="orange.default"
-                                    color="black"
-                                    borderRadius="full"
-                                    px={8}
-                                    py={6}
-                                    mb={3}
-                                    mt={-2}
-                                    boxShadow="orangeGlow"
-                                    transition="all 0.3s ease"
-                                    _hover={{
-                                        bg: 'orange.hover',
-                                        transform: 'translateY(-2px)',
-                                        boxShadow:
-                                            '0 6px 12px rgba(255, 167, 95, 0.5)',
-                                    }}
-                                >
-                                    <a
-                                        href={links.hackathon.dashboard}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        {heroButtons.apply}
-                                    </a>
-                                </Button>
-                            </Box>
-
-                        <Heading
-                            fontSize={['2xl', '5xl']}
-                            color="offWhite"
-                            lineHeight="1.1"
-                            fontWeight="bold"
-                            mt={12}
-                            textAlign="left"
-                        >
-                            SpurHacks Accelerator Program
-                        </Heading>
-
-                        <HStack
-                            color="offWhite"
-                            pt={4}
-                            pb={4}
-                            px={4}
-                            flexWrap="wrap"
-                            justify="flex-start"
-                        >
-                            <Text>{heroEventDetails.accelerator.date}</Text>
-                            <Text>|</Text>
-                            <Text>{heroEventDetails.accelerator.format}</Text>
-                            <Text>|</Text>
-                            <Text>{heroEventDetails.accelerator.location}</Text>
-                            <Text>|</Text>
-                            <Text>{heroEventDetails.accelerator.funding}</Text>
-                        </HStack>
-
-                        <Text
-                            fontSize="2xl"
-                            flexWrap="wrap"
-                            color="offWhite"
-                            textAlign="center"
-                            px="10"
-                            mb={10}
-                            maxW="container.md"
-                            fontWeight="semibold"
-                        >
-                            {heroStrings.acceleratorTagline}
-                        </Text>
-
-                            <HStack>
-                                <Button
-                                    asChild
-                                    size="lg"
-                                    variant="outline"
-                                    color="offWhite"
-                                    borderColor="white"
-                                    borderRadius="full"
-                                    px={8}
-                                    py={6}
-                                    transition="all 0.3s ease"
-                                    _hover={{
-                                        bg: 'whiteAlpha.200',
-                                        transform: 'translateY(-2px)',
-                                        boxShadow:
-                                            '0 6px 12px rgba(255, 255, 255, 0.2)',
-                                    }}
-                                >
-                                    <a
-                                        href={links.accelerator}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        {heroButtons.accelerator}
-                                    </a>
-                                </Button>
-                                {/* <Button
-                                    asChild
-                                    size="lg"
-                                    variant="outline"
-                                    color="offWhite"
-                                    borderColor="white"
-                                    borderRadius="full"
-                                    px={8}
-                                    py={6}
-                                    transition="all 0.3s ease"
-                                    _hover={{
-                                        bg: 'whiteAlpha.200',
-                                        transform: 'translateY(-2px)',
-                                        boxShadow:
-                                            '0 6px 12px rgba(255, 255, 255, 0.2)',
-                                    }}
-                                >
-                                    <a
-                                        href={links.hackathon.talent}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        {heroButtons.talent}
-                                    </a>
-                                </Button> */}
-                            </HStack>
                         </VStack>
-                    </>
-                )}
+                    </VStack>
 
-                {isMobile && (
-                    <Flex direction="column" w="100%" align="center" mt="auto">
+                    <VStack w="100%">
                         <MobileCountdown countdown={countdown} />
-                        <HStack flexDir="column" w="100%" px={6} maxW="100%">
+
+                        <VStack w="100%">
                             <Button
                                 size="md"
                                 bg="orange.default"
                                 color="black"
-                                borderRadius="full"
-                                px={4}
-                                py={5}
+                                borderRadius="none"
+                                px={8}
+                                py={6}
                                 w="100%"
+                                maxW="280px"
+                                fontWeight="bold"
+                                letterSpacing="wide"
                                 boxShadow="orangeGlow"
-                                transition="all 0.3s ease"
+                                transition="all 0.2s ease"
                                 _hover={{
                                     bg: 'orange.hover',
-                                    transform: 'translateY(-2px)',
-                                    boxShadow:
-                                        '0 6px 12px rgba(255, 167, 95, 0.5)',
+                                    transform: 'translateY(-1px)',
                                 }}
                             >
                                 <a
@@ -525,21 +325,22 @@ export const Hero: React.FC = () => {
                                     {heroButtons.apply}
                                 </a>
                             </Button>
+
                             <Button
-                                size="md"
+                                size="sm"
                                 variant="outline"
                                 color="offWhite"
                                 borderColor="white"
-                                borderRadius="full"
-                                px={4}
-                                py={5}
+                                borderRadius="none"
+                                px={6}
+                                py={4}
                                 w="100%"
-                                transition="all 0.3s ease"
+                                maxW="280px"
+                                fontWeight="medium"
+                                letterSpacing="wide"
+                                transition="all 0.2s ease"
                                 _hover={{
-                                    bg: 'whiteAlpha.200',
-                                    transform: 'translateY(-2px)',
-                                    boxShadow:
-                                        '0 6px 12px rgba(255, 255, 255, 0.2)',
+                                    bg: 'whiteAlpha.100',
                                 }}
                             >
                                 <a
@@ -551,63 +352,235 @@ export const Hero: React.FC = () => {
                                     {heroButtons.accelerator}
                                 </a>
                             </Button>
-                            {/* <Button
-                                size="md"
-                                variant="outline"
-                                color="offWhite"
-                                borderColor="white"
-                                borderRadius="full"
-                                px={4}
-                                py={5}
-                                w="100%"
-                                transition="all 0.3s ease"
-                                _hover={{
-                                    bg: 'whiteAlpha.200',
-                                    transform: 'translateY(-2px)',
-                                    boxShadow:
-                                        '0 6px 12px rgba(255, 255, 255, 0.2)',
-                                }}
-                            >
-                                <a
-                                    href={links.hackathon.talent}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="w-full"
+                        </VStack>
+                    </VStack>
+                </Flex>
+            ) : (
+                <Flex position="relative" zIndex={1} h="100%" pt={20}>
+                    <Box w="70%" h="100%" px={12} py={8}>
+                        <Flex direction="column" h="100%" justify="center">
+                            <Box maxW="700px" mb={8}>
+                                <Image
+                                    src={
+                                        NoIconLogo ||
+                                        '/src/assets/logos/logo_noicon.svg'
+                                    }
+                                    alt={heroStrings.alt}
+                                    width="100%"
+                                    height="auto"
+                                />
+                            </Box>
+
+                            <HStack mb={8}>
+                                <Text
+                                    color="offWhite"
+                                    fontSize="lg"
+                                    fontWeight="bold"
+                                    letterSpacing="wider"
                                 >
-                                    {heroButtons.talent}
-                                </a>
-                            </Button> */}
-                        </HStack>
-                    </Flex>
-                )}
+                                    {heroEventDetails.date}
+                                </Text>
+                                <Text
+                                    color="offWhite"
+                                    fontSize="lg"
+                                    opacity={0.6}
+                                >
+                                    •
+                                </Text>
+                                <Text
+                                    color="offWhite"
+                                    fontSize="md"
+                                    opacity={0.8}
+                                >
+                                    {heroEventDetails.format}
+                                </Text>
+                                <Text
+                                    color="offWhite"
+                                    fontSize="lg"
+                                    opacity={0.6}
+                                >
+                                    •
+                                </Text>
+                                <Text
+                                    color="offWhite"
+                                    fontSize="md"
+                                    opacity={0.8}
+                                >
+                                    {heroEventDetails.location}
+                                </Text>
+                            </HStack>
 
-                {showDesktopCountdown && (
-                    <HStack position="absolute" bottom="40px" left="40px">
-                        <CountdownDisplay value={countdown.days} label="DAYS" />
-                        <Separator />
-                        <CountdownDisplay
-                            value={countdown.hours}
-                            label={heroCountdown.hours}
-                        />
-                        <Separator />
-                        <CountdownDisplay
-                            value={countdown.minutes}
-                            label={heroCountdown.minutes}
-                        />
-                        <Separator />
-                        <CountdownDisplay
-                            value={countdown.seconds}
-                            label={heroCountdown.seconds}
-                        />
-                    </HStack>
-                )}
+                            <Text
+                                fontSize="4xl"
+                                color="offWhite"
+                                fontWeight="medium"
+                                lineHeight="1.2"
+                                letterSpacing="tight"
+                                maxW="600px"
+                                mb={10}
+                            >
+                                {heroStrings.tagline}
+                            </Text>
 
-                {showSocialIcons && (
-                    <Box position="absolute" bottom={8} right={8}>
-                        <SocialMediaBar spacing={4} />
+                            <Box>
+                                <Button
+                                    asChild
+                                    size="lg"
+                                    bg="orange.default"
+                                    color="black"
+                                    borderRadius="full"
+                                    px={12}
+                                    py={8}
+                                    fontSize="md"
+                                    fontWeight="bold"
+                                    letterSpacing="wide"
+                                    boxShadow="orangeGlow"
+                                    transition="all 0.2s ease"
+                                    _hover={{
+                                        bg: 'orange.hover',
+                                        transform: 'translateY(-2px)',
+                                    }}
+                                >
+                                    <a
+                                        href={links.hackathon.dashboard}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        {heroButtons.apply}
+                                    </a>
+                                </Button>
+                            </Box>
+                        </Flex>
                     </Box>
-                )}
-            </Flex>
+
+                    <Box
+                        w="30%"
+                        h="100%"
+                        borderLeft="1px solid"
+                        borderColor="whiteAlpha.200"
+                        px={8}
+                        py={8}
+                    >
+                        <Flex direction="column" h="100%" justify="center">
+                            <VStack align="start">
+                                <Text
+                                    color="offWhite"
+                                    fontSize="2xl"
+                                    fontWeight="semibold"
+                                    letterSpacing="widest"
+                                >
+                                    ACCELERATOR
+                                </Text>
+
+                                <Text
+                                    color="offWhite"
+                                    fontSize="xl"
+                                    fontWeight="medium"
+                                    letterSpacing="wide"
+                                >
+                                    PROGRAM
+                                </Text>
+
+                                <VStack align="start">
+                                    <Text
+                                        color="offWhite"
+                                        fontSize="md"
+                                        opacity={0.9}
+                                    >
+                                        {heroEventDetails.accelerator.date}
+                                    </Text>
+                                    <Text
+                                        color="offWhite"
+                                        fontSize="sm"
+                                        opacity={0.8}
+                                    >
+                                        {heroEventDetails.accelerator.format}
+                                    </Text>
+                                    <Text
+                                        color="offWhite"
+                                        fontSize="sm"
+                                        opacity={0.8}
+                                    >
+                                        {heroEventDetails.accelerator.location}
+                                    </Text>
+                                    <Text
+                                        color="offWhite"
+                                        fontSize="md"
+                                        fontWeight="semibold"
+                                        mt={2}
+                                    >
+                                        {heroEventDetails.accelerator.funding}
+                                    </Text>
+                                </VStack>
+
+                                <Text
+                                    fontSize="sm"
+                                    color="offWhite"
+                                    opacity={0.8}
+                                    lineHeight="1.5"
+                                    pb={4}
+                                    maxW="250px"
+                                >
+                                    {heroStrings.acceleratorTagline}
+                                </Text>
+
+                                <Button
+                                    asChild
+                                    size="md"
+                                    variant="outline"
+                                    color="offWhite"
+                                    borderColor="white"
+                                    borderRadius="none"
+                                    px={8}
+                                    py={6}
+                                    fontSize="sm"
+                                    fontWeight="medium"
+                                    letterSpacing="wide"
+                                    transition="all 0.2s ease"
+                                    _hover={{
+                                        bg: 'whiteAlpha.100',
+                                    }}
+                                >
+                                    <a
+                                        href={links.accelerator}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        {heroButtons.accelerator}
+                                    </a>
+                                </Button>
+                            </VStack>
+                        </Flex>
+                    </Box>
+                </Flex>
+            )}
+
+            {showDesktopCountdown && (
+                <HStack position="absolute" bottom="40px" left="40px">
+                    <CountdownDisplay value={countdown.days} label="DAYS" />
+                    <Separator />
+                    <CountdownDisplay
+                        value={countdown.hours}
+                        label={heroCountdown.hours}
+                    />
+                    <Separator />
+                    <CountdownDisplay
+                        value={countdown.minutes}
+                        label={heroCountdown.minutes}
+                    />
+                    <Separator />
+                    <CountdownDisplay
+                        value={countdown.seconds}
+                        label={heroCountdown.seconds}
+                    />
+                </HStack>
+            )}
+
+            {showSocialIcons && (
+                <Box position="absolute" bottom={8} right={8}>
+                    <SocialMediaBar spacing={4} />
+                </Box>
+            )}
         </Box>
     );
 };
