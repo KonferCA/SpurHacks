@@ -199,7 +199,7 @@ export const Hero: React.FC = () => {
             clearInterval(interval);
         };
     }, []);
-
+ 
     return (
         <Box position="relative" h="100vh" overflow="hidden" pl={5}>
             <SplineTarget
@@ -274,7 +274,7 @@ export const Hero: React.FC = () => {
                             {heroStrings.tagline}
                         </Text>
 
-                        <VStack pt={4}>
+                        <VStack pt={20}>
                             <Text
                                 color="offWhite"
                                 fontSize="md"
@@ -302,7 +302,7 @@ export const Hero: React.FC = () => {
                                 size="md"
                                 bg="orange.default"
                                 color="black"
-                                borderRadius="none"
+                                borderRadius="full"
                                 px={8}
                                 py={6}
                                 w="100%"
@@ -331,7 +331,7 @@ export const Hero: React.FC = () => {
                                 variant="outline"
                                 color="offWhite"
                                 borderColor="white"
-                                borderRadius="none"
+                                borderRadius="full"
                                 px={6}
                                 py={4}
                                 w="100%"
