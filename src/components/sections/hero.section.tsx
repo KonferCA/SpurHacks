@@ -201,7 +201,7 @@ export const Hero: React.FC = () => {
     }, []);
 
     return (
-        <Box position="relative" h="100vh" overflow="hidden" pl={5}>
+        <Box position="relative" h="100vh" overflow="hidden">
             <SplineTarget
                 id="hero"
                 zIndex={-1}
@@ -274,7 +274,7 @@ export const Hero: React.FC = () => {
                             {heroStrings.tagline}
                         </Text>
 
-                        <VStack pt={20}>
+                        <VStack pt={12}>
                             <Text
                                 color="offWhite"
                                 fontSize="md"
@@ -356,7 +356,7 @@ export const Hero: React.FC = () => {
                     </VStack>
                 </Flex>
             ) : (
-                <Flex position="relative" zIndex={1} h="100%" pt={20}>
+                <Flex position="relative" zIndex={1} h="100%" pt={20} pl={5}>
                     <Box w="70%" h="100%" px={12} py={8}>
                         <Flex direction="column" h="100%" justify="center">
                             <Box maxW="700px" mb={8}>
