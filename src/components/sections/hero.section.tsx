@@ -199,7 +199,7 @@ export const Hero: React.FC = () => {
             clearInterval(interval);
         };
     }, []);
- 
+
     return (
         <Box position="relative" h="100vh" overflow="hidden" pl={5}>
             <SplineTarget
